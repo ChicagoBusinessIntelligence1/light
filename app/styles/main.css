@@ -2945,6 +2945,7 @@ h6 {
 }
 .menu-link a {
   font-family: 'PT Sans Narrow', 'Sans-serif' !important;
+  font-size: 13px;
   text-transform: uppercase;
 }
 .btn-link-dark {
