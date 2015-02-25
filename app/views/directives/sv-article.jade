@@ -14,6 +14,7 @@ article.post-article
             ul.list-unstyled
               li
                 a.btn-link-dark(href='{{c.userLink || "#"}}')
+                  img.img-fb(ng-src="{{c.userPic}}" ng-if='c.userPic!="Admin"')
                   i.fa.fa-user.fa-lg(ng-if='c.userPic=="Admin"') &nbsp;
                   span.user-name-comment {{c.userName}}
               li

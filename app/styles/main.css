@@ -2695,7 +2695,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/politics128-bw.jpg");
+  background-image: url("../images/news-sections/politics128.jpg");
 }
 .fire-hover {
   -webkit-transition: all 1s ease;
@@ -2703,7 +2703,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/politics128.jpg");
+  background-image: url("../images/news-sections/politics128-bw.jpg");
 }
 .water {
   -webkit-transition: all 1s ease;
@@ -2711,7 +2711,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/elements/water-bw.png") !important;
+  background-image: url("../images/news-sections/business128.jpg") !important;
 }
 .water-hover {
   -webkit-transition: all 1s ease;
@@ -2719,7 +2719,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/elements/water.png") !important;
+  background-image: url("../images/news-sections/business128-bw.jpg") !important;
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
@@ -2727,7 +2727,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/elements/soft-wood-bw.png");
+  background-image: url("../images/news-sections/economy128.jpg");
 }
 .soft-wood-hover {
   -webkit-transition: all 1s ease;
@@ -2735,7 +2735,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/elements/soft-wood.png") !important;
+  background-image: url("../images/news-sections/economy128-bw.jpg");
 }
 .hard-wood {
   -webkit-transition: all 1s ease;
@@ -2743,7 +2743,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/elements/hard-wood-bw.png") !important;
+  background-image: url("../images/news-sections/sport128.jpg");
 }
 .hard-wood-hover {
   -webkit-transition: all 1s ease;
@@ -2751,7 +2751,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/elements/hard-wood.png") !important;
+  background-image: url("../images/news-sections/sport128-bw.jpg");
 }
 .soft-metal {
   -webkit-transition: all 1s ease;

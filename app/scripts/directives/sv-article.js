@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('app')
     .directive('svArticle', function () {
         return {

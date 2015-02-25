@@ -7,6 +7,8 @@
       .modal-body
         form(name='formPost', id='formPost', novalidate)
           .form-group
+            select(ng-options="e.$value for e in elements" ng-model='post.fenElementSelected' required).bootstrap-select.form-control
+          .form-group
             input.form-control(ng-model='post.title', required, name='title', type='text' placeholder='Заголовок')
           .form-group
             textarea.add-article.form-control(ng-model='post.body',required, name='body',class='add-article form-control' rows='10'

@@ -11,7 +11,6 @@ angular.module('mgcrea.ngStrap.alert', ['mgcrea.ngStrap.modal'])
     var defaults = this.defaults = {
       animation: 'am-fade',
       prefixClass: 'alert',
-      prefixEvent: 'alert',
       placement: null,
       template: 'alert/alert.tpl.html',
       container: false,
