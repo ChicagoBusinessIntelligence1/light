@@ -123,11 +123,45 @@
 .table-elements {
   margin: 0 auto;
 }
+.navbar-header {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.navbar-form {
+  margin: 0px;
+}
+.nav-auth li a {
+  padding: 0px 5px;
+}
+.navbar-brand {
+  display: inline-block;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.navbar-brand img {
+  display: inline-block;
+}
+.navbar-logo {
+  margin-bottom: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  height: 120px !important;
+  background-color: #1b4b94 !important;
+}
+.navbar-svet li a {
+  color: #393939 !important;
+}
+.navbar-svet li a .text {
+  color: #393939 !important;
+  padding-left: 5px;
+  display: inline-block;
+}
 .navbar-app {
   margin-bottom: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #43464d !important;
+  background-color: #fff !important;
 }
 .navbar-app li a .text {
   padding-left: 5px;
@@ -2282,7 +2316,7 @@
   margin: 0 auto;
 }
 .footer {
-  background-color: #6e727e;
+  background-color: #2b6fd8;
   height: 60px;
 }
 .footer span,
@@ -2360,7 +2394,7 @@
 .app-tips .panel-heading {
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #f3f4f5 !important;
+  background-color: #eef4fc !important;
 }
 .app-tips .panel-body {
   background-color: #fbfbfb !important;
@@ -2373,7 +2407,7 @@
 }
 h5.label-default-head {
   padding: 10px 15px;
-  background-color: #848994;
+  background-color: #4d86de;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   display: block;
@@ -2383,7 +2417,7 @@ h5.label-default-head {
 }
 .list-info-sidebar {
   padding: 5px 10px;
-  border: 1px solid #ced0d4;
+  border: 1px solid #b8cff2;
 }
 .list-info-sidebar li {
   font-size: 10px;
@@ -2566,7 +2600,7 @@ h5.label-default-head {
   border-radius: 0px;
 }
 .info {
-  color: #43464d !important;
+  color: #1b4b94 !important;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
@@ -2725,7 +2759,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/soft-metal-bw.png") !important;
 }
 .soft-metal-hover {
@@ -2734,7 +2768,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
@@ -2743,7 +2777,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/hard-metal-bw.png") !important;
 }
 .hard-metal-hover {
@@ -2752,7 +2786,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/hard-metal.png") !important;
 }
 .mountain-earth {
@@ -2761,7 +2795,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/mountain-earth-bw.png") !important;
 }
 .mountain-earth-hover {
@@ -2770,7 +2804,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/mountain-earth.png") !important;
 }
 .mother-earth {
@@ -2779,7 +2813,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/mother-earth-bw.png") !important;
 }
 .mother-earth-hover {
@@ -2788,7 +2822,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #4d86de;
   background-image: url("../images/elements/mother-earth.png") !important;
 }
 .table-elements {
@@ -2904,6 +2938,10 @@ h6 {
   margin-bottom: 5px !important;
   margin-top: 5px;
 }
+.input-xs {
+  height: 22px;
+  font-size: 11px;
+}
 .menu-link a {
   font-family: 'Hind', sans-serif;
 }
@@ -2928,14 +2966,14 @@ h6 {
   color: #ababab !important;
 }
 .btn-primary {
-  background-color: #848994;
-  border-color: #8a8f99;
+  background-color: #4d86de;
+  border-color: #568ce0;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #969ba4;
-  border-color: #90959f;
+  background-color: #6898e3;
+  border-color: #5f92e1;
 }
 /**********************
     =form

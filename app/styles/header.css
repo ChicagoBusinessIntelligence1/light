@@ -4,11 +4,45 @@
 /**********************
      =top-navbar
 ***********************/
+.navbar-header {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.navbar-form {
+  margin: 0px;
+}
+.nav-auth li a {
+  padding: 0px 5px;
+}
+.navbar-brand {
+  display: inline-block;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.navbar-brand img {
+  display: inline-block;
+}
+.navbar-logo {
+  margin-bottom: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  height: 120px !important;
+  background-color: #1b4b94 !important;
+}
+.navbar-svet li a {
+  color: #393939 !important;
+}
+.navbar-svet li a .text {
+  color: #393939 !important;
+  padding-left: 5px;
+  display: inline-block;
+}
 .navbar-app {
   margin-bottom: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #43464d !important;
+  background-color: #fff !important;
 }
 .navbar-app li a .text {
   padding-left: 5px;

@@ -1,48 +1,12 @@
 .navbar.navbar-default.navbar-app(role="navigation")
   .container
     <!-- Brand and toggle get grouped for better mobile display -->
-    .navbar-header
-      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand.btn-link-light(ui-sref='app.home')
-        img.img-f(ng-src="../images/feng-shui-logo-name.png")
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
-      ul.nav.navbar-nav.top-nav-menu
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.home')
-            .i.fa.fa-home
-            span.text Главная
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
-            .i.fa.fa-leaf
-            span.text Наши услуги
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.residential-consultations') Фэн-шуй для Вашего Дома
-            li.divider
-            li
-              a(ui-sref='app.business-consultations') Фэн-шуй для Вашего Бизнеca
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Персональные концультации
-            li.divider
-
-            li
-              a(ui-sref="app.schedule-consultations") Запланировать концультацию
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.contact')
-            i.fa.fa-envelope
-            span.text Обратная связь
-
-      //form.navbar-form.navbar-left(role="search")
-      //  .form-group
-      //    input.form-control(type="text" placeholder="Search")
-      //  button.btn.btn-default.btn-search(type="submit") Submit
+    .navbar-header.pull-right
+      form.form-sm.navbar-form.navbar-left(role="search")
+        .form-group
+          input.form-control.input-xs(type="text" placeholder="Search Our Site")
+        button.btn.btn-xs.btn-default.btn-search(type="submit")
+          i.fa.fa-search.fa-fw
       ul.nav.navbar-nav.pull-right.nav-auth
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')
@@ -57,6 +21,150 @@
             i.fa.fa-user.fa-lg
             span.fb-name Админ
         li(ng-show='auth.user')
-          a.btn-link-light(ng-click='fenLogout()')
+          a.btn-link-light(data-toggle="tooltip" data-placement="left" title="Выйти" ng-click='fenLogout()')
             i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Выйти
+            span.span-top-nav
+
+.navbar-logo.navbar-default
+  .container
+    .row
+      a.navbar-brand.text-center.col-sm-6.col-sm-offset-3(ui-sref='app.home')
+        img.img-responsive(ng-src="../images/logo/newLightLogo580.png")
+    <!-- Collect the nav links, forms, and other content for toggling -->
+.navbar.navbar-default.navbar-svet(role="navigation")
+  .container
+    <!-- Brand and toggle get grouped for better mobile display -->
+    .navbar-header
+      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+      ul.nav.navbar-nav.top-nav-menu.text-center
+        li
+          a.btn.btn-link.btn-link-light(ui-sref='app.home')
+            .i.fa.fa-home
+            span.text Main
+        li.dropdown.drop-app.menu-link
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-newspaper-o
+            span.text Politics &nbsp
+            i.fa.fa-angle-down
+          ul.dropdown-menu(role="menu")
+            li
+              a(ui-sref='app.business-consultations') Link 1
+            li.divider
+            li
+              a(ui-sref='app.residential-consultations') Link 2
+            li.divider
+            li
+              a(ui-sref='app.personal-consultations') Link 3
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 4
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 5
+        li.dropdown.drop-app.menu-link
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-newspaper-o
+            span.text Politics &nbsp
+            i.fa.fa-angle-down
+          ul.dropdown-menu(role="menu")
+            li
+              a(ui-sref='app.business-consultations') Link 1
+            li.divider
+            li
+              a(ui-sref='app.residential-consultations') Link 2
+            li.divider
+            li
+              a(ui-sref='app.personal-consultations') Link 3
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 4
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 5
+        li.dropdown.drop-app.menu-link
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-newspaper-o
+            span.text Culture &nbsp
+            i.fa.fa-angle-down
+          ul.dropdown-menu(role="menu")
+            li
+              a(ui-sref='app.business-consultations') Link 1
+            li.divider
+            li
+              a(ui-sref='app.residential-consultations') Link 2
+            li.divider
+            li
+              a(ui-sref='app.personal-consultations') Link 3
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 4
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 5
+        li.dropdown.drop-app.menu-link
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-newspaper-o
+            span.text Entertainment &nbsp
+            i.fa.fa-angle-down
+          ul.dropdown-menu(role="menu")
+            li
+              a(ui-sref='app.business-consultations') Link 1
+            li.divider
+            li
+              a(ui-sref='app.residential-consultations') Link 2
+            li.divider
+            li
+              a(ui-sref='app.personal-consultations') Link 3
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 4
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 5
+        li.dropdown.drop-app.menu-link
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-newspaper-o
+            span.text Sciense &nbsp
+            i.fa.fa-angle-down
+          ul.dropdown-menu(role="menu")
+            li
+              a(ui-sref='app.business-consultations') Link 1
+            li.divider
+            li
+              a(ui-sref='app.residential-consultations') Link 2
+            li.divider
+            li
+              a(ui-sref='app.personal-consultations') Link 3
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 4
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 5
+        li.dropdown.drop-app.menu-link
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-newspaper-o
+            span.text Health &nbsp
+            i.fa.fa-angle-down
+          ul.dropdown-menu(role="menu")
+            li
+              a(ui-sref='app.business-consultations') Link 1
+            li.divider
+            li
+              a(ui-sref='app.residential-consultations') Link 2
+            li.divider
+            li
+              a(ui-sref='app.personal-consultations') Link 3
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 4
+            li.divider
+            li
+              a(ui-sref="app.schedule-consultations") Link 5
+
