@@ -12,11 +12,11 @@
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg
             span.span-top-nav Войти
-        li(ng-if='auth.user.provider=="facebook"')
+        li(ng-if='auth.user.provider==\'facebook\'')
           a.btn-link-light(ui-sref='{{userLink}}')
             span.span-top-nav {{userName}}
             img.img-fb(ng-src="{{userPic}}")
-        li(ng-if='auth.user.provider=="password"')
+        li(ng-if='auth.user.provider==\'password\'')
           a.btn-link-light
             i.fa.fa-user.fa-lg
             span.fb-name Админ
@@ -47,174 +47,30 @@
           a.btn.btn-link.btn-link-light(ui-sref='app.home')
             .i.fa.fa-home.fa-fw
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.business-consultations")
             span.text Politics &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.residential-consultations")
             span.text Business &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
-            span.text Economics &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
+          a.dropdown-toggle(ui-sref="app.personal-consultations")
+            span.text Economy &nbsp
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.schedule-consultations")
             span.text Culture &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.schedule-consultations")
             span.text Sciense &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.schedule-consultations")
             span.text Entertainment &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.schedule-consultations")
             span.text Society &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.schedule-consultations")
             span.text Health &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
+          a.dropdown-toggle(ui-sref="app.schedule-consultations")
             span.text Travel &nbsp
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.business-consultations') Link 1
-            li.divider
-            li
-              a(ui-sref='app.residential-consultations') Link 2
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Link 3
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 4
-            li.divider
-            li
-              a(ui-sref="app.schedule-consultations") Link 5
 
