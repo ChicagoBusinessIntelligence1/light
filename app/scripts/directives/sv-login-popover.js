@@ -11,7 +11,10 @@ angular.module('app')
                     template: '../../views/popover/login-fb.html',
                     placement: 'bottom'
 
+
                 });
             }
         };
     });
+
+
