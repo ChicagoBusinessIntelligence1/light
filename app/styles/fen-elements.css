@@ -205,7 +205,7 @@ ul.fen-elements li {
   transition: all 1s ease;
 }
 .slide-up {
-  top: -27.586206896551726px;
+  top: -44.13793103448276px;
 }
 .slide-up.ng-hide {
   top: 0px;

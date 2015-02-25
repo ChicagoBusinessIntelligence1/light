@@ -2617,7 +2617,7 @@ h5.label-default-head {
 }
 .fen-element-wrapper {
   width: 128px;
-  height: 80px;
+  height: 128px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -2625,7 +2625,7 @@ h5.label-default-head {
 }
 .fen-element {
   width: 128px;
-  height: 80px;
+  height: 128px;
   text-align: center;
   position: relative;
 }
@@ -2684,7 +2684,7 @@ ul.fen-elements li {
   transition: all 1s ease;
 }
 .slide-up {
-  top: -27.586206896551726px;
+  top: -44.13793103448276px;
 }
 .slide-up.ng-hide {
   top: 0px;
