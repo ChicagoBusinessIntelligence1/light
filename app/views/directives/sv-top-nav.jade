@@ -12,11 +12,11 @@
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg
             span.span-top-nav Войти
-        li(ng-if='auth.user.provider==\'facebook\'')
+        li(ng-if='auth.user.provider=="facebook"')
           a.btn-link-light(ui-sref='{{userLink}}')
             span.span-top-nav {{userName}}
             img.img-fb(ng-src="{{userPic}}")
-        li(ng-if='auth.user.provider==\'password\'')
+        li(ng-if='auth.user.provider=="password"')
           a.btn-link-light
             i.fa.fa-user.fa-lg
             span.fb-name Админ
