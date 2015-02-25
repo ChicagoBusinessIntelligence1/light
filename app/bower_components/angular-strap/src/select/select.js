@@ -20,14 +20,12 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
       sort: true,
       caretHtml: '&nbsp;<span class="caret"></span>',
       placeholder: 'Choose among the following...',
-      allText: 'All',
-      noneText: 'None',
       maxLength: 3,
       maxLengthHtml: 'selected',
       iconCheckmark: 'glyphicon glyphicon-ok'
     };
 
-    this.$get = function($window, $document, $rootScope, $tooltip, $timeout) {
+    this.$get = function($window, $document, $rootScope, $tooltip) {
 
       var bodyEl = angular.element($window.document.body);
       var isNative = /(ip(a|o)d|iphone|android)/ig.test($window.navigator.userAgent);
@@ -40,10 +38,6 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
         // Common vars
         var options = angular.extend({}, defaults, config);
 
-        // parse sort option value to support attribute as string
-        // when binded to interpolated value
-        options.sort = options.sort.toString().match(/true|1/i);
-
         $select = $tooltip(element, options);
         var scope = $select.$scope;
 
@@ -52,8 +46,6 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
         scope.$isMultiple = options.multiple;
         scope.$showAllNoneButtons = options.allNoneButtons && options.multiple;
         scope.$iconCheckmark = options.iconCheckmark;
-        scope.$allText = options.allText;
-        scope.$noneText = options.noneText;
 
         scope.$activate = function(index) {
           scope.$$postDigest(function() {
@@ -100,6 +92,7 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
 
         $select.activate = function(index) {
           if(options.multiple) {
+            scope.$activeIndex.sort();
             $select.$isActive(index) ? scope.$activeIndex.splice(scope.$activeIndex.indexOf(index), 1) : scope.$activeIndex.push(index);
             if(options.sort) scope.$activeIndex.sort();
           } else {
@@ -123,7 +116,7 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
             }
           });
           // Emit event
-          scope.$emit(options.prefixEvent + '.select', value, index, $select);
+          scope.$emit(options.prefixEvent + '.select', value, index);
         };
 
         // Protected methods
@@ -204,14 +197,12 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
           if(options.multiple) {
             $select.$element.addClass('select-multiple');
           }
-          // use timeout to hookup the events to prevent
-          // event bubbling from being processed imediately.
-          $timeout(function() {
+          setTimeout(function() {
             $select.$element.on(isTouch ? 'touchstart' : 'mousedown', $select.$onMouseDown);
             if(options.keyboard) {
               element.on('keydown', $select.$onKeyDown);
             }
-          }, 0, false);
+          });
         };
 
         var _hide = $select.hide;
@@ -244,8 +235,8 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
       link: function postLink(scope, element, attr, controller) {
 
         // Directive options
-        var options = {scope: scope, placeholder: defaults.placeholder};
-        angular.forEach(['placement', 'container', 'delay', 'trigger', 'keyboard', 'html', 'animation', 'template', 'placeholder', 'multiple', 'allNoneButtons', 'maxLength', 'maxLengthHtml', 'allText', 'noneText', 'iconCheckmark', 'autoClose', 'id', 'sort', 'caretHtml'], function(key) {
+        var options = {scope: scope};
+        angular.forEach(['placement', 'container', 'delay', 'trigger', 'keyboard', 'html', 'animation', 'template', 'placeholder', 'multiple', 'allNoneButtons', 'maxLength', 'maxLengthHtml'], function(key) {
           if(angular.isDefined(attr[key])) options[key] = attr[key];
         });
 
@@ -299,14 +290,8 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
             index = select.$getIndex(controller.$modelValue);
             selected = angular.isDefined(index) ? select.$scope.$matches[index].label : false;
           }
-          element.html((selected ? selected : options.placeholder) + (options.caretHtml ? options.caretHtml : defaults.caretHtml));
+          element.html((selected ? selected : attr.placeholder || defaults.placeholder) + defaults.caretHtml);
         };
-
-        if(options.multiple){
-          controller.$isEmpty = function(value){
-            return !value || value.length === 0;
-          };
-        }
 
         // Garbage collection
         scope.$on('$destroy', function() {

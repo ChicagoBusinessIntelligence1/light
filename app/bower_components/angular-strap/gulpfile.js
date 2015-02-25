@@ -102,21 +102,20 @@ gulp.task('open:pages', function(){
 
 // WATCH
 //
-
 var watch = require('gulp-watch');
 gulp.task('watch:docs', function() {
-  watch(docs.scripts, {cwd: docs.cwd}, function(files) {
+  watch({glob: docs.scripts, gaze: {cwd: docs.cwd}}, function(files) {
     return files.pipe(connect.reload());
   });
-  watch(docs.watch.styles, {cwd: docs.cwd}, function(files) {
+  watch({glob: docs.watch.styles, gaze: {cwd: docs.cwd}}, function(files) {
     return gulp.start('styles:docs');
   });
-  watch([docs.index, docs.views], {cwd: docs.cwd}, function(files) {
+  watch({glob: [docs.index, docs.views], gaze: {cwd: docs.cwd}}, function(files) {
     return files.pipe(connect.reload());
   });
 });
 gulp.task('watch:dev', function() {
-  watch(src.scripts, {cwd: src.cwd}, function(files) {
+  watch({glob: src.scripts, gaze: {cwd: src.cwd}}, function(files) {
     return files.pipe(connect.reload());
   });
 });
@@ -381,7 +380,6 @@ gulp.task('views:pages', function() {
 //
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
-var testTimezone = '';
 gulp.task('jshint', function() {
   gulp.src(src.scripts, {cwd: src.cwd})
     .pipe(changed(src.scripts))
@@ -390,13 +388,6 @@ gulp.task('jshint', function() {
 });
 var karma = require('karma').server;
 gulp.task('karma:unit', ['templates:test'], function() {
-  // if testTimezone has value, set the environment timezone
-  // before starting karma, so PhantomJS picks up the
-  // timezone setting
-  if (testTimezone) {
-    console.log('Setting timezone to => [' + testTimezone + ']');
-    process.env.TZ = testTimezone;
-  }
   karma.start({
     configFile: path.join(__dirname, 'test/karma.conf.js'),
     browsers: ['PhantomJS'],
@@ -412,8 +403,7 @@ gulp.task('karma:server', ['templates:test'], function() {
     configFile: path.join(__dirname, 'test/karma.conf.js'),
     browsers: ['PhantomJS'],
     reporters: ['progress'],
-    autoWatch: true,
-    singleRun: false
+    autoWatch: true
   }, function(code) {
     gutil.log('Karma has exited with ' + code);
     process.exit(code);
@@ -428,33 +418,21 @@ gulp.task('karma:travis', ['templates:test'], function() {
     singleRun: true
   }, function(code) {
     gutil.log('Karma has exited with ' + code);
-    process.exit(code);
     // gulp.src('test/coverage/**/lcov.info')
     //   .pipe(coveralls())
     //   .on('end', function() {
     //     process.exit(code);
     //   });
   });
+
 });
-gulp.task('karma:travis~1.2.0', ['templates:test'], function() {
-  karma.start({
-    configFile: path.join(__dirname, 'test/~1.2.0/karma.conf.js'),
-    browsers: ['PhantomJS'],
-    reporters: ['dots'],
-    singleRun: true
-  }, function(code) {
-    gutil.log('Karma has exited with ' + code);
-    process.exit(code);
-  });
-});
+
 
 // COPY
 //
 gulp.task('copy:pages', function() {
   gulp.src(['favicon.ico', docs.images], {cwd: docs.cwd, base: docs.cwd})
     .pipe(gulp.dest(docs.dist));
-  gulp.src('**/*.js', {cwd: src.dist, base: src.dist})
-    .pipe(gulp.dest(path.join(docs.dist, src.dist)));
 });
 
 
@@ -464,14 +442,6 @@ var runSequence = require('run-sequence');
 gulp.task('default', ['dist']);
 gulp.task('build', ['dist']);
 gulp.task('test', function() {
-  runSequence('clean:test', 'templates:test', ['jshint', 'karma:unit']);
-});
-gulp.task('test:timezone', function() {
-  // parse command line argument for optional timezone
-  // invoke like this:
-  //     gulp test:timezone --Europe/Paris
-  var timezone = process.argv[3] || '';
-  testTimezone = timezone.replace(/-/g, '');
   runSequence('clean:test', 'templates:test', ['jshint', 'karma:unit']);
 });
 gulp.task('test:server', function() {

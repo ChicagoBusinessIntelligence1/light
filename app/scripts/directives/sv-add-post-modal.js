@@ -7,7 +7,7 @@ angular.module('app')
       scope: {
         posts: '='
       },
-      template: '<button ng-click="showModal()" class="btn btn-link btn-link-dark"><i class="fa fa-pencil"></i> Добавить Пост</button>',
+      template: '<button ng-click="showModal()" class="btn btn-link btn-link-dark"><i class="fa fa-pencil"></i> Add Article</button>',
       controller: function ($scope) {
       },
       link: function postLink($scope, element, attrs) {
@@ -21,7 +21,7 @@ angular.module('app')
         var postModal = $modal(
           {
             scope: $scope,
-            title: 'Добавить Пост',
+            title: 'Your Article',
             animation: 'am-fade-and-slide-top',
             template: '../../views/modals/sv-add-article.html',
             show: false
