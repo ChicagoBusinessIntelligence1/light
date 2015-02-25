@@ -137,8 +137,7 @@ app.value('url', 'https://fengshui2.firebaseio.com/');
 
 
 app.animation('.js-animation', function () {
-  var heightt add.
-    ,
+  var height,
     width;
   return {
     enter: function (element, done) {
