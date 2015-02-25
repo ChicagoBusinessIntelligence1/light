@@ -1,18 +1,18 @@
 'use strict';
 
-var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker'])
+var app = angular.module('app', ['nav', 'aside','firebase', 'ngAnimate', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
       .state('app', {
         abstract: true,
-        templateUrl: '../partials/main.html'
+        templateUrl: '../views/home/main.html'
       })
       .state('app.home', {
         url: '/home',
         controller: 'HomeCtrl',
-        templateUrl: '../partials/home.html'
+        templateUrl: '../views/home/home.html'
       })
       .state('app.contact', {
         url: '/contact',
