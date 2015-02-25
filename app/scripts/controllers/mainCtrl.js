@@ -13,48 +13,15 @@ angular.module('app')
         })
 
         var mainRef = new Firebase(url);
-        $scope.auth = $firebaseAuth(mainRef);
-
-        var user = $scope.auth.$getAuth();
-        if (!user) {
-            return;
-        }
-
-        $scope.auth.$onAuth(function (authData) {
-
-            if (user.provider === 'facebook') {
-                $scope.userLink = user.thirdPartyUserData.link;
-                $scope.userName = user.thirdPartyUserData.first_name;
-                $scope.userPic = user.thirdPartyUserData.picture.data.url;
-            }
-            if (user.provider === 'password') {
-                $scope.isAdmin = true;
-                $scope.userName = 'Admin';
-                $scope.userPic = 'Admin';
-            }
-
-        });
-
-        $scope.fenLogout = function () {
-            $scope.auth.$logout();
-            $scope.userLink = null;
-            $scope.userName = null;
-            $scope.userPic = null;
-            $scope.isAdmin = null;
-            $state.go('app.home', null, {reload: true});
-        }
+        $scope.authObj = $firebaseAuth(mainRef);
 
         $scope.loginFb = function () {
-            $scope.auth.$login('facebook',
-                {
-                    rememberMe: true,
-                    scope: 'email,user_likes'
-                }
-            ).then(function (user) {
-                    $scope.userLink = user.thirdPartyUserData.link;
-                    $scope.userName = user.thirdPartyUserData.first_name;
-                    $scope.userPic = user.thirdPartyUserData.picture.data.url;
-                    ;
-                });
+
+            $scope.authObj.$authWithOAuthPopup("facebook").then(function(authData) {
+                console.log("Logged in as:", authData.uid);
+            }).catch(function(error) {
+                console.error("Authentication failed: ", error);
+            });
+
         }
     });

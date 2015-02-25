@@ -5,14 +5,15 @@ angular.module('app')
         return {
             templateUrl: '../views/directives/sv-login.html',
             restrict: 'E',
-          controller: function ($scope, url, $firebaseSimpleLogin, $state) {
+          controller: function ($scope, url, $state) {
+              console.log('here');
                 $scope.fenLogin = function (email, pass) {
                     if (_.isEmpty(email) || _.isEmpty(pass)) {
                         $scope.loginError = true;
                         return;
                     }
 
-                    $scope.auth.$login('password', {
+                    $scope.authObj.$login('password', {
                         email: email,
                         password: pass
                     }).then(function (user) {

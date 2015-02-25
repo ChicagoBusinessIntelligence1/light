@@ -7,7 +7,7 @@ angular.module('app')
         $scope.pass = {data: '123456'};
 
         $scope.fenLogout = function () {
-            $scope.auth.$logout();
+            $scope.authObj.$logout();
                 console.log('No current user');
         };
     });

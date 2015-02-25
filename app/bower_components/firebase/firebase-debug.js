@@ -8609,7 +8609,7 @@ fb.core.SparseSnapshotTree.prototype.forEachChild = function(func) {
   }
 };
 goog.provide("fb.login.Constants");
-fb.login.Constants = {SESSION_PERSISTENCE_KEY_PREFIX:"session", DEFAULT_SERVER_HOST:"auth.firebase.com", SERVER_HOST:"auth.firebase.com", API_VERSION:"v2", POPUP_PATH_TO_CHANNEL:"/auth/channel", POPUP_RELAY_FRAME_NAME:"__winchan_relay_frame", POPUP_CLOSE_CMD:"die", JSONP_CALLBACK_NAMESPACE:"__firebase_auth_jsonp", REDIR_REQUEST_ID_KEY:"redirect_request_id", REDIR_REQUEST_COMPLETION_KEY:"__firebase_request_key", REDIR_CLIENT_OPTIONS_KEY:"redirect_client_options", INTERNAL_REDIRECT_SENTINAL_PATH:"/blank/page.html", 
+fb.login.Constants = {SESSION_PERSISTENCE_KEY_PREFIX:"session", DEFAULT_SERVER_HOST:"auth.firebase.com", SERVER_HOST:"auth.firebase.com", API_VERSION:"v2", POPUP_PATH_TO_CHANNEL:"/auth/channel", POPUP_RELAY_FRAME_NAME:"__winchan_relay_frame", POPUP_CLOSE_CMD:"die", JSONP_CALLBACK_NAMESPACE:"__firebase_auth_jsonp", REDIR_REQUEST_ID_KEY:"redirect_request_id", REDIR_REQUEST_COMPLETION_KEY:"__firebase_request_key", REDIR_CLIENT_OPTIONS_KEY:"redirect_client_options", INTERNAL_REDIRECT_SENTINAL_PATH:"/blank/page.html",
 CLIENT_OPTION_SESSION_PERSISTENCE:"remember", CLIENT_OPTION_REDIRECT_TO:"redirectTo"};
 goog.provide("fb.login.RequestInfo");
 goog.require("fb.login.Constants");
@@ -10826,7 +10826,7 @@ fb.core.PersistentConnection.prototype.sendListen_ = function(pathString, queryI
     }
   });
 };
-fb.core.PersistentConnection.prototype.auth = function(cred, callback, cancelCallback) {
+fb.core.PersistentConnection.prototype.authObj = function(cred, callback, cancelCallback) {
   this.credential_ = {cred:cred, firstRequestSent:false, callback:callback, cancelCallback:cancelCallback};
   this.log_("Authenticating using credential: " + cred);
   this.tryAuth();
@@ -11385,7 +11385,7 @@ fb.core.Repo = function(repoInfo) {
   }, stopListening:goog.nullFunction});
   this.updateInfo_("connected", false);
   this.onDisconnect_ = new fb.core.SparseSnapshotTree;
-  this.auth = new fb.login.AuthenticationManager(repoInfo, goog.bind(this.connection_.auth, this.connection_), goog.bind(this.connection_.unauth, this.connection_), goog.bind(this.onAuthStatus_, this));
+  this.authObj = new fb.login.AuthenticationManager(repoInfo, goog.bind(this.connection_.authObj, this.connection_), goog.bind(this.connection_.unauth, this.connection_), goog.bind(this.onAuthStatus_, this));
   this.dataUpdateCount = 0;
   this.interceptServerDataCallback_ = null;
   this.serverSyncTree_ = new fb.core.SyncTree({startListening:function(query, tag, currentHashFn, onComplete) {
@@ -12589,7 +12589,7 @@ Firebase.prototype.onDisconnect = function() {
   fb.core.util.validation.validateWritablePath("Firebase.onDisconnect", this.path);
   return new fb.api.OnDisconnect(this.repo, this.path);
 };
-Firebase.prototype.auth = function(cred, opt_onComplete, opt_onCancel) {
+Firebase.prototype.authObj = function(cred, opt_onComplete, opt_onCancel) {
   fb.core.util.warn("FirebaseRef.auth() being deprecated. " + "Please use FirebaseRef.authWithCustomToken() instead.");
   fb.util.validation.validateArgCount("Firebase.auth", 1, 3, arguments.length);
   fb.core.util.validation.validateCredential("Firebase.auth", 1, cred, false);
@@ -12597,49 +12597,49 @@ Firebase.prototype.auth = function(cred, opt_onComplete, opt_onCancel) {
   fb.util.validation.validateCallback("Firebase.auth", 3, opt_onComplete, true);
   var clientOptions = {};
   clientOptions[fb.login.Constants.CLIENT_OPTION_SESSION_PERSISTENCE] = "none";
-  this.repo.auth.authenticate(cred, {}, clientOptions, opt_onComplete, opt_onCancel);
+  this.repo.authObj.authenticate(cred, {}, clientOptions, opt_onComplete, opt_onCancel);
 };
 Firebase.prototype.unauth = function(opt_onComplete) {
   fb.util.validation.validateArgCount("Firebase.unauth", 0, 1, arguments.length);
   fb.util.validation.validateCallback("Firebase.unauth", 1, opt_onComplete, true);
-  this.repo.auth.unauthenticate(opt_onComplete);
+  this.repo.authObj.unauthenticate(opt_onComplete);
 };
 Firebase.prototype.getAuth = function() {
   fb.util.validation.validateArgCount("Firebase.getAuth", 0, 0, arguments.length);
-  return this.repo.auth.getAuth();
+  return this.repo.authObj.getAuth();
 };
 Firebase.prototype.onAuth = function(callback, opt_context) {
   fb.util.validation.validateArgCount("Firebase.onAuth", 1, 2, arguments.length);
   fb.util.validation.validateCallback("Firebase.onAuth", 1, callback, false);
   fb.util.validation.validateContextObject("Firebase.onAuth", 2, opt_context, true);
-  this.repo.auth.on("auth_status", callback, opt_context);
+  this.repo.authObj.on("auth_status", callback, opt_context);
 };
 Firebase.prototype.offAuth = function(callback, opt_context) {
   fb.util.validation.validateArgCount("Firebase.offAuth", 1, 2, arguments.length);
   fb.util.validation.validateCallback("Firebase.offAuth", 1, callback, false);
   fb.util.validation.validateContextObject("Firebase.offAuth", 2, opt_context, true);
-  this.repo.auth.off("auth_status", callback, opt_context);
+  this.repo.authObj.off("auth_status", callback, opt_context);
 };
 Firebase.prototype.authWithCustomToken = function(token, onComplete, opt_options) {
   fb.util.validation.validateArgCount("Firebase.authWithCustomToken", 2, 3, arguments.length);
   fb.core.util.validation.validateCredential("Firebase.authWithCustomToken", 1, token, false);
   fb.util.validation.validateCallback("Firebase.authWithCustomToken", 2, onComplete, false);
   fb.core.util.validation.validateObject("Firebase.authWithCustomToken", 3, opt_options, true);
-  this.repo.auth.authenticate(token, {}, opt_options || {}, onComplete);
+  this.repo.authObj.authenticate(token, {}, opt_options || {}, onComplete);
 };
 Firebase.prototype.authWithOAuthPopup = function(provider, onComplete, opt_options) {
   fb.util.validation.validateArgCount("Firebase.authWithOAuthPopup", 2, 3, arguments.length);
   fb.core.util.validation.validateString("Firebase.authWithOAuthPopup", 1, provider, false);
   fb.util.validation.validateCallback("Firebase.authWithOAuthPopup", 2, onComplete, false);
   fb.core.util.validation.validateObject("Firebase.authWithOAuthPopup", 3, opt_options, true);
-  this.repo.auth.authWithPopup(provider, opt_options, onComplete);
+  this.repo.authObj.authWithPopup(provider, opt_options, onComplete);
 };
 Firebase.prototype.authWithOAuthRedirect = function(provider, onErr, opt_options) {
   fb.util.validation.validateArgCount("Firebase.authWithOAuthRedirect", 2, 3, arguments.length);
   fb.core.util.validation.validateString("Firebase.authWithOAuthRedirect", 1, provider, false);
   fb.util.validation.validateCallback("Firebase.authWithOAuthRedirect", 2, onErr, false);
   fb.core.util.validation.validateObject("Firebase.authWithOAuthRedirect", 3, opt_options, true);
-  this.repo.auth.authWithRedirect(provider, opt_options, onErr);
+  this.repo.authObj.authWithRedirect(provider, opt_options, onErr);
 };
 Firebase.prototype.authWithOAuthToken = function(provider, params, onComplete, opt_options) {
   fb.util.validation.validateArgCount("Firebase.authWithOAuthToken", 3, 4, arguments.length);
@@ -12648,17 +12648,17 @@ Firebase.prototype.authWithOAuthToken = function(provider, params, onComplete, o
   fb.core.util.validation.validateObject("Firebase.authWithOAuthToken", 4, opt_options, true);
   if (goog.isString(params)) {
     fb.core.util.validation.validateString("Firebase.authWithOAuthToken", 2, params, false);
-    this.repo.auth.authWithCredential(provider + "/token", {"access_token":params}, opt_options, onComplete);
+    this.repo.authObj.authWithCredential(provider + "/token", {"access_token":params}, opt_options, onComplete);
   } else {
     fb.core.util.validation.validateObject("Firebase.authWithOAuthToken", 2, params, false);
-    this.repo.auth.authWithCredential(provider + "/token", params, opt_options, onComplete);
+    this.repo.authObj.authWithCredential(provider + "/token", params, opt_options, onComplete);
   }
 };
 Firebase.prototype.authAnonymously = function(onComplete, opt_options) {
   fb.util.validation.validateArgCount("Firebase.authAnonymously", 1, 2, arguments.length);
   fb.util.validation.validateCallback("Firebase.authAnonymously", 1, onComplete, false);
   fb.core.util.validation.validateObject("Firebase.authAnonymously", 2, opt_options, true);
-  this.repo.auth.authWithCredential("anonymous", {}, opt_options, onComplete);
+  this.repo.authObj.authWithCredential("anonymous", {}, opt_options, onComplete);
 };
 Firebase.prototype.authWithPassword = function(params, onComplete, opt_options) {
   fb.util.validation.validateArgCount("Firebase.authWithPassword", 2, 3, arguments.length);
@@ -12667,7 +12667,7 @@ Firebase.prototype.authWithPassword = function(params, onComplete, opt_options) 
   fb.core.util.validation.validateObjectContainsKey("Firebase.authWithPassword", 1, params, "password", false, "string");
   fb.util.validation.validateCallback("Firebase.authAnonymously", 2, onComplete, false);
   fb.core.util.validation.validateObject("Firebase.authAnonymously", 3, opt_options, true);
-  this.repo.auth.authWithCredential("password", params, opt_options, onComplete);
+  this.repo.authObj.authWithCredential("password", params, opt_options, onComplete);
 };
 Firebase.prototype.createUser = function(params, onComplete) {
   fb.util.validation.validateArgCount("Firebase.createUser", 2, 2, arguments.length);
@@ -12675,7 +12675,7 @@ Firebase.prototype.createUser = function(params, onComplete) {
   fb.core.util.validation.validateObjectContainsKey("Firebase.createUser", 1, params, "email", false, "string");
   fb.core.util.validation.validateObjectContainsKey("Firebase.createUser", 1, params, "password", false, "string");
   fb.util.validation.validateCallback("Firebase.createUser", 2, onComplete, false);
-  this.repo.auth.createUser(params, onComplete);
+  this.repo.authObj.createUser(params, onComplete);
 };
 Firebase.prototype.removeUser = function(params, onComplete) {
   fb.util.validation.validateArgCount("Firebase.removeUser", 2, 2, arguments.length);
@@ -12683,7 +12683,7 @@ Firebase.prototype.removeUser = function(params, onComplete) {
   fb.core.util.validation.validateObjectContainsKey("Firebase.removeUser", 1, params, "email", false, "string");
   fb.core.util.validation.validateObjectContainsKey("Firebase.removeUser", 1, params, "password", false, "string");
   fb.util.validation.validateCallback("Firebase.removeUser", 2, onComplete, false);
-  this.repo.auth.removeUser(params, onComplete);
+  this.repo.authObj.removeUser(params, onComplete);
 };
 Firebase.prototype.changePassword = function(params, onComplete) {
   fb.util.validation.validateArgCount("Firebase.changePassword", 2, 2, arguments.length);
@@ -12692,7 +12692,7 @@ Firebase.prototype.changePassword = function(params, onComplete) {
   fb.core.util.validation.validateObjectContainsKey("Firebase.changePassword", 1, params, "oldPassword", false, "string");
   fb.core.util.validation.validateObjectContainsKey("Firebase.changePassword", 1, params, "newPassword", false, "string");
   fb.util.validation.validateCallback("Firebase.changePassword", 2, onComplete, false);
-  this.repo.auth.changePassword(params, onComplete);
+  this.repo.authObj.changePassword(params, onComplete);
 };
 Firebase.prototype.changeEmail = function(params, onComplete) {
   fb.util.validation.validateArgCount("Firebase.changeEmail", 2, 2, arguments.length);
@@ -12701,14 +12701,14 @@ Firebase.prototype.changeEmail = function(params, onComplete) {
   fb.core.util.validation.validateObjectContainsKey("Firebase.changeEmail", 1, params, "newEmail", false, "string");
   fb.core.util.validation.validateObjectContainsKey("Firebase.changeEmail", 1, params, "password", false, "string");
   fb.util.validation.validateCallback("Firebase.changeEmail", 2, onComplete, false);
-  this.repo.auth.changeEmail(params, onComplete);
+  this.repo.authObj.changeEmail(params, onComplete);
 };
 Firebase.prototype.resetPassword = function(params, onComplete) {
   fb.util.validation.validateArgCount("Firebase.resetPassword", 2, 2, arguments.length);
   fb.core.util.validation.validateObject("Firebase.resetPassword", 1, params, false);
   fb.core.util.validation.validateObjectContainsKey("Firebase.resetPassword", 1, params, "email", false, "string");
   fb.util.validation.validateCallback("Firebase.resetPassword", 2, onComplete, false);
-  this.repo.auth.resetPassword(params, onComplete);
+  this.repo.authObj.resetPassword(params, onComplete);
 };
 Firebase.goOffline = function() {
   fb.util.validation.validateArgCount("Firebase.goOffline", 0, 0, arguments.length);
