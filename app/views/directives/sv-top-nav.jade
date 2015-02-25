@@ -12,11 +12,11 @@
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg
             span.span-top-nav Войти
-        li(ng-if='auth.user.provider==\'facebook\'')
+        li(ng-if='auth.user.provider=="facebook"')
           a.btn-link-light(ui-sref='{{userLink}}')
             span.span-top-nav {{userName}}
             img.img-fb(ng-src="{{userPic}}")
-        li(ng-if='auth.user.provider==\'password\'')
+        li(ng-if='auth.user.provider=="password"')
           a.btn-link-light
             i.fa.fa-user.fa-lg
             span.fb-name Админ
@@ -86,7 +86,7 @@
               a(ui-sref="app.schedule-consultations") Link 5
         li.dropdown.drop-app.menu-link
           a.dropdown-toggle(ui-sref="#" data-toggle="dropdown")
-            span.text Economy &nbsp
+            span.text Economics &nbsp
             i.fa.fa-angle-down
           ul.dropdown-menu(role="menu")
             li

@@ -14,7 +14,6 @@ article.post-article
             ul.list-unstyled
               li
                 a.btn-link-dark(href='{{c.userLink || "#"}}')
-                  img.img-fb(ng-src="{{c.userPic}}" ng-if='c.userPic!="Admin"')
                   i.fa.fa-user.fa-lg(ng-if='c.userPic=="Admin"') &nbsp;
                   span.user-name-comment {{c.userName}}
               li
@@ -30,7 +29,6 @@ article.post-article
           .form-group.comment-input.col-xs-11
             textarea.form-control(placeholder='Kомментарий...', ng-model='comment.val')
             .text-right
-              button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic, userLink);comment.val=""')
-                i.fa.fa-share.fa-rotate-180.fa-fw &nbsp
+              button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic, userLink);comment.val=""') Добавить комментарий
 
 

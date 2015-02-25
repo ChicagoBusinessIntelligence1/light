@@ -2452,8 +2452,8 @@ h5.label-default-head {
   margin: 0 auto;
 }
 .article-wrapper {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 .element-1 {
   background-color: #faeae6;
@@ -2617,15 +2617,15 @@ h5.label-default-head {
 }
 .fen-element-wrapper {
   width: 128px;
-  height: 128px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  height: 80px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
 }
 .fen-element {
   width: 128px;
-  height: 128px;
+  height: 80px;
   text-align: center;
   position: relative;
 }
@@ -2684,7 +2684,7 @@ ul.fen-elements li {
   transition: all 1s ease;
 }
 .slide-up {
-  top: -44.13793103448276px;
+  top: -27.586206896551726px;
 }
 .slide-up.ng-hide {
   top: 0px;
@@ -2695,7 +2695,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/politics128.jpg");
+  background-image: url("../images/elements/fire-bw.png");
 }
 .fire-hover {
   -webkit-transition: all 1s ease;
@@ -2703,7 +2703,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/politics128-bw.jpg");
+  background-image: url("../images/elements/fire.png") !important;
 }
 .water {
   -webkit-transition: all 1s ease;
@@ -2711,7 +2711,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/business128.jpg") !important;
+  background-image: url("../images/elements/water-bw.png") !important;
 }
 .water-hover {
   -webkit-transition: all 1s ease;
@@ -2719,7 +2719,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/business128-bw.jpg") !important;
+  background-image: url("../images/elements/water.png") !important;
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
@@ -2727,7 +2727,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/economy128.jpg");
+  background-image: url("../images/elements/soft-wood-bw.png");
 }
 .soft-wood-hover {
   -webkit-transition: all 1s ease;
@@ -2735,7 +2735,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/economy128-bw.jpg");
+  background-image: url("../images/elements/soft-wood.png") !important;
 }
 .hard-wood {
   -webkit-transition: all 1s ease;
@@ -2743,7 +2743,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/sport128.jpg");
+  background-image: url("../images/elements/hard-wood-bw.png") !important;
 }
 .hard-wood-hover {
   -webkit-transition: all 1s ease;
@@ -2751,7 +2751,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/sport128-bw.jpg");
+  background-image: url("../images/elements/hard-wood.png") !important;
 }
 .soft-metal {
   -webkit-transition: all 1s ease;
