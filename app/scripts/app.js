@@ -1,18 +1,36 @@
 'use strict';
 
-var app = angular.module('app', ['nav', 'aside', 'firebase', 'ngAnimate', 'ngMaterial', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker'])
+var app = angular.module('app', [
+
+    // Common modules
+    'header',
+    'aside',
+    'common',
+    'auth',
+    'contactus',
+    'footer',
+
+    // Site section modules
+    'sections.home',
+
+    // 3rd party modules
+    'firebase',
+    'ngAnimate',
+    'ui.router'
+])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
 
         $stateProvider
             .state('app', {
                 abstract: true,
-                templateUrl: '../views/home/main.html'
+                templateUrl: 'scripts/sections/home/views/main.html'
+
             })
             .state('app.home', {
                 url: '/home',
-                controller: 'HomeCtrl',
-                templateUrl: '../views/home/home.html'
+                controller: 'Home',
+                templateUrl: 'scripts/sections/home/views/home.html'
             })
             .state('app.contact', {
                 url: '/contact',
@@ -133,55 +151,7 @@ var app = angular.module('app', ['nav', 'aside', 'firebase', 'ngAnimate', 'ngMat
 //#state
     });
 
-app.value('url', 'https://fengshui2.firebaseio.com/');
+app.value('url', 'https://svet.firebaseio.com/');
 
 
-app.animation('.js-animation', function () {
-    var height,
-        width;
-    return {
-        enter: function (element, done) {
-            element.css('opacity', 0);
-            $(element).animate({'opacity': '1'});
-            done();
-        },
-        leave: function (element, done) {
-            TweenMax.to(element, 1, {opacity: 0, onComplete: done});
-
-        },
-        move: function (element, done) {
-            element.css('opacity', 0);
-            TweenMax.to(element, 1, {opacity: 1, onComplete: done});
-        },
-
-        addClass: function (element, className, done) {
-            height = element.height();
-            width = element.width();
-            element.css('height', height);
-            element.css('width', width);
-            element.css('width', width);
-
-
-            if (className == 'ng-hide') {
-                TweenMax.to(element, 1, {
-                    height: 0,
-                    width: 0,
-                    rotation: 360,
-                    onComplete: done
-                });
-            }
-        },
-        removeClass: function (element, className, done) {
-            if (className == 'ng-hide') {
-                TweenMax.to(element, 1, {
-                    height: height,
-                    width: width,
-                    rotation: -360,
-                    onComplete: done
-                });
-            }
-
-
-        }
-    }
-});
+;

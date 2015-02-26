@@ -1,1 +1,3 @@
-var nav = angular.module('aside', []);
+'use strict'
+
+var aside = angular.module('aside', []);
