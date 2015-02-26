@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app')
+angular.module('footer')
   .directive('svFooterNav', function () {
     return {
       templateUrl: '../views/directives/sv-footer-nav.html',

@@ -5,9 +5,13 @@ var app = angular.module('app', [
     // Common modules
     'nav',
     'aside',
+    'common',
+    'auth',
+    'contactus',
+    'footer',
 
     // Site section modules
-    'home',
+    'sections.home',
 
     // 3rd party modules
     'firebase',
@@ -20,13 +24,13 @@ var app = angular.module('app', [
         $stateProvider
             .state('app', {
                 abstract: true,
-                templateUrl: 'scripts/home/views/main.html'
+                templateUrl: 'scripts/sections/home/views/main.html'
 
             })
             .state('app.home', {
                 url: '/home',
-                controller: 'HomeCtrl',
-                templateUrl: 'scripts/home/views/home.html'
+                controller: 'Home',
+                templateUrl: 'scripts/sections/home/views/home.html'
             })
             .state('app.contact', {
                 url: '/contact',

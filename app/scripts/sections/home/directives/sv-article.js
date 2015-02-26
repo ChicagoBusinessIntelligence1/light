@@ -1,11 +1,10 @@
 'use strict';
 
-
-angular.module('app')
+angular.module('sections.home')
     .directive('svArticle', function () {
         return {
             restrict: 'E',
-            replace:true,
+            replace: true,
             templateUrl: '../views/directives/sv-article.html',
             controller: function ($scope) {
             }

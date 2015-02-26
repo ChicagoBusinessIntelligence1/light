@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: 'views/directives/sv-frame.html',
+      templateUrl: 'scripts/aside/directives/sv-frame.html',
       scope: {
         elementClass: '@',
         name: '@',

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('app')
-    .controller('MainCtrl', function ($scope, $firebase, url, $firebaseAuth, $state) {
+angular.module('common')
+    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state) {
 
         $scope.fenElementActive = {val: 'null'};
 

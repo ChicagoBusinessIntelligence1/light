@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('home')
-  .controller('HomeCtrl', function ($scope, url, $firebase) {
+angular.module('sections.home')
+  .controller('Home', function ($scope, url, $firebase) {
 
     var repo = url + 'posts';
     $scope.posts = $firebase(new Firebase(repo)).$asArray();
