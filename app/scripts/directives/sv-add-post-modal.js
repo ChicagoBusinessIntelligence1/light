@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svAddPostModal', function ($modal, $firebase, url) {
+  .directive('svAddPostModal', function ($firebase, url) {
     return {
       restrict: 'E',
       scope: {
@@ -18,33 +18,33 @@ angular.module('app')
           $scope.post.fenElementSelected = $scope.elements[0];
         })
 
-        var postModal = $modal(
-          {
-            scope: $scope,
-            title: 'Добавить Пост',
-            animation: 'am-fade-and-slide-top',
-            template: '../../views/modals/sv-add-article.html',
-            show: false
-          });
-
-        $scope.showModal = function () {
-          postModal.show();
-        };
-
-        $scope.addPost = function (title, author, body, postElementSelected) {
-          $scope.posts.$add(
-            {
-              title: title,
-              fenelement: postElementSelected.$id,
-              body: body,
-              time: (new Date()).getTime()
-            }).then(function () {
-              $scope.post = {};
-              $scope.post.fenElementSelected = $scope.elements[0];
-              postModal.hide();
-              toastr.info('The post has been submitted');
-            });
-        };
+        //var postModal = $modal(
+        //  {
+        //    scope: $scope,
+        //    title: 'Добавить Пост',
+        //    animation: 'am-fade-and-slide-top',
+        //    template: '../../views/modals/sv-add-article.html',
+        //    show: false
+        //  });
+        //
+        //$scope.showModal = function () {
+        //  postModal.show();
+        //};
+        //
+        //$scope.addPost = function (title, author, body, postElementSelected) {
+        //  $scope.posts.$add(
+        //    {
+        //      title: title,
+        //      fenelement: postElementSelected.$id,
+        //      body: body,
+        //      time: (new Date()).getTime()
+        //    }).then(function () {
+        //      $scope.post = {};
+        //      $scope.post.fenElementSelected = $scope.elements[0];
+        //      postModal.hide();
+        //      toastr.info('The post has been submitted');
+        //    });
+        //};
       }
     };
   });

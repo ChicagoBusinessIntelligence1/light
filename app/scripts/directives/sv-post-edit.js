@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPostEdit', function ($popover, $firebase, url) {
+  .directive('svPostEdit', function ($firebase, url) {
     return {
       restrict: 'E',
       replace: true,
@@ -11,20 +11,20 @@ angular.module('app')
         postKey: '='
       },
       link: function postLink($scope, element, attrs) {
-        $scope.postEditPopover = $popover(element, {
-          scope: $scope,
-          placement: 'left',
-          template: '../../views/popover/sv-post-popover.html'
-        });
-
-        $scope.savePost = function (newPost) {
-          var repo = url + 'posts';
-          var postUrl = repo + '/' + $scope.postKey;
-          $firebase(new Firebase(postUrl)).$update({body: newPost}).then(function () {
-            $scope.postEditPopover.hide();
-            toastr.info('post has been updated');
-          })
-        };
+        //$scope.postEditPopover = $popover(element, {
+        //  scope: $scope,
+        //  placement: 'left',
+        //  template: '../../views/popover/sv-post-popover.html'
+        //});
+        //
+        //$scope.savePost = function (newPost) {
+        //  var repo = url + 'posts';
+        //  var postUrl = repo + '/' + $scope.postKey;
+        //  $firebase(new Firebase(postUrl)).$update({body: newPost}).then(function () {
+        //    $scope.postEditPopover.hide();
+        //    toastr.info('post has been updated');
+        //  })
+        //};
       }
     };
   });
