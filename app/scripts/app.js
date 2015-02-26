@@ -2,10 +2,14 @@
 
 var app = angular.module('app', [
 
-    //modules
+    // Common modules
     'nav',
     'aside',
 
+    // Site section modules
+    'home',
+
+    // 3rd party modules
     'firebase',
     'ngAnimate',
     'ui.router'
@@ -16,12 +20,13 @@ var app = angular.module('app', [
         $stateProvider
             .state('app', {
                 abstract: true,
-                templateUrl: '../views/home/main.html'
+                templateUrl: 'scripts/home/views/main.html'
+
             })
             .state('app.home', {
                 url: '/home',
                 controller: 'HomeCtrl',
-                templateUrl: '../views/home/home.html'
+                templateUrl: 'scripts/home/views/home.html'
             })
             .state('app.contact', {
                 url: '/contact',
@@ -142,7 +147,7 @@ var app = angular.module('app', [
 //#state
     });
 
-app.value('url', 'https://fengshui2.firebaseio.com/');
+app.value('url', 'https://svet.firebaseio.com/');
 
 
 ;
