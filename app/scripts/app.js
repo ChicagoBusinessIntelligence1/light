@@ -1,6 +1,11 @@
 'use strict';
 
 var app = angular.module('app', [
+
+    //modules
+    'nav',
+    'aside',
+
     'firebase',
     'ngAnimate',
     'ui.router'
@@ -11,12 +16,12 @@ var app = angular.module('app', [
         $stateProvider
             .state('app', {
                 abstract: true,
-                templateUrl: '../partials/main.html'
+                templateUrl: '../views/home/main.html'
             })
             .state('app.home', {
                 url: '/home',
                 controller: 'HomeCtrl',
-                templateUrl: '../partials/home.html'
+                templateUrl: '../views/home/home.html'
             })
             .state('app.contact', {
                 url: '/contact',
