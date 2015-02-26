@@ -5,6 +5,7 @@ var processModule = function (module) {
 }
 
 var enterInside = function (target, before, insert) {
+    var newLine = '';
     if (target === undefined) {
         return target;
     }
@@ -12,11 +13,21 @@ var enterInside = function (target, before, insert) {
     var test = target.indexOf(insert);
     if (test > 0)return target;
 
-    var start = target.indexOf(before);
+    var start;
+    try {
+        var temp = 0;
+        before.forEach(function (txt) {
+            temp = target.indexOf(txt, temp);
+        })
+        start = target.indexOf('>', temp) + 1;
+    } catch (e) {
+        console.log(e);
+        start = target.indexOf(before);
+    }
 
-    var p1 = target.substring(0, start);
+    var p1 = target.substring(0, start)+newLine;
     var p2 = target.substring(start);
-    return p1 + insert + p2;
+    return p1  + insert + p2;
 }
 var removeFromInside = function (target, remove) {
     if (target == undefined)
@@ -179,7 +190,7 @@ module.exports = function (grunt) {
             grunt.fail.fatal('Module, dude, module');
             return;
         }
-       var moduleDirectirized = processModule(module);
+        var moduleDirectirized = processModule(module);
 
 //     C        //
         var d = 'app/scripts/' + moduleDirectirized + '/controllers/';
@@ -198,10 +209,10 @@ module.exports = function (grunt) {
 ////////////////
 
         // register
-        var state = '\t\t\t.state("app.'+ _.str.dasherize(module) +'.'+ _.str.dasherize(lname) + '", {\r\n' +
+        var state = '\t\t\t.state("app.' + _.str.dasherize(module) + '.' + _.str.dasherize(lname) + '", {\r\n' +
             '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
             '\t\t\t\tcontroller:"' + name + 'Ctrl",\r\n' +
-            '\t\t\t\ttemplateUrl: "scripts/'+moduleDirectirized+'/views/' + _.str.dasherize(lname) + '.html"\r\n' +
+            '\t\t\t\ttemplateUrl: "scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + '.html"\r\n' +
             '\t\t\t})\r\n';
 
         var apath = 'app/scripts/app.js';
@@ -219,10 +230,11 @@ module.exports = function (grunt) {
             app = enterInside(app, '//#state', state);
         }
 
-
+        var placeToInsert = module.split('.');
+        var before = placeToInsert || '<!-- links -->';
         /////////////////// index
         var ipath = 'app/index.html';
-        var src = '<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>\r\n';
+        var src = '\r\n<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>';
         var indf = grunt.file.read(ipath);
         //////////////////
         if (rm) {
@@ -230,8 +242,7 @@ module.exports = function (grunt) {
 
         } else {
 
-            indf = enterInside(indf,
-                '<!-- links -->', src);
+            indf = enterInside(indf, before, src);
         }
 
         if (rm) {
