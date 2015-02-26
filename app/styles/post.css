@@ -1,3 +1,12 @@
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
+}
 .table-elements {
   margin: 0 auto;
 }

@@ -1,5 +1,23 @@
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
+}
 .table-elements {
   margin: 0 auto;
+}
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
 }
 .table-elements {
   margin: 0 auto;
@@ -119,6 +137,15 @@
 }
 .popover-wide {
   max-width: 300px !important;
+}
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
 }
 .table-elements {
   margin: 0 auto;
@@ -2312,6 +2339,15 @@
   -ms-filter: none;
   filter: none;
 }
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
+}
 .table-elements {
   margin: 0 auto;
 }
@@ -2330,6 +2366,15 @@
 .copyright {
   display: inline-block;
   margin-top: 10px;
+}
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
 }
 .table-elements {
   margin: 0 auto;
@@ -2447,6 +2492,15 @@ h5.label-default-head {
 .label-text {
   padding-left: 5px;
   display: inline-block;
+}
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
 }
 .table-elements {
   margin: 0 auto;
@@ -2825,6 +2879,15 @@ ul.fen-elements li {
   background-color: #4d86de;
   background-image: url("../images/elements/mother-earth.png") !important;
 }
+.yellow {
+  background-color: #fafad2;
+}
+.orange {
+  background-color: #ff7f50;
+}
+.blue {
+  background-color: #00bfff;
+}
 .table-elements {
   margin: 0 auto;
 }
@@ -3098,4 +3161,83 @@ table#users th {
 .img-bagua {
   display: block;
   margin: 0 auto !important;
+}
+.buttondemoBasicUsage,
+section {
+  background: #f7f7f7;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1em;
+  position: relative !important;
+  padding-bottom: 10px;
+}
+.buttondemoBasicUsage .md-button,
+section .md-button {
+  display: block;
+  margin: 1em;
+  line-height: 25px;
+}
+.buttondemoBasicUsage .md-button:not(.md-fab),
+section .md-button:not(.md-fab) {
+  min-width: 10em;
+}
+md-content {
+  margin-right: 7px;
+}
+.label {
+  position: absolute;
+  bottom: 5px;
+  left: 7px;
+  color: #ccc;
+  font-size: 14px;
+}
+.tabsdemoDynamicTabs .sample {
+  height: 500px;
+}
+.tabsdemoDynamicTabs .remove-tab {
+  margin-bottom: 40px;
+}
+.tabsdemoDynamicTabs .demo-tab {
+  height: 300px;
+  text-align: center;
+}
+.tabsdemoDynamicTabs .demo-tab button {
+  margin-bottom: 40px;
+}
+.tabsdemoDynamicTabs md-tabs,
+.tabsdemoDynamicTabs md-tabs .md-header {
+  border-bottom: 1px solid #d8d8d8;
+}
+.tabsdemoDynamicTabs md-tab[disabled] {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.tabsdemoDynamicTabs .md-tab-content {
+  background: #fff;
+}
+.tabsdemoDynamicTabs .title {
+  padding-top: 8px;
+  padding-right: 8px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 24px;
+}
+.tabsdemoDynamicTabs [layout-align] > * {
+  margin-left: 8px;
+}
+.tabsdemoDynamicTabs form > [layout] > * {
+  margin-left: 8px;
+}
+.tabsdemoDynamicTabs form > [layout] > span {
+  padding-top: 2px;
+}
+.tabsdemoDynamicTabs .long > input {
+  width: 264px;
+}
+.tabsdemoDynamicTabs .md-button.add-tab {
+  margin-top: 20px;
+  max-height: 30px !important;
 }
