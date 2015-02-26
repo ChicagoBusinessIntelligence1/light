@@ -5,7 +5,7 @@ angular.module('sections.home')
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: '../views/directives/sv-article.html',
+            templateUrl: 'scripts/sections/home/directives/sv-article.html',
             controller: function ($scope) {
             }
         };

@@ -3,7 +3,7 @@
 var app = angular.module('app', [
 
     // Common modules
-    'nav',
+    'header',
     'aside',
     'common',
     'auth',

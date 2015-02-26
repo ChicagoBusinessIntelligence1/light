@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('nav')
+angular.module('header')
     .directive('svTopNav', function () {
         return {
-            templateUrl: 'scripts/nav/directives/sv-top-nav.html',
+            templateUrl: 'scripts/header/directives/sv-top-nav.html',
             restrict: 'E'
         };
     });
