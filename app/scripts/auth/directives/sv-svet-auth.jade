@@ -2,16 +2,5 @@ ul.nav.navbar-nav.pull-right.nav-auth
 	li(ng-show='!auth.user')
 		a.btn-link-light(data-sv-login-popover='')
 			i.fa.fa-sign-out.fa-lg
-			span.span-top-nav ?????
-	li(ng-if='auth.user.provider==\'facebook\'')
-		a.btn-link-light(ui-sref='{{userLink}}')
-			span.span-top-nav {{userName}}
-			img.img-fb(ng-src="{{userPic}}")
-	li(ng-if='auth.user.provider==\'password\'')
-		a.btn-link-light
-			i.fa.fa-user.fa-lg
-			span.fb-name ?????
-	li(ng-show='auth.user')
-		a.btn-link-light(data-toggle="tooltip" data-placement="left" title="?????" ng-click='fenLogout()')
-			i.fa.fa-sign-out.fa-lg
-			span.span-top-nav
+			span.span-top-nav Enter
+

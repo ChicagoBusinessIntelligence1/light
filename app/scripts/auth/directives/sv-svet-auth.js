@@ -4,7 +4,7 @@
 angular.module('auth')
   .directive('svSvetAuth', function () {
     return {
-      templateUrl: '../views/directives/sv-svet-auth.html',
+      templateUrl: 'scripts/auth/directives/sv-svet-auth.html',
       restrict: 'E'
     };
   });

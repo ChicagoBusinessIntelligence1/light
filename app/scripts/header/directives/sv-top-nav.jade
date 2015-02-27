@@ -1,76 +1,60 @@
 .navbar.navbar-default.navbar-app(role="navigation")
-  .container
-    <!-- Brand and toggle get grouped for better mobile display -->
-    .navbar-header.pull-right
-      form.form-sm.navbar-form.navbar-left(role="search")
-        .form-group
-          input.form-control.input-xs(type="text" placeholder="Search Our Site")
-        button.btn.btn-xs.btn-default.btn-search(type="submit")
-          i.fa.fa-search.fa-fw
-      ul.nav.navbar-nav.pull-right.nav-auth
-        li(ng-show='!auth.user')
-          a.btn-link-dark(data-sv-login-popover='')
-            i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Войти
-        li(ng-if='auth.user.provider==\'facebook\'')
-          a.btn-link-light(ui-sref='{{userLink}}')
-            span.span-top-nav {{userName}}
-            img.img-fb(ng-src="{{userPic}}")
-        li(ng-if='auth.user.provider==\'password\'')
-          a.btn-link-light
-            i.fa.fa-user.fa-lg
-            span.fb-name Админ
-        li(ng-show='auth.user')
-          a.btn-link-light(data-toggle="tooltip" data-placement="left" title="Выйти" ng-click='fenLogout()')
-            i.fa.fa-sign-out.fa-lg
-            span.span-top-nav
+	.container
+		<!-- Brand and toggle get grouped for better mobile display -->
+		.navbar-header.pull-right
+			form.form-sm.navbar-form.navbar-left(role="search")
+				.form-group
+					input.form-control.input-xs(type="text" placeholder="Search Our Site")
+				button.btn.btn-xs.btn-default.btn-search(type="submit")
+					i.fa.fa-search.fa-fw
+			sv-svet-auth
 
 .navbar-logo.navbar-default
-  .container
-    .row
-      a.navbar-brand.text-center.col-sm-6.col-sm-offset-3(ui-sref='app.home')
-        img.img-responsive(ng-src="img/logo/newLightLogo580.png")
-    <!-- Collect the nav links, forms, and other content for toggling -->
+	.container
+		.row
+			a.navbar-brand.text-center.col-sm-6.col-sm-offset-3(ui-sref='app.home')
+				img.img-responsive(ng-src="img/logo/newLightLogo580.png")
+		<!-- Collect the nav links, forms, and other content for toggling -->
 .navbar.navbar-default.navbar-svet(role="navigation")
-  .container
-    <!-- Brand and toggle get grouped for better mobile display -->
-    .navbar-header
-      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
-      ul.nav.navbar-nav.top-nav-menu.text-center
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.home')
-            .i.fa.fa-home.fa-fw
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.business-consultations")
-            span.text Politics &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.residential-consultations")
-            span.text Business &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.personal-consultations")
-            span.text Economy &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.schedule-consultations")
-            span.text Culture &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.schedule-consultations")
-            span.text Sciense &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.schedule-consultations")
-            span.text Entertainment &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.schedule-consultations")
-            span.text Society &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.schedule-consultations")
-            span.text Health &nbsp
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle(ui-sref="app.schedule-consultations")
-            span.text Travel &nbsp
+	.container
+		<!-- Brand and toggle get grouped for better mobile display -->
+		.navbar-header
+			button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+			ul.nav.navbar-nav.top-nav-menu.text-center
+				li
+					a.btn.btn-link.btn-link-light(ui-sref='app.home')
+						.i.fa.fa-home.fa-fw
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.business-consultations")
+						span.text Politics &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.residential-consultations")
+						span.text Business &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.personal-consultations")
+						span.text Economy &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.schedule-consultations")
+						span.text Culture &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.schedule-consultations")
+						span.text Sciense &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.schedule-consultations")
+						span.text Entertainment &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.schedule-consultations")
+						span.text Society &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.schedule-consultations")
+						span.text Health &nbsp
+				li.dropdown.drop-app.menu-link
+					a.dropdown-toggle(ui-sref="app.schedule-consultations")
+						span.text Travel &nbsp
 
