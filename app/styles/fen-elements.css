@@ -237,7 +237,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/politics128.jpg");
+  background-image: url("../img/news-sections/politics128.jpg");
 }
 .fire-hover {
   -webkit-transition: all 1s ease;
@@ -245,7 +245,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/politics128-bw.jpg");
+  background-image: url("../img/news-sections/politics128-bw.jpg");
 }
 .water {
   -webkit-transition: all 1s ease;
@@ -253,7 +253,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/business128.jpg");
+  background-image: url("../img/news-sections/business128.jpg");
 }
 .water-hover {
   -webkit-transition: all 1s ease;
@@ -261,7 +261,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/business128-bw.jpg");
+  background-image: url("../img/news-sections/business128-bw.jpg");
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
@@ -269,7 +269,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/economy128.jpg");
+  background-image: url("../img/news-sections/economy128.jpg");
 }
 .soft-wood-hover {
   -webkit-transition: all 1s ease;
@@ -277,7 +277,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/economy128-bw.jpg");
+  background-image: url("../img/news-sections/economy128-bw.jpg");
 }
 .hard-wood {
   -webkit-transition: all 1s ease;
@@ -285,7 +285,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/sport128.jpg");
+  background-image: url("../img/news-sections/sport128.jpg");
 }
 .hard-wood-hover {
   -webkit-transition: all 1s ease;
@@ -293,7 +293,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-image: url("../images/news-sections/sport128-bw.jpg");
+  background-image: url("../img/news-sections/sport128-bw.jpg");
 }
 .soft-metal {
   -webkit-transition: all 1s ease;
@@ -302,7 +302,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/soft-metal-bw.png") !important;
+  background-image: url("../img/elements/soft-metal-bw.png") !important;
 }
 .soft-metal-hover {
   -webkit-transition: all 1s ease;
@@ -311,7 +311,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/soft-metal.png") !important;
+  background-image: url("../img/elements/soft-metal.png") !important;
 }
 .hard-metal {
   -webkit-transition: all 1s ease;
@@ -320,7 +320,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/hard-metal-bw.png") !important;
+  background-image: url("../img/elements/hard-metal-bw.png") !important;
 }
 .hard-metal-hover {
   -webkit-transition: all 1s ease;
@@ -329,7 +329,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/hard-metal.png") !important;
+  background-image: url("../img/elements/hard-metal.png") !important;
 }
 .mountain-earth {
   -webkit-transition: all 1s ease;
@@ -338,7 +338,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/mountain-earth-bw.png") !important;
+  background-image: url("../img/elements/mountain-earth-bw.png") !important;
 }
 .mountain-earth-hover {
   -webkit-transition: all 1s ease;
@@ -347,7 +347,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/mountain-earth.png") !important;
+  background-image: url("../img/elements/mountain-earth.png") !important;
 }
 .mother-earth {
   -webkit-transition: all 1s ease;
@@ -356,7 +356,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/mother-earth-bw.png") !important;
+  background-image: url("../img/elements/mother-earth-bw.png") !important;
 }
 .mother-earth-hover {
   -webkit-transition: all 1s ease;
@@ -365,5 +365,5 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #4d86de;
-  background-image: url("../images/elements/mother-earth.png") !important;
+  background-image: url("../img/elements/mother-earth.png") !important;
 }

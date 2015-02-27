@@ -9,11 +9,9 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles/bootstrap-additions.min.css">
 
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/functions.css">
     <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
     <link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>
     <!--<link rel="stylesheet" href="styles/kingmain.css">-->
@@ -73,50 +71,56 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
-<script src="bower_components/angular-aria/angular-aria.js"></script>
-<script src="bower_components/angular-material/angular-material.js"></script>
-<!--<script src="bower_components/angular-material/></script>-->
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
 <script src="scripts/app.js"></script>
 
-<!-- Common -->
-<script src="scripts/common/commonIndex.js"></script>
-<script src="scripts/common/controllers/Main.js"></script>
+<!-- MODULES-->
 
-<!--Auth -->
+<!-- common -->
+<script src="scripts/common/commonIndex.js"></script>
+<script src="scripts/common/controllers/MainCtrl.js"></script>
+
+<!-- auth -->
 <script src="scripts/auth/authIndex.js"></script>
 <script src="scripts/auth/controllers/Login.js"></script>
 
-
-<!--Nav Module-->
+<!-- nav -->
 <script src="scripts/header/headerIndex.js"></script>
 <script src="scripts/header/directives/sv-top-nav.js"></script>
 
 
-<!-- Aside Module -->
+<!-- aside -->
 <script src="scripts/aside/asideIndex.js"></script>
 <script src="scripts/aside/directives/sv-aside-nav.js"></script>
 <script src="scripts/aside/directives/sv-elements-nav.js"></script>
 <script src="scripts/aside/directives/sv-frame.js"></script>
 
-<!--Section modules -->
-<!--Home-->
+        <!-- sections -->
+<!-- home -->
 <script src="scripts/sections/home/homeIndex.js"></script>
-<script src="scripts/sections/home/controllers/Home.js"></script>
+<script src="scripts/sections/home/controllers/HomeCtrl.js"></script>
 <script src="scripts/sections/home/directives/sv-article.js"></script>
 
+<!-- politics -->
+<script src="scripts/sections/politics/politicsIndex.js"></script>
 
-<!--Contact us Module -->
+<!-- contactus-->
 <script src="scripts/contact-us/contactUsIndex.js"></script>
-<script src="scripts/contact-us/controllers/Contact.js"></script>
+<script src="scripts/contact-us/controllers/ContactCtrl.js"></script>
 
-<!--Footer module -->
+<!-- footer-->
 <script src="scripts/footer/footerIndex.js"></script>
 <script src="scripts/footer/directives/sv-footer-nav.js"></script>
+
+
+
 <!-- links -->
 <!-- endbuild -->
+
+<!-- END MODULES-->
+
 </body>
 </html>
 
