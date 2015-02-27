@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 angular.module('#module#')
@@ -6,3 +7,4 @@ angular.module('#module#')
       return 'test filter: ' + input;
     };
   });
+})();

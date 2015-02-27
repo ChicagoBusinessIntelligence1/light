@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 angular.module('#module#')
@@ -7,3 +8,4 @@ angular.module('#module#')
       restrict: 'E'
     };
   });
+})();

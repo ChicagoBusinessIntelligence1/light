@@ -1,3 +1,5 @@
+(function () {
+
 'use strict';
 
 var app = angular.module('app', [
@@ -49,5 +51,4 @@ var app = angular.module('app', [
 
 app.value('url', 'https://svet.firebaseio.com/');
 
-
-;
+})();
