@@ -1,10 +1,13 @@
 'use strict';
 
-angular.module('#module#')
-  .factory('#name#', function () {
+angular.module('sections.politics')
+  .factory('Main', function () {
+    // Service logic
+    // ...
 
     var meaningOfLife = 42;
 
+    // Public API here
     return {
       someMethod: function () {
         return meaningOfLife;

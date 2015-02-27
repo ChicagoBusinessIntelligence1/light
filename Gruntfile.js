@@ -268,42 +268,41 @@ module.exports = function (grunt) {
 
         rm = (rm === undefined) ? false : rm;
 
+        //      Module
+        var module = grunt.option('m');
+
+        if (module === undefined) {
+            grunt.fail.fatal('Module, dude, module');
+            return;
+        }
+        var moduleDirectirized = processModule(module);
 
 //     C        //
-        var d = 'app/scripts/services/';
-        var t = 'Service.js';
+        var d = 'app/scripts/'+moduleDirectirized   +'/services/';
+        var t = 'Serv.js';
         var serv = grunt.file.read('templates/serv.tpl');
 
         var lname = sname.toLowerCase();
         var name = lname.charAt(0).toUpperCase() + lname.substring(1);
 
 
-        var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname);
+        var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname).replace(/#module#/g, module);
 
 ////////////////
 
 
         // register
-        var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
-        var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
 
 
         var apath = 'app/scripts/app.js';
         var app = grunt.file.read(apath);
-        if (rm) {
-            app = removeFromInside(app, ref);
-            app = removeFromInside(app, reg);
-        }
-        else {
 
-            app = enterInside(app, '//#serv', reg);
-            app = enterInside(app, '//#ref', ref);
-        }
-
-
+        var placeToInsert = module.split('.');
+        var before = placeToInsert || '<!-- links -->';
         /////////////////// index
         var ipath = 'app/index.html';
-        var src = '<script src="scripts/services/' + name + 'Service.js"></script>\r\n';
+        var src = '\r\n<script src="scripts/' + moduleDirectirized + '/services/' + name + 'Serv.js"></script>';
+
         var indf = grunt.file.read(ipath);
         //////////////////
         if (rm) {
@@ -311,7 +310,7 @@ module.exports = function (grunt) {
 
         } else {
 
-            indf = enterInside(indf, '<!-- links -->', src);
+            indf = enterInside(indf, before, src);
         }
 
         if (rm) {
@@ -322,7 +321,6 @@ module.exports = function (grunt) {
         } else {
             grunt.file.write(d + name + t, servr);
         }
-        grunt.file.write(apath, app);
         grunt.file.write(ipath, indf);
 
     })
