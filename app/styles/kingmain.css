@@ -1873,12 +1873,12 @@ a.g-menu-item, a.soptclass, a.clearsearchclass {
 .gritter-item-wrapper {
     position: relative;
     margin: 0 0 10px 0;
-    background: url("../images/ie-spacer.gif");
+    background: url("../img/ie-spacer.gif");
     /* ie7/8 fix */
 }
 
 .gritter-top {
-    background: url(../images/gritter.png) no-repeat left -30px;
+    background: url(../img/gritter.png) no-repeat left -30px;
     height: 10px;
 }
 
@@ -1887,7 +1887,7 @@ a.g-menu-item, a.soptclass, a.clearsearchclass {
 }
 
 .gritter-bottom {
-    background: url(../images/gritter.png) no-repeat left bottom;
+    background: url(../img/gritter.png) no-repeat left bottom;
     height: 8px;
     margin: 0;
 }
@@ -1898,7 +1898,7 @@ a.g-menu-item, a.soptclass, a.clearsearchclass {
 
 .gritter-item {
     display: block;
-    background: url(../images/gritter.png) no-repeat left -40px;
+    background: url(../img/gritter.png) no-repeat left -40px;
     color: #eee;
     padding: 2px 11px 8px 11px;
     font-size: 11px;
@@ -1920,7 +1920,7 @@ a.g-menu-item, a.soptclass, a.clearsearchclass {
     position: absolute;
     top: 5px;
     left: 3px;
-    background: url(../images/gritter.png) no-repeat left top;
+    background: url(../img/gritter.png) no-repeat left top;
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -1957,7 +1957,7 @@ a.g-menu-item, a.soptclass, a.clearsearchclass {
 .gritter-light .gritter-bottom,
 .gritter-light .gritter-top,
 .gritter-light .gritter-close {
-    background-image: url(../images/gritter-light.png);
+    background-image: url(../img/gritter-light.png);
     color: #222;
 }
 
@@ -2932,7 +2932,7 @@ table.fc-border-separate {
     -o-transition: opacity 0.3s ease-in-out;
     -ms-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
-    background-image: url("../images/spritemap.png");
+    background-image: url("../img/spritemap.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     position: absolute;
@@ -2946,7 +2946,7 @@ table.fc-border-separate {
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5 / 1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
     .dropzone .dz-default.dz-message {
-        background-image: url("../images/spritemap@2x.png");
+        background-image: url("../img/spritemap@2x.png");
         -webkit-background-size: 428px 406px;
         -moz-background-size: 428px 406px;
         background-size: 428px 406px;
@@ -3025,7 +3025,7 @@ table.fc-border-separate {
     -o-transition: opacity 0.4s ease-in-out;
     -ms-transition: opacity 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out;
-    background-image: url("../images/spritemap.png");
+    background-image: url("../img/spritemap.png");
     background-repeat: no-repeat;
 }
 
@@ -3034,7 +3034,7 @@ table.fc-border-separate {
     .dropzone-previews .dz-preview .dz-error-mark,
     .dropzone .dz-preview .dz-success-mark,
     .dropzone-previews .dz-preview .dz-success-mark {
-        background-image: url("../images/spritemap@2x.png");
+        background-image: url("../img/spritemap@2x.png");
         -webkit-background-size: 428px 406px;
         -moz-background-size: 428px 406px;
         background-size: 428px 406px;
@@ -3077,7 +3077,7 @@ table.fc-border-separate {
     left: 0;
     width: 0%;
     height: 100%;
-    background-image: url("../images/spritemap.png");
+    background-image: url("../img/spritemap.png");
     background-repeat: repeat-x;
     background-position: 0px -400px;
 }
@@ -3085,7 +3085,7 @@ table.fc-border-separate {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5 / 1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
     .dropzone .dz-preview .dz-progress .dz-upload,
     .dropzone-previews .dz-preview .dz-progress .dz-upload {
-        background-image: url("../images/spritemap@2x.png");
+        background-image: url("../img/spritemap@2x.png");
         -webkit-background-size: 428px 406px;
         -moz-background-size: 428px 406px;
         background-size: 428px 406px;
