@@ -32,6 +32,7 @@ var app = angular.module('app', [
                 controller: 'Home',
                 templateUrl: 'scripts/sections/home/views/home.html'
             })
+
             .state('app.contact', {
                 url: '/contact',
                 controller: 'ContactusCtrl',
