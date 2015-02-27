@@ -257,6 +257,9 @@
   height: 20px;
   margin-right: 5px !important;
 }
+.test-auth {
+  background-color: #f00;
+}
 .animation-test {
   width: 200px;
   height: 200px;
