@@ -43,11 +43,6 @@ var app = angular.module('app', [
                 templateUrl: '../views/login.html'
             })
 
-			.state("app.sections.politics.main", {
-				url: "/main", 
-				controller:"MainCtrl",
-				templateUrl: "scripts/sections/politics/views/main.html"
-			})
 //#state
     });
 

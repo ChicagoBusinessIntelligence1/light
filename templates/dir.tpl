@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app')
+angular.module('#module#')
   .directive('#jname#', function () {
     return {
       templateUrl: '../views/directives/#dname#.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app')
+angular.module('#module#')
   .filter('#name#', function () {
     return function (input) {
       return 'test filter: ' + input;
