@@ -1,12 +1,27 @@
 div
 	h1  Breaking News
 	hr
-div(layout='row' layout-sm='column'  )
-	div.yellow(flex='10' flex-order-sm='3') At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-	div.grey(flex='33' ) I'm center.
-	div.blue(flex='33')
+	md-grid-list(md-cols-sm='1', md-cols-md='2', md-cols-gt-md='6', md-row-height-gt-md='1:1', md-row-height='2:2', md-gutter='12x', md-gutter-gt-sm='8px')
+		md-grid-tile.gray(md-rowspan='3', md-colspan='2')
+			md-grid-tile-footer
+				h3 #1: (3r x 2c)
+		md-grid-tile.green
+			md-grid-tile-footer
+				h3 #2: (1r x 1c)
+		md-grid-tile.yellow
+			md-grid-tile-footer
+				h3 #3: (1r x 1c)
+		md-grid-tile.blue(md-rowspan='2')
+			md-grid-tile-footer
+				h3 #4: (2r x 1c)
+		md-grid-tile.red(md-rowspan='2', md-colspan='2')
+			md-grid-tile-footer
+				h3 #5: (2r x 2c)
+		md-grid-tile.green(md-rowspan='2')
+			md-grid-tile-footer
+				h3 #6: (2r x 1c)
 
-		flex
+
 hr
 .tr
 	.col-xs-12

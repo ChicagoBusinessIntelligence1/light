@@ -5,27 +5,20 @@
 /**********************
     =Color Backgrounds
 ***********************/
-.yellow {
-  background-color: #fafad2;
-}
-.red {
-  background-color: #f00;
-}
-.orange {
-  background-color: #ff7f50;
-}
-.purple {
-  background-color: #9370db;
-}
-.blue {
-  background-color: #00bfff;
-}
-.green {
-  background-color: #008000;
-}
-.grey {
-  background-color: #d3d3d3;
-}
+/*.yellow*/
+/*background-color lightgoldenrodyellow*/
+/*.red*/
+/*background-color red*/
+/*.orange*/
+/*background-color coral*/
+/*.purple*/
+/*background-color mediumpurple*/
+/*.blue*/
+/*background-color deepskyblue*/
+/*.green*/
+/*background-color green*/
+/*.grey*/
+/*background-color lightgrey*/
 /**********************
       =Mixins
 ***********************/
