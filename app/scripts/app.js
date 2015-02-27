@@ -16,6 +16,7 @@ var app = angular.module('app', [
     // 3rd party modules
     'firebase',
     'ngAnimate',
+    'ngMaterial',
     'ui.router'
 ])
     .config(function ($stateProvider, $urlRouterProvider) {
