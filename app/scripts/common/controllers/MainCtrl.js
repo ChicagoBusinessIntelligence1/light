@@ -1,12 +1,9 @@
 'use strict';
 
 angular.module('common')
-    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state) {
-
+    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log) {
         $scope.fenElementActive = {val: 'null'};
-
         $scope.$watch('auth.user.provider', function (newVal) {
-
             if (newVal === 'password') {
                 $scope.isAdmin = true;
             }
@@ -16,12 +13,41 @@ angular.module('common')
         $scope.authObj = $firebaseAuth(mainRef);
 
         $scope.loginFb = function () {
-
-            $scope.authObj.$authWithOAuthPopup("facebook").then(function(authData) {
+            $scope.authObj.$authWithOAuthPopup("facebook").then(function (authData) {
                 console.log("Logged in as:", authData.uid);
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.error("Authentication failed: ", error);
             });
-
         }
+        /**
+         * Sidenav
+         */
+        $scope.toggleLeft = function () {
+            $mdSidenav('left').toggle()
+                .then(function () {
+                    $log.debug("toggle left is done");
+                });
+        };
+        $scope.toggleRight = function () {
+            $mdSidenav('right').toggle()
+                .then(function () {
+                    $log.debug("toggle RIGHT is done");
+                });
+        };
+    })
+    .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+        $scope.close = function () {
+            $mdSidenav('left').close()
+                .then(function () {
+                    $log.debug("close LEFT is done");
+                });
+        };
+    })
+    .controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+        $scope.close = function () {
+            $mdSidenav('right').close()
+                .then(function () {
+                    $log.debug("close RIGHT is done");
+                });
+        };
     });
