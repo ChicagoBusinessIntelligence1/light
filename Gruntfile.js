@@ -1,6 +1,5 @@
 var processModule = function (module) {
     module = module.replace(/\./g, '/');
-    console.log(module);
     return module;
 }
 
@@ -12,7 +11,6 @@ var enterInside = function (target, before, insert) {
 
     var test = target.indexOf(insert);
     console.log(test);
-
 
 
     if (test > 0)return target;
@@ -44,8 +42,22 @@ var removeFromInside = function (target, remove) {
     remove = remove.trim();
 
     var targetArr = target.split(remove);
+    var final;
 
-    return target[0].substring(0,target[0].length-2)+target[1];
+    targetArr.forEach(function (part) {
+        if (part.length > 4) {
+            var end = part.length - 2;
+            var isLineEnd = part.substr(end) === '\r\n';
+           if (isLineEnd){
+            part = part.substring(0, end);
+           }
+            final += part;
+
+        }
+
+    });
+
+    return final;
 }
 
 
@@ -258,8 +270,6 @@ module.exports = function (grunt) {
 
         if (rm) {
             var file = d + name + t;
-            console.log(file);
-            console.log(tpath);
             delFileDep(file);
             delFileDep(tpath);
             //grunt.file.delete(tpath);
