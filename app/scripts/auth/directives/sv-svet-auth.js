@@ -18,6 +18,7 @@
                         LxNotificationService.info('Dialog closed!');
                     };
 
+
                 }
             };
         });
