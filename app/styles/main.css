@@ -197,6 +197,11 @@
 .span-top-nav {
   color: #000;
 }
+.b-login {
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .table-elements {
   margin: 0 auto;
 }
