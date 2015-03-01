@@ -1,0 +1,13 @@
+/**********************
+      =Sidenav
+***********************/
+.h1-sidehead {
+  color: #fff !important;
+}
+.home-sidenav-layout {
+  height: 100%;
+  min-height: 500px;
+}
+md-button.b-close {
+  width: 30px !important;
+}
