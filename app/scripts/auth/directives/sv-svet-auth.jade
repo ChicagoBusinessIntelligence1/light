@@ -1,10 +1,7 @@
-div
-	ul.nav.navbar-nav.pull-right.nav-auth
-		li(ng-show='!auth.user')
-			button.btn.btn--m.btn--white.btn--raised(ng-click="openLogin('login')", lx-ripple="")
-				.mt
-					i.icon.icon--xs.icon--blue.icon--flat.mdi.mdi-login
-
+div(layout='row' layout-align="end center")
+	button.btn.btn--m.btn--white.btn--raised(ng-click="openLogin('login')", lx-ripple="" ng-show='!auth.user')
+		.mt
+			i.icon.icon--xs.icon--blue.icon--flat.mdi.mdi-login
 	sv-lumx-auth
 
 
