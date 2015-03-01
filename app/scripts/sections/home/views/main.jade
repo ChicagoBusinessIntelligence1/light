@@ -1,29 +1,29 @@
 section(layout='row', flex='')
-	md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-md')")
-		md-toolbar.md-theme-indigo
+	md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left')
+		md-toolbar.md-theme-light
 			h1.md-toolbar-tools Sidenav Left
 		md-content.md-padding(ng-controller='LeftCtrl')
-			md-button.md-primary(ng-click='close()', hide-gt-md='')
+			md-button.md-primary(ng-click='close()')
 				| Close Sidenav Left
-			p(hide-md='', show-gt-md='')
-				| This sidenav is locked open on your device. To go back to the default behavior,
-				| narrow your display.
 	md-content.md-padding(flex='')
 		div(layout='column', layout-fill='', layout-align='center center')
 			p
-				| The left sidenav will 'lock open' on a medium (>=960px wide) device.
+				| The rigth sidenav will 'lock open' on a medium (>=960px wide) device.
 			div
-				md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='')
+				md-button.md-primary(ng-click='toggleRight()', hide-gt-md='')
+					| Toggle rigth
+			div
+				md-button.md-primary(ng-click='toggleLeft()')
 					| Toggle left
-			div
-				md-button.md-primary(ng-click='toggleRight()')
-					| Toggle right
-	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
-		md-toolbar.md-theme-light
+	md-sidenav.md-sidenav-rigth.md-whiteframe-z2(md-component-id='rigth', md-is-locked-open="$media('gt-md')")
+		md-toolbar.md-theme-indigo
 			h1.md-toolbar-tools Sidenav Right
 		md-content.md-padding(ng-controller='RightCtrl')
-			md-button.md-primary(ng-click='close()')
+			md-button.md-primary(ng-click='close()', hide-gt-md='')
 				| Close Sidenav Right
+			p(hide-md='', show-gt-md='')
+				| This sidenav is locked open on your device. To go back to the default behavior,
+				| narrow your display.
 
 //.row
 //	.col-lg-9.content-wrapper
