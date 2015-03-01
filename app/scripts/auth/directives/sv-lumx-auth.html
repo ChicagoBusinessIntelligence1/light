@@ -13,6 +13,43 @@
         </div>
     </div>
     <div class="dialog__content">
+        <fa-app style="width: 400px;height: 400px">
+            <fa-flipper>
+                <fa-modifier fa-size="[200, 200]" fa-align='[.5,.5]' fa-origin='[.5,.5]'>
+                    <fa-surface fa-click="flipIt()">
+                        <div flex-container="column" flex-gutter="24">
+                            <div flex-item>
+                                <div class="card">
+                                    <div class="card__img card__img--top">
+                                        <sv-login-icon></sv-login-icon>
+                                        <span class="fs-headline tc-white-1 display-block">Facebook</span>
+                                    </div>
+
+                                    <div class="p+">
+                                        <span class="fs-subhead tc-black-2 display-block">Facebook</span>
+
+                                        <div class="paragraph fs-body-1">
+                                            <p>
+                                                Login with Facebook Account
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="card__actions">
+                                        <button class="btn btn--m btn--black btn--flat" lx-ripple>Share</button>
+                                        <button class="btn btn--m btn--orange btn--flat" lx-ripple>Learn more</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </fa-surface>
+                </fa-modifier>
+                <fa-modifier fa-size="[200, 200]" fa-align='[.5,.5]' fa-origin='[.5,.5]'>
+                    <fa-surface fa-click="flipIt()">Flip me again!</fa-surface>
+                </fa-modifier>
+            </fa-flipper>
     </div>
     <div class="dialog__actions">
         <button class="btn btn--m btn--white btn--raised" lx-ripple lx-dialog-close>Cancel</button>

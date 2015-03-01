@@ -202,9 +202,6 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.table-elements {
-  margin: 0 auto;
-}
 .h1-sidehead {
   color: #fff !important;
 }
@@ -239,11 +236,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -326,11 +323,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -469,11 +466,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -612,11 +609,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -751,11 +748,11 @@ md-item.aside-elem a {
   filter: none;
 }
 .slide-down {
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -892,11 +889,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
 /* easeOutBack */
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
 /* older webkit */
@@ -1039,11 +1036,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
 /* easeOutBack */
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
 /* older webkit */
@@ -1186,11 +1183,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
 /* easeOutBack */
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
 /* older webkit */
@@ -1333,11 +1330,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
 /* easeOutBack */
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
 /* older webkit */
@@ -1478,11 +1475,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1621,11 +1618,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1764,11 +1761,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1909,11 +1906,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
 /* easeOutBack */
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
 /* older webkit */
@@ -2054,11 +2051,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2199,11 +2196,11 @@ md-item.aside-elem a {
   -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all all ease;
-  -moz-transition: all all ease;
-  -ms-transition: all all ease;
-  -o-transition: all all ease;
-  transition: all all ease;
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
 /* easeOutBack */
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
 /* older webkit */

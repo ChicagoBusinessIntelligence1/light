@@ -3,7 +3,10 @@
     angular.module('auth')
         .directive('svLumxAuth', function () {
             return {
-                templateUrl: 'scripts/auth/directives/sv-lumx-auth.html'
+                templateUrl: 'scripts/auth/directives/sv-lumx-auth.html',
+                link: function ($scope, element, attr) {
+
+                }
             };
         });
 })();

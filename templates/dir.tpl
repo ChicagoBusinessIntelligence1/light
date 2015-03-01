@@ -8,7 +8,7 @@
                 link: function ($scope, element, attr) {
 
                 },
-                templateUrl: '../views/directives/#dname#.html'
+                templateUrl: 'scripts/#module#/directives/#dname#.html'
             };
         });
 })();
