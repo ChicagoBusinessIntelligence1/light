@@ -1,5 +1,5 @@
 .home-sidenav-layout(layout='column')
-	section(layout='row', flex='')
+	section(layout='row')
 		md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left')
 			md-toolbar.md-theme-light(ng-controller='LeftCtrl')
 				.md-toolbar-tools
@@ -8,11 +8,11 @@
 						i.mdi.mdi-close
 			md-content.md-padding(ng-controller='LeftCtrl')
 		md-content.md-padding(flex='')
-			div(layout='column', layout-fill='', layout-align='center center')
-				div
+			div(layout='row', layout-fill='', layout-align='center')
+				div(flex='')
 					md-button.md-primary(ng-click='toggleLeft()')
 						| Advertise with us
-				div
+				div(flex='')
 					md-button.md-primary(ng-click='toggleRight()', hide-gt-md='')
 						| News Archive
 		md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right', md-is-locked-open="$media('gt-md')")
