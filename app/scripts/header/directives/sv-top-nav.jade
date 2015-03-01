@@ -1,11 +1,10 @@
 .navbar.navbar-default.navbar-app(role="navigation")
 	.container
-			sv-svet-auth
-
+		sv-svet-auth
 .navbar-logo.navbar-default
 	.container
-		.row
-			a.navbar-brand.text-center.col-sm-6.col-sm-offset-3(ui-sref='app.home')
+		div(layout='row' layout-align="center center")
+			a.navbar-brand(ui-sref='app.home')
 				img.img-responsive(ng-src="img/logo/newLightLogo580.png")
 		<!-- Collect the nav links, forms, and other content for toggling -->
 .navbar.navbar-default.navbar-svet(role="navigation")
