@@ -1,7 +1,6 @@
 div(layout='row' layout-align="end center")
-	button.btn.btn--m.btn--white.btn--raised(ng-click="openLogin('login')", lx-ripple="" ng-show='!auth.user')
-		.mt
-			i.icon.icon--xs.icon--blue.icon--flat.mdi.mdi-login
+	button.btn.btn--m.btn--white.btn--raised.b-login(ng-click="openLogin('login')", lx-ripple="" ng-show='!auth.user')
+		i.icon.icon--m.icon--blue.icon--flat.mdi.mdi-login
 	sv-lumx-auth
 
 
