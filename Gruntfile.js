@@ -42,10 +42,10 @@ var removeFromInside = function (target, remove) {
     remove = remove.trim();
 
     var targetArr = target.split(remove);
-    var final;
+    var final='';
 
     targetArr.forEach(function (part) {
-        if (part.length > 4) {
+        if (part.length > 4 && part !== undefined) {
             var end = part.length - 2;
             var isLineEnd = part.substr(end) === '\r\n';
            if (isLineEnd){
