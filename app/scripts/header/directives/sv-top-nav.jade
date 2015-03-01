@@ -1,12 +1,13 @@
 .navbar.navbar-default.navbar-app(role="navigation")
 	.container
 		<!-- Brand and toggle get grouped for better mobile display -->
-		.navbar-header.pull-right
-			form.form-sm.navbar-form.navbar-left(role="search")
-				.form-group
-					input.form-control.input-xs(type="text" placeholder="Search Our Site")
-				button.btn.btn-xs.btn-default.btn-search(type="submit")
-					i.fa.fa-search.fa-fw
+		div(layout='row' layout-align='end center')
+			div
+				form.form-sm.navbar-form(role="search")
+					.form-group
+						input.form-control.input-xs(type="text" placeholder="Search Our Site")
+					button.btn.btn-xs.btn-default.btn-search(type="submit")
+						i.fa.fa-search.fa-fw
 			sv-svet-auth
 
 .navbar-logo.navbar-default
