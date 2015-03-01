@@ -1,7 +1,8 @@
 div
 	ul.nav.navbar-nav.pull-right.nav-auth
 		li(ng-show='!auth.user')
-			button.btn.btn--m.btn--black.btn--flat(ng-click="opendDialog('test')", lx-ripple="") Log In
+			button.btn.btn--m.btn--white.btn--raised(ng-click="openLogin('login')", lx-ripple="")
+				i.mdi.mdi-account Log in
 
 	sv-lumx-auth
 
