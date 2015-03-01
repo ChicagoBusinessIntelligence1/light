@@ -4,7 +4,7 @@
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Entity',['require','exports','module'],function(require, exports, module) {
@@ -82,7 +82,7 @@ define('famous/core/Entity',['require','exports','module'],function(require, exp
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Transform',['require','exports','module'],function(require, exports, module) {
@@ -145,7 +145,7 @@ define('famous/core/Transform',['require','exports','module'],function(require, 
     };
 
     /**
-     * Fast-multiply two or more Transform matrix types to return a
+     * Fast-multiply two Transform matrix types to return a
      *    Matrix, assuming bottom row on each is [0 0 0 1].
      *
      * @method multiply
@@ -765,7 +765,7 @@ define('famous/core/Transform',['require','exports','module'],function(require, 
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/SpecParser',['require','exports','module','./Transform'],function(require, exports, module) {
@@ -942,7 +942,7 @@ define('famous/core/SpecParser',['require','exports','module','./Transform'],fun
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/RenderNode',['require','exports','module','./Entity','./SpecParser'],function(require, exports, module) {
@@ -1110,7 +1110,7 @@ define('famous/core/RenderNode',['require','exports','module','./Entity','./Spec
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/EventEmitter',['require','exports','module'],function(require, exports, module) {
@@ -1206,7 +1206,7 @@ define('famous/core/EventEmitter',['require','exports','module'],function(requir
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/EventHandler',['require','exports','module','./EventEmitter'],function(require, exports, module) {
@@ -1413,7 +1413,7 @@ define('famous/core/EventHandler',['require','exports','module','./EventEmitter'
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/ElementAllocator',['require','exports','module'],function(require, exports, module) {
@@ -1520,7 +1520,7 @@ define('famous/core/ElementAllocator',['require','exports','module'],function(re
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/utilities/Utility',['require','exports','module'],function(require, exports, module) {
@@ -1642,9 +1642,9 @@ define('famous/utilities/Utility',['require','exports','module'],function(requir
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
-
+/*eslint-disable new-cap */
 define('famous/transitions/MultipleTransition',['require','exports','module','../utilities/Utility'],function(require, exports, module) {
     var Utility = require('../utilities/Utility');
 
@@ -1720,7 +1720,7 @@ define('famous/transitions/MultipleTransition',['require','exports','module','..
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/transitions/TweenTransition',['require','exports','module'],function(require, exports, module) {
@@ -2147,9 +2147,9 @@ define('famous/transitions/TweenTransition',['require','exports','module'],funct
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
-
+/*eslint-disable new-cap */
 define('famous/transitions/Transitionable',['require','exports','module','./MultipleTransition','./TweenTransition'],function(require, exports, module) {
     var MultipleTransition = require('./MultipleTransition');
     var TweenTransition = require('./TweenTransition');
@@ -2313,7 +2313,12 @@ define('famous/transitions/Transitionable',['require','exports','module','./Mult
      *    completion (t=1)
      */
     Transitionable.prototype.delay = function delay(duration, callback) {
-        this.set(this.get(), {duration: duration,
+        var endValue;
+        if (this.actionQueue.length) endValue = this.actionQueue[this.actionQueue.length - 1][0];
+        else if (this.currentAction) endValue = this.currentAction[0];
+        else endValue = this.get();
+
+        return this.set(endValue, { duration: duration,
             curve: function() {
                 return 0;
             }},
@@ -2370,7 +2375,7 @@ define('famous/transitions/Transitionable',['require','exports','module','./Mult
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Context',['require','exports','module','./RenderNode','./EventHandler','./ElementAllocator','./Transform','../transitions/Transitionable'],function(require, exports, module) {
@@ -2383,7 +2388,8 @@ define('famous/core/Context',['require','exports','module','./RenderNode','./Eve
     var _zeroZero = [0, 0];
     var usePrefix = !('perspective' in document.documentElement.style);
 
-    function _getElementSize(element) {
+    function _getElementSize() {
+        var element = this.container;
         return [element.clientWidth, element.clientHeight];
     }
 
@@ -2409,7 +2415,7 @@ define('famous/core/Context',['require','exports','module','./RenderNode','./Eve
 
         this._node = new RenderNode();
         this._eventOutput = new EventHandler();
-        this._size = _getElementSize(this.container);
+        this._size = _getElementSize.call(this);
 
         this._perspectiveState = new Transitionable(0);
         this._perspective = undefined;
@@ -2424,7 +2430,7 @@ define('famous/core/Context',['require','exports','module','./RenderNode','./Eve
         };
 
         this._eventOutput.on('resize', function() {
-            this.setSize(_getElementSize(this.container));
+            this.setSize(_getElementSize.call(this));
         }.bind(this));
 
     }
@@ -2478,7 +2484,7 @@ define('famous/core/Context',['require','exports','module','./RenderNode','./Eve
      * @param {Array.Number} size [width, height].  If unspecified, use size of root document element.
      */
     Context.prototype.setSize = function setSize(size) {
-        if (!size) size = _getElementSize(this.container);
+        if (!size) size = _getElementSize.call(this);
         this._size[0] = size[0];
         this._size[1] = size[1];
     };
@@ -2604,7 +2610,7 @@ define('famous/core/Context',['require','exports','module','./RenderNode','./Eve
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/ElementOutput',['require','exports','module','./Entity','./EventHandler','./Transform'],function(require, exports, module) {
@@ -2782,13 +2788,7 @@ define('famous/core/ElementOutput',['require','exports','module','./Entity','./E
      */
 
     var _setMatrix;
-    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-        _setMatrix = function(element, matrix) {
-            element.style.zIndex = (matrix[14] * 1000000) | 0;    // fix for Firefox z-buffer issues
-            element.style.transform = _formatCSSTransform(matrix);
-        };
-    }
-    else if (usePrefix) {
+    if (usePrefix) {
         _setMatrix = function(element, matrix) {
             element.style.webkitTransform = _formatCSSTransform(matrix);
         };
@@ -2933,7 +2933,7 @@ define('famous/core/ElementOutput',['require','exports','module','./Entity','./E
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/OptionsManager',['require','exports','module','./EventHandler'],function(require, exports, module) {
@@ -3135,7 +3135,7 @@ define('famous/core/OptionsManager',['require','exports','module','./EventHandle
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Engine',['require','exports','module','./Context','./EventHandler','./OptionsManager'],function(require, exports, module) {
@@ -3545,7 +3545,7 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Surface',['require','exports','module','./ElementOutput'],function(require, exports, module) {
@@ -4042,7 +4042,7 @@ define('famous/core/Surface',['require','exports','module','./ElementOutput'],fu
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Group',['require','exports','module','./Context','./Transform','./Surface'],function(require, exports, module) {
@@ -4167,7 +4167,7 @@ define('famous/core/Group',['require','exports','module','./Context','./Transfor
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/transitions/TransitionableTransform',['require','exports','module','./Transitionable','../core/Transform','../utilities/Utility'],function(require, exports, module) {
@@ -4398,7 +4398,7 @@ define('famous/transitions/TransitionableTransform',['require','exports','module
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Modifier',['require','exports','module','./Transform','../transitions/Transitionable','../transitions/TransitionableTransform'],function(require, exports, module) {
@@ -4833,7 +4833,7 @@ define('famous/core/Modifier',['require','exports','module','./Transform','../tr
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/Scene',['require','exports','module','./Transform','./Modifier','./RenderNode'],function(require, exports, module) {
@@ -5013,7 +5013,7 @@ define('famous/core/Scene',['require','exports','module','./Transform','./Modifi
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/View',['require','exports','module','./EventHandler','./OptionsManager','./RenderNode','../utilities/Utility'],function(require, exports, module) {
@@ -5124,7 +5124,7 @@ define('famous/core/View',['require','exports','module','./EventHandler','./Opti
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/core/ViewSequence',['require','exports','module'],function(require, exports, module) {
@@ -5463,7 +5463,7 @@ define('famous/core/ViewSequence',['require','exports','module'],function(requir
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/events/EventArbiter',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
@@ -5548,7 +5548,7 @@ define('famous/events/EventArbiter',['require','exports','module','../core/Event
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/events/EventFilter',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
@@ -5606,7 +5606,7 @@ define('famous/events/EventFilter',['require','exports','module','../core/EventH
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/events/EventMapper',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
@@ -5742,7 +5742,7 @@ define('famous/inputs/DesktopEmulationMode',['require','exports','module'],funct
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/inputs/FastClick',['require','exports','module'],function(require, exports, module) {
@@ -5811,7 +5811,7 @@ define('famous/inputs/FastClick',['require','exports','module'],function(require
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/GenericSync',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
 
@@ -5937,7 +5937,7 @@ define('famous/inputs/GenericSync',['require','exports','module','../core/EventH
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/MouseSync',['require','exports','module','../core/EventHandler','../core/OptionsManager'],function(require, exports, module) {
     var EventHandler = require('../core/EventHandler');
@@ -6239,7 +6239,7 @@ define('famous/inputs/MouseSync',['require','exports','module','../core/EventHan
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/TwoFingerSync',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
     var EventHandler = require('../core/EventHandler');
@@ -6362,7 +6362,7 @@ define('famous/inputs/TwoFingerSync',['require','exports','module','../core/Even
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/PinchSync',['require','exports','module','./TwoFingerSync','../core/OptionsManager'],function(require, exports, module) {
     var TwoFingerSync = require('./TwoFingerSync');
@@ -6461,7 +6461,7 @@ define('famous/inputs/PinchSync',['require','exports','module','./TwoFingerSync'
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/RotateSync',['require','exports','module','./TwoFingerSync','../core/OptionsManager'],function(require, exports, module) {
     var TwoFingerSync = require('./TwoFingerSync');
@@ -6561,7 +6561,7 @@ define('famous/inputs/RotateSync',['require','exports','module','./TwoFingerSync
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/ScaleSync',['require','exports','module','./TwoFingerSync','../core/OptionsManager'],function(require, exports, module) {
     var TwoFingerSync = require('./TwoFingerSync');
@@ -6668,7 +6668,7 @@ define('famous/inputs/ScaleSync',['require','exports','module','./TwoFingerSync'
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/ScrollSync',['require','exports','module','../core/EventHandler','../core/Engine','../core/OptionsManager'],function(require, exports, module) {
     var EventHandler = require('../core/EventHandler');
@@ -6866,7 +6866,7 @@ define('famous/inputs/ScrollSync',['require','exports','module','../core/EventHa
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/TouchTracker',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
     var EventHandler = require('../core/EventHandler');
@@ -6991,7 +6991,7 @@ define('famous/inputs/TouchTracker',['require','exports','module','../core/Event
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/inputs/TouchSync',['require','exports','module','./TouchTracker','../core/EventHandler','../core/OptionsManager'],function(require, exports, module) {
     var TouchTracker = require('./TouchTracker');
@@ -7213,7 +7213,7 @@ define('famous/inputs/TouchSync',['require','exports','module','./TouchTracker',
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/math/Vector',['require','exports','module'],function(require, exports, module) {
@@ -7594,7 +7594,7 @@ define('famous/math/Vector',['require','exports','module'],function(require, exp
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/math/Matrix',['require','exports','module','./Vector'],function(require, exports, module) {
@@ -7717,7 +7717,7 @@ define('famous/math/Matrix',['require','exports','module','./Vector'],function(r
      * @return {Matrix} result of transpose, as a handle to the internal register
      */
     Matrix.prototype.transpose = function transpose() {
-        var result = [];
+        var result = [[], [], []];
         var M = this.get();
         for (var row = 0; row < 3; row++) {
             for (var col = 0; col < 3; col++) {
@@ -7750,7 +7750,7 @@ define('famous/math/Matrix',['require','exports','module','./Vector'],function(r
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/math/Quaternion',['require','exports','module','./Matrix'],function(require, exports, module) {
@@ -8170,7 +8170,7 @@ define('famous/math/Quaternion',['require','exports','module','./Matrix'],functi
             scaleFrom   = 1.0 - t;
             scaleTo     = t;
         }
-        return register.set(this.scalarMultiply(scaleFrom/scaleTo).add(q).multiply(scaleTo));
+        return register.set(this.scalarMultiply(scaleFrom/scaleTo).add(q).scalarMultiply(scaleTo));
     };
 
     module.exports = Quaternion;
@@ -8183,19 +8183,29 @@ define('famous/math/Quaternion',['require','exports','module','./Matrix'],functi
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
-
+/*eslint-disable new-cap */
 define('famous/math/Random',['require','exports','module'],function(require, exports, module) {
-
     var RAND = Math.random;
 
-    function _randomFloat(min,max) {
+    function _randomFloat(min, max) {
         return min + RAND() * (max - min);
     }
 
-    function _randomInteger(min,max) {
-        return (min + RAND() * (max - min + 1)) >> 0;
+    function _randomInteger(min, max) {
+        return min + ((RAND() * (max - min + 1)) >> 0);
+    }
+
+    function _range(randomFunction, min, max, dim) {
+        min = (min !== undefined) ? min : 0;
+        max = (max !== undefined) ? max : 1;
+        if (dim !== undefined) {
+            var result = [];
+            for (var i = 0; i < dim; i++) result.push(randomFunction(min, max));
+            return result;
+        }
+        else return randomFunction(min, max);
     }
 
     /**
@@ -8217,15 +8227,8 @@ define('famous/math/Random',['require','exports','module'],function(require, exp
      * @param {Number} dim (optional) dimension of output array, if specified
      * @return {number | array<number>} random integer, or optionally, an array of random integers
      */
-    Random.integer = function integer(min,max,dim) {
-        min = (min !== undefined) ? min : 0;
-        max = (max !== undefined) ? max : 1;
-        if (dim !== undefined) {
-            var result = [];
-            for (var i = 0; i < dim; i++) result.push(_randomInteger(min,max));
-            return result;
-        }
-        else return _randomInteger(min,max);
+    Random.integer = function integer(min, max, dim) {
+        return _range(_randomInteger, min, max, dim);
     };
 
     /**
@@ -8239,15 +8242,8 @@ define('famous/math/Random',['require','exports','module'],function(require, exp
      * @param {Number} [dim] dimension of output array, if specified
      * @return {Number} random float, or optionally an array
      */
-    Random.range = function range(min,max,dim) {
-        min = (min !== undefined) ? min : 0;
-        max = (max !== undefined) ? max : 1;
-        if (dim !== undefined) {
-            var result = [];
-            for (var i = 0; i < dim; i++) result.push(_randomFloat(min,max));
-            return result;
-        }
-        else return _randomFloat(min,max);
+    Random.range = function range(min, max, dim) {
+        return _range(_randomFloat, min, max, dim);
     };
 
     /**
@@ -8259,8 +8255,7 @@ define('famous/math/Random',['require','exports','module'],function(require, exp
      * @return {Number} random sign (-1 or 1)
      */
     Random.sign = function sign(prob) {
-        prob = (prob !== undefined) ? prob : 0.5;
-        return (RAND() < prob) ? 1 : -1;
+        return Random.bool(prob) ? 1 : -1;
     };
 
     /**
@@ -8285,7 +8280,7 @@ define('famous/math/Random',['require','exports','module'],function(require, exp
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/math/Utilities',['require','exports','module'],function(require, exports, module) {
@@ -8333,7 +8328,7 @@ define('famous/math/Utilities',['require','exports','module'],function(require, 
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/modifiers/Draggable',['require','exports','module','../core/Transform','../transitions/Transitionable','../core/EventHandler','../math/Utilities','../inputs/GenericSync','../inputs/MouseSync','../inputs/TouchSync'],function(require, exports, module) {
@@ -8717,7 +8712,7 @@ define('famous/modifiers/Fader',['require','exports','module','../transitions/Tr
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/modifiers/ModifierChain',['require','exports','module'],function(require, exports, module) {
@@ -8788,7 +8783,7 @@ define('famous/modifiers/ModifierChain',['require','exports','module'],function(
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/modifiers/StateModifier',['require','exports','module','../core/Modifier','../core/Transform','../transitions/Transitionable','../transitions/TransitionableTransform'],function(require, exports, module) {
@@ -9106,7 +9101,7 @@ define('famous/modifiers/StateModifier',['require','exports','module','../core/M
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  *
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 define('famous/physics/PhysicsEngine',['require','exports','module','../core/EventHandler'],function(require, exports, module) {
     var EventHandler = require('../core/EventHandler');
@@ -9635,7 +9630,7 @@ define('famous/physics/PhysicsEngine',['require','exports','module','../core/Eve
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/integrators/SymplecticEuler',['require','exports','module'],function(require, exports, module) {
@@ -9738,7 +9733,7 @@ define('famous/physics/integrators/SymplecticEuler',['require','exports','module
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/bodies/Particle',['require','exports','module','../../math/Vector','../../core/Transform','../../core/EventHandler','../integrators/SymplecticEuler'],function(require, exports, module) {
@@ -10126,7 +10121,7 @@ define('famous/physics/bodies/Particle',['require','exports','module','../../mat
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/bodies/Body',['require','exports','module','./Particle','../../core/Transform','../../math/Vector','../../math/Quaternion','../../math/Matrix','../integrators/SymplecticEuler'],function(require, exports, module) {
@@ -10356,7 +10351,7 @@ define('famous/physics/bodies/Body',['require','exports','module','./Particle','
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/bodies/Circle',['require','exports','module','./Body','../../math/Matrix'],function(require, exports, module) {
@@ -10418,7 +10413,7 @@ define('famous/physics/bodies/Circle',['require','exports','module','./Body','..
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/bodies/Rectangle',['require','exports','module','./Body','../../math/Matrix'],function(require, exports, module) {
@@ -10480,7 +10475,7 @@ define('famous/physics/bodies/Rectangle',['require','exports','module','./Body',
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Constraint',['require','exports','module','../../core/EventHandler'],function(require, exports, module) {
@@ -10536,7 +10531,7 @@ define('famous/physics/constraints/Constraint',['require','exports','module','..
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Collision',['require','exports','module','./Constraint','../../math/Vector'],function(require, exports, module) {
@@ -10681,7 +10676,7 @@ define('famous/physics/constraints/Collision',['require','exports','module','./C
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Curve',['require','exports','module','./Constraint','../../math/Vector'],function(require, exports, module) {
@@ -10787,9 +10782,9 @@ define('famous/physics/constraints/Curve',['require','exports','module','./Const
             var z = p.z;
 
             var f0  = f(x, y, z);
-            var dfx = (f(x + epsilon, p, p) - f0) / epsilon;
-            var dfy = (f(x, y + epsilon, p) - f0) / epsilon;
-            var dfz = (f(x, y, p + epsilon) - f0) / epsilon;
+            var dfx = (f(x + epsilon, y, z) - f0) / epsilon;
+            var dfy = (f(x, y + epsilon, z) - f0) / epsilon;
+            var dfz = (f(x, y, z + epsilon) - f0) / epsilon;
 
             var g0  = g(x, y, z);
             var dgx = (g(x + epsilon, y, z) - g0) / epsilon;
@@ -10815,7 +10810,7 @@ define('famous/physics/constraints/Curve',['require','exports','module','./Const
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Distance',['require','exports','module','./Constraint','../../math/Vector'],function(require, exports, module) {
@@ -10984,7 +10979,7 @@ define('famous/physics/constraints/Distance',['require','exports','module','./Co
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Snap',['require','exports','module','./Constraint','../../math/Vector'],function(require, exports, module) {
@@ -11160,7 +11155,7 @@ define('famous/physics/constraints/Snap',['require','exports','module','./Constr
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Surface',['require','exports','module','./Constraint','../../math/Vector'],function(require, exports, module) {
@@ -11277,7 +11272,7 @@ define('famous/physics/constraints/Surface',['require','exports','module','./Con
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Wall',['require','exports','module','./Constraint','../../math/Vector'],function(require, exports, module) {
@@ -11466,7 +11461,7 @@ define('famous/physics/constraints/Wall',['require','exports','module','./Constr
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/constraints/Walls',['require','exports','module','./Constraint','./Wall','../../math/Vector'],function(require, exports, module) {
@@ -11717,7 +11712,7 @@ define('famous/physics/constraints/Walls',['require','exports','module','./Const
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/forces/Force',['require','exports','module','../../math/Vector','../../core/EventHandler'],function(require, exports, module) {
@@ -11779,7 +11774,7 @@ define('famous/physics/forces/Force',['require','exports','module','../../math/V
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/forces/Drag',['require','exports','module','./Force'],function(require, exports, module) {
@@ -11899,7 +11894,7 @@ define('famous/physics/forces/Drag',['require','exports','module','./Force'],fun
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/forces/Repulsion',['require','exports','module','./Force','../../math/Vector'],function(require, exports, module) {
@@ -12113,7 +12108,7 @@ define('famous/physics/forces/Repulsion',['require','exports','module','./Force'
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/forces/RotationalDrag',['require','exports','module','./Drag'],function(require, exports, module) {
@@ -12211,7 +12206,7 @@ define('famous/physics/forces/RotationalDrag',['require','exports','module','./D
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 /*global console */
@@ -12479,7 +12474,7 @@ define('famous/physics/forces/Spring',['require','exports','module','./Force','.
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 //TODO: test inheritance
@@ -12623,7 +12618,7 @@ define('famous/physics/forces/RotationalSpring',['require','exports','module','.
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/physics/forces/VectorField',['require','exports','module','./Force','../../math/Vector'],function(require, exports, module) {
@@ -12824,7 +12819,7 @@ define('famous/physics/forces/VectorField',['require','exports','module','./Forc
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/surfaces/CanvasSurface',['require','exports','module','../core/Surface'],function(require, exports, module) {
@@ -12943,7 +12938,7 @@ define('famous/surfaces/CanvasSurface',['require','exports','module','../core/Su
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/surfaces/ContainerSurface',['require','exports','module','../core/Surface','../core/Context'],function(require, exports, module) {
@@ -13080,7 +13075,7 @@ define('famous/surfaces/FormContainerSurface',['require','exports','module','./C
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/surfaces/ImageSurface',['require','exports','module','../core/Surface'],function(require, exports, module) {
@@ -13124,7 +13119,7 @@ define('famous/surfaces/ImageSurface',['require','exports','module','../core/Sur
         return {
             urlCache: urlCache,
             countCache: countCache,
-            nodeCache: countCache
+            nodeCache: nodeCache
         };
     };
 
@@ -13202,7 +13197,7 @@ define('famous/surfaces/ImageSurface',['require','exports','module','../core/Sur
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/surfaces/InputSurface',['require','exports','module','../core/Surface'],function(require, exports, module) {
@@ -13388,7 +13383,7 @@ define('famous/surfaces/SubmitInputSurface',['require','exports','module','./Inp
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/surfaces/TextareaSurface',['require','exports','module','../core/Surface'],function(require, exports, module) {
@@ -13583,7 +13578,7 @@ define('famous/surfaces/TextareaSurface',['require','exports','module','../core/
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/surfaces/VideoSurface',['require','exports','module','../core/Surface'],function(require, exports, module) {
@@ -13688,7 +13683,7 @@ define('famous/surfaces/VideoSurface',['require','exports','module','../core/Sur
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/transitions/CachedMap',['require','exports','module'],function(require, exports, module) {
@@ -13740,7 +13735,7 @@ define('famous/transitions/CachedMap',['require','exports','module'],function(re
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/transitions/Easing',['require','exports','module'],function(require, exports, module) {
@@ -14033,7 +14028,7 @@ define('famous/transitions/Easing',['require','exports','module'],function(requi
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/transitions/SnapTransition',['require','exports','module','../physics/PhysicsEngine','../physics/bodies/Particle','../physics/constraints/Snap','../math/Vector'],function(require, exports, module) {
@@ -14302,7 +14297,7 @@ s     *
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 /*global console*/
@@ -14581,7 +14576,7 @@ define('famous/transitions/SpringTransition',['require','exports','module','../p
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/transitions/WallTransition',['require','exports','module','../physics/PhysicsEngine','../physics/bodies/Particle','../physics/forces/Spring','../physics/constraints/Wall','../math/Vector'],function(require, exports, module) {
@@ -14885,7 +14880,7 @@ define('famous/transitions/WallTransition',['require','exports','module','../phy
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/utilities/KeyCodes',['require','exports','module'],function(require, exports, module) {
@@ -14978,7 +14973,7 @@ define('famous/utilities/KeyCodes',['require','exports','module'],function(requi
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 // TODO fix func-style
 /*eslint func-style: [0, "declaration"] */
@@ -15182,7 +15177,7 @@ define('famous/utilities/Timer',['require','exports','module','../core/Engine'],
  *
  * Owner: mike@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/ContextualView',['require','exports','module','../core/Entity','../core/Transform','../core/EventHandler','../core/OptionsManager'],function(require, exports, module) {
@@ -15199,6 +15194,10 @@ define('famous/views/ContextualView',['require','exports','module','../core/Enti
      * @class ContextualView
      * @constructor
      * @param {Options} [options] An object of configurable options.
+     *
+     * Deprecated: Use SizeAwareView when creating views that need to be
+     * aware of their parent's size.
+     * @deprecated
      */
     function ContextualView(options) {
         this.options = Object.create(this.constructor.DEFAULT_OPTIONS || ContextualView.DEFAULT_OPTIONS);
@@ -15267,7 +15266,7 @@ define('famous/views/ContextualView',['require','exports','module','../core/Enti
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/SequentialLayout',['require','exports','module','../core/OptionsManager','../core/Entity','../core/Transform','../core/ViewSequence','../utilities/Utility'],function(require, exports, module) {
@@ -15422,6 +15421,7 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
         return {
             transform: parentSpec.transform,
             origin: parentSpec.origin,
+            opacity: parentSpec.opacity,
             size: this.getSize(),
             target: result
         };
@@ -15436,7 +15436,7 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/Deck',['require','exports','module','../core/Transform','../core/OptionsManager','../transitions/Transitionable','../utilities/Utility','./SequentialLayout'],function(require, exports, module) {
@@ -15580,7 +15580,7 @@ define('famous/views/Deck',['require','exports','module','../core/Transform','..
  *
  * Owner: david@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/DrawerLayout',['require','exports','module','../core/RenderNode','../core/Transform','../core/OptionsManager','../transitions/Transitionable','../core/EventHandler'],function(require, exports, module) {
@@ -15893,7 +15893,7 @@ define('famous/views/DrawerLayout',['require','exports','module','../core/Render
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/RenderController',['require','exports','module','../core/Modifier','../core/RenderNode','../core/Transform','../transitions/Transitionable','../core/View'],function(require, exports, module) {
@@ -16232,7 +16232,7 @@ define('famous/views/RenderController',['require','exports','module','../core/Mo
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/EdgeSwapper',['require','exports','module','../transitions/CachedMap','../core/Entity','../core/EventHandler','../core/Transform','./RenderController'],function(require, exports, module) {
@@ -16339,7 +16339,7 @@ define('famous/views/EdgeSwapper',['require','exports','module','../transitions/
  *
  * Owner: mike@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/FlexibleLayout',['require','exports','module','../core/Entity','../core/Transform','../core/OptionsManager','../core/EventHandler','../transitions/Transitionable'],function(require, exports, module) {
@@ -16569,7 +16569,7 @@ define('famous/views/FlexibleLayout',['require','exports','module','../core/Enti
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/Flipper',['require','exports','module','../core/Transform','../transitions/Transitionable','../core/RenderNode','../core/OptionsManager'],function(require, exports, module) {
@@ -16720,7 +16720,7 @@ define('famous/views/Flipper',['require','exports','module','../core/Transform',
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/GridLayout',['require','exports','module','../core/Entity','../core/RenderNode','../core/Transform','../core/ViewSequence','../core/EventHandler','../core/Modifier','../core/OptionsManager','../transitions/Transitionable','../transitions/TransitionableTransform'],function(require, exports, module) {
@@ -16949,7 +16949,7 @@ define('famous/views/GridLayout',['require','exports','module','../core/Entity',
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/HeaderFooterLayout',['require','exports','module','../core/Entity','../core/RenderNode','../core/Transform','../core/OptionsManager'],function(require, exports, module) {
@@ -17606,7 +17606,7 @@ define('famous/views/Scroller',['require','exports','module','../core/Entity','.
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/Scrollview',['require','exports','module','../physics/PhysicsEngine','../physics/bodies/Particle','../physics/forces/Drag','../physics/forces/Spring','../core/EventHandler','../core/OptionsManager','../core/ViewSequence','../views/Scroller','../utilities/Utility','../inputs/GenericSync','../inputs/ScrollSync','../inputs/TouchSync'],function(require, exports, module) {
@@ -18265,7 +18265,7 @@ define('famous/views/Scrollview',['require','exports','module','../physics/Physi
  *
  * Owner: felix@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/views/ScrollContainer',['require','exports','module','../surfaces/ContainerSurface','../core/EventHandler','./Scrollview','../utilities/Utility','../core/OptionsManager'],function(require, exports, module) {
@@ -18364,9 +18364,103 @@ define('famous/views/ScrollContainer',['require','exports','module','../surfaces
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  *
+ * Owner: arkady@famo.us
+ * @license MPL 2.0
+ * @copyright Famous Industries, Inc. 2015
+ */
+
+define('famous/views/SizeAwareView',['require','exports','module','../core/View','../core/Entity','../core/Transform'],function(require, exports, module) {
+    var View      = require('../core/View');
+    var Entity    = require('../core/Entity');
+    var Transform = require('../core/Transform');
+
+    /*
+     *  A View that keeps track of the parent's resize, passed down from the
+     *  commit function. This can be anything higher in the render tree,
+     *  either the engine, or a modifier with a size, or a custom render function
+     *  that changes the size.
+     *
+     *  Views that inherit from SizeAwareView have a .getParentSize() method
+     *  that can be queried at any point as well as a 'parentResize' event on
+     *  the View's '_eventInput' that can be listened to for immediate notifications
+     *  of size changes.
+     *
+     *  @class SizeAwareView
+     */
+    function SizeAwareView() {
+        View.apply(this, arguments);
+        this._id = Entity.register(this);
+        this._parentSize = []; //Store reference to parent size.
+    }
+
+    SizeAwareView.prototype = Object.create(View.prototype);
+    SizeAwareView.prototype.constructor = SizeAwareView;
+
+    /*
+     * Commit the content change from this node to the document.
+     * Keeps track of parent's size and fires 'parentResize' event on
+     * eventInput when it changes.
+     *
+     * @private
+     * @method commit
+     * @param {Object} context
+     */
+    SizeAwareView.prototype.commit = function commit(context) {
+        var transform = context.transform;
+        var opacity = context.opacity;
+        var origin = context.origin;
+
+        // Update the reference to view's parent size if it's out of sync with
+        // the commit's context. Notify the element of the resize.
+        if (!this._parentSize || this._parentSize[0] !== context.size[0] ||
+            this._parentSize[1] !== context.size[1]) {
+            this._parentSize[0] = context.size[0];
+            this._parentSize[1] = context.size[1];
+            this._eventInput.emit('parentResize', this._parentSize);
+            if (this.onResize) this.onResize(this._parentSize);
+        }
+
+        if (this._parentSize) {
+          transform = Transform.moveThen([
+              -this._parentSize[0]*origin[0],
+              -this._parentSize[1]*origin[1],
+              0], transform);
+        }
+
+        return {
+            transform: transform,
+            opacity: opacity,
+            size: this._parentSize,
+            target: this._node.render()
+        };
+    };
+
+    /*
+     * Get view's parent size.
+     * @method getSize
+     */
+    SizeAwareView.prototype.getParentSize = function getParentSize() {
+        return this._parentSize;
+    };
+
+    /*
+     * Actual rendering happens in commit.
+     * @method render
+     */
+    SizeAwareView.prototype.render = function render() {
+        return this._id;
+    };
+
+    module.exports = SizeAwareView;
+});
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/widgets/NavigationBar',['require','exports','module','../core/Scene','../core/Surface','../core/Transform','../core/View'],function(require, exports, module) {
@@ -18512,7 +18606,7 @@ define('famous/widgets/NavigationBar',['require','exports','module','../core/Sce
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/widgets/Slider',['require','exports','module','../core/Surface','../surfaces/CanvasSurface','../core/Transform','../core/EventHandler','../math/Utilities','../core/OptionsManager','../inputs/MouseSync','../inputs/TouchSync','../inputs/GenericSync'],function(require, exports, module) {
@@ -18649,7 +18743,7 @@ define('famous/widgets/Slider',['require','exports','module','../core/Surface','
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
 
 define('famous/widgets/ToggleButton',['require','exports','module','../core/Surface','../core/EventHandler','../views/RenderController'],function(require, exports, module) {
@@ -18823,9 +18917,9 @@ define('famous/widgets/ToggleButton',['require','exports','module','../core/Surf
  *
  * Owner: mark@famo.us
  * @license MPL 2.0
- * @copyright Famous Industries, Inc. 2014
+ * @copyright Famous Industries, Inc. 2015
  */
-
+/*eslint-disable new-cap */
 define('famous/widgets/TabBar',['require','exports','module','../utilities/Utility','../core/View','../views/GridLayout','./ToggleButton'],function(require, exports, module) {
     var Utility = require('../utilities/Utility');
     var View = require('../core/View');

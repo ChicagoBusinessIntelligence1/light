@@ -1,3 +1,35 @@
+## 0.3.5
+
+### General
+
+- Update .gitignore
+- Update copyright year
+- Update linter
+- update distribution generator
+- Fix broken links to http://famo.us
+
+### Bug Fixes
+
+- Famous/core
+    - Fix container memory leak on migration
+
+- Famous/math
+    - Fix Matrix.transpose
+    - Fix Random
+    - Update Matrix.multiply documentation
+    - Fix Quaternion.slerp
+
+- Famous/views
+    - Fix caching in ImageSurface
+    - Pass parent opacity through SequentialLayout
+    - Add SizeAwareView
+
+- Famous/physics
+    - Fix Curve constraint
+
+- Famous/transitions
+    - Transitionable.delay fix
+
 ## 0.3.4
 
 ### Bug Fixes
