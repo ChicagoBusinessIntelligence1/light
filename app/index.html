@@ -40,7 +40,6 @@
 <div class="main-wrapper">
     <div class="container">
         <div class="center" ui-view></div>
-    </div>
     <sv-footer-nav></sv-footer-nav>
 </div>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -82,7 +81,7 @@
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/lumx/dist/lumx.js"></script>
 <script src="bower_components/famous-angular/dist/famous-angular.js"></script>
-<script src="bower_components/raphael/raphael.js"></script>
+<script src="bower_components/raphael/raphael-min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
@@ -108,9 +107,9 @@
 
 <!-- aside -->
 <script src="scripts/aside/asideIndex.js"></script>
+<script src="scripts/aside/directives/sv-left-aside-nav.js"></script>
 <script src="scripts/aside/directives/sv-aside-nav.js"></script>
 <script src="scripts/aside/directives/sv-elements-nav.js"></script>
-<script src="scripts/aside/directives/sv-frame.js"></script>
 
 <!-- sections -->
 <!-- home -->

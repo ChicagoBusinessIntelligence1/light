@@ -212,6 +212,12 @@
 md-button.b-close {
   width: 30px !important;
 }
+md-item.aside-elem a {
+  height: 40px !important;
+  cursor: pointer;
+  font-size: 14px;
+  color: #393939;
+}
 .animation-test {
   width: 200px;
   height: 200px;
