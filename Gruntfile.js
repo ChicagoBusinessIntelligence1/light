@@ -11,30 +11,41 @@ var enterInside = function (target, before, insert) {
     }
 
     var test = target.indexOf(insert);
+    console.log(test);
+
+
+
     if (test > 0)return target;
 
-    var start;
+    var start, startAfterIndex;
     try {
         var temp = 0;
         before.forEach(function (txt) {
             temp = target.indexOf(txt, temp);
-        })
+        });
         start = target.indexOf('>', temp) + 1;
+        start = target.indexOf('Index', start) + 1;
+        start = target.indexOf('>', start) + 1;
+        start = target.indexOf('>', start) + 1;
+
     } catch (e) {
         console.log(e);
         start = target.indexOf(before);
     }
 
-    var p1 = target.substring(0, start)+newLine;
+    var p1 = target.substring(0, start) + newLine;
     var p2 = target.substring(start);
-    return p1  + insert + p2;
+    return p1 + insert + p2;
 }
+
 var removeFromInside = function (target, remove) {
     if (target == undefined)
         return target;
+    remove = remove.trim();
 
-    target = target.replace(remove, '');
-    return target;
+    var targetArr = target.split(remove);
+
+    return target[0].substring(0,target[0].length-2)+target[1];
 }
 
 
@@ -278,7 +289,7 @@ module.exports = function (grunt) {
         var moduleDirectirized = processModule(module);
 
 //     C        //
-        var d = 'app/scripts/'+moduleDirectirized   +'/services/';
+        var d = 'app/scripts/' + moduleDirectirized + '/services/';
         var t = 'Serv.js';
         var serv = grunt.file.read('templates/serv.tpl');
 
@@ -287,7 +298,6 @@ module.exports = function (grunt) {
 
 
         var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname).replace(/#module#/g, module);
-
 
 
         // register
@@ -340,7 +350,7 @@ module.exports = function (grunt) {
         var moduleDirectirized = processModule(module);
 
 //     C        //
-        var d = 'app/scripts/'+moduleDirectirized+'/filters/';
+        var d = 'app/scripts/' + moduleDirectirized + '/filters/';
         var t = '.js';
 
 
@@ -353,7 +363,6 @@ module.exports = function (grunt) {
         var filtr = filt.replace(/#name#/g, name).replace(/#module#/g, module);
 
 
-
         var apath = 'app/scripts/app.js';
         var app = grunt.file.read(apath);
 
@@ -361,7 +370,7 @@ module.exports = function (grunt) {
         var before = placeToInsert || '<!-- links -->';
         /////////////////// index
         var ipath = 'app/index.html';
-        var src = '\r\n<script src="scripts/'+moduleDirectirized+'/filters/' + name + '.js"></script>';
+        var src = '\r\n<script src="scripts/' + moduleDirectirized + '/filters/' + name + '.js"></script>';
         var indf = grunt.file.read(ipath);
         //////////////////
         if (rm) {
@@ -386,10 +395,9 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('d', function (dname, dtype) {
-        dname = dname.charAt(0).toLowerCase()+ dname.substr(1);
+        dname = dname.charAt(0).toLowerCase() + dname.substr(1);
 //        delete option
         var rm = grunt.option('rm');
-
 
 
         rm = (rm === undefined) ? false : rm;
@@ -406,7 +414,7 @@ module.exports = function (grunt) {
         var placeToInsert = module.split('.');
         var before = placeToInsert || '<!-- links -->';
 
-        var d = 'app/scripts/'+moduleDirectirized+'/directives/';
+        var d = 'app/scripts/' + moduleDirectirized + '/directives/';
         var directive = grunt.file.read('templates/dir.tpl');
         dname = 'sv-' + _.str.dasherize(dname);
         var dnames = dname.toLowerCase().split('-');
@@ -428,19 +436,18 @@ module.exports = function (grunt) {
 
         jnameDashed = _.str.dasherize(jname);
 
-
         var oname = dname;
         var directivef = directive.replace(/#uname#/g, uname).replace(/#lname#/g, lname).replace(/#module#/g, module)
             .replace(/#jname#/g, jname).replace(/#dname#/g, dname);
 
         var dirFileName = d + jnameDashed + '.js';
-        dirFileName = dirFileName.replace(/--/g,'-');
+        dirFileName = dirFileName.replace(/--/g, '-');
+
         if (!rm)
             grunt.file.write(dirFileName, directivef);
         else {
             delFileDep(dirFileName);
         }
-
 
 
         var apath = 'app/scripts/app.js';
@@ -449,7 +456,7 @@ module.exports = function (grunt) {
 
         /////////////////// index/
         var ipath = 'app/index.html';
-        var src = '\r\n<script src="scripts/'+moduleDirectirized+'/directives/' + jnameDashed + '.js"></script>';
+        var src = '\r\n<script src="scripts/' + moduleDirectirized + '/directives/' + jnameDashed + '.js"></script>';
         var indf = grunt.file.read(ipath);
         //////////////////
         var directiveTemplate = '.well ' + oname + ' Template';
