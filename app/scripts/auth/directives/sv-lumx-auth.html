@@ -13,18 +13,13 @@
         </div>
     </div>
     <div class="dialog__content">
-        <fa-app style='width:{{loginW}}px;height:{{loginH}}px'>
-            <fa-flipper>
-                <fa-modifier fa-size="[200, 200]" fa-align='[.5,.5]' fa-origin='[.5,.5]'>
-                    <fa-surface fa-click="flipIt()">
-                        <div flex-item>
-                            <sv-login-icon></sv-login-icon>
-                        </div>
-                    </fa-surface>
+        <fa-app style={{'width:'+w+'px;height:'+h+'px'}}>
+            <fa-grid-layout fa-options='myGridLayoutOptions' id="grid">
+                <fa-modifier ng-repeat="grid in grids"
+                             fa-size="[100, 100]">
+                    <fa-surface fa-background-color="grid.bgColor"></fa-surface>
                 </fa-modifier>
-                <fa-modifier fa-size="[200, 200]" fa-align='[.5,.5]' fa-origin='[.5,.5]'>
-                    <fa-surface fa-click="flipIt()">Flip me again!</fa-surface>
-                </fa-modifier>
-            </fa-flipper>
+            </fa-grid-layout>
+        </fa-app>
     </div>
 </lx-dialog>
