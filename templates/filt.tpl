@@ -1,10 +1,10 @@
 (function () {
-'use strict';
+    'use strict';
 
-angular.module('#module#')
-  .filter('#name#', function () {
-    return function (input) {
-      return 'test filter: ' + input;
-    };
-  });
+    angular.module('#module#')
+        .filter('#name#', function () {
+            return function (input) {
+                return 'test filter: ' + input;
+            };
+        });
 })();
