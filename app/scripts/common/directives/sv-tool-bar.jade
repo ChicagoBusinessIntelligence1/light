@@ -1,4 +1,11 @@
-md-toolbar(layout='row')
-	button.menuBtn(ng-click="toggleSidenav('left')", hide-gt-sm='')
-		span.visually-hidden Menu
-	h1 New Light
+md-toolbar(layout='row' layout-align='space-between center')
+	div(flex-md='25' flex-sm="20")
+		button.menuBtn(ng-click="toggleSidenav('left')", hide-gt-sm='')
+			span.visually-hidden Menu
+	div(flex-md='50' flex-sm="60")
+		.header-logo
+			a(ui-sref='app.home')
+				img.img-responsive(ng-src="img/logo/newLightLogo580.png")
+	div(flex-md='25' flex-sm="20")
+		sv-svet-auth
+

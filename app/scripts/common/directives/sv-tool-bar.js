@@ -5,11 +5,8 @@
         .directive('svToolBar', function () {
             return {
                 templateUrl: 'scripts/common/directives/sv-tool-bar.html',
-                replace:true,
-                scope:{},
-                link: function ($scope, element, attr) {
+                replace:true
 
-                }
             };
         });
 })();

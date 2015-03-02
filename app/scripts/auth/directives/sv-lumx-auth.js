@@ -40,7 +40,6 @@
                     $scope.myGridLayoutOptions = {
                         dimensions: $scope.dimensions // specifies number of columns and rows
                     };
-                    console.log($scope.myGridLayoutOptions.dimensions);
 
                     $scope.win.bind('resize', function () {
                         $scope.$apply(function () {
@@ -55,7 +54,6 @@
                             $scope.myGridLayoutOptions = {
                                 dimensions: $scope.dimensions
                             }
-                            console.log($scope.myGridLayoutOptions.dimensions);
                         });
                     });
 
