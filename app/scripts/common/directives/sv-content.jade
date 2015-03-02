@@ -18,9 +18,9 @@ div(layout='row', flex='')
 			div
 				md-button.md-primary(ng-click='toggleRight()')
 					| Toggle right
-	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
-		md-toolbar.md-accent
-			h1.md-toolbar-tools Sidenav Right
+	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-locked-open="$media('gt-md')")
+		md-toolbar.md-accent(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
+			button.btn.btn--m.btn--fab(ng-click='close()' hide-gt-md='')
+				i.mdi.mdi-close
+			span Archive
 		md-content.md-padding(ng-controller='RightCtrl')
-			md-button.md-primary(ng-click='close()')
-				| Close Sidenav Right
