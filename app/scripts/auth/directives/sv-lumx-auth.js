@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('auth')
-        .directive('svLumxAuth', function ($window,$famous) {
+        .directive('svLumxAuth', function ($window, $famous) {
             function getDimensions(w) {
                 var large = 760;
                 var tablet = 500;
@@ -26,22 +26,12 @@
             return {
                 templateUrl: 'scripts/auth/directives/sv-lumx-auth.html',
                 controller: function ($scope) {
-                    $scope.flipIt = function() {
-                        $famous.find('fa-flipper')[0].flip();
+                    $scope.flipIt = function (flipperId) {
+                        $famous.find("#" + flipperId)[0].flip();
                     };
                 },
                 link: function ($scope, element, attr) {
                     $scope.win = angular.element($window);
-                    $scope.logWin = angular.element(element[0].children[0]);
-
-
-                    var w = angular.element(element[0].children[0]).width();
-                    var h = $scope.win.height();
-
-                    $scope.w = w;
-                    $scope.h = h;
-
-
                     $scope.win.bind('resize', function () {
                         $scope.$apply(function () {
 
@@ -53,6 +43,17 @@
 
                         });
                     });
+
+                    $scope.logWin = angular.element(element[0].children[0]);
+
+
+                    var w = angular.element(element[0].children[0]).width();
+                    var h = $scope.win.height();
+
+                    $scope.w = w;
+                    $scope.h = h;
+
+
 
 
                 }
