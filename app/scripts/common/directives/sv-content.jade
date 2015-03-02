@@ -1,10 +1,27 @@
 div(layout='row', flex='')
-	md-sidenav.md-sidenav-left.md-whiteframe-z2(layout='column', md-component-id='left', md-is-locked-open="$media('gt-sm')")
-	#content(layout='column', flex='')
-		div
-			| At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-		md-content.md-padding(layout='column', flex='')
-			md-list
-				md-item
-					md-item-content
-						| Home
+	md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-md')")
+		md-toolbar.md-accent( hide-gt-md='' ng-controller='LeftCtrl')
+			md-toolbar-tools
+				span Advertise with us
+				button.btn.btn--m.btn--fab(ng-click='close()')
+					i.mdi.mdi-close
+		md-content.md-padding(ng-controller='LeftCtrl')
+			p(hide-md='', show-gt-md='')
+				| This sidenav is locked open on your device. To go back to the default behavior,
+				| narrow your display.
+	md-content.md-padding(flex='')
+		div(layout='column', layout-fill='', layout-align='center center')
+			p
+				| The left sidenav will 'lock open' on a medium (>=960px wide) device.
+			div
+				md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='')
+					| Toggle left
+			div
+				md-button.md-primary(ng-click='toggleRight()')
+					| Toggle right
+	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
+		md-toolbar.md-accent
+			h1.md-toolbar-tools Sidenav Right
+		md-content.md-padding(ng-controller='RightCtrl')
+			md-button.md-primary(ng-click='close()')
+				| Close Sidenav Right
