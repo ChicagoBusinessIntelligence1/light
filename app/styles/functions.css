@@ -2,27 +2,3 @@
       =Variables
 ***********************/
 /*color-skin = #43464D*/
-/**********************
-    =Color Backgrounds
-***********************/
-/*.yellow*/
-/*background-color lightgoldenrodyellow*/
-/*.red*/
-/*background-color red*/
-/*.orange*/
-/*background-color coral*/
-/*.purple*/
-/*background-color mediumpurple*/
-/*.blue*/
-/*background-color deepskyblue*/
-/*.green*/
-/*background-color green*/
-/*.grey*/
-/*background-color lightgrey*/
-/**********************
-      =Mixins
-***********************/
-/*comma-list*/
-.table-elements {
-  margin: 0 auto;
-}

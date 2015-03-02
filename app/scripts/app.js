@@ -14,6 +14,7 @@ var app = angular.module('app', [
 
     // Site section modules
     'sections.home',
+    'sections.politics',
 
     // 3rd party modules
     'firebase',
@@ -47,6 +48,11 @@ var app = angular.module('app', [
                 templateUrl: '../views/login.html'
             })
 
+			.state("app.politics", {
+				url: "/politics",
+				controller:"PoliticsCtrl",
+				templateUrl: "scripts/sections/politics/views/politics.html"
+			})
 //#state
     });
 

@@ -1,18 +1,9 @@
-.table-elements {
-  margin: 0 auto;
-}
 /**********************
      =top-navbar
 ***********************/
-.navbar-header {
-  padding: 10px;
-  padding-bottom: 5px;
-}
-.navbar-form {
-  margin: 0px;
-}
-.nav-auth li a {
-  padding: 0px 5px;
+.header-logo {
+  margin-bottom: 0px;
+  padding: 15px;
 }
 .navbar-brand {
   display: inline-block;
@@ -23,12 +14,20 @@
 .navbar-brand img {
   display: inline-block;
 }
-.navbar-logo {
-  margin-bottom: 0px;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
-  height: 120px !important;
-  background-color: #1b4b94 !important;
+.menuBtn {
+  margin: 10px !important;
+  top: 5px;
+  left: 0px;
+}
+.navbar-header {
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.navbar-form {
+  margin: 0px;
+}
+.nav-auth li a {
+  padding: 0px 5px;
 }
 .navbar-svet li a {
   color: #393939 !important;

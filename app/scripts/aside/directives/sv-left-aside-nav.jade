@@ -1,1 +1,12 @@
-.well sv-left-aside-nav Template
+div(layout='column' layout-align="left center")
+	md-list
+		md-item.aside-elem
+			md-item-content
+				a(ui-sref='app.admin')
+					i.fa.fa-gears.fa-fw
+					span.text &nbsp Admin Panel
+		md-item.aside-elem
+			md-item-content
+				a(ui-sref='app.education')
+					i.fa.fa-bell.fa-fw
+					span.text &nbsp Classified
