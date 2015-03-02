@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('#module#')
-        .directive('#jname#', function () {
+    angular.module('common')
+        .directive('svToolBar', function () {
             return {
-                templateUrl: 'scripts/#module#/directives/#dname#.html',
+                templateUrl: 'scripts/common/directives/sv-tool-bar.html',
                 replace:true,
                 scope:{},
                 link: function ($scope, element, attr) {
