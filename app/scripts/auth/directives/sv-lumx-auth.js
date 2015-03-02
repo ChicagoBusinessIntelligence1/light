@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('auth')
-        .directive('svLumxAuth', function ($window,$famous) {
+        .directive('svLumxAuth', function ($window, $famous) {
             function getDimensions(w) {
                 var large = 760;
                 var tablet = 500;
@@ -26,36 +26,34 @@
             return {
                 templateUrl: 'scripts/auth/directives/sv-lumx-auth.html',
                 controller: function ($scope) {
-                    $scope.grids = [{bgColor: "orange"}, {bgColor: "red"}, {bgColor: "green"}, {bgColor: "yellow"}];
-
+                    $scope.flipIt = function (flipperId) {
+                        $famous.find("#" + flipperId)[0].flip();
+                    };
                 },
                 link: function ($scope, element, attr) {
                     $scope.win = angular.element($window);
-
-                    var w = angular.element(element[0].children[0]).width();
-                    var h = $scope.win.height();
-                    $scope.w = w;
-                    $scope.h = h;
-                    $scope.dimensions = getDimensions(w);
-                    $scope.myGridLayoutOptions = {
-                        dimensions: $scope.dimensions // specifies number of columns and rows
-                    };
-
                     $scope.win.bind('resize', function () {
                         $scope.$apply(function () {
 
-                            w = angular.element(element[0].children[0]).width();
-                            h = $window.innerHeight;
+                            w = $scope.logWin.width();
+                            h = $scope.win.height();
 
                             $scope.w = w;
                             $scope.h = h;
 
-                            $scope.dimensions = getDimensions(w);
-                            $scope.myGridLayoutOptions = {
-                                dimensions: $scope.dimensions
-                            }
                         });
                     });
+
+                    $scope.logWin = angular.element(element[0].children[0]);
+
+
+                    var w = angular.element(element[0].children[0]).width();
+                    var h = $scope.win.height();
+
+                    $scope.w = w;
+                    $scope.h = h;
+
+
 
 
                 }
