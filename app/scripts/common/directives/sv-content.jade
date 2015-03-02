@@ -9,15 +9,13 @@ div(layout='row', flex='')
 				| This sidenav is locked open on your device. To go back to the default behavior,
 				| narrow your display.
 	md-content.md-padding(flex='')
-		div(layout='column', layout-fill='', layout-align='center center')
-			p
-				| The left sidenav will 'lock open' on a medium (>=960px wide) device.
-			div
-				md-button.md-primary(ng-click='toggleLeft()', hide-gt-md='')
-					| Toggle left
-			div
-				md-button.md-primary(ng-click='toggleRight()')
-					| Toggle right
+		div(layout='row', layout-align='center center', layout-margin, hide-gt-md)
+			md-button.md-primary(ng-click='toggleLeft()')
+				i.mdi.mdi-newspaper
+				| &nbsp More News Sections
+			md-button.md-primary(ng-click='toggleRight()')
+				i.fa.fa-file-archive-o.fa-fw
+				| News Archive
 	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-locked-open="$media('gt-md')")
 		md-toolbar.md-accent(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
 			button.btn.btn--m.btn--fab(ng-click='close()' hide-gt-md='')
