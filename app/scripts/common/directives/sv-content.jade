@@ -1,10 +1,9 @@
 div(layout='row', flex='')
 	md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-md')")
-		md-toolbar.md-accent( hide-gt-md='' ng-controller='LeftCtrl')
-			md-toolbar-tools
-				span Advertise with us
-				button.btn.btn--m.btn--fab(ng-click='close()')
-					i.mdi.mdi-close
+		md-toolbar.md-accent( hide-gt-md='' ng-controller='LeftCtrl' layout='row' layout-align='space-around center')
+			span Advertise with us
+			button.btn.btn--m.btn--fab(ng-click='close()')
+				i.mdi.mdi-close
 		md-content.md-padding(ng-controller='LeftCtrl')
 			p(hide-md='', show-gt-md='')
 				| This sidenav is locked open on your device. To go back to the default behavior,
