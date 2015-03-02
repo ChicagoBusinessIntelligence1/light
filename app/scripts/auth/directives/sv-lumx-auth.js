@@ -26,36 +26,31 @@
             return {
                 templateUrl: 'scripts/auth/directives/sv-lumx-auth.html',
                 controller: function ($scope) {
-                    $scope.grids = [{bgColor: "orange"}, {bgColor: "red"}, {bgColor: "green"}, {bgColor: "yellow"}];
-
+                    $scope.flipIt = function() {
+                        $famous.find('fa-flipper')[0].flip();
+                    };
                 },
                 link: function ($scope, element, attr) {
                     $scope.win = angular.element($window);
+                    $scope.logWin = angular.element(element[0].children[0]);
+
 
                     var w = angular.element(element[0].children[0]).width();
                     var h = $scope.win.height();
+
                     $scope.w = w;
                     $scope.h = h;
-                    $scope.dimensions = getDimensions(w);
-                    $scope.myGridLayoutOptions = {
-                        dimensions: $scope.dimensions // specifies number of columns and rows
-                    };
-                    console.log($scope.myGridLayoutOptions.dimensions);
+
 
                     $scope.win.bind('resize', function () {
                         $scope.$apply(function () {
 
-                            w = angular.element(element[0].children[0]).width();
-                            h = $window.innerHeight;
+                            w = $scope.logWin.width();
+                            h = $scope.win.height();
 
                             $scope.w = w;
                             $scope.h = h;
 
-                            $scope.dimensions = getDimensions(w);
-                            $scope.myGridLayoutOptions = {
-                                dimensions: $scope.dimensions
-                            }
-                            console.log($scope.myGridLayoutOptions.dimensions);
                         });
                     });
 
