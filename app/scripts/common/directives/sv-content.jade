@@ -1,6 +1,6 @@
 div(layout='row', flex='')
 	md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-md')")
-		md-toolbar.md-accent( hide-gt-md='' ng-controller='LeftCtrl' layout='row' layout-align='space-around center')
+		md-toolbar.md-accent( hide-gt-lg='' ng-controller='LeftCtrl' layout='row' layout-align='space-around center')
 			span Advertise with us
 			button.btn.btn--m.btn--fab(ng-click='close()')
 				i.mdi.mdi-close
@@ -10,13 +10,21 @@ div(layout='row', flex='')
 				| This sidenav is locked open on your device. To go back to the default behavior,
 				| narrow your display.
 	md-content.md-padding(flex='')
-		div(layout='row', layout-align='center center', layout-margin, hide-gt-md)
+		div(layout='row', layout-align='center center', layout-margin, hide-gt-md='')
 			md-button.md-primary(ng-click='toggleLeft()')
 				i.mdi.mdi-newspaper
 				| &nbsp More News Sections
 			md-button.md-primary(ng-click='toggleRight()')
 				i.fa.fa-file-archive-o.fa-fw
 				| News Archive
+		md-grid-list(md-cols-sm='1', md-cols-md='2', md-cols-gt-md='6', md-row-height-gt-md='1:2', md-row-height='2:2', md-gutter='12x', md-gutter-gt-sm='18px')
+			md-grid-tile.blue(md-rowspan='3', md-colspan='3')
+				md-grid-tile-footer
+					h3 #1: (3r x 2c)
+			md-grid-tile.green(md-rowspan='3', md-colspan='3')
+				md-grid-tile-footer
+					h3 #1: (3r x 2c)
+			//sv-home-news-grid
 	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-locked-open="$media('gt-md')")
 		md-toolbar.md-accent(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
 			button.btn.btn--m.btn--fab(ng-click='close()' hide-gt-md='')
