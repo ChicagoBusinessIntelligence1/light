@@ -2,11 +2,9 @@
 
 angular.module('common')
     .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log) {
-        $scope.toggleSidenav = function(menuId) {
+        $scope.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
         };
-
-
         $scope.fenElementActive = {val: 'null'};
         $scope.$watch('auth.user.provider', function (newVal) {
             if (newVal === 'password') {
