@@ -21,118 +21,29 @@ font-app = font-size-custom "Helvetica Neue", Helvetica, Arial
 /**********************
     =Color Backgrounds
 ***********************/
-/*.yellow*/
-  /*background-color lightgoldenrodyellow*/
+.yellow
+  background-color lightgoldenrodyellow
 
-/*.red*/
-  /*background-color red*/
+.red
+  background-color red
 
-/*.orange*/
-  /*background-color coral*/
+.orange
+  background-color coral
 
-/*.purple*/
-  /*background-color mediumpurple*/
+.purple
+  background-color mediumpurple
 
-/*.blue*/
-  /*background-color deepskyblue*/
+.blue
+  background-color deepskyblue
 
-/*.green*/
-  /*background-color green*/
+.green
+  background-color green
 
-/*.grey*/
-  /*background-color lightgrey*/
+.grey
+  background-color lightgrey
 
 /**********************
       =Mixins
 ***********************/
 
-hover-element(color, amount)
-  hover-color(lighten(color, amount))
-  transition(5s)
-  background-color color-darken
 
-hover-editable(color, amount)
-  hover-color(lighten(color, amount))
-
-simple-radius(n)
-  -webkit-border-radius n
-  -moz-border-radius n
-  border-radius n
-
-custom-radius()
-  -webkit-border-radius arguments
-  -moz-border-radius argument
-  border-radius argument
-  border 2px border-default solid unless @border
-
-/*comma-list*/
-inline-list()
-  li
-    display inline
-
-comma-list()
-  inline-list()
-  li
-    &:after
-      content ','
-    &:last-child:after
-      content ''
-
-link-custom()
-  cursor pointer
-  font-size 14px unless @font-size
-  color color-app unless @color
-  &:hover
-  &:active
-  &:focus
-    color lighten(color-app, 40%)
-
-link-light()
-  font-size 14px unless @font-size
-  cursor pointer
-  color lighten(color-app, 97%) !important
-  &:hover
-  &:active
-  &:focus
-    color lighten(color-app, 57%) !important
-
-label-default-head()
-  padding 10px 15px
-  background-color label-default-background
-  border-radius 0px
-  display block
-  font-size 0.9em unless @font-size
-  text-align left
-  margin-bottom 0
-
-post-time(n)
-  font-size n
-  color lighten(color-app, 35%)
-  line-height 24px
-  margin-bottom 0px
-
-.table-elements
-  margin 0 auto
-
-post-style(n)
-  background-color lighten(n, 90%)
-  border-top 1px lighten(n, 80%) solid
-  border-right 1px lighten(n, 80%) solid
-  border-left 1px lighten(n, 80%) solid
-  border-bottom 1px lighten(n, 80%) solid
-  border-radius 0px
-
-post-comment-style(n)
-  background-color lighten(n, 94%)
-  border-right 1px lighten(n, 80%) solid
-  border-left 1px lighten(n, 80%) solid
-  border-bottom 1px lighten(n, 80%) solid
-  border-top 0px
-  border-radius 0px
-
-transition(n)
-  -webkit-transition all n ease
-  -moz-transition all n ease
-  -ms-transition all n ease
-  -o-transition all n ease
-  transition all n ease

@@ -1,10 +1,10 @@
 .text-left(layout='column' layout-align='center')
-	div(layout='row' layout-align='space-between' layout-margin='15')
+	div(layout='row' layout-align='space-between')
 		h1  Breaking News
 		div
 			button.btn.btn--m.btn--fab(lx-ripple='' ng-click='close()')
 				i.mdi.mdi-pencil
-	div(layout='col')
+	div(layout='row')
 		.col-sx-12
 			ul.slide-view.list-unstyled
 				li(ng-repeat="(key,post) in posts | orderBy:'time':true")
