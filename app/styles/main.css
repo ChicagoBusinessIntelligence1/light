@@ -112,6 +112,9 @@ md-item.aside-elem a {
   cursor: pointer;
   font-size: 14px;
 }
+md-warn {
+  color: #fff !important;
+}
 md-grid-list {
   margin: 8px;
 }
