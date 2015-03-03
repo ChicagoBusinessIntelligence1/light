@@ -21,6 +21,10 @@ div(layout='row', flex='')
 				md-button.md-primary(ng-click='toggleRight()')
 					i.fa.fa-file-archive-o.fa-fw
 					| News Archive
+			div(layout='row' layout-margin='10' layout-sm='column')
+				div.well(flex='' flex-order-gt-md='1' flex-order-sm='1')  I am 1
+				div.well(flex='' flex-order-gt-md='2' flex-order-sm='3')  I am 2
+				div.well(flex='' flex-order-gt-md='3' flex-order-sm='2')  I am 3
 		sv-home-news-grid
 	md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-locked-open="$media('gt-lg')")
 		md-toolbar.md-accent(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
@@ -29,3 +33,5 @@ div(layout='row', flex='')
 			span Archive
 		md-content.md-padding(ng-controller='RightCtrl')
 			sv-aside-nav
+			md-button.md-warn.md-raised.md-hue-1(ng-click='openBottomSheet()')
+				| We are on Social Media
