@@ -1,3 +1,3 @@
 'use strict'
 
-var auth = angular.module('auth', ['lumx']);
+var auth = angular.module('auth', ['lumx','famous.angular']);
