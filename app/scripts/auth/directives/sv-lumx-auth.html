@@ -13,65 +13,21 @@
         </div>
     </div>
     <div class="dialog__content">
-        <fa-app style={{'width:'+w+'px;height:'+h+'px'}}>
 
-            <fa-modifier fa-translate="[-w/4,0]">
-                <fa-flipper id="facebook">
-                    <fa-modifier fa-size="[w/2, w/2]" style="cursor: pointer" fa-origin="[0.5,0,5]"
-                                 fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'green'" style='"cursor":"pointer"'
-                                    fa-click="flipIt('facebook')"></fa-surface>
-                    </fa-modifier>
+        <div class="card mt++">
+            <lx-tabs>
+                <lx-tab icon="facebook-box">
+                    <sv-login-form></sv-login-form>
+                </lx-tab>
 
-                    <fa-modifier fa-size="[w/2, w/2]" fa-origin="[0.5,0,5]" fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'grey'" fa-click="flipIt('facebook')">Login</fa-surface>
-                    </fa-modifier>
-                </fa-flipper>
-            </fa-modifier>
+                <lx-tab icon="google-plus-box">
+                    <sv-login-form></sv-login-form>
+                </lx-tab>
 
-            <fa-modifier fa-translate="[w/4,0]">
-                <fa-flipper id="google">
-                    <fa-modifier fa-size="[w/2, w/2]" style="cursor: pointer" fa-origin="[0.5,0,5]"
-                                 fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'red'" style='"cursor":"pointer"'
-                                    fa-click="flipIt('google')"></fa-surface>
-                    </fa-modifier>
+                <lx-tab icon="newspaper">
+                    <sv-login-form></sv-login-form>
+                </lx-tab>
+            </lx-tabs>
+        </div>
 
-                    <fa-modifier fa-size="[w/2, w/2]" fa-origin="[0.5,0,5]" fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'grey'" fa-click="flipIt('google')">Login</fa-surface>
-                    </fa-modifier>
-                </fa-flipper>
-            </fa-modifier>
-
-            <fa-modifier fa-translate="[-w/4,w/2]">
-                <fa-flipper id="twitter">
-                    <fa-modifier fa-size="[w/2, w/2]" style="cursor: pointer" fa-origin="[0.5,0,5]"
-                                 fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'yellow'" style='"cursor":"pointer"'
-                                    fa-click="flipIt('twitter')"></fa-surface>
-                    </fa-modifier>
-
-                    <fa-modifier fa-size="[w/2, w/2]" fa-origin="[0.5,0,5]" fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'grey'" fa-click="flipIt('twitter')">Login</fa-surface>
-                    </fa-modifier>
-                </fa-flipper>
-            </fa-modifier>
-
-            <fa-modifier fa-translate="[w/4,w/2]">
-                <fa-flipper id="svet">
-                    <fa-modifier fa-size="[w/2, w/2]" style="cursor: pointer" fa-origin="[0.5,0,5]"
-                                 fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'black'" style='"cursor":"pointer"'
-                                    fa-click="flipIt('svet')"></fa-surface>
-                    </fa-modifier>
-
-                    <fa-modifier fa-size="[w/2, w/2]" fa-origin="[0.5,0,5]" fa-align="[0.5,0,5]">
-                        <fa-surface fa-background-color="'grey'" fa-click="flipIt('svet')">Login</fa-surface>
-                    </fa-modifier>
-                </fa-flipper>
-            </fa-modifier>
-
-
-        </fa-app>
     </div>
-</lx-dialog>
