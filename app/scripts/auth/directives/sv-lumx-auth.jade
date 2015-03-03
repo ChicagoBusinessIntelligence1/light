@@ -1,5 +1,6 @@
 md-dialog(aria-label='Login')
 	md-content
+		md-subheader.md-sticky-no-effect Login
 		md-tabs(flex)
 			md-tab(label='Facebook')
 				sv-login-form
@@ -7,14 +8,3 @@ md-dialog(aria-label='Login')
 				sv-login-form
 			md-tab(label='Svet')
 				sv-login-form
-		lx-tabs
-				lx-tab(icon='facebook-box')
-					sv-login-form
-				lx-tab(icon='google-plus-box')
-					sv-login-form
-				lx-tab(icon='newspaper')
-					sv-login-form
-
-	.md-actions(layout='row')
-		md-button.md-primary.md-raised(ng-click="login()") Login
-		md-button.md-button.md-raised(ng-click="cancel()") Cancel
