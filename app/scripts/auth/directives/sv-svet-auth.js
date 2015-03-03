@@ -12,10 +12,14 @@
                             targetEvent: ev
                         }).then(function (answer) {
                             $scope.alert = 'You said the information was "' + answer + '".';
-                            }, function () {
-                                $scope.alert = 'You cancelled the dialog.';
-                            });
+                        }, function () {
+                            $scope.alert = 'You cancelled the dialog.';
+                        });
                     };
+
+                    $scope.$on('cancel', function () {
+                        $mdDialog.cancel();
+                    });
                 }
             };
         });
