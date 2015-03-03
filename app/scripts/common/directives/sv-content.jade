@@ -5,13 +5,13 @@ div(layout='row', flex='')
 			span Advertise with us
 			button.btn.btn--m.btn--fab(ng-click='close()')
 				i.mdi.mdi-close
-		md-content.md-padding(ng-controller='LeftCtrl')
+		md-content(ng-controller='LeftCtrl')
+			md-toolbar.md-accent.text-center
+				h3 All News
 			sv-left-aside-nav
-			h2 POPULAR
+			md-toolbar.md-accent.text-center
+				h3 Popular
 			sv-elements-nav
-			p(hide-md='', show-gt-md='')
-				| This sidenav is locked open on your device. To go back to the default behavior,
-				| narrow your display.
 	md-content(flex='')
 		div(layout='column')
 			div(layout='row', layout-align='center center', layout-margin, hide-gt-lg='')
