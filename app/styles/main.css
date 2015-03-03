@@ -9,6 +9,9 @@
 .famous-surface {
   cursor: pointer;
 }
+.login-dialog {
+  width: 500px;
+}
 .header-logo {
   margin-bottom: 0px;
   padding: 15px;

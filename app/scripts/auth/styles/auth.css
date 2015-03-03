@@ -9,3 +9,6 @@
 .famous-surface {
   cursor: pointer;
 }
+.login-dialog {
+  width: 500px;
+}
