@@ -9,8 +9,14 @@
 .famous-surface {
   cursor: pointer;
 }
-.login-dialog {
+.auth-dialog {
   width: 500px;
+}
+.auth-subheader {
+  margin: 0px;
+  font-size: 18px;
+  color: #f5f5f5 !important;
+  background-color: #448aff !important;
 }
 .header-logo {
   margin-bottom: 0px;
@@ -167,7 +173,7 @@ md-grid-list .blue {
   background: #84ffff;
 }
 md-grid-list .darkBlue {
-  background: #80d8ff;
+  background: #3f51b5;
 }
 md-grid-list .deepBlue {
   background: #448aff;
