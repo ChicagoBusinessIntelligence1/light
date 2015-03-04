@@ -97,7 +97,7 @@
 }
 .footer span,
 .footer a {
-  color: #fbfbfb;
+  color: color-lighten;
 }
 .footer-content {
   padding-top: 15px;
