@@ -1,9 +1,10 @@
-div(layout='column')
+div(layout='column' ui-view = '')
 	md-list
 		md-item(ng-repeat="a in articles")
 			md-item-content
 				sv-article-thumb(
-				url='{{a.url}}'
+				state='a.state'
+				id='{{a.id}}'
 				img='{{a.img}}'
 				title='{{a.title}}'
 				)
