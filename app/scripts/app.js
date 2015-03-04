@@ -51,7 +51,8 @@
                 })
 
                 .state("app.politics.article", {
-                    url: "/politics:id",
+                    url: "/politics/:id",
+                    controller: "Politics",
                     templateUrl: "scripts/sections/politics/views/politics-article.html"
                 })
 

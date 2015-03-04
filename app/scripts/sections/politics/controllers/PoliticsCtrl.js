@@ -2,6 +2,7 @@
     'use strict';
     angular.module('sections.politics')
         .controller('Politics', function ($scope, url, $firebase) {
+            console.log('here');
             $scope.articles = [];
             var article1 = {
                 url: 'app.sections/politics/:i',
