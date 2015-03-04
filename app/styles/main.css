@@ -124,8 +124,28 @@ md-item.aside-elem a {
 md-warn {
   color: #fff !important;
 }
+.fs-body-1 {
+  font-size: 18px !important;
+  line-height: 30px;
+}
+.fs-body-2 {
+  font-size: 14px !important;
+  line-height: 24px;
+}
 body {
   font-family: Roboto;
+}
+.light-padding {
+  padding: 15px;
+}
+.light-margin {
+  padding: 15px;
+}
+.light-subheader {
+  color: #494949;
+}
+.padding-left-10 {
+  padding-left: 10px;
 }
 .link-dark {
   color: #393939 !important;
