@@ -97,7 +97,7 @@
 }
 .footer span,
 .footer a {
-  color: color-lighten;
+  color: #fbfbfb;
 }
 .footer-content {
   padding-top: 15px;
@@ -124,6 +124,9 @@ md-item.aside-elem a {
 md-warn {
   color: #fff !important;
 }
+.link-dark {
+  color: #393939 !important;
+}
 .md-raised {
   color: #fff !important;
 }
@@ -131,6 +134,9 @@ md-warn {
   color: #fff !important;
   padding-left: 10px;
   padding-right: 10px;
+}
+md-button .md-warn span {
+  color: #fff !important;
 }
 .margin-right {
   margin-right: 15px;
