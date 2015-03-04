@@ -42,15 +42,15 @@ var removeFromInside = function (target, remove) {
     remove = remove.trim();
 
     var targetArr = target.split(remove);
-    var final='';
+    var final = '';
 
     targetArr.forEach(function (part) {
         if (part.length > 4 && part !== undefined) {
             var end = part.length - 2;
             var isLineEnd = part.substr(end) === '\r\n';
-           if (isLineEnd){
-            part = part.substring(0, end);
-           }
+            if (isLineEnd) {
+                part = part.substring(0, end);
+            }
             final += part;
 
         }
@@ -224,7 +224,9 @@ module.exports = function (grunt) {
         var name = lname.charAt(0).toUpperCase() + lname.substring(1);
 
 
-        var ctrlr = ctrl.replace(/#name#/g, name).replace(/#module#/g, module).replace(/#lname#/g, lname);
+        var ctrlr = ctrl.replace(/#name#/g, name)
+            .replace(/#module#/g, module)
+            .replace(/#lname#/g, lname);
 
 ////////////////
 
@@ -239,7 +241,8 @@ module.exports = function (grunt) {
             '\t\t\t})\r\n';
 
         var apath = 'app/scripts/app.js';
-        var tpath = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + '.jade';
+        var tpath = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.jade';
+        var tpathHtml = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html';
         var app = grunt.file.read(apath);
         if (rm) {
             //app = removeFromInside(app, ref);
@@ -272,10 +275,12 @@ module.exports = function (grunt) {
             var file = d + name + t;
             delFileDep(file);
             delFileDep(tpath);
+            delFileDep(tpathHtml);
             //grunt.file.delete(tpath);
         } else {
             grunt.file.write(d + name + t, ctrlr);
-            grunt.file.write(tpath, grunt.file.read("templates/ctrl-template.tpl"));
+            grunt.file.write(tpath, '.well content');
+            grunt.file.write(tpathHtml, '<div class="well">content</div>');
         }
         grunt.file.write(apath, app);
         grunt.file.write(ipath, indf);
@@ -447,7 +452,10 @@ module.exports = function (grunt) {
         jnameDashed = _.str.dasherize(jname);
 
         var oname = dname;
-        var directivef = directive.replace(/#uname#/g, uname).replace(/#lname#/g, lname).replace(/#module#/g, module)
+        var directivef = directive.replace(/#uname#/g, uname)
+            .replace(/#lname#/g, lname)
+            .replace(/#module#/g, module)
+            .replace(/#moduleDirectirized#/g, moduleDirectirized)
             .replace(/#jname#/g, jname).replace(/#dname#/g, dname);
 
         var dirFileName = d + jnameDashed + '.js';
@@ -462,6 +470,7 @@ module.exports = function (grunt) {
 
         var apath = 'app/scripts/app.js';
         var tpath = d + oname + '.jade';
+        var tpathHtml = d + oname + '.html';
         var app = grunt.file.read(apath);
 
         /////////////////// index/
@@ -470,14 +479,8 @@ module.exports = function (grunt) {
         var indf = grunt.file.read(ipath);
         //////////////////
         var directiveTemplate = '.well ' + oname + ' Template';
+        var directiveTemplateHtml = '<div class="well">' + oname + ' Template</div>';
         /////////////////
-        if (dtype && dtype == 'info') {
-            var directiveTemplate = grunt.file.read('templates/dir-info.tpl');
-        }
-
-        if (dtype && dtype == 'edit') {
-            var directiveTemplate = grunt.file.read('templates/dir-edit.tpl');
-        }
 
 
 /////
@@ -491,8 +494,10 @@ module.exports = function (grunt) {
 
         if (rm) {
             delFileDep(tpath);
+            delFileDep(tpathHtml);
         } else {
             grunt.file.write(tpath, directiveTemplate);
+            grunt.file.write(tpathHtml, directiveTemplateHtml);
         }
         grunt.file.write(ipath, indf);
 

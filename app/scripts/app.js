@@ -31,7 +31,6 @@
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
 
-
             $stateProvider
                 .state('app', {
                     abstract: true,
@@ -40,26 +39,16 @@
                 })
                 .state('app.home', {
                     url: '/home',
-                    controller: 'Home',
+                    controller: 'HomeCtrl',
                     templateUrl: 'scripts/sections/home/views/home.html'
-                })
-
-                .state('app.contact', {
-                    url: '/contact',
-                    controller: 'ContactusCtrl',
-                    templateUrl: '../views/contactus.html'
-                })
-                .state('app.admin', {
-                    url: '/admin',
-                    controller: 'LoginCtrl',
-                    templateUrl: '../views/login.html'
                 })
 
                 .state("app.politics", {
                     url: "/politics",
-                    controller: "PoliticsCtrl",
+                    controller: "Politics",
                     templateUrl: "scripts/sections/politics/views/politics.html"
                 })
+			
 //#state
         });
 
