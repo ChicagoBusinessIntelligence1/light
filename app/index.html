@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/bootstrap-additions.min.css">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="bower_components/angular-material/modules/css/angular-material-layout.css">
 
     <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+    <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.min.css">
     <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index-container.css">
@@ -32,12 +34,9 @@
 </head>
 <body layout="column" ng-controller="Main">
 
-<sv-tool-bar></sv-tool-bar>
-<!--<sv-top-nav></sv-top-nav>-->
-<sv-content>
-</sv-content>
+<div ui-view=""></div>
 
-
+<script src="bower_components/famous/dist/famous-global.js"></script>
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -55,6 +54,7 @@
 <script src="bower_components/velocity/velocity.ui.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/lumx/dist/lumx.js"></script>
+<script src="bower_components/famous-angular/dist/famous-angular.js"></script>
 <script src="bower_components/raphael/raphael.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
@@ -65,6 +65,10 @@
 
 <!-- common -->
 <script src="scripts/common/commonIndex.js"></script>
+<script src="scripts/common/directives/sv-main-right.js"></script>
+<script src="scripts/common/directives/sv-main-content.js"></script>
+<script src="scripts/common/directives/sv-main-left.js"></script>
+<script src="scripts/common/directives/sv-home-news-grid.js"></script>
 <script src="scripts/common/directives/sv-tool-bar.js"></script>
 <script src="scripts/common/directives/sv-content.js"></script>
 <script src="scripts/common/controllers/MainCtrl.js"></script>
@@ -90,10 +94,10 @@
 <!-- home -->
 <script src="scripts/sections/home/homeIndex.js"></script>
 <script src="scripts/sections/home/controllers/HomeCtrl.js"></script>
-<script src="scripts/sections/home/directives/sv-article.js"></script>
 
 <!-- politics -->
 <script src="scripts/sections/politics/politicsIndex.js"></script>
+<script src="scripts/sections/politics/directives/sv-politics-content.js"></script>
 <script src="scripts/sections/politics/controllers/PoliticsCtrl.js"></script>
 
 
