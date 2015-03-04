@@ -124,6 +124,9 @@ md-item.aside-elem a {
 md-warn {
   color: #fff !important;
 }
+body {
+  font-family: Roboto;
+}
 .link-dark {
   color: #393939 !important;
 }
