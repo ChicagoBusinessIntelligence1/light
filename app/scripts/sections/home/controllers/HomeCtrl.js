@@ -1,7 +1,24 @@
 'use strict';
 
 angular.module('sections.home')
-    .controller('HomeCtrl', function ($scope, url, $firebase) {
+    .controller('Home', function ($scope, url, $firebase) {
 
-        console.log('I am');
+        var repo = url + 'posts';
+        $scope.posts = $firebase(new Firebase(repo)).$asArray();
+
+
+        $scope.addComment = function (postId, comment, userName, userPic, userLink) {
+            var commentsUrl = repo + '/' + postId + '/comments';
+            $scope.comments = $firebase(new Firebase(commentsUrl)).$asArray();
+            if (_.isUndefined(userLink)) {
+                userLink = '#';
+            }
+            $scope.comments.$add(({
+                comment: comment,
+                userName: userName,
+                userPic: userPic,
+                userLink: userLink,
+                time: (new Date).getTime()
+            }))
+        };
     });
