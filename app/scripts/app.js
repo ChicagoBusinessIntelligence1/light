@@ -47,14 +47,15 @@
                 .state("app.politics", {
                     url: "/politics",
                     controller: "Politics",
-                    templateUrl: "scripts/sections/politics/views/politics.html"
+                    templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
                 })
 
                 .state("app.politics.article", {
-                    url: "/politics/:id",
-                    controller: "Politics",
+                    url: "/:id",
                     templateUrl: "scripts/sections/politics/views/politics-article.html"
                 })
+
+
 
 
 //#state
