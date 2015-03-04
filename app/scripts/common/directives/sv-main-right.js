@@ -1,12 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('#module#')
-        .directive('#jname#', function () {
+    angular.module('common')
+        .directive('svMainRight', function () {
             return {
-                templateUrl: 'scripts/#moduleDirectirized#/directives/#dname#.html',
+                templateUrl: 'scripts/common/directives/sv-main-right.html',
                 replace:true,
-                scope:{},
                 link: function ($scope, element, attr) {
 
                 }
