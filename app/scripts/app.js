@@ -18,6 +18,7 @@
 
         // 3rd party modules
         'firebase',
+        'lumx',
         'ngAnimate',
         'ngMaterial',
         'ui.router'
@@ -48,7 +49,7 @@
                     controller: "Politics",
                     templateUrl: "scripts/sections/politics/views/politics.html"
                 })
-			
+
 //#state
         });
 
