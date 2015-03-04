@@ -2,16 +2,14 @@
     'use strict';
 
     angular.module('common')
-        .directive('svOneArticle', function () {
+        .directive('svArticleThumb', function () {
             return {
-                templateUrl: 'scripts/common/directives/sv-one-article.html',
+                templateUrl: 'scripts/common/directives/sv-article-thumb.html',
                 replace:true,
                 scope:{
+                    url:'@',
                     img:'@',
-                    title:'@',
-                    body:'@',
-                    author:'@',
-                    date:'@'
+                    title:'@'
                 },
                 link: function ($scope, element, attr) {
 

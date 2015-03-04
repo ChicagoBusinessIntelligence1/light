@@ -1,3 +1,3 @@
 'use strict'
 
-var politics = angular.module('sections.politics', ['ngMaterial']);
+var politics = angular.module('sections.politics', ['ngMaterial','common']);
