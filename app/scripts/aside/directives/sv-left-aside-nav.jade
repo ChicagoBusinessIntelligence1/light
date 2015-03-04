@@ -1,59 +1,12 @@
-div(layout='column' layout-align="left center" layout-margin='10')
-	md-list.list-nav
+div(layout='column' layout-align="left center")
+	md-list
 		md-item.aside-elem
 			md-item-content
-				md-button(ui-sref='app.home')
-					i.mdi.mdi-home
-					span.text &nbsp Home &nbsp
+				a(ui-sref='app.admin')
+					i.fa.fa-gears.fa-fw
+					span.text &nbsp Admin Panel
 		md-item.aside-elem
 			md-item-content
-				md-button(ui-sref='app.politics')
-					i.mdi.mdi-file-document
-					span.text &nbsp Politics &nbsp
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Business
-
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Economy
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Culture
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Sciense
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp sciense
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Entertainment
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Society
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Health
-		md-item.aside-elem
-			md-item-content
-				md-button(ui-sref='app.education')
-					i.mdi.mdi-file-document
-					span.text &nbsp Traveling
-
+				a(ui-sref='app.education')
+					i.fa.fa-bell.fa-fw
+					span.text &nbsp Classified

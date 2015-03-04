@@ -1,24 +1,13 @@
-md-content(flex='')
-	div(layout='column')
-		div(layout='row', layout-align='center center', layout-margin, hide-gt-lg='')
-			md-button.md-primary(ng-click='toggleLeft()')
-				i.mdi.mdi-newspaper
-				| &nbsp More News Sections
-			md-button.md-primary(ng-click='toggleRight()')
-				i.fa.fa-file-archive-o.fa-fw
-				| News Archive
-		div(layout='row' layout-margin='10' layout-md='column' layout-align='center')
-			div(flex='' flex-gt-md='70')
-				md-card
-					img(src="../img/articles/globe.jpg")
-					| I am an Article of the Day
-			div(flex='' flex-gt-md='30')
-				div(layout='row' layout-gt-md='column')
-					div(flex='' flex-order-gt-lg='1' flex-order-gt-md='2')
-						md-card
-							img(src="../img/articles/science.jpg")
-							| I am Article 1
-					div(flex='' flex-order-gt-lg='2' flex-order-gt-md='1')
-						md-card
-							img(src="../img/articles/culture.jpg")
-							| I am Article 2
+.text-left(layout='column' layout-align='center')
+	div(layout='row' layout-align='space-between')
+		h1  Breaking News
+		div
+			button.btn.btn--m.btn--fab(lx-ripple='' ng-click='close()')
+				i.mdi.mdi-pencil
+	div(layout='row')
+		.col-sx-12
+			ul.slide-view.list-unstyled
+				li(ng-repeat="(key,post) in posts | orderBy:'time':true")
+					sv-article
+
+
