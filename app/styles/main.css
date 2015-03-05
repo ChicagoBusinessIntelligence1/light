@@ -132,10 +132,16 @@ md-warn {
   margin: 20px;
   padding: 20px;
 }
+.article-header {
+  font-size: 2.8em;
+  line-height: 1.5em;
+  font-weight: bold;
+}
 body {
 font-family
   color: #444;
   font: Verdana, Helvetica Neue, Helvetica, Arial;
+  font-size: 0.8em;
 /*font-family Roboto*/
 /*font-family PT Serif*/
 }
