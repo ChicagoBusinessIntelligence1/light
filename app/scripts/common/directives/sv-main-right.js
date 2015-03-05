@@ -5,7 +5,7 @@
         .directive('svMainRight', function ($mdBottomSheet) {
             return {
                 templateUrl: 'scripts/common/directives/sv-main-right.html',
-                replace:true,
+                replace: true,
                 link: function ($scope, element, attr) {
 
                     $scope.openBottomSheet = function () {
