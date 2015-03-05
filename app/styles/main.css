@@ -133,9 +133,24 @@ md-warn {
   padding: 20px;
 }
 .article-header {
-  font-size: 2.8em;
-  line-height: 1.5em;
+  font-size: 36px;
+  line-height: 53px;
   font-weight: bold;
+}
+@media screen and (max-width: 992px) {
+  .article-header {
+    font-size: 150%;
+    line-height: 150%;
+  }
+}
+.article-quote {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 22px;
+}
+.article-quote footer {
+  font-size: 13px;
+  line-height: 22px;
 }
 body {
 font-family
@@ -147,6 +162,9 @@ font-family
 }
 .light-padding-10 {
   padding: 10px;
+}
+.light-padding-5 {
+  padding: 5px;
 }
 .light-margin {
   margin: 15px;
