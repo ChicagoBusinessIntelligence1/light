@@ -1,6 +1,6 @@
-div(layout='column' ui-view = '')
-	md-list
-		md-item(ng-repeat="a in articles")
+div(layout='col' ui-view = '')
+	md-list(layout='row')
+		md-item(flex=33)(ng-repeat="a in articles")
 			md-item-content
 				sv-article-thumb(
 				state='a.state'

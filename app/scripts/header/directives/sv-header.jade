@@ -1,9 +1,20 @@
-md-toolbar(layout='row' layout-align='space-between center')
-	div(flex-md='25' flex-sm="20")
-	div(flex-md='50' flex-sm="60")
-		.header-logo
-			a(ui-sref='app.home')
-				img.img-responsive(ng-src="img/logo/newLightLogo580.png")
-	div(flex-md='25' flex-sm="20")
-		sv-svet-auth
+md-toolbar(layout='col')
+	div(layout='row' layout-align='space-between center')
+		div(flex-md='25' flex-sm="20")
+			.light-margin
+				span Chicago, IL
+				span.display-block.padding-left-10
+					img(src="../img/weather/partlycloudy.png")
+		div(flex-md='50' flex-sm="60")
+			.header-logo
+				a(ui-sref='app.home')
+					img.img-responsive(ng-src="img/logo/newLightLogo580.png")
+		div(flex-md='25' flex-sm="20")
+			sv-svet-auth
+	div(layout='row')
+		.text-center(flex)
+			span.display-block.fs-body-1.margin-bottom-5 FIRST RUSSIAN NEWSPAPER IN CHICAGO
+
+
+
 

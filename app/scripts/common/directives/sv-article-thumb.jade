@@ -1,4 +1,13 @@
-md-card
-	a(ui-sref='{{state}}')
+.card
+	.card__img.card__img--top
 		img(ng-src="{{img}}")
-		| {{title}}
+		a(ui-sref='{{state}}')
+			span.fs-headline.tc-white-1.display-block {{title}}
+	div(class='p+')
+		//span.fs-subhead.tc-black-2.display-block Lorem Ipsum
+		//.paragraph.fs-body-1
+		//	a(ui-sref='{{state}}')
+		//		p.fs-body-2  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique orci a lacinia malesuada.
+		.card__actions
+			button.btn.btn--s.btn--black.btn--flat(lx-ripple='') Share
+			button.btn.btn--s.btn--orange.btn--flat(lx-ripple='' ui-sref='{{state}}') Read More
