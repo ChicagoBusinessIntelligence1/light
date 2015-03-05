@@ -156,6 +156,10 @@ md-warn {
 .comment-feedback-link {
   cursor: pointer;
 }
+.article-header-thumb {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 body {
 font-family
   color: #444;

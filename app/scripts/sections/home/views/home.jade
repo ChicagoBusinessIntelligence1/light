@@ -1,15 +1,28 @@
 div(layout='row' layout-margin='10' layout-md='column' layout-align='center')
 	div(flex)
-		md-card
-			img(src="../img/articles/globe.jpg")
-			| I am an Article of the Day
+		sv-article-thumb(
+		state='politics1.state'
+		id='{{politics1.id}}'
+		img='{{politics1.img}}'
+		title='{{politics1.title}}'
+		)
 	div(flex)
-		div(layout='row' layout-gt-md='column' layout-gt-lg='row')
-			div(flex='' flex-order-gt-lg='1' flex-order-gt-md='2')
-				md-card
-					img(src="../img/articles/science.jpg")
-					| I am Article 1
-			div(flex='' flex-order-gt-lg='2' flex-order-gt-md='1')
+		div(layout='row' layout-gt-md='column' layout-gt-lg='row' layout-align='space-between')
+			div(flex='45' flex-order-gt-lg='1' flex-order-gt-md='2')
+				sv-article-thumb(
+				state='politics1.state'
+				id='{{politics1.id}}'
+				img='{{politics1.img}}'
+				title='{{politics1.title | Title:20}}'
+				)
+			div(flex='45' flex-order-gt-lg='1' flex-order-gt-md='2')
+				sv-article-thumb(
+				state='politics1.state'
+				id='{{politics1.id}}'
+				img='{{politics1.img}}'
+				title='{{politics1.title | Title:20}}'
+				)
+			//div(flex='' flex-order-gt-lg='2' flex-order-gt-md='1')
 div(layout='col')
 	div(flex)
 		sv-home-news-grid
