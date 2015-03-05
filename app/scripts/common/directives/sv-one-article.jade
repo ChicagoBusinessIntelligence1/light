@@ -6,15 +6,30 @@ div(layout='row' layout-margin='10' layout-align="center")
 			h1.article-header Czech Republic rejects accusations of selling American and German weapons to Russia
 		div.margin-bottom-5
 			span.fs-subhead.display-block Source: Radio Svoboda
-			ul.list-inline.list-unstyled
-				li
-					img(src="../img/social/fb-share.png")
-				li
-					img(src="../img/social/google-share.png")
-				li
-					img(src="../img/social/twitter-share.png")
-				li
-					img(src="../img/social/linkedin-share.png")
+		div(layout='row' layout-align='space-between')
+			div(flex='40')
+				ul.list-inline.list-unstyled
+					li
+						img(src="../img/social/fb-share.png" lx-ripple lx-tooltip="Поделиться")
+					li
+						img(src="../img/social/google-share.png" lx-ripple lx-tooltip="Поделиться")
+					li
+						img(src="../img/social/twitter-share.png" lx-ripple lx-tooltip="Поделиться" )
+					li
+						img(src="../img/social/linkedin-share.png" lx-ripple lx-tooltip="Поделиться")
+					li
+			div(flex='15')
+				ul.list-inline.list-unstyled.margin-left-10
+					li
+						span.display-block.text-right.color-subheader(lx-ripple lx-tooltip="Комменты")
+							i.icon.icon--s.icon--flat.mdi.mdi-comment-text
+					li
+						span.display-block.text-right.color-subheader(lx-ripple lx-tooltip="Просмотры")
+							i.icon.icon--s.icon--flat.mdi.mdi-eye
+
+
+
+
 		div.atricle-img.margin-bottom-15
 			img(src="../img/articles/weapon.jpg")
 		div.light-padding-5

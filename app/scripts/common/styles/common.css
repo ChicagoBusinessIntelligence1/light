@@ -35,3 +35,6 @@
   font-size: 13px;
   line-height: 22px;
 }
+.comment-feedback-link {
+  cursor: pointer;
+}
