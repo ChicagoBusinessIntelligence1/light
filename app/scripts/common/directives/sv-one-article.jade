@@ -1,37 +1,42 @@
 //Lumx Typography
 
-div(layout='column' layout-margin='10')
-	div(flex='')
-		h1.fs-display-2 Czech Republic rejects accusations of selling American and German weapons to Russia
-	div(flex='')
-		span.fs-subhead.display-block Source: Radio Svoboda
-		ul.list-inline.list-unstyled
-			li
-				img(src="../img/social/fb-share.png")
-			li
-				img(src="../img/social/google-share.png")
-			li
-				img(src="../img/social/twitter-share.png")
-			li
-				img(src="../img/social/linkedin-share.png")
-	div(flex='')
-		img(src="../img/articles/weapon.jpg")
-	div(flex='')
-		.fs-subhead The country claims selling a very few weapons allowed by the European Council's provisions.
-		article
-			blockquote.blockquote-reverse.light-padding
+div(layout='row' layout-margin='10' layout-align="center")
+	div(flex-gt-lg='70' flex-sm="95" flex-md='95' flex-gt-md='95' flex-lg='95')
+		div
+			h1.article-header Czech Republic rejects accusations of selling American and German weapons to Russia
+		div
+			span.fs-subhead.display-block Source: Radio Svoboda
+			ul.list-inline.list-unstyled
+				li
+					img(src="../img/social/fb-share.png")
+				li
+					img(src="../img/social/google-share.png")
+				li
+					img(src="../img/social/twitter-share.png")
+				li
+					img(src="../img/social/linkedin-share.png")
+		div
+			img(src="../img/articles/weapon.jpg")
+		div.light-padding-5
+			.fs-subhead The country claims selling a very few weapons allowed by the European Council's provisions.
+			blockquote.blockquote-reverse.light-padding.article-quote
 				p
-					| "Since these agreements had been signed before the embargo was imposed, our government has no legitimate reason to stop the export, which is primarily directed for civilian use"
+					| "Since these agreements had been signed before the embargo was imposed,
+					br
+					| our government has no legitimate reason to stop the export,
+					br
+					| which is primarily directed for civilian use"
 				footer
 					| Jiri Hynek,
 					cite(title='Source Title') President of the Czech Association of Defensive Industry
+		div.light-padding-5
 			p.fs-subhead Czech Ministry of Industry and Trade has denied reports that the country sells modern American and German weapon to Russia against the EU embargo.
 			p.fs-subhead "There have been very few weapons transferred in accordance with the provisions of the European Council,which do not violate the embargo agaist Russia," ? announced an expert from the Ministry, Miroslav Kinchl, reports Radio Liberty.
 			p.fs-subhead Jiri Hynek, the president of the Czech Association of Defensive Industry also argues about the legality of the his country's weapon supplies to Russia, namely the ones, which deal with hunting weapons.
 			p.fs-subhead Earlier, the Polish edition, Rzeczpospolita wrote that despite the embargo on arms sales to Russia, which the EU has introduced 9 months ago, the Czech Republic continues to sell modern American and German small arms to Russia.
 			p.fs-subhead Thus, in particular, the Czech side sold American Bushmaster 90705, 90838 and 90899 automatic guns, DPMS RFA 3-3G2 to Russia. In addition, the Russians were able to buy German Heckler-Koch automatic guns and Sig Sauer pistols.
 			p.fs-subhead The Czech Republic explained that the weapons had been allegedly sold to "hunters". While the EU officials explained that the contracts on these samples of weapons delivery had been signed before the Donbas conflict.
-	hr
-	//comment
-	h2.padding-left-20 Comments
-	sv-comment
+		hr
+		//comment
+		h2.padding-left-20 Comments
+		sv-comment
