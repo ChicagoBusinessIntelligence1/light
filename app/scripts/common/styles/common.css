@@ -27,10 +27,12 @@
 }
 .article-quote {
   font-size: 14px;
+  color: #777;
   font-style: italic;
   line-height: 22px;
 }
 .article-quote footer {
+  color: #444;
   font-size: 13px;
   line-height: 22px;
 }
