@@ -10,19 +10,37 @@ div(layout='row' layout-margin='10' layout-md='column' layout-align='center')
 		div(layout='row' layout-gt-md='column' layout-gt-lg='row' layout-align='space-between')
 			div(flex='45' flex-order-gt-lg='1' flex-order-gt-md='2')
 				sv-article-thumb(
+				home-small='true'
 				state='politics1.state'
 				id='{{politics1.id}}'
 				img='{{politics1.img}}'
-				title='{{politics1.title | Title:20}}'
+				title='{{politics1.title}}'
 				)
 			div(flex='45' flex-order-gt-lg='1' flex-order-gt-md='2')
 				sv-article-thumb(
+				home-small='true'
+				state='politics1.state'
+				id='{{politics1.id}}'
+				img='img/articles/economy.jpg'
+				title='{{politics1.title}}'
+				)
+		div(layout='row' layout-gt-md='column' layout-gt-lg='row' layout-align='space-between')
+			div(flex='45' flex-order-gt-lg='1' flex-order-gt-md='2')
+				sv-article-thumb(
+				home-small='true'
 				state='politics1.state'
 				id='{{politics1.id}}'
 				img='{{politics1.img}}'
-				title='{{politics1.title | Title:20}}'
+				title='{{politics1.title}}'
 				)
-			//div(flex='' flex-order-gt-lg='2' flex-order-gt-md='1')
+			div(flex='45' flex-order-gt-lg='1' flex-order-gt-md='2')
+				sv-article-thumb(
+				home-small='true'
+				state='politics1.state'
+				id='{{politics1.id}}'
+				img='{{politics1.img}}'
+				title='{{politics1.title}}'
+				)
 div(layout='col')
 	div(flex)
 		sv-home-news-grid

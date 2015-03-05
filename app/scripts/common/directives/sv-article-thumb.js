@@ -7,6 +7,7 @@
                 templateUrl: 'scripts/common/directives/sv-article-thumb.html',
                 replace: true,
                 scope: {
+                    homeSmall:'=',
                     state: '=',
                     id: '@',
                     img: '@',
