@@ -42,3 +42,7 @@
   font-weight: bold;
   margin-bottom: 5px;
 }
+.positioner {
+  max-width: 1260px;
+  margin: 0 auto;
+}

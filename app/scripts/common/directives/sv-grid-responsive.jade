@@ -1,36 +1,16 @@
 md-content
 	md-grid-list(
-	md-cols-gt-md='3'
 	md-cols-sm='2'
 	md-cols-md='2'
-	md-row-height-gt-md='1:1'
-	md-row-height='1:1.4'
+	md-cols-gt-md='3'
+	md-cols-gt-lg='6'
+
+	//md-row-height-gt-md='1:1'
+	md-row-height="1:1"
 	md-gutter-gt-sm='8px'
 	md-gutter='4px')
-		md-grid-tile( md-colspan='2' md-rowspan='1' md-rowspan-gt-md='2' )
-			sv-article-thumb(
-			home-small='false'
-			state='politics1.state'
-			id='{{politics1.id}}'
-			img='{{politics1.img}}'
-			title='{{politics1.title}}'
-			)
-		md-grid-tile( md-rowspan='1' )
-			sv-article-thumb(
-			home-small='true'
-			state='politics1.state'
-			id='{{politics1.id}}'
-			img='{{politics1.img}}'
-			title='{{politics1.title}}'
-			)
-		md-grid-tile( )
-			sv-article-thumb(
-			home-small='true'
-			state='politics1.state'
-			id='{{politics1.id}}'
-			img='{{politics1.img}}'
-			title='{{politics1.title}}'
-			)
-
-
-
+		md-grid-tile.red( md-colspan='2' md-rowspan='2' md-rowspan-gt-md='2' )
+		md-grid-tile.green( md-rowspan='1'   )
+		md-grid-tile.blue
+		md-grid-tile.yellow
+		md-grid-tile.purple
