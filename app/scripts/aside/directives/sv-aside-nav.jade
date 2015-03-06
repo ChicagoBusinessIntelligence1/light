@@ -1,25 +1,13 @@
 div(layout='column' layout-align="left center" layout-margin)
 	md-list
 		md-item.aside-elem
-			md-item-content
-				a(ui-sref='app.audiobooks')
-					i.fa.fa-newspaper-o.fa-fw
-					span.text &nbsp Digital Newspaper Archive
+			sv-nav-link(url='app.home' title='Digital Newspaper Archive' icon='zip-box')
 		md-item.aside-elem
-			md-item-content
-				a(ui-sref='app.admin')
-					i.fa.fa-gears.fa-fw
-					span.text &nbsp Admin Panel
+			sv-nav-link(url='app.home' title='Admin' icon='account-key')
 		md-item.aside-elem
-			md-item-content
-				a(ui-sref='app.education')
-					i.fa.fa-bell.fa-fw
-					span.text &nbsp Classified
+			sv-nav-link(url='app.home' title='Classified' icon='tag-faces')
 		md-item.aside-elem
-			md-item-content
-				a(ui-sref='app.education')
-					i.fa.fa-envelope
-					span.text &nbsp Contact Us
+			sv-nav-link(url='app.home' title='Contact Us' icon='map-marker')
 
 //li
 //  a(ng-click='showSub1()' ui-sref='app.about-fengshui')
