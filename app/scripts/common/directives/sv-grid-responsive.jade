@@ -9,7 +9,7 @@ md-content
 	md-row-height="1:1"
 	md-gutter-gt-sm='8px'
 	md-gutter='4px')
-		md-grid-tile.red( md-colspan='2' md-rowspan='2' md-rowspan-gt-md='2' )
+		md-grid-tile( md-colspan='2' md-rowspan='2' md-rowspan-gt-md='2' )
 			sv-article-thumb(
 			home-small='true'
 			state='politics1.state'
@@ -17,7 +17,7 @@ md-content
 			img='img/articles/weapon.jpg'
 			title='{{politics1.title}}'
 			)
-		md-grid-tile.green.text-center( md-rowspan='1' )
+		md-grid-tile.text-center( md-rowspan='1' )
 			.light-align
 				sv-article-thumb(
 				home-small='true'
@@ -26,7 +26,7 @@ md-content
 				img='img/articles/flags.jpg'
 				title='{{politics1.title}}'
 				)
-		md-grid-tile.blue
+		md-grid-tile
 			sv-article-thumb(
 			home-small='true'
 			state='politics1.state'
