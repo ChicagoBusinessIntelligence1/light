@@ -10,6 +10,28 @@ md-content
 	md-gutter-gt-sm='8px'
 	md-gutter='4px')
 		md-grid-tile.red( md-colspan='2' md-rowspan='2' md-rowspan-gt-md='2' )
-		md-grid-tile.green( md-rowspan='1' )
+			sv-article-thumb(
+			home-small='true'
+			state='politics1.state'
+			id='{{politics1.id}}'
+			img='img/articles/weapon.jpg'
+			title='{{politics1.title}}'
+			)
+		md-grid-tile.green.text-center( md-rowspan='1' )
+			.light-align
+				sv-article-thumb(
+				home-small='true'
+				state='politics1.state'
+				id='{{politics1.id}}'
+				img='img/articles/flags.jpg'
+				title='{{politics1.title}}'
+				)
 		md-grid-tile.blue
+			sv-article-thumb(
+			home-small='true'
+			state='politics1.state'
+			id='{{politics1.id}}'
+			img='img/articles/blue-face.png'
+			title='{{politics1.title}}'
+			)
 

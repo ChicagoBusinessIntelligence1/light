@@ -3478,12 +3478,12 @@ md-grid-list {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      -webkit-align-items: baseline;
+          -ms-flex-align: baseline;
+              align-items: baseline;
+      -webkit-justify-content: baseline;
+          -ms-flex-pack: baseline;
+              justify-content: baseline;
       height: 100%;
       position: absolute;
       top: 0;
@@ -3499,9 +3499,9 @@ md-grid-list {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
+      -webkit-align-items: baseline;
+          -ms-flex-align: baseline;
+              align-items: baseline;
       height: 48px;
       color: #fff;
       background: rgba(0, 0, 0, 0.18);
@@ -6378,7 +6378,7 @@ md-toast {
 @media (min-width: 600px) {
   md-toast {
     min-width: 288px;
-    /* 
+    /*
      * When the toast doesn't take up the whole screen,
      * make it rotate when the user swipes it away
      */ }
