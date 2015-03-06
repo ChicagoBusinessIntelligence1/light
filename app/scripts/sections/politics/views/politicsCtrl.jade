@@ -1,10 +1,11 @@
-div(layout='row' layout-margin='10' layout-md='column' layout-align='start')
-	md-item(flex-gt-sm='33'  flex-sm="100" ng-repeat="a in articles")
-		md-item-content
-			sv-article-thumb(
-			state='a.state'
-			id='{{a.id}}'
-			img='{{a.img}}'
-			title='{{a.title}}'
-			)
+div(ui-view='')
+	div(layout='row' layout-margin='10' layout-md='column' layout-align='start' )
+		md-item(flex-gt-sm='33'  flex-sm="100" ng-repeat="a in articles")
+			md-item-content
+				sv-article-thumb(
+				state='a.state'
+				id='{{a.id}}'
+				img='{{a.img}}'
+				title='{{a.title}}'
+				)
 
