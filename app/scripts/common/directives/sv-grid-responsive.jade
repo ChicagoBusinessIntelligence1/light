@@ -1,44 +1,45 @@
-md-content.md-padding
-    md-grid-list(
-    // How many colums and rows it has in each size
-    md-cols-gt-md='3'
-    md-cols-sm='2'
-    md-cols-md='2'
+div(flex)
+	md-content
+			md-grid-list(
+			// How many colums and rows it has in each size
+			md-cols-gt-md='3'
+			md-cols-sm='2'
+			md-cols-md='2'
 
-    md-row-height-gt-md='1:1'
-    md-row-height='1:1.4'
+			md-row-height-gt-md='1:1'
+			md-row-height='1:1.4'
 
-    md-gutter-gt-sm='8px'
-    md-gutter='4px')
-        md-grid-tile(
-        // Behavior how many rows and columns it takes.
-        md-colspan='2'
-        md-rowspan='1'
-        md-rowspan-gt-md='2'
-        )
-            sv-article-thumb(
-            home-small='false'
-            state='politics1.state'
-            id='{{politics1.id}}'
-            img='{{politics1.img}}'
-            title='{{politics1.title}}'
-            )
-        md-grid-tile(
-        md-rowspan='1'
-        )
-            sv-article-thumb(
-            home-small='true'
-            state='politics1.state'
-            id='{{politics1.id}}'
-            img='{{politics1.img}}'
-            title='{{politics1.title}}'
-            )
-        md-grid-tile(
-        )
-            sv-article-thumb(
-            home-small='true'
-            state='politics1.state'
-            id='{{politics1.id}}'
-            img='{{politics1.img}}'
-            title='{{politics1.title}}'
-            )
+			md-gutter-gt-sm='8px'
+			md-gutter='4px')
+					md-grid-tile(
+					// Behavior how many rows and columns it takes.
+					md-colspan='2'
+					md-rowspan='1'
+					md-rowspan-gt-md='2'
+					)
+							sv-article-thumb(
+							home-small='false'
+							state='politics1.state'
+							id='{{politics1.id}}'
+							img='{{politics1.img}}'
+							title='{{politics1.title}}'
+							)
+					md-grid-tile(
+					md-rowspan='1'
+					)
+							sv-article-thumb(
+							home-small='true'
+							state='politics1.state'
+							id='{{politics1.id}}'
+							img='{{politics1.img}}'
+							title='{{politics1.title}}'
+							)
+					md-grid-tile(
+					)
+							sv-article-thumb(
+							home-small='true'
+							state='politics1.state'
+							id='{{politics1.id}}'
+							img='{{politics1.img}}'
+							title='{{politics1.title}}'
+							)
