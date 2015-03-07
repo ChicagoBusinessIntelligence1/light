@@ -1,15 +1,14 @@
 md-content
 	md-grid-list(
-	md-cols-sm='2'
-	md-cols-md='2'
-	md-cols-gt-md='3'
-	md-cols-gt-xl='5'
+	md-cols='2'
+	md-cols-gt-lg='3'
 
-	//md-row-height-gt-md='1:1'
+	md-rows='3'
+	md-rows-gt-lg='2'
+
 	md-row-height="1:1"
-	md-gutter-gt-sm='10px'
 	md-gutter='7px')
-		md-grid-tile.card( md-colspan='2' md-rowspan='2' md-rowspan-gt-md='2' )
+		md-grid-tile.card(md-colspan='2' md-rowspan='2' )
 			sv-article-thumb(
 			home-small='true'
 			state='politics1.state'
@@ -22,7 +21,7 @@ md-content
 			home-small='true'
 			state='politics1.state'
 			id='{{politics1.id}}'
-			img='img/articles/flags.jpg'
+			img='img/articles/weapon.jpg'
 			title='{{politics1.title}}'
 			)
 		md-grid-tile.card
@@ -30,7 +29,7 @@ md-content
 			home-small='true'
 			state='politics1.state'
 			id='{{politics1.id}}'
-			img='img/articles/blue-face.png'
+			img='img/articles/weapon.jpg'
 			title='{{politics1.title}}'
 			)
 
