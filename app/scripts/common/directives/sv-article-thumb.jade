@@ -1,16 +1,8 @@
-.card(flex)
-	.card__img.card__img--top.margin-bottom-5
-		img(ng-src="{{img}}")
+md-content
+	md-card
 		a(ui-sref='{{state}}')
-			//span.fs-headline.tc-white-1.display-block Czech Republic rejects
+			img(ng-src="{{img}}")
+		md-card-content.light-padding-5
+			.article-header-thumb(ng-if='homeSmall') {{title | Title:13}}
+			.article-header-thumb(ng-if='!homeSmall') {{title}}
 
-	div
-		span.fs-caption.display-block.padding-left-10.article-header-thumb(ng-if='homeSmall') {{title | Title:13}}
-		span.fs-caption.display-block.padding-left-10.article-header-thumb(ng-if='!homeSmall') {{title}}
-		md-divider
-		//.paragraph.fs-body-1
-		//	a(ui-sref='{{state}}')
-		//		p.fs-body-2  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique orci a lacinia malesuada.
-		div(ng-if='!homeSmall')
-			button.btn.btn--xs.btn--black.btn--flat(lx-ripple='') Share
-			button.btn.btn--xs.btn--orange.btn--flat(lx-ripple='' ui-sref='{{state}}') Read More

@@ -119,9 +119,9 @@ angular.module('ngMaterial', ["ng", "ngAnimate", "ngAria", "material.core", "mat
                 'sm': '(max-width: 600px)',
                 'gt-sm': '(min-width: 600px)',
                 'md': '(min-width: 600px) and (max-width: 960px)',
-                'gt-md': '(min-width: 980px)',
-                'lg': '(min-width: 980px) and (max-width: 1250px)',
-                'gt-lg': '(min-width: 1250px)'
+                'gt-md': '(min-width: 960px)',
+                'lg': '(min-width: 960px) and (max-width: 1200px)',
+                'gt-lg': '(min-width: 1200px)'
             },
             MEDIA_PRIORITY: [
                 'gt-lg',

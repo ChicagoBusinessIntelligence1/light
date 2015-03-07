@@ -40,9 +40,12 @@
 }
 .article-header-thumb {
   font-weight: bold;
-  margin-bottom: 5px;
+  line-height: 15px;
 }
 .positioner {
   max-width: 1260px;
   margin: 0 auto;
+}
+.card-light {
+  height: 600px;
 }
