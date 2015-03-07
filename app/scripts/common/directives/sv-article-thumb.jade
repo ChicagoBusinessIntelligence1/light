@@ -1,8 +1,7 @@
 md-content
-	md-card
-		a(ui-sref='{{state}}')
-			img(ng-src="{{img}}")
-		md-card-content.light-padding-5
-			.article-header-thumb(ng-if='homeSmall') {{title | Title:13}}
-			.article-header-thumb(ng-if='!homeSmall') {{title}}
+	a(ui-sref='{{state}}')
+		img(ng-src="{{img}}")
+	.light-padding-5
+		.article-header-thumb(ng-if='homeSmall') {{title | Title:13}}
+		.article-header-thumb(ng-if='!homeSmall') {{title}}
 
