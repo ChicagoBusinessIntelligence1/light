@@ -6,27 +6,6 @@ md-content
 
     md-row-height="1:1"
     md-gutter='15px')
-        md-grid-tile.card
-            sv-article-thumb-second(
-            home-small='true'
-            state='politics1.state'
-            id='{{politics1.id}}'
-            img='img/articles/weapon.jpg'
-            title='{{politics1.title}}'
-            )
-        md-grid-tile.card
-            sv-article-thumb-second(
-            home-small='true'
-            state='politics1.state'
-            id='{{politics1.id}}'
-            img='img/articles/weapon.jpg'
-            title='{{politics1.title}}'
-            )
-        md-grid-tile.card
-            sv-article-thumb-second(
-            home-small='true'
-            state='politics1.state'
-            id='{{politics1.id}}'
-            img='img/articles/weapon.jpg'
-            title='{{politics1.title}}'
-            )
+        md-grid-tile.card(ng-repeat='t in secondTiles')
+            sv-article-thumb-second()
+
