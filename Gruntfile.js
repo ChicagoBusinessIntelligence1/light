@@ -356,9 +356,9 @@ module.exports = function (grunt) {
                     var fileContent = grunt.file.read(file);
 
                     if (!rm) {
-                        fileContent = fileContent.replace(', function (', ', function (' + name + 'Service ');
+                        fileContent = fileContent.replace(', function (', ', function (' + name + 'Serv ');
                     } else {
-                        fileContent = fileContent.replace(', function (' + name + 'Service ', ', function (');
+                        fileContent = fileContent.replace(', function (' + name + 'Serv ', ', function (');
                     }
 
                     grunt.file.write(file, fileContent);

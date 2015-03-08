@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('#module#')
-        .factory('#name#', function () {
+        .factory('#name#Serv', function () {
 
             var meaningOfLife = 42;
 

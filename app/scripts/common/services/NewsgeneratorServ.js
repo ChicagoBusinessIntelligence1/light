@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('common')
-        .factory('NewsGenerator', function () {
+        .factory('NewsGeneratorServ', function () {
 
             var meaningOfLife = 42;
 
