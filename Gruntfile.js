@@ -105,6 +105,10 @@ module.exports = function (grunt) {
             }
         }
     });
+    grunt.registerTask('addcommit', function () {
+        git.task.run('gitadd');
+        git.task.run('gitcommit');
+    });
     grunt.registerTask('move-app-to-z', function () {
         if (grunt.file.exists('vs/app.js')) {
             grunt.file.copy('vs/app.js', 'vs/z/app.js');
