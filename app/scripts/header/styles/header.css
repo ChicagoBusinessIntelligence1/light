@@ -78,5 +78,10 @@
   margin-right: 5px !important;
 }
 /**********************
-			=Search
+	=Weather
 ***********************/
+@media screen and (max-width: 992px) {
+  .weather-city {
+    font-size: 11px;
+  }
+}

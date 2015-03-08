@@ -2,11 +2,12 @@ md-toolbar(layout='column')
 	div(layout='row' layout-align='space-between center')
 		div(flex-md='25' flex-sm="20" )
 			.light-margin(hide-sm)
-				span Chicago, IL
+				span.weather-city Chicago, IL
 				span
 					img(src="../img/weather/partlycloudy.png" style='display:inline-block')
 				span
-					i.icon.icon--s.icon--flat.mdi.mdi-temperature-fahrenheit
+					i.icon.icon--s.mdi.mdi-temperature-fahrenheit(hide-sm)
+					i.icon.icon--s.mdi.mdi-temperature-fahrenheit(hide-gt-sm)
 		div(flex-md='50' flex-sm="60")
 			.header-logo
 				a(ui-sref='app.home')
