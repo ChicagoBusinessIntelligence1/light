@@ -85,7 +85,7 @@ module.exports = function (grunt) {
         gitadd: {
             task: {
                 options: {
-                    force: true
+                    cwd:'./app'
                 },
                 files: {
                     src: ['.']
@@ -106,8 +106,8 @@ module.exports = function (grunt) {
         }
     });
     grunt.registerTask('addcommit', function () {
-        git.task.run('gitadd');
-        git.task.run('gitcommit');
+        grunt.task.run('gitadd');
+        grunt.task.run('gitcommit');
     });
     grunt.registerTask('move-app-to-z', function () {
         if (grunt.file.exists('vs/app.js')) {
@@ -297,7 +297,7 @@ module.exports = function (grunt) {
         }
         grunt.file.write(apath, app);
         grunt.file.write(ipath, indf);
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
     })
 
     grunt.registerTask('s', function (sname) {
@@ -392,7 +392,7 @@ module.exports = function (grunt) {
             })
             grunt.task.run('gitcommit');
         }
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
 
     })
 
@@ -448,7 +448,7 @@ module.exports = function (grunt) {
             grunt.file.write(d + name + t, filtr);
         }
         grunt.file.write(ipath, indf);
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
     })
 
     grunt.registerTask('d', function (dname, dtype) {
@@ -539,7 +539,7 @@ module.exports = function (grunt) {
             grunt.file.write(tpathHtml, directiveTemplateHtml);
         }
         grunt.file.write(ipath, indf);
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
     })
 
 };
