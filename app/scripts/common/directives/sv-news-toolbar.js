@@ -5,10 +5,8 @@
         .directive('svNewsToolbar', function () {
             return {
                 templateUrl: 'scripts/common/directives/sv-news-toolbar.html',
-                scope:{},
+                scope: {},
                 link: function ($scope, element, attr) {
-
-
                 }
             };
         });
