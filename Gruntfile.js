@@ -283,7 +283,7 @@ module.exports = function (grunt) {
         }
         grunt.file.write(apath, app);
         grunt.file.write(ipath, indf);
-
+        grunt.task.run('gitcommit');
     })
 
     grunt.registerTask('s', function (sname) {
@@ -310,7 +310,8 @@ module.exports = function (grunt) {
         var t                  = 'Serv.js';
         var serv               = grunt.file.read('templates/serv.tpl');
 
-        var lname = sname.toLowerCase();
+        //var lname = sname.toLowerCase();
+        var lname = sname;
         var name  = lname.charAt(0).toUpperCase() + lname.substring(1);
 
         var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname).replace(/#module#/g, module);
@@ -423,7 +424,7 @@ module.exports = function (grunt) {
             grunt.file.write(d + name + t, filtr);
         }
         grunt.file.write(ipath, indf);
-
+        grunt.task.run('gitcommit');
     })
 
     grunt.registerTask('d', function (dname, dtype) {
@@ -514,7 +515,7 @@ module.exports = function (grunt) {
             grunt.file.write(tpathHtml, directiveTemplateHtml);
         }
         grunt.file.write(ipath, indf);
-
+        grunt.task.run('gitcommit');
     })
 
 };
