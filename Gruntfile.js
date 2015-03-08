@@ -82,6 +82,16 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        gitadd: {
+            task: {
+                options: {
+                    cwd:'./app'
+                },
+                files: {
+                    src: ['.']
+                }
+            }
+        },
         gitcommit: {
             task: {
                 options: {
@@ -94,6 +104,10 @@ module.exports = function (grunt) {
                 }
             }
         }
+    });
+    grunt.registerTask('addcommit', function () {
+        grunt.task.run('gitadd');
+        grunt.task.run('gitcommit');
     });
     grunt.registerTask('move-app-to-z', function () {
         if (grunt.file.exists('vs/app.js')) {
@@ -283,7 +297,7 @@ module.exports = function (grunt) {
         }
         grunt.file.write(apath, app);
         grunt.file.write(ipath, indf);
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
     })
 
     grunt.registerTask('s', function (sname) {
@@ -361,7 +375,7 @@ module.exports = function (grunt) {
                         var start    = fileContent.indexOf(selector) + selector.length;
                         var finish   = fileContent.indexOf(')', start);
                         if (finish - start > 2) {
-                           prefix+=', ' ;
+                            prefix += ', ';
                         }
 
                         fileContent = fileContent.replace(selector, prefix);
@@ -376,8 +390,9 @@ module.exports = function (grunt) {
                 }
                 return true;
             })
+            grunt.task.run('gitcommit');
         }
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
 
     })
 
@@ -433,7 +448,7 @@ module.exports = function (grunt) {
             grunt.file.write(d + name + t, filtr);
         }
         grunt.file.write(ipath, indf);
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
     })
 
     grunt.registerTask('d', function (dname, dtype) {
@@ -524,7 +539,7 @@ module.exports = function (grunt) {
             grunt.file.write(tpathHtml, directiveTemplateHtml);
         }
         grunt.file.write(ipath, indf);
-        grunt.task.run('gitcommit');
+        grunt.task.run('addcommit');
     })
 
 };
