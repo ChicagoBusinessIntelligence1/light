@@ -6,7 +6,8 @@
             return {
                 templateUrl: 'scripts/common/directives/sv-news-toolbar.html',
                 scope: {
-                    number: '='
+                    number: '=',
+                    panelTitle: '@'
                 },
                 link: function ($scope, element, attr) {
 
