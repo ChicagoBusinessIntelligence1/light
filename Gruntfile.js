@@ -82,6 +82,16 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        gitadd: {
+            task: {
+                options: {
+                    force: true
+                },
+                files: {
+                    src: ['.']
+                }
+            }
+        },
         gitcommit: {
             task: {
                 options: {
