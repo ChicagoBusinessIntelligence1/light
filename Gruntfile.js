@@ -311,8 +311,8 @@ module.exports = function (grunt) {
         var serv               = grunt.file.read('templates/serv.tpl');
 
         //var lname = sname.toLowerCase();
-        var lname = sname;
-        var name  = lname.charAt(0).toUpperCase() + lname.substring(1);
+        var lname              = sname;
+        var name               = lname.charAt(0).toUpperCase() + lname.substring(1);
 
         var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname).replace(/#module#/g, module);
 
@@ -356,7 +356,15 @@ module.exports = function (grunt) {
                     var fileContent = grunt.file.read(file);
 
                     if (!rm) {
-                        fileContent = fileContent.replace(', function (', ', function (' + name + 'Serv ');
+                        var prefix   = ', function (' + name + 'Serv ';
+                        var selector = ', function (';
+                        var start    = fileContent.indexOf(selector) + selector.length;
+                        var finish   = fileContent.indexOf(')', start);
+                        if (finish - start > 2) {
+                           prefix+=',' ;
+                        }
+
+                        fileContent = fileContent.replace(selector, prefix);
                     } else {
                         fileContent = fileContent.replace(', function (' + name + 'Serv ', ', function (');
                     }
