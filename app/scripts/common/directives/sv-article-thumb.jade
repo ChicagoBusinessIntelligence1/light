@@ -1,7 +1,8 @@
 md-content
-	a(ui-sref='{{state}}')
+	a.txt-fontGrey(ui-sref='{{state}}')
 		img(ng-src="{{img}}")
-	.light-padding-5
-		.article-header-thumb(ng-if='homeSmall') {{title | Title:13}}
-		.article-header-thumb(ng-if='!homeSmall') {{title}}
-
+		.light-padding-10
+			.margin-bottom-5
+				.article-header-thumb.f-16(ng-if='homeSmall') {{title | Title:13}}
+				.article-header-thumb(ng-if='!homeSmall') {{title}}
+			p At vero eos et accusamus et iusto odio dignissimos ducimus
