@@ -356,7 +356,7 @@ module.exports = function (grunt) {
                     var fileContent = grunt.file.read(file);
 
                     if (!rm) {
-                        var prefix   = ', function (' + name + 'Serv ';
+                        var prefix   = ', function (' + name + 'Serv';
                         var selector = ', function (';
                         var start    = fileContent.indexOf(selector) + selector.length;
                         var finish   = fileContent.indexOf(')', start);
@@ -366,7 +366,7 @@ module.exports = function (grunt) {
 
                         fileContent = fileContent.replace(selector, prefix);
                     } else {
-                        fileContent = fileContent.replace(', function (' + name + 'Serv ', ', function (');
+                        fileContent = fileContent.replace(', function (' + name + 'Serv', ', function (');
                     }
 
                     grunt.file.write(file, fileContent);
