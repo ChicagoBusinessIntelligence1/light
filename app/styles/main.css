@@ -265,6 +265,9 @@ md-button .md-warn span {
 .margin-right {
   margin-right: 15px;
 }
+.margin-right-5 {
+  margin-right: 5px;
+}
 .padding {
   padding: 15px;
 }
