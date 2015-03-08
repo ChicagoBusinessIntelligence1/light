@@ -5,6 +5,8 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked
 			i.mdi.mdi-close
 	md-content.md-padding(ng-controller='LeftCtrl')
 		sv-left-aside-nav
+	md-content.md-padding.text-center
+		iframe(id='forecast_embed' type='text/html', frameborder='0', height='245', width='100%', src='http://forecast.io/embed/#lat=41.995125&lon=-87.754128&name=Chicago')
 	md-toolbar.md-accent.margin-bottom-10(layout='row' layout-align='center center')
 		span Новости по тегам
 	md-content.md-padding
