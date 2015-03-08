@@ -5,9 +5,12 @@
         .directive('svArticleThumbSecond', function () {
             return {
                 templateUrl: 'scripts/common/directives/sv-article-thumb-second.html',
-                scope:{},
+                scope: {
+                    title: '@',
+                    img: '@'
+                },
                 link: function ($scope, element, attr) {
-
+                    console.log($scope.title);
                 }
             };
         });

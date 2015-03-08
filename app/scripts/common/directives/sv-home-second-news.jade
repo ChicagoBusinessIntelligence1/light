@@ -6,6 +6,6 @@ md-content
 
     md-row-height="1:1"
     md-gutter='15px')
-        md-grid-tile.card(ng-repeat='t in secondTiles')
-            sv-article-thumb-second()
+        md-grid-tile.card(ng-repeat='n in secondNews')
+            sv-article-thumb-second(title='{{n.title}}' img='{{n.img}}')
 
