@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('common')
-        .directive('svNewsToolbar', function (NewsGeneratorServ ) {
+        .directive('svNewsToolbar', function (NewsGeneratorServ ,NewsGeneratorServ ) {
             return {
                 templateUrl: 'scripts/common/directives/sv-news-toolbar.html',
                 scope:{},
