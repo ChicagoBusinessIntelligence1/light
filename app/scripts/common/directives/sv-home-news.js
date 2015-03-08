@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('common')
-        .directive('svGridResponsive', function ($mdMedia,$filter) {
+        .directive('svHomeNews', function ($mdMedia) {
             return {
-                templateUrl: 'scripts/common/directives/sv-grid-responsive.html',
+                templateUrl: 'scripts/common/directives/sv-home-news.html',
                 replace: true,
                 link: function ($scope, element, attr) {
 
