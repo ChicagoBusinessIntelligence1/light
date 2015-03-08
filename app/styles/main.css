@@ -120,6 +120,14 @@
     padding-bottom: 30px !important;
   }
 }
+.news-tags-wrapper {
+  word-wrap: break-word;
+}
+.tag-link {
+  line-height: 26px;
+  text-decoration: none;
+  cursor: pointer;
+}
 .h1-sidehead {
   color: #fff !important;
 }
@@ -193,6 +201,120 @@ font-family
 }
 /*font-family Roboto*/
 /*font-family PT Serif*/
+.f-11 {
+  font-size: 11px;
+}
+.f-12 {
+  font-size: 12px;
+}
+.f-13 {
+  font-size: 13px;
+}
+.f-14 {
+  font-size: 14px;
+}
+.f-15 {
+  font-size: 15px;
+}
+.f-16 {
+  font-size: 16px;
+}
+.f-17 {
+  font-size: 17px;
+}
+.f-18 {
+  font-size: 18px;
+}
+.f-19 {
+  font-size: 19px;
+}
+.f-20 {
+  font-size: 20px;
+}
+.f-21 {
+  font-size: 21px;
+}
+.f-22 {
+  font-size: 22px;
+}
+.f-23 {
+  font-size: 23px;
+}
+.f-24 {
+  font-size: 24px;
+}
+.f-25 {
+  font-size: 25px;
+}
+.f-26 {
+  font-size: 26px;
+}
+.f-27 {
+  font-size: 27px;
+}
+.f-28 {
+  font-size: 28px;
+}
+.f-29 {
+  font-size: 29px;
+}
+.f-30 {
+  font-size: 30px;
+}
+.f-31 {
+  font-size: 31px;
+}
+.f-32 {
+  font-size: 32px;
+}
+.txt-grey {
+  color: #d3d3d3;
+}
+.txt-green {
+  color: #72d572;
+}
+.txt-lime {
+  color: #dce775;
+}
+.txt-peach {
+  color: #cd853f;
+}
+.txt-blue {
+  color: #0288d1;
+}
+.txt-darkBlue {
+  color: #01579b;
+}
+.txt-deepBlue {
+  color: #448aff;
+}
+.txt-purple {
+  color: #b388ff;
+}
+.txt-lightPurple {
+  color: #8c9eff;
+}
+.txt-deepPurple {
+  color: #800080;
+}
+.txt-darkRed {
+  color: #8b0000;
+}
+.txt-lightRed {
+  color: #e57373;
+}
+.txt-pink {
+  color: #ff80ab;
+}
+.txt-coral {
+  color: #ff7f50;
+}
+.txt-darkGrey {
+  color: #898989;
+}
+.txt-deemGrey {
+  color: #696969;
+}
 .light-align {
   margin: 0 auto;
 }
