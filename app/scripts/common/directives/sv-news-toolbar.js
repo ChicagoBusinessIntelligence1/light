@@ -1,12 +1,13 @@
 (function () {
     'use strict';
 
-    angular.module('#module#')
-        .directive('#jname#', function () {
+    angular.module('common')
+        .directive('svNewsToolbar', function () {
             return {
-                templateUrl: 'scripts/#moduleDirectirized#/directives/#dname#.html',
+                templateUrl: 'scripts/common/directives/sv-news-toolbar.html',
                 scope:{},
                 link: function ($scope, element, attr) {
+
 
                 }
             };
