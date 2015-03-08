@@ -361,7 +361,7 @@ module.exports = function (grunt) {
                         var start    = fileContent.indexOf(selector) + selector.length;
                         var finish   = fileContent.indexOf(')', start);
                         if (finish - start > 2) {
-                            prefix += ', ';
+                           prefix+=', ' ;
                         }
 
                         fileContent = fileContent.replace(selector, prefix);
@@ -376,7 +376,6 @@ module.exports = function (grunt) {
                 }
                 return true;
             })
-            grunt.task.run('gitcommit');
         }
         grunt.task.run('gitcommit');
 
