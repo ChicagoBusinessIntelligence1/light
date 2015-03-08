@@ -366,6 +366,7 @@ module.exports = function (grunt) {
 
                         fileContent = fileContent.replace(selector, prefix);
                     } else {
+                        fileContent = fileContent.replace(', function (' + name + 'Serv, ', ', function (');
                         fileContent = fileContent.replace(', function (' + name + 'Serv', ', function (');
                     }
 
