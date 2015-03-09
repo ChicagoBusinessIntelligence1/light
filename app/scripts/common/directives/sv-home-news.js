@@ -16,13 +16,19 @@
                         $scope.n3 = $scope.topNews[2];
                     });
 
-
+                    $scope.mainNewsFilter;
+                    $scope.secondNewsTitleFilter;
+                    $scope.secondNewsBodyFilter;
 
                     $scope.$watch(function () {
                         return $mdMedia('sm');
                     }, function (isThisSize) {
                         if (isThisSize) {
                             console.log('sm');
+
+                            $scope.mainNewsFilter=150;
+                            $scope.secondNewsTitleFilter=30;
+                            $scope.secondNewsBodyFilter=0;
                         }
                     });
 
@@ -30,6 +36,10 @@
                         return $mdMedia('md');
                     }, function (isThisSize) {
                         if (isThisSize) {
+
+                            $scope.mainNewsFilter=750;
+                            $scope.secondNewsTitleFilter=250;
+                            $scope.secondNewsBodyFilter=70;
                             console.log('md');
                         }
                     });
@@ -38,14 +48,20 @@
                         return $mdMedia('lg');
                     }, function (isThisSize) {
                         if (isThisSize) {
+                            $scope.mainNewsFilter=850;
                             console.log('lg');
+                            $scope.secondNewsTitleFilter=250;
+                            $scope.secondNewsBodyFilter=100;
                         }
                     });
                     $scope.$watch(function () {
                         return $mdMedia('gt-lg');
                     }, function (isThisSize) {
                         if (isThisSize) {
+                            $scope.mainNewsFilter=100;
                             console.log('gt-lg');
+                            $scope.secondNewsTitleFilter=25;
+                            $scope.secondNewsBodyFilter=0;
                         }
                     });
 
