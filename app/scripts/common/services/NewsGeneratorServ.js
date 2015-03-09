@@ -11,10 +11,51 @@
                     return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
 
                 },
-                getPoliticalNewsWithImages: function (url) {
+                getPoliticalNewsWithImages: function (url, number) {
                     var deferred = $q.defer();
 
-                    return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
+                    var result = $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
+
+                    function parseXml(xml) {
+                        var start = 0;
+                        var end   = 0;
+                        var imgs  = [];
+                        while (true) {
+                            start = xml.indexOf('enclosure', start);
+                            if (start === -1) {
+                                break;
+                            }
+
+                            start = xml.indexOf('http', start);
+
+                            end     = xml.indexOf('"', start);
+                            var img = xml.substring(start, end);
+                            imgs.push(img);
+                            start   = end;
+
+                        }
+                        return imgs;
+                    }
+
+                    function joinNewsImages(news, imgs) {
+                        for (var i = 0; i < news.length; i++) {
+                            var n   = news[i];
+                            var img = imgs[i];
+                            n.img   = img;
+                        }
+                        return news;
+                    }
+
+                    result.then(function (data) {
+                        var xml       = data.data.responseData.xmlString;
+                        var imgs      = parseXml(xml);
+                        var news      = (data.data.responseData.feed.entries);
+                        news          = joinNewsImages(news, imgs);
+                        var finalNews = _.first(_.shuffle(news), number);
+                        deferred.resolve(finalNews);
+                    }).catch(function (e) {
+                        deferred.reject('Error in rss request. Due to: '+ e);
+                    });
 
                     return deferred.promise;
 
