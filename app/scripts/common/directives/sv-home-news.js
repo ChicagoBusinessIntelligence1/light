@@ -7,6 +7,7 @@
                 templateUrl: 'scripts/common/directives/sv-home-news.html',
                 replace: true,
                 link: function ($scope, element, attr) {
+
                     NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 3, false).then(function (news) {
                         $scope.topNews = news;
 
@@ -18,28 +19,52 @@
                     $scope.mainNewsFilter;
                     $scope.secondNewsTitleFilter;
                     $scope.secondNewsBodyFilter;
-
                     $scope.$watch(function () {
-                        return $mdMedia('sm');
+                        return $mdMedia('max-width: 600px');
                     }, function (isThisSize) {
                         if (isThisSize) {
-                            console.log('sm');
-                            $scope.mainNewsFilter = 150;
-                            $scope.secondNewsTitleFilter = 30;
-                            $scope.secondNewsBodyFilter = 0;
+                            console.log('max-width: 600px');
+
+                            $scope.mainNewsFilter=450;
+                            $scope.secondNewsTitleFilter=70;
+                            $scope.secondNewsBodyFilter=30;
                         }
                     });
+
+                    $scope.$watch(function () {
+                        return $mdMedia('max-width: 500px');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('max-width: 500px');
+                            $scope.mainNewsFilter=250;
+                            $scope.secondNewsTitleFilter=30;
+                            $scope.secondNewsBodyFilter=0;
+                        }
+                    });
+
+                    $scope.$watch(function () {
+                        return $mdMedia('max-width: 400px');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('max-width: 400px');
+
+                            $scope.mainNewsFilter=200;
+                            $scope.secondNewsTitleFilter=50;
+                            $scope.secondNewsBodyFilter=0;
+                        }
+                    });
+
+
 
                     $scope.$watch(function () {
                         return $mdMedia('md');
                     }, function (isThisSize) {
                         if (isThisSize) {
 
-                            $scope.mainNewsFilter = 550;
-                            $scope.secondNewsTitleFilter = 250;
-                            $scope.secondNewsBodyFilter = 70;
+                            $scope.mainNewsFilter=750;
+                            $scope.secondNewsTitleFilter=250;
+                            $scope.secondNewsBodyFilter=70;
                             console.log('md');
-
                         }
                     });
 
@@ -47,20 +72,20 @@
                         return $mdMedia('lg');
                     }, function (isThisSize) {
                         if (isThisSize) {
-                            $scope.mainNewsFilter = 850;
+                            $scope.mainNewsFilter=850;
                             console.log('lg');
-                            $scope.secondNewsTitleFilter = 250;
-                            $scope.secondNewsBodyFilter = 100;
+                            $scope.secondNewsTitleFilter=250;
+                            $scope.secondNewsBodyFilter=100;
                         }
                     });
                     $scope.$watch(function () {
                         return $mdMedia('gt-lg');
                     }, function (isThisSize) {
                         if (isThisSize) {
-                            $scope.mainNewsFilter = 100;
+                            $scope.mainNewsFilter=100;
                             console.log('gt-lg');
-                            $scope.secondNewsTitleFilter = 25;
-                            $scope.secondNewsBodyFilter = 0;
+                            $scope.secondNewsTitleFilter=25;
+                            $scope.secondNewsBodyFilter=0;
                         }
                     });
 
