@@ -6,15 +6,13 @@ md-toolbar(layout='column')
 				span
 					img(src="../img/weather/partlycloudy.png" style='display:inline-block')
 				i.icon.icon--lg.icon--circled.mdi.mdi-temperature-fahrenheit
-					//i.icon.icon--m.mdi.mdi-temperature-fahrenheit(hide-sm)
-					//i.icon.icon--s.mdi.mdi-temperature-fahrenheit(hide-gt-sm)
 		div(flex-md='50' flex-sm="60")
-			.header-logo
-				a(ui-sref='app.home')
-					img.img-responsive(ng-src="img/logo/newLightLogo580.png")
+			div(layout='column')
+				.header-logo
+					a(ui-sref='app.home')
+						img.img-responsive(ng-src="img/logo/newLightLogo580.png")
+				.text-center
+					span.display-block.first-newspaper FIRST RUSSIAN NEWSPAPER IN CHICAGO
 		div(flex-md='25' flex-sm="20")
 			sv-svet-auth
-	div(layout='row')
-		.text-center(flex)
-			span.display-block.first-newspaper FIRST RUSSIAN NEWSPAPER IN CHICAGO
 

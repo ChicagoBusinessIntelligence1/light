@@ -213,12 +213,12 @@ md-warn {
 }
 @media screen and (min-width: 1200px) {
   .article-thumb-body {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media screen and (min-width: 1400px) {
   .article-thumb-body {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 .positioner {

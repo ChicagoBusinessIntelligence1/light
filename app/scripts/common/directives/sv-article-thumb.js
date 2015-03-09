@@ -11,7 +11,8 @@
                     state: '=',
                     id: '@',
                     img: '@',
-                    title: '@'
+                    title: '@',
+                    body: '@'
                 },
                 link: function ($scope, element, attr) {
                     var width = element.css('width');
