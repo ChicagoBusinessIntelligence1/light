@@ -5,7 +5,12 @@ angular.module('common')
 
 
         NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 50, false).then(function (news) {
-            $rootScope.allNews = news;
+            var counter=0;
+            $rootScope.allNews = _.map(news, function (n) {
+                n.id = counter++;
+                return n;
+
+            });
 
         });
 
