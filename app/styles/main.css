@@ -305,6 +305,9 @@ font-family
 .f-32 {
   font-size: 32px;
 }
+.txt-white {
+  color: #f5f5f5 !important;
+}
 .txt-grey {
   color: #d3d3d3;
 }
