@@ -10,7 +10,6 @@
                     img: '@'
                 },
                 link: function ($scope, element, attr) {
-                    console.log($scope.title);
                 }
             };
         });

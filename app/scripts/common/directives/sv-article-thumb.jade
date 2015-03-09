@@ -3,6 +3,6 @@ md-content
 		img(ng-src="{{img}}")
 		.light-padding-10
 			.margin-bottom-5
-				.article-thumb-header(ng-if='homeSmall') {{title | Title:13}}
+				.article-thumb-header-s(ng-if='homeSmall') {{title | Title:30}}
 				.article-thumb-header(ng-if='!homeSmall') {{title}}
-			p.article-thumb-body {{body}}
+			p.article-thumb-body(ng-if='!homeSmall') {{body}}

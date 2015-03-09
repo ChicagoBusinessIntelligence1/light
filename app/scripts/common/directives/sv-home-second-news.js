@@ -10,8 +10,8 @@
                     number: '='
                 },
                 link: function ($scope, element, attr) {
-                    NewsGeneratorServ.getPoliticalNews('http://www.svoboda.org/api/z-pqpiev-qpp').then(function (news) {
-                        console.log(news);
+                    NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp',12,true).then(function (news) {
+                        $scope.secondNews = news;
                     });
                 }
             };

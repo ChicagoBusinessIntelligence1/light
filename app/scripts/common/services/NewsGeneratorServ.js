@@ -11,7 +11,7 @@
                     return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
 
                 },
-                getPoliticalNewsWithImages: function (url, number) {
+                getPoliticalNewsWithImages: function (url, number,shuffle) {
                     var deferred = $q.defer();
 
                     var result = $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
@@ -47,11 +47,17 @@
                     }
 
                     result.then(function (data) {
+                        var finalNews;
                         var xml       = data.data.responseData.xmlString;
                         var imgs      = parseXml(xml);
                         var news      = (data.data.responseData.feed.entries);
                         news          = joinNewsImages(news, imgs);
-                        var finalNews = _.first(_.shuffle(news), number);
+                        if (shuffle) {
+                            news = _.rest(news,3);
+                            finalNews = _.first(_.shuffle(news), number);
+                        } else{
+                            finalNews = _.first(news, number);
+                        }
                         deferred.resolve(finalNews);
                     }).catch(function (e) {
                         deferred.reject('Error in rss request. Due to: '+ e);
