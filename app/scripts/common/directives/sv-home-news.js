@@ -89,6 +89,17 @@
                         }
                     });
 
+                    $scope.$watch(function () {
+                        return $mdMedia('min-width:1400');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            $scope.mainNewsFilter=1000;
+                            console.log('very large');
+                            $scope.secondNewsTitleFilter=2500;
+                            $scope.secondNewsBodyFilter=1000;
+                        }
+                    });
+
                 }
             };
         });
