@@ -15,7 +15,6 @@
 
                         var news    = (data.data.responseData.feed.entries);
                         $scope.news = _.first(_.shuffle(news), $scope.number);
-                        var i       = 1;
                     });
                 }
             };
