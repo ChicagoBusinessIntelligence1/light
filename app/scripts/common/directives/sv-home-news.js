@@ -8,12 +8,11 @@
                 replace: true,
                 link: function ($scope, element, attr) {
 
-                    NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 3, false).then(function (news) {
-                        $rootScope.topNews = news;
-
-                        $scope.n1 = $scope.topNews[0];
-                        $scope.n2 = $scope.topNews[1];
-                        $scope.n3 = $scope.topNews[2];
+                    $scope.$watch('allNews', function (newValue, oldValue) {
+                        console.log(newValue);
+                        $scope.n1=$scope.allNews[0];
+                        $scope.n2=$scope.allNews[1];
+                        $scope.n3=$scope.allNews[2];
                     });
 
                     $scope.mainNewsFilter;

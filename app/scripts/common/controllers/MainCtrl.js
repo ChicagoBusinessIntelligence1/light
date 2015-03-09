@@ -1,7 +1,15 @@
 'use strict';
 
 angular.module('common')
-    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log) {
+    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log,$rootScope, NewsGeneratorServ) {
+
+
+        NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 50, false).then(function (news) {
+            $rootScope.allNews = news;
+
+        });
+
+
         $scope.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
         };
