@@ -1,6 +1,6 @@
 md-toolbar.md-hue-1.margin-bottom-10( ng-controller='RightCtrl' layout='row' layout-align='space-around center')
 	span {{panelTitle}}
-md-content
+md-content.md-padding
 	ul.list-inline
 		li.margin-bottom-10(ng-repeat='n in news')
 			span.text-primary {{n.publishedDate|NewsDate}}
