@@ -27,7 +27,20 @@
             $mdThemingProvider.theme('default')
                 .primaryPalette('indigo')
                 .backgroundPalette('grey')
-                .accentPalette('red');
+                .accentPalette('red', {
+                    'default': '600',
+                    'hue-1': '400'
+                });
+        })
+        .config(function ($mdThemingProvider) {
+            var svetRedMap = $mdThemingProvider.extendPalette('red', {
+                '500': 'C02033'
+            });
+            // Register the new color palette map with the name <code>neonRed</code>
+            $mdThemingProvider.definePalette('svetRed', svetRedMap);
+            // Use that theme for the primary intentions
+            $mdThemingProvider.theme('accent')
+                .primaryPalette('svetRed')
         })
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
