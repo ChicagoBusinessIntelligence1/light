@@ -6,16 +6,18 @@ md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-loc
 	md-content.md-padding(ng-controller='RightCtrl')
 		sv-aside-nav
 	div(layout='column')
-		.margin-bottom-10.text-center(flex='')
+		.margin-bottom-15.text-center(flex='')
 			md-button.md-raised(ng-click='openBottomSheet()')
 				i.mdi.mdi-account-multiple
 				span.f-12 &nbsp Мы в Социальных Сетях
-		.margin-bottom-5.text-center(flex='')
+		.margin-bottom-15.text-center(flex='')
 			md-button.md-raised(href="https://www.youtube.com/watch?v=fuVyrMp3BpI")
-				i.fa.fa-youtube.fa-2x
+				i.fa.fa-youtube.fa-lg
 				span.f-12 &nbsp Youtube Канал
-	md-content.md-padding.text-center
-		img(src="../img/ad/surgery.jpg" style='display:inline-block')
+	//md-content.md-padding.text-center
+	//	img(src="../img/ad/surgery.jpg" style='display:inline-block')
 	md-content.md-padding.margin-top-8.text-center
 		div(id='datepicker')
+	md-content.md-padding.margin-top-8.text-center
+		img.aside-img(src="../img/clients/chicago-symphony-orchestra.png")
 

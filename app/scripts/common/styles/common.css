@@ -90,3 +90,6 @@
     font-size: 15px;
   }
 }
+.aside-img {
+  display: inline-block;
+}
