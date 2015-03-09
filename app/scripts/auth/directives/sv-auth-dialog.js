@@ -3,7 +3,7 @@
     angular.module('auth')
         .directive('svAuthDialog', function ($mdDialog) {
             return {
-                templateUrl: 'scripts/auth/directives/sv-lumx-auth.html',
+                templateUrl: 'scripts/auth/directives/sv-auth-dialog.html',
                 link: function ($scope, element, attr) {
 
                     $scope.showAdvanced = function (ev) {

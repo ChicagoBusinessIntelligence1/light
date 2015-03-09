@@ -8,7 +8,7 @@
                 link: function ($scope, element, attr) {
                     $scope.showAdvanced = function (ev) {
                         $mdDialog.show({
-                            templateUrl: 'scripts/auth/directives/sv-lumx-auth.html',
+                            templateUrl: 'scripts/auth/directives/sv-auth-dialog.html',
                             targetEvent: ev
                         }).then(function (answer) {
                             $scope.alert = 'You said the information was "' + answer + '".';

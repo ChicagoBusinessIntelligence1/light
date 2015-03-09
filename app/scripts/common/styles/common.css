@@ -79,3 +79,17 @@
 .card-light {
   height: 600px;
 }
+.toolbar-blue-grey {
+  color: #393939 !important;
+}
+.row-news-title {
+  font-size: 16px;
+}
+@media screen and (min-width: 960px) {
+  .row-news-title {
+    font-size: 15px;
+  }
+}
+.aside-img {
+  display: inline-block;
+}
