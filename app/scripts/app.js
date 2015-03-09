@@ -54,11 +54,6 @@
                     url: "/:id",
                     templateUrl: "scripts/sections/politics/views/politics-article.html"
                 })
-
-
-
-
-			
 //#state
         });
 

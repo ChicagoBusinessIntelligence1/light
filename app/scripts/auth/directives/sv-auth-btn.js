@@ -1,9 +1,9 @@
 (function () {
     'use strict';
     angular.module('auth')
-        .directive('svSvetAuth', function ($mdDialog) {
+        .directive('svAuthBtn', function ($mdDialog) {
             return {
-                templateUrl: 'scripts/auth/directives/sv-svet-auth.html',
+                templateUrl: 'scripts/auth/directives/sv-auth-btn.html',
                 restrict: 'E',
                 link: function ($scope, element, attr) {
                     $scope.showAdvanced = function (ev) {
