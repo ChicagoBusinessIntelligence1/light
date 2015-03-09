@@ -43,6 +43,16 @@
   font-size: 13px;
   line-height: 18px;
 }
+@media screen and (min-width: 1200px) {
+  .article-thumb-header {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .article-thumb-header {
+    font-size: 16px;
+  }
+}
 .article-thumb-header-s {
   font-weight: bold;
   font-size: 12px;
@@ -51,6 +61,16 @@
 .article-thumb-body {
   line-height: 20px;
   font-size: 12px;
+}
+@media screen and (min-width: 1200px) {
+  .article-thumb-body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .article-thumb-body {
+    font-size: 16px;
+  }
 }
 .positioner {
   max-width: 1260px;
