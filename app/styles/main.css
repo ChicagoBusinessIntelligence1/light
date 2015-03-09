@@ -125,6 +125,12 @@
     padding-bottom: 30px !important;
   }
 }
+.toolbar-g {
+  background-color: #eceff1 !important;
+}
+.h-footer {
+  color: #777;
+}
 .news-tags-wrapper {
   word-wrap: break-word;
 }
