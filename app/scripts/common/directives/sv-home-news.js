@@ -7,7 +7,6 @@
                 templateUrl: 'scripts/common/directives/sv-home-news.html',
                 replace: true,
                 link: function ($scope, element, attr) {
-
                     NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 3, false).then(function (news) {
                         $scope.topNews = news;
 
@@ -25,10 +24,9 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
                             console.log('sm');
-
-                            $scope.mainNewsFilter=150;
-                            $scope.secondNewsTitleFilter=30;
-                            $scope.secondNewsBodyFilter=0;
+                            $scope.mainNewsFilter = 150;
+                            $scope.secondNewsTitleFilter = 30;
+                            $scope.secondNewsBodyFilter = 0;
                         }
                     });
 
@@ -37,9 +35,9 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
 
-                            $scope.mainNewsFilter=750;
-                            $scope.secondNewsTitleFilter=250;
-                            $scope.secondNewsBodyFilter=70;
+                            $scope.mainNewsFilter = 550;
+                            $scope.secondNewsTitleFilter = 250;
+                            $scope.secondNewsBodyFilter = 70;
                             console.log('md');
 
                         }
@@ -49,20 +47,20 @@
                         return $mdMedia('lg');
                     }, function (isThisSize) {
                         if (isThisSize) {
-                            $scope.mainNewsFilter=850;
+                            $scope.mainNewsFilter = 850;
                             console.log('lg');
-                            $scope.secondNewsTitleFilter=250;
-                            $scope.secondNewsBodyFilter=100;
+                            $scope.secondNewsTitleFilter = 250;
+                            $scope.secondNewsBodyFilter = 100;
                         }
                     });
                     $scope.$watch(function () {
                         return $mdMedia('gt-lg');
                     }, function (isThisSize) {
                         if (isThisSize) {
-                            $scope.mainNewsFilter=100;
+                            $scope.mainNewsFilter = 100;
                             console.log('gt-lg');
-                            $scope.secondNewsTitleFilter=25;
-                            $scope.secondNewsBodyFilter=0;
+                            $scope.secondNewsTitleFilter = 25;
+                            $scope.secondNewsBodyFilter = 0;
                         }
                     });
 
