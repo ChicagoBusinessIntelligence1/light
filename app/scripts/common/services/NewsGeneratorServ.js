@@ -56,6 +56,10 @@
                             news = _.rest(news,3);
                             finalNews = _.first(_.shuffle(news), number);
                         } else{
+                            news = _.filter(news, function (news) {
+                                return news.content.length>750;
+
+                            })
                             finalNews = _.first(news, number);
                         }
                         deferred.resolve(finalNews);

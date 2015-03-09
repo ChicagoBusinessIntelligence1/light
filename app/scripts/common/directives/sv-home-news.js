@@ -19,18 +19,42 @@
                     $scope.mainNewsFilter;
                     $scope.secondNewsTitleFilter;
                     $scope.secondNewsBodyFilter;
-
                     $scope.$watch(function () {
-                        return $mdMedia('sm');
+                        return $mdMedia('max-width: 600px');
                     }, function (isThisSize) {
                         if (isThisSize) {
-                            console.log('sm');
+                            console.log('max-width: 600px');
 
-                            $scope.mainNewsFilter=150;
+                            $scope.mainNewsFilter=450;
+                            $scope.secondNewsTitleFilter=70;
+                            $scope.secondNewsBodyFilter=30;
+                        }
+                    });
+
+                    $scope.$watch(function () {
+                        return $mdMedia('max-width: 500px');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('max-width: 500px');
+                            $scope.mainNewsFilter=250;
                             $scope.secondNewsTitleFilter=30;
                             $scope.secondNewsBodyFilter=0;
                         }
                     });
+
+                    $scope.$watch(function () {
+                        return $mdMedia('max-width: 400px');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('max-width: 400px');
+
+                            $scope.mainNewsFilter=200;
+                            $scope.secondNewsTitleFilter=50;
+                            $scope.secondNewsBodyFilter=0;
+                        }
+                    });
+
+
 
                     $scope.$watch(function () {
                         return $mdMedia('md');
@@ -41,7 +65,6 @@
                             $scope.secondNewsTitleFilter=250;
                             $scope.secondNewsBodyFilter=70;
                             console.log('md');
-
                         }
                     });
 
