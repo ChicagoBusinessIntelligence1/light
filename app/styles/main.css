@@ -187,9 +187,19 @@ md-warn {
 .comment-feedback-link {
   cursor: pointer;
 }
-.article-header-thumb {
+.article-thumb-header {
   font-weight: bold;
-  line-height: 15px;
+  font-size: 13px;
+  line-height: 18px;
+}
+.article-thumb-header-s {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+}
+.article-thumb-body {
+  line-height: 20px;
+  font-size: 12px;
 }
 .positioner {
   max-width: 1260px;
@@ -206,6 +216,9 @@ font-family
 }
 /*font-family Roboto*/
 /*font-family PT Serif*/
+.bold {
+  font-weight: bold;
+}
 .f-11 {
   font-size: 11px;
 }
@@ -374,6 +387,9 @@ font-family
 .margin-bottom-5 {
   margin-bottom: 5px;
 }
+.margin-bottom-3 {
+  margin-bottom: 3px;
+}
 .fs-subhead {
   font-size: 16px;
   margin-bottom: 10px;
@@ -495,4 +511,10 @@ md-grid-list md-grid-tile-footer figcaption h3 {
   font-weight: 700;
   width: 100%;
   text-align: center;
+}
+/**********************
+ =Weather Widget
+***********************/
+.fe_container {
+  color: #00f !important;
 }

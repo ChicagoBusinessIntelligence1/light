@@ -3,6 +3,6 @@ md-content
 		img(ng-src="{{img}}")
 		.light-padding-10
 			.margin-bottom-5
-				.article-header-thumb.f-16(ng-if='homeSmall') {{title | Title:13}}
-				.article-header-thumb(ng-if='!homeSmall') {{title}}
-			p At vero eos et accusamus et iusto odio dignissimos ducimus
+				.article-thumb-header(ng-if='homeSmall') {{title | Title:13}}
+				.article-thumb-header(ng-if='!homeSmall') {{title}}
+			p.article-thumb-body At vero eos et accusamus et iusto odio dignissimos ducimus

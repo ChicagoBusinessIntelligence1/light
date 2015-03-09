@@ -5,9 +5,9 @@ md-toolbar(layout='column')
 				span.weather-city Chicago, IL
 				span
 					img(src="../img/weather/partlycloudy.png" style='display:inline-block')
-				span
-					i.icon.icon--s.mdi.mdi-temperature-fahrenheit(hide-sm)
-					i.icon.icon--s.mdi.mdi-temperature-fahrenheit(hide-gt-sm)
+				i.icon.icon--lg.icon--circled.mdi.mdi-temperature-fahrenheit
+					//i.icon.icon--m.mdi.mdi-temperature-fahrenheit(hide-sm)
+					//i.icon.icon--s.mdi.mdi-temperature-fahrenheit(hide-gt-sm)
 		div(flex-md='50' flex-sm="60")
 			.header-logo
 				a(ui-sref='app.home')
@@ -17,7 +17,4 @@ md-toolbar(layout='column')
 	div(layout='row')
 		.text-center(flex)
 			span.display-block.first-newspaper FIRST RUSSIAN NEWSPAPER IN CHICAGO
-
-
-
 
