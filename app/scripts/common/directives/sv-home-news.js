@@ -16,18 +16,38 @@
                         $scope.n3 = $scope.topNews[2];
                     });
 
-                    //$scope.$watch(function() { return $mdMedia('sm'); }, function(big) {
-                    //    console.log('sm');
-                    //});
-                    //
-                    //$scope.$watch(function() { return $mdMedia('md'); }, function(big) {
-                    //    console.log('md');
-                    //});
-                    //
-                    //$scope.$watch(function() { return $mdMedia('lg'); }, function(big) {
-                    //    console.log('lg');
-                    //});
 
+
+                    $scope.$watch(function () {
+                        return $mdMedia('sm');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('sm');
+                        }
+                    });
+
+                    $scope.$watch(function () {
+                        return $mdMedia('md');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('md');
+                        }
+                    });
+
+                    $scope.$watch(function () {
+                        return $mdMedia('lg');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('lg');
+                        }
+                    });
+                    $scope.$watch(function () {
+                        return $mdMedia('gt-lg');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('gt-lg');
+                        }
+                    });
 
                 }
             };
