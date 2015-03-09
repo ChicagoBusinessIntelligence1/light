@@ -41,6 +41,7 @@
                             $scope.secondNewsTitleFilter=250;
                             $scope.secondNewsBodyFilter=70;
                             console.log('md');
+
                         }
                     });
 
