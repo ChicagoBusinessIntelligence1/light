@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module('common')
-        .directive('svHomeNews', function ($mdMedia, NewsGeneratorServ) {
+        .directive('svHomeNews', function ($mdMedia, NewsGeneratorServ, $rootScope) {
             return {
                 templateUrl: 'scripts/common/directives/sv-home-news.html',
                 replace: true,
                 link: function ($scope, element, attr) {
 
                     NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 3, false).then(function (news) {
-                        $scope.topNews = news;
+                        $rootScope.topNews = news;
 
                         $scope.n1 = $scope.topNews[0];
                         $scope.n2 = $scope.topNews[1];
@@ -19,6 +19,10 @@
                     $scope.mainNewsFilter;
                     $scope.secondNewsTitleFilter;
                     $scope.secondNewsBodyFilter;
+
+
+
+
                     $scope.$watch(function () {
                         return $mdMedia('max-width: 600px');
                     }, function (isThisSize) {
@@ -56,6 +60,7 @@
 
 
 
+
                     $scope.$watch(function () {
                         return $mdMedia('md');
                     }, function (isThisSize) {
@@ -65,6 +70,19 @@
                             $scope.secondNewsTitleFilter=250;
                             $scope.secondNewsBodyFilter=70;
                             console.log('md');
+                        }
+                    });
+
+
+                    $scope.$watchCollection(function () {
+                        return $mdMedia('min-width: 700px') && $mdMedia('max-width: 958px');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+                            console.log('max-width: 780');
+
+                            $scope.mainNewsFilter=830;
+                            $scope.secondNewsTitleFilter=200;
+                            $scope.secondNewsBodyFilter=70;
                         }
                     });
 
@@ -90,13 +108,13 @@
                     });
 
                     $scope.$watch(function () {
-                        return $mdMedia('min-width:1400');
+                        return $mdMedia('min-width: 1400px');
                     }, function (isThisSize) {
                         if (isThisSize) {
                             $scope.mainNewsFilter=1000;
                             console.log('very large');
                             $scope.secondNewsTitleFilter=2500;
-                            $scope.secondNewsBodyFilter=1000;
+                            $scope.secondNewsBodyFilter=400;
                         }
                     });
 

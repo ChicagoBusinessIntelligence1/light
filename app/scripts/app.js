@@ -58,7 +58,7 @@
                 })
 
                 .state("app.politics", {
-                    url: "/politics",
+                    url: "/news",
                     controller: "Politics",
                     templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
                 })
@@ -67,6 +67,11 @@
                     url: "/:id",
                     templateUrl: "scripts/sections/politics/views/politics-article.html"
                 })
+			.state("app.common.-article", {
+				url: "/-article", 
+				controller:"ArticleCtrl",
+				templateUrl: "scripts/common/views/-article.html"
+			})
 //#state
         });
 
