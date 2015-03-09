@@ -9,7 +9,6 @@
                 link: function ($scope, element, attr) {
 
                     $scope.$watch('allNews', function (newValue, oldValue) {
-                        console.log(newValue);
                         $scope.n1=$scope.allNews[0];
                         $scope.n2=$scope.allNews[1];
                         $scope.n3=$scope.allNews[2];

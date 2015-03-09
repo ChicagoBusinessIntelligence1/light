@@ -6,6 +6,7 @@
             return {
                 templateUrl: 'scripts/common/directives/sv-article-thumb-second.html',
                 scope: {
+                    id:'@',
                     title: '@',
                     img: '@'
                 },

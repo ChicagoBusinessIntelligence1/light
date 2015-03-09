@@ -1,7 +1,8 @@
 md-toolbar.md-hue-1.margin-bottom-10( ng-controller='RightCtrl' layout='row' layout-align='space-around center')
-	span.row-news-title {{panelTitle}}
+    span.row-news-title {{panelTitle}}
 md-content.light-padding-8
-	ul.list-inline
-		li.margin-bottom-10(ng-repeat='n in news')
-			span.text-primary {{n.publishedDate|NewsDate}}
-			p {{n.title}}
+    ul.list-inline
+        li.margin-bottom-10(ng-repeat='n in news')
+            a(ui-sref='app.news({id:n.id})')
+                span.text-primary {{n.publishedDate|NewsDate}}
+                p {{n.title}}
