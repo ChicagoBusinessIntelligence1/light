@@ -27,7 +27,7 @@
             $mdThemingProvider.theme('default')
                 .primaryPalette('indigo')
                 .backgroundPalette('grey')
-                .accentPalette('grey');
+                .accentPalette('red');
         })
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
