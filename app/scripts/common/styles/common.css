@@ -102,3 +102,11 @@
 .aside-img {
   display: inline-block;
 }
+.fbug {
+  position: absolute;
+  overflow-y: auto !important;
+  height: 100%;
+}
+.fparent {
+  position: relative;
+}
