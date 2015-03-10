@@ -73,9 +73,9 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 			.state("app.sections.politics.politics", {
-				url: "/politics", 
+				url: "/politics",
 				controller:"PoliticsCtrl",
-				templateUrl: "scripts/sections/politics/views/politics.html"
+				templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
 			})
 //#state
         });
