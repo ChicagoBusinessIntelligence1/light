@@ -1,7 +1,19 @@
 @import 'nib'
 
 /**********************
- =article
+      =mixins
+***********************/
+
+news-xs()
+  font-size 11px
+  line-height 14px !important
+
+news-header-s()
+  font-size 10px
+  line-height 12px
+
+/**********************
+     =article
 ***********************/
 
 .fs-body-1
@@ -31,6 +43,10 @@
 
 .article-toolbar-body
   color #393939
+  news-xs()
+
+.article-toolbar-date
+  news-xs()
 
 .article-quote
   font-size 14px
@@ -56,9 +72,12 @@
 
 
 .article-thumb-header-s
-  /*font-weight bold*/
-  font-size 12px
-  line-height 16px
+  news-header-s()
+
+  @media screen and (max-width: 1200px)
+    font-size 12px
+    line-height 15px
+    font-weight bold
 
 .article-thumb-body
   line-height 20px
