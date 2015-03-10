@@ -3,7 +3,6 @@
 
     angular.module('sections.politics')
         .controller('PoliticsCtrl', function ($scope) {
-
         });
 })();
 
