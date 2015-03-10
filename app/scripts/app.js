@@ -56,7 +56,11 @@
                     controller: 'HomeCtrl',
                     templateUrl: 'scripts/sections/home/views/home.html'
                 })
-
+                .state("app.politics", {
+                    url: "/politics",
+                    controller: "PoliticsCtrl",
+                    templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
+                })
                 //.state("app.politics", {
                 //    url: "/politics",
                 //    controller: "Politics",
@@ -72,16 +76,7 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-			.state("app.sections.politics.politics", {
-				url: "/politics",
-				controller:"PoliticsCtrl",
-				templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
-			})
-			.state("app.politics", {
-				url: "/politics", 
-				controller:"PoliticsCtrl",
-				templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
-			})
+
 //#state
         });
 
