@@ -72,6 +72,11 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
+			.state("app.sections.politics.politics", {
+				url: "/politics", 
+				controller:"PoliticsCtrl",
+				templateUrl: "scripts/sections/politics/views/politics.html"
+			})
 //#state
         });
 
