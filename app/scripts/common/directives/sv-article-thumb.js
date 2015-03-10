@@ -12,19 +12,18 @@
                     id: '@',
                     img: '@',
                     title: '@',
-                    fsize: '=',
+                    fscale: '=',
                     body: '@'
                 },
                 link: function ($scope, element, attr) {
                     var width = element.css('width');
 
-                    $scope.$watch('fsize', function (newValue, oldValue) {
+                    $scope.$watch('fscale', function (newValue, oldValue) {
 
-                        if ($scope.fsize) {
-                            console.log($scope.fsize);
-                            var parse = parseInt($scope.fsize.substr(0, $scope.fsize.length-2));
-                            element.find('.content').css('font-size', $scope.fsize);
-                            element.find('.content').css('line-height', (parse+16)+px);
+                        if ($scope.fscale) {
+                            console.log($scope.fscale);
+                            element.find('.content').css('font-size', 100*$scope.fscale+'%');
+                            element.find('.content').css('line-height', 1.1*$scope.fscale);
 
                         }
                     });
