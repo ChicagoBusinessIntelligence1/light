@@ -41,8 +41,8 @@
                             console.log('max-width: 500px');
 
                             $scope.fscale=1.2;
-                            $scope.mainNewsFilter=250;
-                            $scope.secondNewsTitleFilter=30;
+                            $scope.mainNewsFilter=200;
+                            $scope.secondNewsTitleFilter=25;
                             $scope.secondNewsBodyFilter=0;
                         }
                     });
@@ -118,7 +118,7 @@
                         if (isThisSize) {
                             $scope.mainNewsFilter=100;
                             console.log('gt-lg');
-                            $scope.secondNewsTitleFilter=25;
+                            $scope.secondNewsTitleFilter=22;
                             $scope.secondNewsBodyFilter=0;
 
                             $scope.fscale=1;
@@ -130,11 +130,24 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
 
-                            $scope.fscale=1;
+                            $scope.fscale=1.1;
 
                             $scope.mainNewsFilter=1000;
                             console.log('very large');
-                            $scope.secondNewsTitleFilter=2500;
+                            $scope.secondNewsTitleFilter=50;
+                            $scope.secondNewsBodyFilter=400;
+                        }
+                    });
+                    $scope.$watch(function () {
+                        return $mdMedia('min-width: 1600px');
+                    }, function (isThisSize) {
+                        if (isThisSize) {
+
+                            $scope.fscale=1.2;
+
+                            $scope.mainNewsFilter=1000;
+                            console.log('very very large');
+                            $scope.secondNewsTitleFilter=60;
                             $scope.secondNewsBodyFilter=400;
                         }
                     });
