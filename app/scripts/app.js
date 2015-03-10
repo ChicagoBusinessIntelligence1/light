@@ -82,6 +82,11 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
+			.state("app.money", {
+				url: "/money", 
+				controller:"MoneyCtrl",
+				templateUrl: "scripts/sections/money/views/moneyCtrl.html"
+			})
 //#state
         });
 
