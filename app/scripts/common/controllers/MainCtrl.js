@@ -9,9 +9,7 @@ angular.module('common')
             $rootScope.allNews = _.map(news, function (n) {
                 n.id = counter++;
                 return n;
-
             });
-
         });
 
 

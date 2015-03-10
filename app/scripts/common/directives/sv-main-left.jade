@@ -1,18 +1,18 @@
-md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-lg')")
+md-sidenav.md-sidenav-left.md-whiteframe-z2( md-component-id='left', md-is-locked-open="$media('gt-lg')")
 	md-toolbar.bgc-blue-grey-50.toolbar-blue-grey(ng-controller='LeftCtrl' layout='row' layout-align='space-around center' style='background-color:white')
 		span Наши новости
 		button.btn.btn--m.btn--fab(ng-click='close()' hide-gt-lg)
 			i.mdi.mdi-close
-	md-content.md-padding(ng-controller='LeftCtrl')
+	.md-padding(ng-controller='LeftCtrl')
 		sv-left-aside-nav
-	md-content.md-padding.text-center
+	.md-padding.text-center
 		iframe(id='forecast_embed' type='text/html', frameborder='0', height='245', width='100%', src='https://forecast.io/embed/#lat=41.995125&lon=-87.754128&name=Chicago')
-	div(flex-container='row')
+	div(flex-container='col')
 		div(flex-item)
 			.card.bgc-blue-grey-50.margin-bottom-10.text-center(class='p+')
 				span.display-block.margin-top-10.margin-bottom-10.f-16 Популярные Теги
 			md-content.md-padding
 				sv-elements-nav
-	md-content.md-padding.text-center
-		a(href="http://crystalpalacebanquets.com/")
+	.md-padding.text-center
+		a(href="http://crystalpaklacebanquets.com/")
 			img(src="../img/ad/crystal-palace-banquets.jpg" style='display:inline-block')
