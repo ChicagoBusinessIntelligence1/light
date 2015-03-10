@@ -3,7 +3,7 @@ md-toolbar.md-hue-1.margin-bottom-10( ng-controller='RightCtrl' layout='row' lay
 md-content.light-padding-8
 	ul.list-inline
 		li.margin-bottom-10(ng-repeat='n in news')
-			a(ui-sref='app.news({id:n.id})')
-				span.text-primary {{n.publishedDate|NewsDate}}
+			a.article-toolbar-date(ui-sref='app.news({id:n.id})')
+				.text-primary {{n.publishedDate|NewsDate}}
 			a.article-toolbar-body(ui-sref='app.news({id:n.id})')
-				p {{n.title}}
+				| {{n.title}}

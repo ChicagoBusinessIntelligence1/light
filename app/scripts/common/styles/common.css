@@ -1,5 +1,8 @@
 /**********************
- =article
+      =mixins
+***********************/
+/**********************
+     =article
 ***********************/
 .fs-body-1 {
   font-size: 18px !important;
@@ -30,6 +33,12 @@
 }
 .article-toolbar-body {
   color: #393939;
+  font-size: 11px;
+  line-height: 14px !important;
+}
+.article-toolbar-date {
+  font-size: 11px;
+  line-height: 14px !important;
 }
 .article-quote {
   font-size: 14px;
@@ -60,9 +69,15 @@
   }
 }
 .article-thumb-header-s {
-/*font-weight bold*/
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 10px;
+  line-height: 12px;
+}
+@media screen and (max-width: 1200px) {
+  .article-thumb-header-s {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+  }
 }
 .article-thumb-body {
   line-height: 20px;
