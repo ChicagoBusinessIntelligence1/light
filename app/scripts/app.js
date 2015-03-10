@@ -15,6 +15,7 @@
         // Site section modules
         'sections.home',
         'sections.politics',
+        'sections.money',
 
         // 3rd party modules
         'firebase',
@@ -63,8 +64,8 @@
                 })
                 .state("app.money", {
                     url: "/money",
-                    controller:"MoneyCtrl",
-                    templateUrl: "scripts/money/views/moneyCtrl.html"
+                    controller: "MoneyCtrl",
+                    templateUrl: "scripts/sections/money/views/moneyCtrl.html"
                 })
                 //.state("app.politics", {
                 //    url: "/politics",
@@ -82,11 +83,6 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
-			.state("app.money", {
-				url: "/money", 
-				controller:"MoneyCtrl",
-				templateUrl: "scripts/sections/money/views/moneyCtrl.html"
-			})
 //#state
         });
 
