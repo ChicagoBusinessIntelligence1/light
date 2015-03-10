@@ -18,7 +18,7 @@
                     $scope.secondNewsTitleFilter;
                     $scope.secondNewsBodyFilter;
 
-
+                    $scope.fsize='13px';
 
 
                     $scope.$watch(function () {
@@ -27,6 +27,7 @@
                         if (isThisSize) {
                             console.log('max-width: 600px');
 
+                            $scope.fsize='13px';
                             $scope.mainNewsFilter=450;
                             $scope.secondNewsTitleFilter=70;
                             $scope.secondNewsBodyFilter=30;
@@ -38,6 +39,8 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
                             console.log('max-width: 500px');
+
+                            $scope.fsize='13px';
                             $scope.mainNewsFilter=250;
                             $scope.secondNewsTitleFilter=30;
                             $scope.secondNewsBodyFilter=0;
@@ -50,6 +53,7 @@
                         if (isThisSize) {
                             console.log('max-width: 400px');
 
+                            $scope.fsize='13px';
                             $scope.mainNewsFilter=200;
                             $scope.secondNewsTitleFilter=50;
                             $scope.secondNewsBodyFilter=0;
@@ -64,6 +68,7 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
 
+                            $scope.fsize='13px';
                             $scope.mainNewsFilter=750;
                             $scope.secondNewsTitleFilter=250;
                             $scope.secondNewsBodyFilter=70;
@@ -77,6 +82,7 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
                             console.log('max-width: 780');
+                            $scope.fsize = '17px';
 
                             $scope.mainNewsFilter=830;
                             $scope.secondNewsTitleFilter=200;
@@ -89,6 +95,7 @@
                     }, function (isThisSize) {
                         if (isThisSize) {
                             $scope.mainNewsFilter=850;
+                            $scope.fsize='15px';
                             console.log('lg');
                             $scope.secondNewsTitleFilter=250;
                             $scope.secondNewsBodyFilter=100;
@@ -102,6 +109,8 @@
                             console.log('gt-lg');
                             $scope.secondNewsTitleFilter=25;
                             $scope.secondNewsBodyFilter=0;
+
+                            $scope.fsize='13px';
                         }
                     });
 
@@ -109,6 +118,9 @@
                         return $mdMedia('min-width: 1400px');
                     }, function (isThisSize) {
                         if (isThisSize) {
+
+                            $scope.fsize='15px';
+
                             $scope.mainNewsFilter=1000;
                             console.log('very large');
                             $scope.secondNewsTitleFilter=2500;
