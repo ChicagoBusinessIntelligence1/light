@@ -578,8 +578,10 @@ module.exports = function (grunt) {
             var newIndexHtml = addInIndexHtml('<!-- MODULES-->', indexAddition);
             grunt.file.delete(INDEXHTML);
 
-            grunt.file.write('2' + INDEXHTML, newIndexHtml);
-            deferred.resolve();
+            grunt.file.write(INDEXHTML, newIndexHtml, function () {
+               deferred.resolve() ;
+            });
+
         }
         return deferred.promise;
     }
