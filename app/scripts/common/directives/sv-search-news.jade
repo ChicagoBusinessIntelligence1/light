@@ -1,1 +1,6 @@
-.well sv-search-news Template
+div(flex-item='')
+	.card(style='max-height:55px !important')
+		.toolbar(style='padding:8px')
+			lx-search-filter(model='searchFilter.fourth', style='height:30px !important' filter-width='100%' position='left', closed='')
+			button.btn.btn--m.btn--black.btn--icon(lx-ripple='')
+				i.mdi.mdi-apps
