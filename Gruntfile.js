@@ -544,6 +544,7 @@ module.exports = function (grunt) {
                     grunt.file.write(tpathHtml, directiveTemplateHtml);
                 }
                 //grunt.file.write(ipath, indf);
+                console.log(indf);
                 grunt.task.run('addcommit');
             }
         );
