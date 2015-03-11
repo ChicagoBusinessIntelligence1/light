@@ -541,9 +541,9 @@ module.exports = function (grunt) {
                     delFileDep(tpathHtml);
                 } else {
                     grunt.file.write(tpath, directiveTemplate);
-                    grunt.file.write(tpathHtml, directiveTemplateHtml);
+                    //grunt.file.write(tpathHtml, directiveTemplateHtml);
                 }
-                grunt.file.write(ipath, indf);
+                //grunt.file.write(ipath, indf);
                 grunt.task.run('addcommit');
             }
         );
