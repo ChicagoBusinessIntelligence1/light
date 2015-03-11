@@ -564,7 +564,7 @@ module.exports = function (grunt) {
 
         var moduleIndex = SCRIPT_PATH + module + '/' + module + 'Index.js';
 
-        //grunt.file.delete(moduleIndex);
+        grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
 
         var isIndexExist = grunt.file.exists(moduleIndex);
