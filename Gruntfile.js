@@ -533,7 +533,7 @@ module.exports = function (grunt) {
 
                 } else {
 
-                    console.log(src);
+                    console.log(before);
                     indf = enterInside(indf, before, src);
                 }
 
