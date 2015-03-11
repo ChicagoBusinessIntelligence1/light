@@ -624,7 +624,7 @@ module.exports = function (grunt) {
 
     function addInAppJs(after, addition) {
         var app = grunt.file.read(APP);
-        var alreadyIn = app.indexOf(addition);
+        var alreadyIn = app.indexOf("'"+addition+"',");
         if (alreadyIn > -1) {
             return app;
         }
