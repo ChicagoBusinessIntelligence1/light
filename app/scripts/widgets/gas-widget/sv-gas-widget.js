@@ -2,10 +2,9 @@
     'use strict';
 
     angular.module('common')
-        .directive('svFooter', function () {
+        .directive('svGasWidget', function () {
             return {
-                templateUrl: 'scripts/common/directives/sv-footer.html',
-                scope:{},
+                templateUrl: 'scripts/widgets/gas-widget/sv-gas-widget.html',
                 link: function ($scope, element, attr) {
 
                 }
