@@ -124,6 +124,11 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
+			.state("app.classified", {
+				url: "/classified", 
+				controller:"ClassifiedCtrl",
+				templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
+			})
 //#state
         });
 
