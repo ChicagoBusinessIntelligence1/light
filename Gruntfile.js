@@ -544,18 +544,35 @@ module.exports = function (grunt) {
         grunt.task.run('addcommit');
     })
     var SCRIPT_PATH = 'app/scripts/';
+    var APP = SCRIPT_PATH + 'app.js'
 
     function generateModule(module) {
-        var index = SCRIPT_PATH+ module+'/'+module+'Index.js';
+        var index = SCRIPT_PATH + module + '/' + module + 'Index.js';
+
+        grunt.file.delete(index);
         console.log(index);
+
         var isIndexExist = grunt.file.exists(index);
         if (!isIndexExist) {
             var moduleTpl = grunt.file.read('templates/module.tpl.js');
-            var moduleTpl = moduleTpl.replace(/#module#/g, module) ;
-            grunt.file.write(index,moduleTpl);
+            var moduleTpl = moduleTpl.replace(/#module#/g, module);
+            grunt.file.write(index, moduleTpl);
+
+            var newApp = addInApp('// modules', 'Izya');
+            console.log(newApp);
         }
 
         console.log(isIndexExist);
+    }
+
+    function addInApp(after, addition) {
+        var app = grunt.file.read(APP);
+        var start = app.indexOf(after);
+        var start = app.indexOf('\r\n', start);
+        var part1 = app.substr(0, start);
+        var part2 = app.substr(start);
+        return part1 + '\r\n' + addition + part2;
+
     }
 
 };

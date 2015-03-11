@@ -4,7 +4,7 @@
 
     var app = angular.module('app', [
 
-        // Common modules
+        // modules
         'header',
         'aside',
         'common',
