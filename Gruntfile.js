@@ -527,7 +527,7 @@ module.exports = function (grunt) {
 /////
         var indf;
         var newIndex = generateModule(moduleDirectirized);
-        
+
         if (newIndex) {
             indf = newIndex;
         } else {
@@ -561,12 +561,11 @@ module.exports = function (grunt) {
 
     function generateModule(module) {
 
-        var deferred = Q.defer();
 
         var moduleIndex = SCRIPT_PATH + module + '/' + module + 'Index.js';
 
-        grunt.file.delete(moduleIndex);
-        console.log(moduleIndex);
+        //grunt.file.delete(moduleIndex);
+        //console.log(moduleIndex);
 
         var isIndexExist = grunt.file.exists(moduleIndex);
         if (!isIndexExist) {
