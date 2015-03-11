@@ -590,6 +590,14 @@ module.exports = function (grunt) {
 
     function addInAppJs(after, addition) {
         var app = grunt.file.read(APP);
+        var alreadyIn = app.indexOf(addition);
+        if (alreadyIn) {
+            return app;
+        }
+
+
+
+
         var start = app.indexOf(after);
         start = app.indexOf('\r\n', start);
         var part1 = app.substr(0, start);
