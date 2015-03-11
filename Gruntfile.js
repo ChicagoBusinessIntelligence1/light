@@ -526,7 +526,7 @@ module.exports = function (grunt) {
 
 /////
         var indf;
-        var newIndex = generateModule(moduleDirectirized);
+        var newIndex = generateModule(module);
 
         if (newIndex) {
             indf = newIndex;
@@ -561,8 +561,9 @@ module.exports = function (grunt) {
 
     function generateModule(module) {
 
+        var moduleDirectirized = processModule(module);
 
-        var moduleIndex = SCRIPT_PATH + module + '/' + module + 'Index.js';
+        var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleDirectirized + 'Index.js';
 
         grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
@@ -570,10 +571,10 @@ module.exports = function (grunt) {
         var isIndexExist = grunt.file.exists(moduleIndex);
         if (!isIndexExist) {
             var moduleTpl = grunt.file.read('templates/module.tpl.js');
-            moduleTpl = moduleTpl.replace(/#module#/g, module);
+            moduleTpl = moduleTpl.replace(/#module#/g, moduleDirectirized);
             grunt.file.write(moduleIndex, moduleTpl);
 
-            var newApp = addInAppJs('// modules', module);
+            var newApp = addInAppJs('// modules', moduleDirectirized);
             grunt.file.write(APP, newApp);
 
             var slash = moduleIndex.indexOf('/')+1;
