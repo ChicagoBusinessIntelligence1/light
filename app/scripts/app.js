@@ -5,6 +5,7 @@
     var app = angular.module('app', [
 
         // modules
+		'sections/test',
 		'widgets',
         'header',
         'aside',
