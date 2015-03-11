@@ -3,11 +3,12 @@
     'use strict';
 
     var app = angular.module('app', [
+        'common',
 
-        // Common modules
+        // modules
+		'widgets',
         'header',
         'aside',
-        'common',
         'auth',
         'footer',
 
