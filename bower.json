@@ -16,7 +16,8 @@
     "lumx": "~0.3.17",
     "raphael": "~2.1.3",
     "firebase": "2.2.2",
-    "angular-resource": "1.4.0-beta.5"
+    "angular-resource": "1.4.0-beta.5",
+    "simpleWeather": "~3.0.2"
   },
   "devDependencies": {}
 }
