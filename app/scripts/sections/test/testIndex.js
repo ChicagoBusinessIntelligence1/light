@@ -1,6 +1,6 @@
 (function () {
     'use strict'
 
-    angular.module('sections/test', []);
+    angular.module('sections.test', []);
 })();
 

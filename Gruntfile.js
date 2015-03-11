@@ -573,10 +573,10 @@ module.exports = function (grunt) {
         var isIndexExist = grunt.file.exists(moduleIndex);
         if (!isIndexExist) {
             var moduleTpl = grunt.file.read('templates/module.tpl.js');
-            moduleTpl = moduleTpl.replace(/#module#/g, moduleDirectirized);
+            moduleTpl = moduleTpl.replace(/#module#/g, module);
             grunt.file.write(moduleIndex, moduleTpl);
 
-            var newApp = addInAppJs('// modules', moduleDirectirized);
+            var newApp = addInAppJs('// modules', module);
             grunt.file.write(APP, newApp);
 
             var slash = moduleIndex.indexOf('/') + 1;
