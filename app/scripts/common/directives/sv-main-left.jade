@@ -6,14 +6,17 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked
 	md-content.md-padding(ng-controller='LeftCtrl')
 		sv-left-aside-nav
 	md-content.md-padding.text-center
-		iframe(id='forecast_embed' type='text/html', frameborder='0', height='245', width='100%', src='https://forecast.io/embed/#lat=41.995125&lon=-87.754128&name=Chicago')
+		iframe(id='forecast_embed'
+		type='text/html', frameborder='0',
+		height='190', width='100%',
+		src='https://forecast.io/embed/#lat=41.995125&lon=-87.754128&name=Chicago')
 	div(flex-container='row')
 		div(flex-item)
 			.card.bgc-blue-grey-50.margin-bottom-10.text-center(class='p+')
 				span.display-block.margin-top-10.margin-bottom-10.f-16 Популярные Теги
 			md-content.md-padding
 				sv-elements-nav
-	md-content.md-padding.text-center
+	md-content.md-padding(layout='col' layout-align='center')
 		sv-gas-widget
 	//md-content.md-padding.text-center
 	//	a(href="http://crystalpalacebanquets.com/")
