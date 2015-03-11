@@ -18,6 +18,7 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
+            console.log(txt);
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
@@ -526,6 +527,7 @@ module.exports = function (grunt) {
 /////
         var indf;
         var newIndex = generateModule(moduleDirectirized);
+        
         if (newIndex) {
             indf = newIndex;
         } else {
@@ -569,7 +571,7 @@ module.exports = function (grunt) {
         var isIndexExist = grunt.file.exists(moduleIndex);
         if (!isIndexExist) {
             var moduleTpl = grunt.file.read('templates/module.tpl.js');
-            var moduleTpl = moduleTpl.replace(/#module#/g, module);
+            moduleTpl = moduleTpl.replace(/#module#/g, module);
             grunt.file.write(moduleIndex, moduleTpl);
 
             var newApp = addInAppJs('// modules', module);
@@ -590,7 +592,7 @@ module.exports = function (grunt) {
     function addInAppJs(after, addition) {
         var app = grunt.file.read(APP);
         var start = app.indexOf(after);
-        var start = app.indexOf('\r\n', start);
+        start = app.indexOf('\r\n', start);
         var part1 = app.substr(0, start);
         var part2 = app.substr(start);
         return part1 + '\r\n\t\t\'' + addition + '\',' + part2;
@@ -599,7 +601,7 @@ module.exports = function (grunt) {
     function addInIndexHtml(after, addition) {
         var indexHtml = grunt.file.read(INDEXHTML);
         var start = indexHtml.indexOf(after);
-        var start = indexHtml.indexOf(eol, start);
+        start = indexHtml.indexOf(eol, start);
         var part1 = indexHtml.substr(0, start);
         var part2 = indexHtml.substr(start);
         return part1 + eol + eol + addition + part2;
