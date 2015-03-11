@@ -4,7 +4,7 @@
     angular.module('common')
         .directive('svSideNews', function () {
             return {
-                templateUrl: 'scripts/common/directives/sv-side-news.html',
+                templateUrl: 'scripts/common/news/directives/sv-side-news.html',
                 scope:{},
                 link: function ($scope, element, attr) {
 
