@@ -546,6 +546,7 @@ module.exports = function (grunt) {
     var SCRIPT_PATH = 'app/scripts/';
     var APP = SCRIPT_PATH + 'app.js'
     var INDEXHTML = 'app/' + 'index.html';
+    var eol = '\r\n';
 
     function generateModule(module) {
         var index = SCRIPT_PATH + module + '/' + module + 'Index.js';
@@ -583,10 +584,10 @@ module.exports = function (grunt) {
     function addInIndexHtml(after, addition) {
         var indexHtml = grunt.file.read(INDEXHTML);
         var start = indexHtml.indexOf(after);
-        var start = indexHtml.indexOf('\r\n', start);
+        var start = indexHtml.indexOf(eol, start);
         var part1 = indexHtml.substr(0, start);
         var part2 = indexHtml.substr(start);
-        return part1 + '\r\n' + addition +  part2;
+        return part1 + eol + eol + addition + part2;
     }
 
 };
