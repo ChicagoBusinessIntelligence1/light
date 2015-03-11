@@ -523,6 +523,8 @@ module.exports = function (grunt) {
         /////////////////
 
 /////
+        generateModule(tpath,moduleDirectirized);
+
         if (rm) {
             indf = removeFromInside(indf, src);
 
@@ -541,5 +543,10 @@ module.exports = function (grunt) {
         grunt.file.write(ipath, indf);
         grunt.task.run('addcommit');
     })
+
+    function generateModule(path, module) {
+       console.log(path);
+       console.log(module);
+    }
 
 };
