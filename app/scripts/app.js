@@ -83,6 +83,11 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
+			.state("app.culture", {
+				url: "/culture", 
+				controller:"CultureCtrl",
+				templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
+			})
 //#state
         });
 
