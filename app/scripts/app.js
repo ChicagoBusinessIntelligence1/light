@@ -124,6 +124,11 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
+			.state("app.track", {
+				url: "/track", 
+				controller:"TrackCtrl",
+				templateUrl: "scripts/sections/test/views/trackCtrl.html"
+			})
 //#state
         });
 
