@@ -60,8 +60,10 @@ var removeFromInside = function (target, remove) {
 }
 
 module.exports = function (grunt) {
+    var Q  = require('q')
     var _ = require('underscore');
     _.str = require('underscore.string');
+
     _.str.include('Underscore.string', 'string');
 
     var delFileDep = function (fileName) {
@@ -525,22 +527,22 @@ module.exports = function (grunt) {
 /////
         generateModule(moduleDirectirized);
 
-        //if (rm) {
-        //    indf = removeFromInside(indf, src);
-        //
-        //} else {
-        //
-        //    indf = enterInside(indf, before, src);
-        //}
-        //
-        //if (rm) {
-        //    delFileDep(tpath);
-        //    delFileDep(tpathHtml);
-        //} else {
-        //    grunt.file.write(tpath, directiveTemplate);
-        //    grunt.file.write(tpathHtml, directiveTemplateHtml);
-        //}
-        //grunt.file.write(ipath, indf);
+        if (rm) {
+            indf = removeFromInside(indf, src);
+
+        } else {
+
+            indf = enterInside(indf, before, src);
+        }
+
+        if (rm) {
+            delFileDep(tpath);
+            delFileDep(tpathHtml);
+        } else {
+            grunt.file.write(tpath, directiveTemplate);
+            grunt.file.write(tpathHtml, directiveTemplateHtml);
+        }
+        grunt.file.write(ipath, indf);
         grunt.task.run('addcommit');
     })
     var SCRIPT_PATH = 'app/scripts/';
@@ -549,6 +551,9 @@ module.exports = function (grunt) {
     var eol = '\r\n';
 
     function generateModule(module) {
+
+        var deferred = Q.defer();
+
         var moduleIndex = SCRIPT_PATH + module + '/' + module + 'Index.js';
 
         grunt.file.delete(moduleIndex);
