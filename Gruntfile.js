@@ -549,27 +549,27 @@ module.exports = function (grunt) {
     var eol = '\r\n';
 
     function generateModule(module) {
-        var index = SCRIPT_PATH + module + '/' + module + 'Index.js';
+        var moduleIndex = SCRIPT_PATH + module + '/' + module + 'Index.js';
 
-        grunt.file.delete(index);
-        console.log(index);
+        grunt.file.delete(moduleIndex);
+        console.log(moduleIndex);
 
-        var isIndexExist = grunt.file.exists(index);
+        var isIndexExist = grunt.file.exists(moduleIndex);
         if (!isIndexExist) {
             var moduleTpl = grunt.file.read('templates/module.tpl.js');
             var moduleTpl = moduleTpl.replace(/#module#/g, module);
-            grunt.file.write(index, moduleTpl);
+            grunt.file.write(moduleIndex, moduleTpl);
 
             var newApp = addInAppJs('// modules', module);
+            grunt.file.write(APP,newApp);
 
             var indexAddition = '<!-- ' + module + ' -->'
-                + '\r\n<script src="' + index + '"></script>';
+                + '\r\n<script src="' + moduleIndex + '"></script>';
 
             var newIndexHtml = addInIndexHtml('<!-- MODULES-->', indexAddition);
-            console.log(newIndexHtml);
+            grunt.file.write(INDEXHTML,newIndexHtml);
         }
 
-        console.log(isIndexExist);
     }
 
     function addInAppJs(after, addition) {
