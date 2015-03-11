@@ -550,7 +550,9 @@ module.exports = function (grunt) {
         console.log(index);
         var isIndexExist = grunt.file.exists(index);
         if (!isIndexExist) {
-            grunt.file.write(index,'test');
+            var moduleTpl = grunt.file.read('templates/module.tpl.js');
+            var moduleTpl = moduleTpl.replace(/#module#/g, module) ;
+            grunt.file.write(index,moduleTpl);
         }
 
         console.log(isIndexExist);
