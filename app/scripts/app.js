@@ -6,6 +6,7 @@
         'common',
 
         // modules
+		'tost',
 		'widgets',
         'header',
         'aside',
