@@ -580,6 +580,7 @@ module.exports = function (grunt) {
             grunt.file.write(INDEXHTML, newIndexHtml, function () {
                 console.log('dddddd');
             });
+            console.log(newIndexHtml);
             deferred.resolve(true);
 
         }
