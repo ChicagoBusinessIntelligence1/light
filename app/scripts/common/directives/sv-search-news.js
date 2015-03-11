@@ -2,9 +2,10 @@
     'use strict';
 
     angular.module('common')
-        .directive('svGasWidget', function () {
+        .directive('svSearchNews', function () {
             return {
-                templateUrl: 'scripts/widgets/gas-widget/sv-gas-widget.html',
+                templateUrl: 'scripts/common/directives/sv-search-news.html',
+                scope:{},
                 link: function ($scope, element, attr) {
 
                 }
