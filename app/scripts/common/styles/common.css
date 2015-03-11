@@ -4,6 +4,9 @@
 /**********************
      =article
 ***********************/
+.breadcrumb-section {
+  cursor: pointer;
+}
 .fs-body-1 {
   font-size: 18px !important;
   line-height: 30px;

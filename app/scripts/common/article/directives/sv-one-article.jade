@@ -1,33 +1,35 @@
-div(layout='column')
-	div(flex='')
-		div(layout='row' layout-align='center')
-			a Section Name
-				span &nbsp / &nbsp
-			.f-11 {{title|Title:15}}
-	.card(flex='')
-		.light-margin
-			h1.article-header {{title}}
-			.margin-bottom-5
-				span.fs-subhead.display-block Svet Media Group
-			div(layout='row' layout-align='space-between')
-				div(flex='40' flex-sm="60")
-					ul.list-inline.list-unstyled.margin-bottom-5
-						li
-							img(src="../img/social/fb-share.png" lx-ripple lx-tooltip="Поделиться")
-						li
-							img(src="../img/social/google-share.png" lx-ripple lx-tooltip="Поделиться")
-						li
-							img(src="../img/social/twitter-share.png" lx-ripple lx-tooltip="Поделиться" )
-						li
-							img(src="../img/social/linkedin-share.png" lx-ripple lx-tooltip="Поделиться")
-						li
-				div(flex='15' flex-sm="30")
-					span.display-block.text-right.color-subheader(lx-ripple lx-tooltip="Просмотры")
-						i.icon.icon--s.icon--flat.mdi.mdi-eye
-			div.atricle-img.margin-bottom-15
-				img(ng-src="{{img}}")
-			div.light-padding-5.margin-bottom-15
-				p.one-article-body {{body}}
-			md-toolbar.bgc-blue-grey-50.toolbar-blue-grey
-				h1.md-toolbar-tools.txt-fontGrey Comments
-			sv-comment
+div(layout='column' flex='')
+	div.margin-top-8.margin-bottom-10(flex='')
+		div(layout='row' layout-align='start end')
+			a.breadcrumb-section Section Name
+			span &nbsp / &nbsp
+			.f-12 {{title|Title:15}}
+	.light-margin-5(flex='')
+		.card
+			.light-margin
+				h1.article-header {{title}}
+				.margin-bottom-5
+					span.fs-subhead.display-block Svet Media Group
+				div(layout='row' layout-align='space-between')
+					div(flex='40' flex-sm="60")
+						ul.list-inline.list-unstyled.margin-bottom-5
+							li
+								img(src="../img/social/fb-share.png" lx-ripple lx-tooltip="Поделиться")
+							li
+								img(src="../img/social/google-share.png" lx-ripple lx-tooltip="Поделиться")
+							li
+								img(src="../img/social/twitter-share.png" lx-ripple lx-tooltip="Поделиться" )
+							li
+								img(src="../img/social/linkedin-share.png" lx-ripple lx-tooltip="Поделиться")
+							li
+					div(flex='15' flex-sm="30")
+						span.display-block.text-right.color-subheader(lx-ripple lx-tooltip="Просмотры")
+							i.icon.icon--s.icon--flat.mdi.mdi-eye
+				div.atricle-img.margin-bottom-15
+					img(ng-src="{{img}}")
+				div.light-padding-5.margin-bottom-15
+					p.one-article-body {{body}}
+	.light-margin-5(flex='')
+		md-toolbar.bgc-blue-grey-50.toolbar-blue-grey
+			h1.md-toolbar-tools.txt-fontGrey Comments
+		sv-comment
