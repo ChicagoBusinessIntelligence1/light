@@ -1,8 +1,10 @@
 md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-lg')" style='bottom:0')
-	md-toolbar.bgc-blue-grey-50.txt-fontGrey(ng-controller='LeftCtrl' layout='row' layout-align='space-around center' style='background-color:white')
+	md-toolbar.bgc-blue-grey-50.txt-fontGrey(ng-controller='LeftCtrl' layout='row' layout-align='space-around center' style='background-color:white'  hide-gt-lg)
 		span Наши новости
-		button.btn.btn--m.btn--fab(ng-click='close()' hide-gt-lg)
+		button.btn.btn--m.btn--fab(ng-click='close()')
 			i.mdi.mdi-close
+	md-content.md-padding(ng-controller='LeftCtrl')
+		sv-search-news
 	md-content.md-padding(ng-controller='LeftCtrl')
 		sv-news-sections-nav
 	md-content.md-padding.text-center

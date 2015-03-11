@@ -279,6 +279,10 @@ md-warn {
 .aside-img {
   display: inline-block;
 }
+.search-filter__label {
+  width: 30px;
+  height: 30px;
+}
 body {
 font-family
   color: #444;

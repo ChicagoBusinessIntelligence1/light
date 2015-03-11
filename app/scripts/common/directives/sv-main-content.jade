@@ -6,13 +6,15 @@ md-content.md-padding(flex)
 			.card.margin-top-8
 				sv-news-toolbar(number='5' panel-title='Свежий номер')
 		.margin-left-5.margin-right-5(flex flex-order-gt-md='2' flex-order='1')
-			div(layout='row', layout-align='center center', layout-margin, hide-gt-lg='')
-				md-button.md-primary(ng-click='toggleLeft()')
-					i.mdi.mdi-newspaper
-					| &nbsp Рубрики Новостей
-				md-button.md-primary(ng-click='toggleRight()')
-					i.fa.fa-file-archive-o.fa-fw
-					| Наши Сервисы
+			div(layout='row' layout-align='space-around center' hide-gt-lg='')
+				div
+					md-button.md-primary(ng-click='toggleLeft()' style='font-size:12px')
+						i.mdi.mdi-newspaper
+						| &nbsp Рубрики Новостей
+				div
+					md-button.md-primary(ng-click='toggleRight()' style='font-size:12px')
+						i.fa.fa-file-archive-o.fa-fw
+						| Наши Сервисы
 			div(ui-view='')
 		.margin-top-8(flex-gt-md='20' flex-order-gt-md='1' flex-order='2')
 			.card
