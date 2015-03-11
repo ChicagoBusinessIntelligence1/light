@@ -562,8 +562,10 @@ module.exports = function (grunt) {
     function generateModule(module) {
 
         var moduleDirectirized = processModule(module);
+        var moduleNameArr = module.split('.');
+        var moduleName = moduleNameArr[moduleNameArr.length - 1];
 
-        var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleDirectirized + 'Index.js';
+        var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleName + 'Index.js';
 
         grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
@@ -577,7 +579,7 @@ module.exports = function (grunt) {
             var newApp = addInAppJs('// modules', moduleDirectirized);
             grunt.file.write(APP, newApp);
 
-            var slash = moduleIndex.indexOf('/')+1;
+            var slash = moduleIndex.indexOf('/') + 1;
             var moduleIndexShort = moduleIndex.substr(slash);
 
             var indexAddition = '<!-- ' + module + ' -->'
@@ -592,12 +594,9 @@ module.exports = function (grunt) {
     function addInAppJs(after, addition) {
         var app = grunt.file.read(APP);
         var alreadyIn = app.indexOf(addition);
-        if (alreadyIn>-1) {
+        if (alreadyIn > -1) {
             return app;
         }
-
-
-
 
         var start = app.indexOf(after);
         start = app.indexOf('\r\n', start);
