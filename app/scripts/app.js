@@ -4,10 +4,7 @@
 
     var app = angular.module('app', [
 
-        // modules
-		'sections.test',
-		'sections/test',
-		'widgets',
+        // Common modules
         'header',
         'aside',
         'common',
