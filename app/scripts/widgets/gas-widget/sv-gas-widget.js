@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('widgets')
+    angular.module('common')
         .directive('svGasWidget', function () {
             return {
                 templateUrl: 'scripts/widgets/gas-widget/sv-gas-widget.html',
