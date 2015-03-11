@@ -1,19 +1,18 @@
-md-toolbar(layout='column')
-	div(layout='row' layout-align='space-between center')
-		div(flex-md='25' flex-sm="20" )
-			.light-margin(hide-sm)
-				span.weather-city Chicago, IL
-				span
-					img(src="../img/weather/partlycloudy.png" style='display:inline-block')
-				i.icon.icon--lg.icon--circled.mdi.mdi-temperature-fahrenheit
-		div(flex-md='50' flex-sm="60")
-			div(layout='column' layout-margin='10')
-				.header-logo.margin-top-8
-					a(ui-sref='app.home')
-						img.img-responsive(ng-src="img/logo/newLightLogo580.png")
-				.text-center.margin-top-8
-					span.display-block.first-newspaper Первая Русская Газета в Чикаго
-		.text-right(flex-md='25' flex-sm="20")
-			.margin-right-10
-				sv-auth-btn
+md-toolbar(layout='row' layout-align='space-between center')
+	div(flex-md='25' flex-sm="20" )
+		.light-margin(hide-sm)
+			span.weather-city Chicago, IL
+			span
+				img(src="../img/weather/partlycloudy.png" style='display:inline-block')
+			i.icon.icon--lg.icon--circled.mdi.mdi-temperature-fahrenheit
+	div(flex-md='50' flex-sm="60")
+		div(layout='column' layout-margin='10')
+			.header-logo.margin-top-8
+				a(ui-sref='app.home')
+					img.img-responsive(ng-src="img/logo/newLightLogo580.png")
+			.text-center.margin-top-8
+				span.display-block.first-newspaper Первая Русская Газета в Чикаго
+	.text-right(flex-md='25' flex-sm="20")
+		.margin-right-10
+			sv-auth-btn
 
