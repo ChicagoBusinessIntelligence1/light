@@ -545,6 +545,7 @@ module.exports = function (grunt) {
     })
     var SCRIPT_PATH = 'app/scripts/';
     var APP = SCRIPT_PATH + 'app.js'
+    var INDEXHTML = 'app/' + 'index.html';
 
     function generateModule(module) {
         var index = SCRIPT_PATH + module + '/' + module + 'Index.js';
@@ -558,21 +559,31 @@ module.exports = function (grunt) {
             var moduleTpl = moduleTpl.replace(/#module#/g, module);
             grunt.file.write(index, moduleTpl);
 
-            var newApp = addInApp('// modules', module);
+            var newApp = addInAppJs('// modules', module);
+            var newIndexHtml = addInAppJs('// modules', module);
             console.log(newApp);
         }
 
         console.log(isIndexExist);
     }
 
-    function addInApp(after, addition) {
+    function addInAppJs(after, addition) {
         var app = grunt.file.read(APP);
         var start = app.indexOf(after);
         var start = app.indexOf('\r\n', start);
         var part1 = app.substr(0, start);
         var part2 = app.substr(start);
         return part1 + '\r\n\t\'' + addition +'\','+ part2;
-
     }
+
+    function addInIndexHtml(after, addition) {
+        var indexHtml = grunt.file.read(INDEXHTML);
+        var start = indexHtml.indexOf(after);
+        var start = indexHtml.indexOf('\r\n', start);
+        var part1 = indexHtml.substr(0, start);
+        var part2 = indexHtml.substr(start);
+        return part1 + '\r\n\t\'' + addition +'\','+ part2;
+    }
+
 
 };
