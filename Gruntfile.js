@@ -546,7 +546,7 @@ module.exports = function (grunt) {
     var SCRIPT_PATH = 'app/scripts/';
 
     function generateModule(module) {
-        var index = SCRIPT_PATH+ module+'Index.js';
+        var index = SCRIPT_PATH+ module+'/'+module+'Index.js';
         console.log(index);
         var isIndexExist = grunt.file.exists(index);
         if (!isIndexExist) {
