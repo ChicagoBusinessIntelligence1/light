@@ -106,7 +106,7 @@
                 .state("app.classified", {
                     url: "/classified",
                     controller: "ClassifiedCtrl",
-                    templateUrl: "scripts/sections/calssified/views/classifiedCtrl.html"
+                    templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
                 //.state("app.politics", {
                 //    url: "/politics",
@@ -123,12 +123,6 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-
-			.state("app.classified", {
-				url: "/classified", 
-				controller:"ClassifiedCtrl",
-				templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
-			})
 //#state
         });
 
