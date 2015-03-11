@@ -277,7 +277,17 @@ module.exports = function (grunt) {
         /////////////////// index
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>';
-        var indf = grunt.file.read(ipath);
+        var indf;
+
+
+        var newIndex = generateModule(module,rm);
+
+        if (newIndex && !rm) {
+            indf = newIndex;
+        } else {
+
+            indf = grunt.file.read(ipath);
+        }
         //////////////////
         if (rm) {
             indf = removeFromInside(indf, src);
@@ -344,7 +354,15 @@ module.exports = function (grunt) {
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/services/' + name + 'Serv.js"></script>';
 
-        var indf = grunt.file.read(ipath);
+        var indf;
+        var newIndex = generateModule(module,rm);
+
+        if (newIndex && !rm) {
+            indf = newIndex;
+        } else {
+
+            indf = grunt.file.read(ipath);
+        }
         //////////////////
         if (rm) {
             indf = removeFromInside(indf, src);
@@ -432,7 +450,16 @@ module.exports = function (grunt) {
         /////////////////// index
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/filters/' + name + '.js"></script>';
-        var indf = grunt.file.read(ipath);
+
+        var indf;
+        var newIndex = generateModule(module,rm);
+
+        if (newIndex && !rm) {
+            indf = newIndex;
+        } else {
+
+            indf = grunt.file.read(ipath);
+        }
         //////////////////
         if (rm) {
             indf = removeFromInside(indf, src);
@@ -526,9 +553,9 @@ module.exports = function (grunt) {
 
 /////
         var indf;
-        var newIndex = generateModule(module);
+        var newIndex = generateModule(module,rm);
 
-        if (newIndex) {
+        if (newIndex && !rm) {
             indf = newIndex;
         } else {
 
@@ -559,7 +586,10 @@ module.exports = function (grunt) {
     var INDEXHTML = 'app/' + 'index.html';
     var eol = '\r\n';
 
-    function generateModule(module) {
+    function generateModule(module,rm) {
+        if (rm) {
+            return null;
+        }
 
         var moduleDirectirized = processModule(module);
         var moduleNameArr = module.split('.');
@@ -567,7 +597,8 @@ module.exports = function (grunt) {
 
         var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleName + 'Index.js';
 
-        grunt.file.delete(moduleIndex);
+
+        //grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
 
         var isIndexExist = grunt.file.exists(moduleIndex);
