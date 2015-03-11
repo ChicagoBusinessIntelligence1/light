@@ -3,14 +3,12 @@
     'use strict';
 
     var app = angular.module('app', [
+        'common',
 
         // modules
-		'sections.test',
-		'sections/test',
 		'widgets',
         'header',
         'aside',
-        'common',
         'auth',
         'footer',
 

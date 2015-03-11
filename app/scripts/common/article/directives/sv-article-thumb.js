@@ -21,7 +21,6 @@
                     $scope.$watch('fscale', function (newValue, oldValue) {
 
                         if ($scope.fscale) {
-                            console.log($scope.fscale);
                             element.find('.content').css('font-size', 100 * $scope.fscale + '%');
                             element.find('.content').css('line-height', 1.1 * $scope.fscale);
 
