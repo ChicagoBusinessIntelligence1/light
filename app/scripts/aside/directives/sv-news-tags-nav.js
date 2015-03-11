@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('aside')
-  .directive('svElementsNav', function () {
+  .directive('svNewsTagsNav', function () {
     return {
-      templateUrl: 'scripts/aside/directives/sv-elements-nav.html',
+      templateUrl: 'scripts/aside/directives/sv-news-tags-nav.html',
       restrict: 'E',
         controller: function ($scope) {
 
