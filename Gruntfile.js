@@ -525,22 +525,22 @@ module.exports = function (grunt) {
 /////
         generateModule(moduleDirectirized);
 
-        if (rm) {
-            indf = removeFromInside(indf, src);
-
-        } else {
-
-            indf = enterInside(indf, before, src);
-        }
-
-        if (rm) {
-            delFileDep(tpath);
-            delFileDep(tpathHtml);
-        } else {
-            grunt.file.write(tpath, directiveTemplate);
-            //grunt.file.write(tpathHtml, directiveTemplateHtml);
-        }
-        grunt.file.write(ipath, indf);
+        //if (rm) {
+        //    indf = removeFromInside(indf, src);
+        //
+        //} else {
+        //
+        //    indf = enterInside(indf, before, src);
+        //}
+        //
+        //if (rm) {
+        //    delFileDep(tpath);
+        //    delFileDep(tpathHtml);
+        //} else {
+        //    grunt.file.write(tpath, directiveTemplate);
+        //    grunt.file.write(tpathHtml, directiveTemplateHtml);
+        //}
+        //grunt.file.write(ipath, indf);
         grunt.task.run('addcommit');
     })
     var SCRIPT_PATH = 'app/scripts/';
