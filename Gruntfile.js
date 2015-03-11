@@ -558,7 +558,7 @@ module.exports = function (grunt) {
             var moduleTpl = moduleTpl.replace(/#module#/g, module);
             grunt.file.write(index, moduleTpl);
 
-            var newApp = addInApp('// modules', 'Izya');
+            var newApp = addInApp('// modules', moduleTpl);
             console.log(newApp);
         }
 
@@ -571,7 +571,7 @@ module.exports = function (grunt) {
         var start = app.indexOf('\r\n', start);
         var part1 = app.substr(0, start);
         var part2 = app.substr(start);
-        return part1 + '\r\n' + addition + part2;
+        return part1 + '\r\n\t' + addition +','+ part2;
 
     }
 
