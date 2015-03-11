@@ -17,6 +17,7 @@
 		'widgets',
 		'widgets',
 		'widgets',
+		'widgets',
 	    'widgets',
         'header',
         'aside',
