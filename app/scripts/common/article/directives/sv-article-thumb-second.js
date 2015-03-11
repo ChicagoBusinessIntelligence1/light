@@ -4,7 +4,7 @@
     angular.module('common')
         .directive('svArticleThumbSecond', function () {
             return {
-                templateUrl: 'scripts/common/directives/sv-article-thumb-second.html',
+                templateUrl: 'scripts/common/article/directives/sv-article-thumb-second.html',
                 scope: {
                     id:'@',
                     title: '@',

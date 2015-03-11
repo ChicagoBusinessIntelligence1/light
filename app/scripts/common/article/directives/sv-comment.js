@@ -4,11 +4,9 @@
     angular.module('common')
         .directive('svComment', function () {
             return {
-                templateUrl: 'scripts/common/directives/sv-comment.html',
-                replace:true,
-                scope:{
-
-                },
+                templateUrl: 'scripts/common/article/directives/sv-comment.html',
+                replace: true,
+                scope: {},
                 link: function ($scope, element, attr) {
 
                 }
