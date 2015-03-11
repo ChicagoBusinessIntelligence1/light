@@ -533,6 +533,7 @@ module.exports = function (grunt) {
 
                 } else {
 
+                    console.log(src);
                     indf = enterInside(indf, before, src);
                 }
 
@@ -544,7 +545,7 @@ module.exports = function (grunt) {
                     grunt.file.write(tpathHtml, directiveTemplateHtml);
                 }
                 //grunt.file.write(ipath, indf);
-                console.log(indf);
+                //console.log(indf);
                 grunt.task.run('addcommit');
             }
         );
