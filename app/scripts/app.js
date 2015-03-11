@@ -9,7 +9,6 @@
         'aside',
         'common',
         'auth',
-        'contactus',
         'footer',
 
         // Site section modules
@@ -20,6 +19,8 @@
         'sections.food',
         'sections.health',
         'sections.archive',
+        'sections.contact',
+        'sections.subscription',
 
         // 3rd party modules
         'firebase',
@@ -91,6 +92,11 @@
                     controller: "ArchiveCtrl",
                     templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
                 })
+                .state("app.contact", {
+                    url: "/contact",
+                    controller: "ContactCtrl",
+                    templateUrl: "scripts/sections/contact/views/contactCtrl.html"
+                })
                 //.state("app.politics", {
                 //    url: "/politics",
                 //    controller: "Politics",
@@ -107,10 +113,10 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
-			.state("app.contact", {
-				url: "/contact", 
-				controller:"ContactCtrl",
-				templateUrl: "scripts/sections/contact/views/contactCtrl.html"
+			.state("app.subscription", {
+				url: "/subscription", 
+				controller:"SubscriptionCtrl",
+				templateUrl: "scripts/sections/subscription/views/subscriptionCtrl.html"
 			})
 //#state
         });
