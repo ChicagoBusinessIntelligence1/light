@@ -129,11 +129,7 @@
 				controller:"TrackCtrl",
 				templateUrl: "scripts/sections/test/views/trackCtrl.html"
 			})
-			.state("app.test-andr", {
-				url: "/test-andr", 
-				controller:"TestAndrCtrl",
-				templateUrl: "scripts/test/views/test-andrCtrl.html"
-			})
+			
 //#state
         });
 
