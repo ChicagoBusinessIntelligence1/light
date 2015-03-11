@@ -18,6 +18,7 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
+            console.log(txt);
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
@@ -60,8 +61,10 @@ var removeFromInside = function (target, remove) {
 }
 
 module.exports = function (grunt) {
+    var Q = require('q')
     var _ = require('underscore');
     _.str = require('underscore.string');
+
     _.str.include('Underscore.string', 'string');
 
     var delFileDep = function (fileName) {
@@ -516,14 +519,21 @@ module.exports = function (grunt) {
         /////////////////// index/
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/directives/' + jnameDashed + '.js"></script>';
-        var indf = grunt.file.read(ipath);
         //////////////////
         var directiveTemplate = '.well ' + oname + ' Template';
         var directiveTemplateHtml = '<div class="well">' + oname + ' Template</div>';
         /////////////////
 
 /////
-        generateModule(moduleDirectirized);
+        var indf;
+        var newIndex = generateModule(module);
+
+        if (newIndex) {
+            indf = newIndex;
+        } else {
+
+            indf = grunt.file.read(ipath);
+        }
 
         if (rm) {
             indf = removeFromInside(indf, src);
@@ -542,18 +552,66 @@ module.exports = function (grunt) {
         }
         grunt.file.write(ipath, indf);
         grunt.task.run('addcommit');
+
     })
     var SCRIPT_PATH = 'app/scripts/';
+    var APP = SCRIPT_PATH + 'app.js'
+    var INDEXHTML = 'app/' + 'index.html';
+    var eol = '\r\n';
 
     function generateModule(module) {
-        var index = SCRIPT_PATH+ module+'/'+module+'Index.js';
-        console.log(index);
-        var isIndexExist = grunt.file.exists(index);
+
+        var moduleDirectirized = processModule(module);
+        var moduleNameArr = module.split('.');
+        var moduleName = moduleNameArr[moduleNameArr.length - 1];
+
+        var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleName + 'Index.js';
+
+        grunt.file.delete(moduleIndex);
+        //console.log(moduleIndex);
+
+        var isIndexExist = grunt.file.exists(moduleIndex);
         if (!isIndexExist) {
-            grunt.file.write(index,'test');
+            var moduleTpl = grunt.file.read('templates/module.tpl.js');
+            moduleTpl = moduleTpl.replace(/#module#/g, module);
+            grunt.file.write(moduleIndex, moduleTpl);
+
+            var newApp = addInAppJs('// modules', module);
+            grunt.file.write(APP, newApp);
+
+            var slash = moduleIndex.indexOf('/') + 1;
+            var moduleIndexShort = moduleIndex.substr(slash);
+
+            var indexAddition = '<!-- ' + module + ' -->'
+                + '\r\n<script src="' + moduleIndexShort + '"></script>';
+
+            return addInIndexHtml('<!-- MODULES-->', indexAddition);
+
+        }
+        return null;
+    }
+
+    function addInAppJs(after, addition) {
+        var app = grunt.file.read(APP);
+        var alreadyIn = app.indexOf(addition);
+        if (alreadyIn > -1) {
+            return app;
         }
 
-        console.log(isIndexExist);
+        var start = app.indexOf(after);
+        start = app.indexOf('\r\n', start);
+        var part1 = app.substr(0, start);
+        var part2 = app.substr(start);
+        return part1 + '\r\n\t\t\'' + addition + '\',' + part2;
+    }
+
+    function addInIndexHtml(after, addition) {
+        var indexHtml = grunt.file.read(INDEXHTML);
+        var start = indexHtml.indexOf(after);
+        start = indexHtml.indexOf(eol, start);
+        var part1 = indexHtml.substr(0, start);
+        var part2 = indexHtml.substr(start);
+        return part1 + eol + eol + addition + part2;
     }
 
 };
