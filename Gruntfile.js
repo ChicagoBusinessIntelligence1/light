@@ -528,26 +528,26 @@ module.exports = function (grunt) {
         generateModule(moduleDirectirized).then(
             function () {
                 console.log('doe');
+                if (rm) {
+                    indf = removeFromInside(indf, src);
+
+                } else {
+
+                    indf = enterInside(indf, before, src);
+                }
+
+                if (rm) {
+                    delFileDep(tpath);
+                    delFileDep(tpathHtml);
+                } else {
+                    grunt.file.write(tpath, directiveTemplate);
+                    grunt.file.write(tpathHtml, directiveTemplateHtml);
+                }
+                grunt.file.write(ipath, indf);
+                grunt.task.run('addcommit');
             }
         );
 
-        if (rm) {
-            indf = removeFromInside(indf, src);
-
-        } else {
-
-            indf = enterInside(indf, before, src);
-        }
-
-        if (rm) {
-            delFileDep(tpath);
-            delFileDep(tpathHtml);
-        } else {
-            grunt.file.write(tpath, directiveTemplate);
-            grunt.file.write(tpathHtml, directiveTemplateHtml);
-        }
-        grunt.file.write(ipath, indf);
-        grunt.task.run('addcommit');
     })
     var SCRIPT_PATH = 'app/scripts/';
     var APP = SCRIPT_PATH + 'app.js'
@@ -578,8 +578,9 @@ module.exports = function (grunt) {
             var newIndexHtml = addInIndexHtml('<!-- MODULES-->', indexAddition);
 
             grunt.file.write(INDEXHTML, newIndexHtml, function () {
-               deferred.resolve(true) ;
+                console.log('dddddd');
             });
+            deferred.resolve(true);
 
         }
         return deferred.promise;
