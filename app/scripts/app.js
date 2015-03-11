@@ -6,7 +6,6 @@
         'common',
 
         // modules
-		'tost',
 		'widgets',
         'header',
         'aside',
@@ -126,11 +125,11 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 			.state("app.track", {
-				url: "/track", 
+				url: "/track",
 				controller:"TrackCtrl",
 				templateUrl: "scripts/sections/test/views/trackCtrl.html"
 			})
-			
+
 //#state
         });
 
