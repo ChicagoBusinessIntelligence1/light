@@ -571,7 +571,7 @@ module.exports = function (grunt) {
         var start = app.indexOf('\r\n', start);
         var part1 = app.substr(0, start);
         var part2 = app.substr(start);
-        return part1 + '\r\n\t' + addition +','+ part2;
+        return part1 + '\r\n\t\'' + addition +'\','+ part2;
 
     }
 
