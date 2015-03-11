@@ -5,9 +5,9 @@
         .directive('svWeather', function () {
             return {
                 templateUrl: 'scripts/common/directives/sv-weather.html',
-                scope:{},
+                scope: {},
                 link: function ($scope, element, attr) {
-
+                    console.log('test');
                 }
             };
         });
