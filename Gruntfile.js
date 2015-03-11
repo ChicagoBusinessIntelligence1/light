@@ -558,7 +558,7 @@ module.exports = function (grunt) {
             var moduleTpl = moduleTpl.replace(/#module#/g, module);
             grunt.file.write(index, moduleTpl);
 
-            var newApp = addInApp('// modules', moduleTpl);
+            var newApp = addInApp('// modules', module);
             console.log(newApp);
         }
 
