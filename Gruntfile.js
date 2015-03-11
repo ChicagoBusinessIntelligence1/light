@@ -579,7 +579,7 @@ module.exports = function (grunt) {
             grunt.file.delete(INDEXHTML);
 
             grunt.file.write('2' + INDEXHTML, newIndexHtml);
-            console.log(newIndexHtml);
+            deferred.resolve();
         }
         return deferred.promise;
     }
