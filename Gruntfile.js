@@ -523,7 +523,7 @@ module.exports = function (grunt) {
         /////////////////
 
 /////
-        generateModule(tpath, moduleDirectirized);
+        generateModule(moduleDirectirized);
 
         if (rm) {
             indf = removeFromInside(indf, src);
