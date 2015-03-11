@@ -1,3 +1,3 @@
 'use strict'
 
-var economics = angular.module('sections.economics', ['ngMaterial','economics']);
+var culture = angular.module('sections.culture', ['ngMaterial']);

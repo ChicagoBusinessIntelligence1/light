@@ -16,6 +16,7 @@
         'sections.home',
         'sections.politics',
         'sections.money',
+        'sections.culture',
 
         // 3rd party modules
         'firebase',
@@ -67,6 +68,11 @@
                     controller: "MoneyCtrl",
                     templateUrl: "scripts/sections/money/views/moneyCtrl.html"
                 })
+                .state("app.culture", {
+                    url: "/culture",
+                    controller: "CultureCtrl",
+                    templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
+                })
                 //.state("app.politics", {
                 //    url: "/politics",
                 //    controller: "Politics",
@@ -83,10 +89,10 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
-			.state("app.culture", {
-				url: "/culture", 
-				controller:"CultureCtrl",
-				templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
+			.state("app.food", {
+				url: "/food", 
+				controller:"FoodCtrl",
+				templateUrl: "scripts/sections/food/views/foodCtrl.html"
 			})
 //#state
         });
