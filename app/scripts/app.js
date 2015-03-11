@@ -97,6 +97,11 @@
                     controller: "ContactCtrl",
                     templateUrl: "scripts/sections/contact/views/contactCtrl.html"
                 })
+                .state("app.subscription", {
+                    url: "/subscription",
+                    controller: "SubscriptionCtrl",
+                    templateUrl: "scripts/sections/subscription/views/subscriptionCtrl.html"
+                })
                 //.state("app.politics", {
                 //    url: "/politics",
                 //    controller: "Politics",
@@ -113,10 +118,10 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
-			.state("app.subscription", {
-				url: "/subscription", 
-				controller:"SubscriptionCtrl",
-				templateUrl: "scripts/sections/subscription/views/subscriptionCtrl.html"
+			.state("app.classified", {
+				url: "/classified", 
+				controller:"ClassifiedCtrl",
+				templateUrl: "scripts/sections/calssified/views/classifiedCtrl.html"
 			})
 //#state
         });
