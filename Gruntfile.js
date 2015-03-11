@@ -575,8 +575,11 @@ module.exports = function (grunt) {
             var newApp = addInAppJs('// modules', module);
             grunt.file.write(APP, newApp);
 
+            var slash = moduleIndex.indexOf('/')+1;
+            var moduleIndexShort = moduleIndex.substr(slash);
+
             var indexAddition = '<!-- ' + module + ' -->'
-                + '\r\n<script src="' + moduleIndex + '"></script>';
+                + '\r\n<script src="' + moduleIndexShort + '"></script>';
 
             return addInIndexHtml('<!-- MODULES-->', indexAddition);
 
