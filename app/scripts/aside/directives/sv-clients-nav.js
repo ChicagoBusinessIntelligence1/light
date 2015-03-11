@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('aside')
-    .directive('svAsideNav', function () {
+    .directive('svClientsNav', function () {
         return {
-            templateUrl: 'scripts/aside/directives/sv-aside-nav.html',
+            templateUrl: 'scripts/aside/directives/sv-clients-nav.html',
             restrict: 'E',
             controller: function ($scope) {
                 $scope.sub1Shown = false;
