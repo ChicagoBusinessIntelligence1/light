@@ -21,6 +21,7 @@
         'sections.archive',
         'sections.contact',
         'sections.subscription',
+        'sections.classified',
 
         // 3rd party modules
         'firebase',
@@ -102,6 +103,11 @@
                     controller: "SubscriptionCtrl",
                     templateUrl: "scripts/sections/subscription/views/subscriptionCtrl.html"
                 })
+                .state("app.classified", {
+                    url: "/classified",
+                    controller: "ClassifiedCtrl",
+                    templateUrl: "scripts/sections/calssified/views/classifiedCtrl.html"
+                })
                 //.state("app.politics", {
                 //    url: "/politics",
                 //    controller: "Politics",
@@ -118,11 +124,6 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
-			.state("app.classified", {
-				url: "/classified", 
-				controller:"ClassifiedCtrl",
-				templateUrl: "scripts/sections/calssified/views/classifiedCtrl.html"
-			})
 //#state
         });
 
