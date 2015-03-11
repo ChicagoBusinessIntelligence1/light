@@ -60,7 +60,7 @@ var removeFromInside = function (target, remove) {
 }
 
 module.exports = function (grunt) {
-    var Q  = require('q')
+    var Q = require('q')
     var _ = require('underscore');
     _.str = require('underscore.string');
 
@@ -525,7 +525,11 @@ module.exports = function (grunt) {
         /////////////////
 
 /////
-        generateModule(moduleDirectirized);
+        generateModule(moduleDirectirized).then(
+            function () {
+                console.log('doe');
+            }
+        );
 
         if (rm) {
             indf = removeFromInside(indf, src);
@@ -566,7 +570,7 @@ module.exports = function (grunt) {
             grunt.file.write(moduleIndex, moduleTpl);
 
             var newApp = addInAppJs('// modules', module);
-            grunt.file.write(APP,newApp);
+            grunt.file.write(APP, newApp);
 
             var indexAddition = '<!-- ' + module + ' -->'
                 + '\r\n<script src="' + moduleIndex + '"></script>';
@@ -574,10 +578,10 @@ module.exports = function (grunt) {
             var newIndexHtml = addInIndexHtml('<!-- MODULES-->', indexAddition);
             grunt.file.delete(INDEXHTML);
 
-            grunt.file.write('2'+INDEXHTML,newIndexHtml);
+            grunt.file.write('2' + INDEXHTML, newIndexHtml);
             console.log(newIndexHtml);
         }
-
+        return deferred.promise;
     }
 
     function addInAppJs(after, addition) {
