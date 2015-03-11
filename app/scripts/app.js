@@ -78,6 +78,11 @@
                     controller: "FoodCtrl",
                     templateUrl: "scripts/sections/food/views/foodCtrl.html"
                 })
+                .state("app.health", {
+                    url: "/health",
+                    controller: "HealthCtrl",
+                    templateUrl: "scripts/sections/health/views/healthCtrl.html"
+                })
                 //.state("app.politics", {
                 //    url: "/politics",
                 //    controller: "Politics",
@@ -94,10 +99,10 @@
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
 
-			.state("app.health", {
-				url: "/health", 
-				controller:"HealthCtrl",
-				templateUrl: "scripts/sections/health/views/healthCtrl.html"
+			.state("app.archive", {
+				url: "/archive", 
+				controller:"ArchiveCtrl",
+				templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
 			})
 //#state
         });
