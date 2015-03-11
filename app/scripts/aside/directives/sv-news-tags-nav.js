@@ -6,7 +6,6 @@ angular.module('aside')
       templateUrl: 'scripts/aside/directives/sv-news-tags-nav.html',
       restrict: 'E',
         controller: function ($scope) {
-
         }
     };
   });

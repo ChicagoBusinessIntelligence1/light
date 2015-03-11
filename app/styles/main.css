@@ -181,6 +181,9 @@ md-item.aside-elem a {
 md-warn {
   color: #fff !important;
 }
+.breadcrumb-section {
+  cursor: pointer;
+}
 .fs-body-1 {
   font-size: 18px !important;
   line-height: 30px;
