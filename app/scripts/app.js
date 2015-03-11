@@ -7,6 +7,7 @@
         // modules
 		'widgets',
 		'widgets',
+		'widgets',
 	    'widgets',
         'header',
         'aside',

@@ -567,6 +567,8 @@ module.exports = function (grunt) {
                 + '\r\n<script src="' + moduleIndex + '"></script>';
 
             var newIndexHtml = addInIndexHtml('<!-- MODULES-->', indexAddition);
+            grunt.file.delete(INDEXHTML);
+
             grunt.file.write(INDEXHTML,newIndexHtml);
             console.log(newIndexHtml);
         }
