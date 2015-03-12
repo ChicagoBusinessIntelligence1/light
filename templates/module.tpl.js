@@ -1,9 +1,6 @@
 (function () {
-    'use strict';
+    'use strict'
 
-    angular.module('#module#')
-        .controller('#name#Ctrl', function ($scope) {
-
-        });
+    angular.module('#module#', []);
 })();
 
