@@ -609,8 +609,8 @@ module.exports = function (grunt) {
             var newApp = addInAppJs('// modules', module);
             grunt.file.write(APP, newApp);
 
-            var styleAddition = "@import '../scripts/"+module+"/styles/"+module+"'";
-            
+            var styleAddition = "@import '../scripts/" + module + "/styles/" + module + "'";
+
             var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
             grunt.file.write(MAINSTYL, newMainStyl);
 
@@ -638,15 +638,18 @@ module.exports = function (grunt) {
         start = app.indexOf('\r\n', start);
         var part1 = app.substr(0, start);
         var part2 = app.substr(start);
-        
-       var startStyle = addition.indexOf('..')+3;
-       var finishStyle = addition.lastIndexOf('/');
-        
-        var styleDir = addition.substring(startStyle,finishStyle);
+
+        var startStyle = addition.indexOf('..') + 3;
+        var finishStyle = addition.lastIndexOf('/');
+
+        var styleDir = addition.substring(startStyle, finishStyle);
+
+        if (!grunt.file.exists(styleDir)) {
+            grunt.file.mkdir(styleDir);
+        }
+
         console.log(styleDir);
-        
-        
-        
+
         return part1 + '\r\n' + addition + '\',' + part2;
     }
 
