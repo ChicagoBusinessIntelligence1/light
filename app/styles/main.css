@@ -100,9 +100,12 @@
   height: 20px;
   margin-right: 5px !important;
 }
+.weather-city {
+  font-size: 14px;
+}
 @media screen and (max-width: 992px) {
   .weather-city {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 }
 .footer {
