@@ -7,13 +7,11 @@
                 templateUrl: 'scripts/common/article/directives/sv-article-thumb.html',
                 replace: true,
                 scope: {
-                    homeSmall: '=',
                     state: '=',
                     id: '@',
                     img: '@',
                     title: '@',
-                    fscale: '=',
-                    body: '@'
+                    fscale: '='
                 },
                 link: function ($scope, element, attr) {
                     var width = element.css('width');

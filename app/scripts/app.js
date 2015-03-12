@@ -1,11 +1,11 @@
 (function () {
-		'common.article',
 
     'use strict';
 
     var app = angular.module('app', [
 
-        // Common modules
+        // modules
+		'common.article',
         'widgets',
         'header',
         'aside',
