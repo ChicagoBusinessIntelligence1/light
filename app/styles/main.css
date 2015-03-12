@@ -19,11 +19,6 @@
   background-color: #448aff !important;
 }
 @media screen and (max-width: 992px) {
-  .auth-dialog-content {
-    padding: 12px !important;
-  }
-}
-@media screen and (max-width: 992px) {
   .auth-text-field {
     padding-top: 20px;
   }
