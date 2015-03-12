@@ -625,7 +625,7 @@ module.exports = function (grunt) {
 
     function addStyleImages(after, addition) {
         var app = grunt.file.read(MAINSTYL);
-        var alreadyIn = app.indexOf("@import '" + addition + "'");
+        var alreadyIn = app.indexOf(addition);
 
         if (alreadyIn > -1) {
             //return;
@@ -639,13 +639,12 @@ module.exports = function (grunt) {
         var startStyle = addition.indexOf('..') + 3;
         //var finishStyle = addition.lastIndexOf('/');
 
-        var styleFile = 'app/'+addition.substr(startStyle)+'.styl';
+        var styleFile = 'app/' + addition.substr(startStyle,addition.length-1) + '.styl';
         console.log(styleFile);
 
         if (!grunt.file.exists(styleFile)) {
-            grunt.file.write(styleFile,'');
+            grunt.file.write(styleFile, '');
         }
-
 
         return part1 + '\r\n' + addition + '\',' + part2;
     }
