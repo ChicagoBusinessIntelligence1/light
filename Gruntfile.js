@@ -54,6 +54,7 @@ var removeFromInside = function (target, remove) {
 
     });
 
+
     return final;
 }
 
