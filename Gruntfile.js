@@ -628,7 +628,7 @@ module.exports = function (grunt) {
         var alreadyIn = app.indexOf(addition);
 
         if (alreadyIn > -1) {
-            //return;
+            return;
         }
 
         var start = app.indexOf(after);
@@ -651,7 +651,7 @@ module.exports = function (grunt) {
             grunt.file.mkdir(imgDir);
         }
 
-        return part1 + '\r\n' + addition + '\',' + part2;
+        return part1 + '\r\n' + addition + part2;
     }
 
     function addInAppJs(after, addition) {
