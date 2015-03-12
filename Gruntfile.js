@@ -10,7 +10,6 @@ var enterInside = function (target, before, insert) {
     }
 
     var test = target.indexOf(insert);
-    console.log(test);
 
     if (test > 0)return target;
 
@@ -18,7 +17,6 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
-            console.log(txt);
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
@@ -27,7 +25,6 @@ var enterInside = function (target, before, insert) {
         start = target.indexOf('>', start) + 1;
 
     } catch (e) {
-        console.log(e);
         start = target.indexOf(before);
     }
 
@@ -649,7 +646,6 @@ module.exports = function (grunt) {
             grunt.file.mkdir(styleDir);
         }
 
-        console.log(styleDir);
 
         return part1 + '\r\n' + addition + '\',' + part2;
     }
