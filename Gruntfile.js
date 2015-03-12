@@ -59,7 +59,6 @@ var removeFromInside = function (target, remove) {
 }
 
 module.exports = function (grunt) {
-    var Q = require('q')
     var _ = require('underscore');
     _.str = require('underscore.string');
 

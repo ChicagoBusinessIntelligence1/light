@@ -1,4 +1,5 @@
 (function () {
+		'common.article',
 
     'use strict';
 
