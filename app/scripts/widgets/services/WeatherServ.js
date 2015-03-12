@@ -15,6 +15,19 @@
 
             }
 
+            var weatherImages={};
+            weatherImages['01d'] = 'weather-sunny';
+            weatherImages['02d'] = 'few-clouds';
+            weatherImages['03d'] = 'scattered-clouds';
+            weatherImages['04d'] = 'broken-cloud';
+            weatherImages['09d'] = 'shower-rain';
+            weatherImages['10d'] = 'rain';
+            weatherImages['11d'] = 'thunderstorm';
+            weatherImages['13d'] = 'snow';
+            weatherImages['50d'] = 'mist';
+
+
+
             return {
                 getForeCast: function (days) {
 
@@ -25,10 +38,13 @@
                     $http.jsonp(url)
                         .success(function (data) {
 
-                            weather.celc = data.main.temp;
+                            weather.celc = data.main.temp.toFixed(1);
                             weather.humidity = data.main.humidity;
                             weather.f = celciusToFar(weather.celc);
-                            console.log(weather);
+                            var weatherIcon = data.weather['0'].icon;
+                            weather.icon = weatherImages[weatherIcon];
+                            deferred.resolve(weather);
+
                         }).error(function (error) {
                             console.log(error);
                         });

@@ -1,1 +1,11 @@
-.well sv-weather Template
+.light-margin(layout='row' layout-align='space-between')
+	div.weather-city Chicago, IL
+	div
+		img(ng-src="../img/weather/{{weather.icon}}.png" style='display:inline-block')
+	div.weather-city {{weather.f}}
+	div
+		i.icon.icon--lg.icon--circled.mdi.mdi-temperature-fahrenheit
+	div.weather-city {{weather.celc}}
+	div
+		i.icon.icon--lg.icon--circled.mdi.mdi-temperature-celsius
+

@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('aside')
-        .directive('svNavLink', function () {
+        .directive('svNavLink', function ($rootScope) {
             return {
                 templateUrl: 'scripts/aside/directives/sv-nav-link.html',
                 replace:true,
@@ -13,6 +13,9 @@
                 },
                 link: function ($scope, element, attr) {
 
+                    $scope.closeSideBar = function () {
+                        $rootScope.$broadcast('close:leftSideBar');
+                    };
                 }
             };
         });
