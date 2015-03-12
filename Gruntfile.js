@@ -647,7 +647,9 @@ module.exports = function (grunt) {
         var startImg = styleFile.lastIndexOf('styles/');
         var imgDir = styleFile.substring(0,startImg)+'img';
 
-        console.log(imgDir);
+        if (!grunt.file.exists(imgDir)) {
+            grunt.file.mkdir(imgDir);
+        }
 
         return part1 + '\r\n' + addition + '\',' + part2;
     }
