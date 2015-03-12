@@ -10,7 +10,6 @@ var enterInside = function (target, before, insert) {
     }
 
     var test = target.indexOf(insert);
-    console.log(test);
 
     if (test > 0)return target;
 
@@ -18,7 +17,6 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
-            console.log(txt);
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
@@ -27,7 +25,6 @@ var enterInside = function (target, before, insert) {
         start = target.indexOf('>', start) + 1;
 
     } catch (e) {
-        console.log(e);
         start = target.indexOf(before);
     }
 
@@ -56,6 +53,7 @@ var removeFromInside = function (target, remove) {
         }
 
     });
+
 
     return final;
 }
@@ -279,8 +277,7 @@ module.exports = function (grunt) {
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>';
         var indf;
 
-
-        var newIndex = generateModule(module,rm);
+        var newIndex = generateModule(module, rm);
 
         if (newIndex && !rm) {
             indf = newIndex;
@@ -355,7 +352,7 @@ module.exports = function (grunt) {
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/services/' + name + 'Serv.js"></script>';
 
         var indf;
-        var newIndex = generateModule(module,rm);
+        var newIndex = generateModule(module, rm);
 
         if (newIndex && !rm) {
             indf = newIndex;
@@ -452,7 +449,7 @@ module.exports = function (grunt) {
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/filters/' + name + '.js"></script>';
 
         var indf;
-        var newIndex = generateModule(module,rm);
+        var newIndex = generateModule(module, rm);
 
         if (newIndex && !rm) {
             indf = newIndex;
@@ -553,7 +550,7 @@ module.exports = function (grunt) {
 
 /////
         var indf;
-        var newIndex = generateModule(module,rm);
+        var newIndex = generateModule(module, rm);
 
         if (newIndex && !rm) {
             indf = newIndex;
@@ -583,10 +580,11 @@ module.exports = function (grunt) {
     })
     var SCRIPT_PATH = 'app/scripts/';
     var APP = SCRIPT_PATH + 'app.js'
+    var MAINSTYL = 'app/styles/' + 'main.styl'
     var INDEXHTML = 'app/' + 'index.html';
     var eol = '\r\n';
 
-    function generateModule(module,rm) {
+    function generateModule(module, rm) {
         if (rm) {
             return null;
         }
@@ -597,8 +595,7 @@ module.exports = function (grunt) {
 
         var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleName + 'Index.js';
 
-
-        //grunt.file.delete(moduleIndex);
+        grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
 
         var isIndexExist = grunt.file.exists(moduleIndex);
@@ -609,6 +606,11 @@ module.exports = function (grunt) {
 
             var newApp = addInAppJs('// modules', module);
             grunt.file.write(APP, newApp);
+
+            var styleAddition = "@import '../scripts/" + module + "/styles/" + module + "'";
+
+            var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
+            grunt.file.write(MAINSTYL, newMainStyl);
 
             var slash = moduleIndex.indexOf('/') + 1;
             var moduleIndexShort = moduleIndex.substr(slash);
@@ -622,9 +624,40 @@ module.exports = function (grunt) {
         return null;
     }
 
+    function addStyleImages(after, addition) {
+        var app = grunt.file.read(MAINSTYL);
+        var alreadyIn = app.indexOf(addition);
+
+        if (alreadyIn > -1) {
+            return;
+        }
+
+        var start = app.indexOf(after);
+        start = app.indexOf('\r\n', start);
+        var part1 = app.substr(0, start);
+        var part2 = app.substr(start);
+
+        var startStyle = addition.indexOf('..') + 3;
+        var finishStyle = addition.lastIndexOf("'");
+
+        var styleFile = 'app/' + addition.substring(startStyle, finishStyle) + '.styl';
+
+        if (!grunt.file.exists(styleFile)) {
+            grunt.file.write(styleFile, '');
+        }
+        var startImg = styleFile.lastIndexOf('styles/');
+        var imgDir = styleFile.substring(0,startImg)+'img';
+
+        if (!grunt.file.exists(imgDir)) {
+            grunt.file.mkdir(imgDir);
+        }
+
+        return part1 + '\r\n' + addition + part2;
+    }
+
     function addInAppJs(after, addition) {
         var app = grunt.file.read(APP);
-        var alreadyIn = app.indexOf("'"+addition+"',");
+        var alreadyIn = app.indexOf("'" + addition + "',");
         if (alreadyIn > -1) {
             return app;
         }
