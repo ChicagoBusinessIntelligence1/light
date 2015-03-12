@@ -85,8 +85,8 @@
                     controller: "FoodCtrl",
                     templateUrl: "scripts/sections/food/views/foodCtrl.html"
                 })
-                .state("app.health", {
-                    url: "/health",
+                .state("app.science", {
+                    url: "/science",
                     controller: "HealthCtrl",
                     templateUrl: "scripts/sections/health/views/healthCtrl.html"
                 })

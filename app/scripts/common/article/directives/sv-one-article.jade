@@ -4,6 +4,9 @@ div(layout='column' flex='')
 			a.fs-caption.breadcrumb-section Section Name
 			span &nbsp / &nbsp
 			span.fs-caption.display-block {{title|Title:15}}
+	ul.list-inline
+		li(ng-repeat='s in sections')
+			div {{s}}
 	.light-margin-5(flex='')
 		.card
 			.light-margin
