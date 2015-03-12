@@ -14,7 +14,7 @@
                 link: function ($scope, element, attr) {
 
                     $scope.closeSideBar = function () {
-                        $rootScope.$broadcast('close:leftSideBar');
+                        $rootScope.$broadcast('close:SideBars');
                     };
                 }
             };

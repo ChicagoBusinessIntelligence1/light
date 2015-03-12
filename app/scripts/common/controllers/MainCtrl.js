@@ -49,10 +49,14 @@ angular.module('common')
         };
     })
     .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-        $scope.$on('close:leftSideBar', function () {
+        $scope.$on('close:SideBars', function () {
             $mdSidenav('left').close()
                 .then(function () {
                     $log.debug("close LEFT is done");
+                });
+            $mdSidenav('right').close()
+                .then(function () {
+                    $log.debug("close Right is done");
                 });
         })
 
