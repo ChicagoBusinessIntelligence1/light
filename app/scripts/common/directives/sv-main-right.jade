@@ -1,6 +1,6 @@
 md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-locked-open="$media('gt-lg')")
 	md-toolbar.md-accent.md-hue-1.txt-white(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
-		button.btn.btn--m.btn--fab(ng-click='close()' hide-gt-lg='')
+		md-button.md-primary(ng-click='close()' hide-gt-lg='')
 			i.mdi.mdi-close
 		span Партнерам и Клиентам
 	md-content.md-padding(ng-controller='RightCtrl')
