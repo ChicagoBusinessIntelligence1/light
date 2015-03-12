@@ -1,17 +1,13 @@
 /**********************
      =top-navbar
 ***********************/
-.first-newspaper {
-  margin-bottom: 5px;
-}
 @media screen and (max-width: 992px) {
   .first-newspaper {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 .header-logo {
   margin-bottom: 0px;
-  margin-right: 15px;
 }
 .navbar-brand {
   display: inline-block;
