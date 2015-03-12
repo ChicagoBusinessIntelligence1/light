@@ -1,12 +1,11 @@
 (function () {
-		'sectioins.test',
-		'sections.test',
 
     'use strict';
 
     var app = angular.module('app', [
 
-        // Common modules
+        // modules
+		'sections.test',
         'widgets',
         'header',
         'aside',
