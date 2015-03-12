@@ -628,7 +628,7 @@ module.exports = function (grunt) {
         var alreadyIn = app.indexOf("@import '" + addition + "'");
 
         if (alreadyIn > -1) {
-            return;
+            //return;
         }
 
         var start = app.indexOf(after);
