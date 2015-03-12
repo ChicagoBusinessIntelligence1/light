@@ -637,13 +637,12 @@ module.exports = function (grunt) {
         var part2 = app.substr(start);
 
         var startStyle = addition.indexOf('..') + 3;
-        var finishStyle = addition.lastIndexOf('/');
+        //var finishStyle = addition.lastIndexOf('/');
 
-        var styleDir = 'app/'+addition.substring(startStyle, finishStyle);
-        console.log(styleDir);
+        var styleFile = 'app/'+addition.substring(startStyle)+'.styl';
 
-        if (!grunt.file.exists(styleDir)) {
-            grunt.file.mkdir(styleDir);
+        if (!grunt.file.exists(styleFile)) {
+            grunt.file.write(styleFile,'');
         }
 
 
