@@ -131,11 +131,7 @@
 				templateUrl: "scripts/sections/test/views/trackCtrl.html"
 			})
 
-			.state("app.login", {
-				url: "/login", 
-				controller:"LoginCtrl",
-				templateUrl: "scripts/auth/views/loginCtrl.html"
-			})
+			
 //#state
         });
 
