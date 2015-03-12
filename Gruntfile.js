@@ -639,7 +639,7 @@ module.exports = function (grunt) {
         var startStyle = addition.indexOf('..') + 3;
         //var finishStyle = addition.lastIndexOf('/');
 
-        var styleFile = 'app/' + addition.substr(startStyle,addition.length-1) + '.styl';
+        var styleFile = 'app/' + addition.substr(startStyle,addition.length-2) + '.styl';
         console.log(styleFile);
 
         if (!grunt.file.exists(styleFile)) {
