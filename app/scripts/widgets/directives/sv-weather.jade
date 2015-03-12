@@ -1,9 +1,9 @@
-.light-margin(layout-gt-sm='row' layout-sm='column' layout-align='start center')
-	.weather-city(flex-gt-sm='35' flex-sm="100") Chicago, IL
-	div.text-left(flex-gt-sm='20' flex-sm="100")
+div(layout='row' layout-align='center center')
+	.weather-city.text-center(flex-gt-sm='35' flex-sm='15') Chicago, IL
+	.text-center(flex-gt-sm='20' flex-sm="15")
 		img(ng-src="../img/weather/{{weather.icon}}.png" style='display:inline-block; width:80%')
-	.text-left(flex-gt-sm='20' flex-sm="100")
-		span.display-block.weather-city
+	.text-left(flex-gt-sm='20' flex-sm="15")
+		.weather-city
 			| {{weather.celc}}
 			i.mdi.mdi-temperature-celsius
 

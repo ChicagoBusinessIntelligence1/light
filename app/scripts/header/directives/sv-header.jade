@@ -1,7 +1,7 @@
 md-toolbar(layout='column')
 	div(layout='row' layout-align='space-between center')
 		.text-right(flex-gt-lg='20' flex-gt-sm='25' flex-sm="20")
-			sv-weather
+			sv-weather(hide-sm)
 		div(flex-gt-lg='60' flex-gt-sm='50' flex-sm="60")
 			.header-logo.margin-top-8.text-center
 				a.text-center(ui-sref='app.home')
@@ -9,7 +9,9 @@ md-toolbar(layout='column')
 		div(flex-gt-lg='20' flex-gt-sm='25' flex-sm="20")
 			.margin-right-10.text-right
 				sv-auth-btn
-	div(layout='row' layout-align='center')
-		.text-center.margin-top-8
+	div(layout-gt-sm='row' layout-sm='column' layout-align='center')
+		.text-center.margin-top-8(flex)
 			span.display-block.fs-subhead.first-newspaper Первая Русская Газета в Чикаго
+		.text-center.margin-top-8.margin-bottom-10(flex hide-gt-sm)
+			sv-weather
 
