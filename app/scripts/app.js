@@ -1,4 +1,5 @@
 (function () {
+		'sectioins.test',
 		'sections.test',
 
     'use strict';

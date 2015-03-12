@@ -606,7 +606,7 @@ module.exports = function (grunt) {
             var newApp = addInAppJs('// modules', module);
             grunt.file.write(APP, newApp);
 
-            var styleAddition = "@import '../scripts/" + module + "/styles/" + module + "'";
+            var styleAddition = "@import '../scripts/" + moduleDirectirized + "/styles/" + moduleName + "'";
 
             var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
             grunt.file.write(MAINSTYL, newMainStyl);
