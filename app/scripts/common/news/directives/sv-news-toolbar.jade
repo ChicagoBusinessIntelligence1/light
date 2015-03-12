@@ -1,9 +1,9 @@
 md-toolbar.md-hue-1.margin-bottom-10( ng-controller='RightCtrl' layout='row' layout-align='space-around center')
-	span.row-news-title {{panelTitle}}
+	span.fs-subhead.display-block {{panelTitle}}
 md-content.light-padding-8
-	ul.list-inline
+	ul.list-unstyled
 		li.margin-bottom-10(ng-repeat='n in news')
-			a.article-toolbar-date(ui-sref='app.news({id:n.id})')
-				.text-primary {{n.publishedDate|NewsDate}}
+			a.text-primary(ui-sref='app.news({id:n.id})')
+				span.fs-caption.display-block {{n.publishedDate|NewsDate}}
 			a.article-toolbar-body(ui-sref='app.news({id:n.id})')
-				| {{n.title}}
+				span.display-block.fs-caption {{n.title}}

@@ -29,7 +29,7 @@
 
                             $scope.fscale = 1.3;
                             $scope.mainNewsFilter = 350;
-                            $scope.secondNewsTitleFilter = 70;
+                            $scope.secondNewsTitleFilter = 50;
                             $scope.secondNewsBodyFilter = 30;
                         }
                     });

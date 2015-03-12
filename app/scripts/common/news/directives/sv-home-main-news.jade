@@ -9,7 +9,7 @@ md-content
 	md-row-height="1:1"
 	md-gutter='7px')
 		md-grid-tile.card(md-colspan='2' md-rowspan='2' )
-			sv-article-thumb(
+			sv-article-thumb-main(
 			fscale='fscale'
 			home-small='false'
 			state='politics1.state'
@@ -21,22 +21,18 @@ md-content
 		md-grid-tile.card( md-rowspan='1' )
 			sv-article-thumb(
 			fscale='fscale'
-			home-small='true'
 			state='politics1.state'
 			id='1'
 			img='{{n2.img}}'
 			title='{{n2.title|Title:secondNewsTitleFilter}}'
-			body='{{n2.content|Title:secondNewsBodyFilter}}'
 			)
 
 		md-grid-tile.card
 			sv-article-thumb(
 			fscale='fscale'
-			home-small='true'
 			state='politics1.state'
 			id='2'
 			img='{{n3.img}}'
 			title='{{n3.title|Title:secondNewsTitleFilter}}'
-			body='{{n3.content|Title:secondNewsBodyFilter}}'
 			)
 

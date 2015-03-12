@@ -1,18 +1,20 @@
 (function () {
     'use strict';
 
-    angular.module('common')
-        .directive('svArticleThumb', function () {
+    angular.module('common.article')
+        .directive('svArticleThumbMain', function () {
             return {
-                templateUrl: 'scripts/common/article/directives/sv-article-thumb.html',
-                replace: true,
+                templateUrl: 'scripts/common/article/directives/sv-article-thumb-main.html',
                 scope: {
+                    homeSmall: '=',
                     state: '=',
                     id: '@',
                     img: '@',
                     title: '@',
-                    fscale: '='
+                    fscale: '=',
+                    body: '@'
                 },
+
                 link: function ($scope, element, attr) {
                     var width = element.css('width');
 
@@ -24,6 +26,7 @@
                         }
                     });
                 }
+
             };
         });
 })();
