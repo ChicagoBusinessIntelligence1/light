@@ -3,7 +3,7 @@
 ***********************/
 @media screen and (max-width: 992px) {
   .first-newspaper {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 .header-logo {
@@ -81,6 +81,6 @@
 }
 @media screen and (max-width: 992px) {
   .weather-city {
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 }
