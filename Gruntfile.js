@@ -643,6 +643,7 @@ module.exports = function (grunt) {
         var finishStyle = addition.lastIndexOf('/');
 
         var styleDir = 'app/'+addition.substring(startStyle, finishStyle);
+        console.log(styleDir);
 
         if (!grunt.file.exists(styleDir)) {
             grunt.file.mkdir(styleDir);
