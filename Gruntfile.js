@@ -594,10 +594,17 @@ module.exports = function (grunt) {
 
         var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleName + 'Index.js';
 
-        grunt.file.delete(moduleIndex);
+        //grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
 
         var isIndexExist = grunt.file.exists(moduleIndex);
+
+        function includeStyleCreateImgFolder() {
+            var styleAddition = "@import '../scripts/" + moduleDirectirized + "/styles/" + moduleName + "'";
+            var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
+            grunt.file.write(MAINSTYL, newMainStyl);
+        }
+
         if (!isIndexExist) {
             var moduleTpl = grunt.file.read('templates/module.tpl.js');
             moduleTpl = moduleTpl.replace(/#module#/g, module);
@@ -605,12 +612,7 @@ module.exports = function (grunt) {
 
             var newApp = addInAppJs('// modules', module);
             grunt.file.write(APP, newApp);
-
-            var styleAddition = "@import '../scripts/" + module + "/styles/" + module + "'";
-
-            var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
-            grunt.file.write(MAINSTYL, newMainStyl);
-
+            includeStyleCreateImgFolder();
             var slash = moduleIndex.indexOf('/') + 1;
             var moduleIndexShort = moduleIndex.substr(slash);
 
@@ -620,6 +622,8 @@ module.exports = function (grunt) {
             return addInIndexHtml('<!-- MODULES-->', indexAddition);
 
         }
+
+        includeStyleCreateImgFolder();
         return null;
     }
 
