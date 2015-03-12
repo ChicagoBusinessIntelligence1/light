@@ -6,7 +6,7 @@
 
             var rusEng = {};
             rusEng['politics'] = 'политика';
-            rusEng['culture'] = 'Культура';
+            rusEng['culture'] = 'культура';
 
             return {
                 getCategoryNews: function (location) {

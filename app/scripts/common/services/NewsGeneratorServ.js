@@ -111,6 +111,7 @@
                         });
                         var categories = getUniqueCategories(finalNews);
                         finalNews = classify(finalNews);
+                        console.log(categories);
 
                         deferred.resolve(finalNews);
                     }).catch(function (e) {
