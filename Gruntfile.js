@@ -59,7 +59,6 @@ var removeFromInside = function (target, remove) {
 }
 
 module.exports = function (grunt) {
-    var Q = require('q')
     var _ = require('underscore');
     _.str = require('underscore.string');
 
@@ -595,7 +594,7 @@ module.exports = function (grunt) {
 
         var moduleIndex = SCRIPT_PATH + moduleDirectirized + '/' + moduleName + 'Index.js';
 
-        grunt.file.delete(moduleIndex);
+        //grunt.file.delete(moduleIndex);
         //console.log(moduleIndex);
 
         var isIndexExist = grunt.file.exists(moduleIndex);
