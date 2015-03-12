@@ -639,12 +639,15 @@ module.exports = function (grunt) {
         var startStyle = addition.indexOf('..') + 3;
         var finishStyle = addition.lastIndexOf("'");
 
-       var styleFile = 'app/' + addition.substring(startStyle,finishStyle) + '.styl';
-        console.log(styleFile);
+        var styleFile = 'app/' + addition.substring(startStyle, finishStyle) + '.styl';
 
         if (!grunt.file.exists(styleFile)) {
             grunt.file.write(styleFile, '');
         }
+        var startImg = styleFile.lastIndexOf('styles/');
+        var imgDir = styleFile.substring(0,startImg)+'img';
+
+        console.log(imgDir);
 
         return part1 + '\r\n' + addition + '\',' + part2;
     }
