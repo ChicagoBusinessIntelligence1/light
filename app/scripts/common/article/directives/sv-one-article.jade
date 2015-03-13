@@ -4,9 +4,10 @@ div(layout='column' flex='')
 			a.fs-caption.breadcrumb-section Section Name
 			span &nbsp / &nbsp
 			span.fs-caption.display-block {{title|Title:15}}
-	ul.list-inline
-		li(ng-repeat='s in sections')
-			div {{s}}
+	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
+		ul.list-inline
+			li(ng-repeat='s in sections')
+				.text-subheader.label.label-default {{s}}
 	.light-margin-5(flex='')
 		.card
 			.light-margin
@@ -32,6 +33,8 @@ div(layout='column' flex='')
 					img(ng-src="{{img}}")
 				div.light-padding-5.margin-bottom-15
 					p.fs-body-2 {{body}}
+	.light-margin-5(flex='')
+		img(src="../img/ad/mb-logo.jpg")
 	.light-margin-5(flex='')
 		md-toolbar.bgc-blue-grey-50.toolbar-blue-grey
 			h1.md-toolbar-tools.txt-fontGrey Comments
