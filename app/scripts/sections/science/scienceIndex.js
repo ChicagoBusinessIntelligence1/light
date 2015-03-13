@@ -1,3 +1,3 @@
 'use strict'
 
-var health = angular.module('sections.health', ['ngMaterial']);
+var health = angular.module('sections.science', ['ngMaterial']);

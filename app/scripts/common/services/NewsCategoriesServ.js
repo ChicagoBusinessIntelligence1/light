@@ -7,6 +7,10 @@
             var rusEng = {};
             rusEng['politics'] = 'политика';
             rusEng['culture'] = 'культура';
+            rusEng['science'] = 'мир';
+            rusEng['money'] = 'экономика';
+            rusEng['society'] = 'общество';
+            rusEng['archive'] = 'регионы';
 
             return {
                 getCategoryNews: function (location) {
@@ -23,15 +27,11 @@
                                 if (news.indexOf(n) === -1) {
                                     news.push(n);
                                 }
-
                             }
                         })
 
                     })
-
-
                     return news;
-
                 }
             };
         });
