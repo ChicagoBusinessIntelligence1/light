@@ -87,8 +87,8 @@
                 })
                 .state("app.science", {
                     url: "/science",
-                    controller: "HealthCtrl",
-                    templateUrl: "scripts/sections/health/views/healthCtrl.html"
+                    controller: "ScienceCtrl",
+                    templateUrl: "scripts/sections/health/views/scienceCtrl.html"
                 })
                 .state("app.archive", {
                     url: "/archive",
