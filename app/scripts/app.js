@@ -18,8 +18,8 @@
         'sections.politics',
         'sections.money',
         'sections.culture',
-        'sections.food',
-        'sections.health',
+        'sections.society',
+        'sections.science',
         'sections.archive',
         'sections.contact',
         'sections.subscription',
@@ -80,15 +80,15 @@
                     controller: "CultureCtrl",
                     templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
                 })
-                .state("app.food", {
-                    url: "/food",
-                    controller: "FoodCtrl",
-                    templateUrl: "scripts/sections/food/views/foodCtrl.html"
+                .state("app.society", {
+                    url: "/society",
+                    controller: "SocietyCtrl",
+                    templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
-                .state("app.health", {
-                    url: "/health",
-                    controller: "HealthCtrl",
-                    templateUrl: "scripts/sections/health/views/healthCtrl.html"
+                .state("app.science", {
+                    url: "/science",
+                    controller: "ScienceCtrl",
+                    templateUrl: "scripts/sections/science/views/scienceCtrl.html"
                 })
                 .state("app.archive", {
                     url: "/archive",

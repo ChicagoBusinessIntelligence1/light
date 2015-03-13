@@ -11,10 +11,10 @@
                     title: '@',
                     body: '@',
                     author: '@',
+                    sections: '=',
                     date: '@'
                 },
                 link: function ($scope, element, attr) {
-
                 }
             };
         });
