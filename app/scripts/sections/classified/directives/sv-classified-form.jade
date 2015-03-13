@@ -1,1 +1,41 @@
-.well sv-classified-form Template
+div(layout='column' flex)
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Контактное Имя', icon='account', fixed-label='true')
+			input(type='text', ng-model='textFields.firstName')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Электронный Адрес', icon='email', fixed-label='true')
+			input(type='email', ng-model='textFields.firstEmail')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Контактный Телефон', icon='phone', fixed-label='true')
+			input(type='email', ng-model='textFields.secondEmail')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Страна')
+			input(type='text', ng-model='textFields.fixedAdress')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Город')
+			input(type='text', ng-model='textFields.fixedAdress')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Штат')
+			input(type='text', ng-model='textFields.fixedAdress')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Заголовок Объявления')
+			input(ng-model='textFields.description')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Описание')
+			input(ng-model='textFields.description')
+	div(flex='')
+		span.display-block
+		lx-text-field(label='Description')
+			textarea(ng-model='textFields.description')
+	div.margin-top-15(flex='')
+		md-button.md-raised.md-hue-1 Разместить
+
+
