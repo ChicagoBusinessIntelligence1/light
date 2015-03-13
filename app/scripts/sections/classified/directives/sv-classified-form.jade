@@ -1,4 +1,4 @@
-div(layout='column' flex)
+div(layout-sm='column' layout-gt-sm='row' layout-gt-lg='column' flex)
 	div(flex='')
 		span.display-block
 		lx-text-field(label='Контактное Имя', icon='account', fixed-label='true')
@@ -7,10 +7,12 @@ div(layout='column' flex)
 		span.display-block
 		lx-text-field(label='Электронный Адрес', icon='email', fixed-label='true')
 			input(type='email', ng-model='textFields.firstEmail')
+div(layout-sm='column' flex)
 	div(flex='')
 		span.display-block
 		lx-text-field(label='Контактный Телефон', icon='phone', fixed-label='true')
 			input(type='email', ng-model='textFields.secondEmail')
+div(layout-sm='column' layout-gt-sm='row' layout-gt-lg='column' flex)
 	div(flex='')
 		span.display-block
 		lx-text-field(label='Страна')
@@ -23,6 +25,7 @@ div(layout='column' flex)
 		span.display-block
 		lx-text-field(label='Штат')
 			input(type='text', ng-model='textFields.fixedAdress')
+div(layout-sm='column' flex)
 	div(flex='')
 		span.display-block
 		lx-text-field(label='Заголовок Объявления')
@@ -31,11 +34,15 @@ div(layout='column' flex)
 		span.display-block
 		lx-text-field(label='Цена Товара / Услуги')
 			input(ng-model='textFields.description')
+div(layout-sm='column' flex)
 	div(flex='')
 		span.display-block
 		lx-text-field(label='Описание')
 			textarea(ng-model='textFields.description')
+div(layout-sm='column' flex)
 	div.margin-top-15(flex='')
-		md-button.md-raised.md-hue-1 Разместить
+		md-button.md-raised.md-hue-1
+			i.mdi.mdi-send
+			| &nbsp Опубликовать
 
 
