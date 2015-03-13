@@ -8,9 +8,10 @@
                 scope:{},
                 link: function ($scope, element, attr) {
                     WeatherServ.getForeCast(1).then(function (weather) {
-
                         $scope.weather = weather;
                     });
+
+
 
 
                 }

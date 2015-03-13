@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('common')
-    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ) {
-
+    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ, AuthServ) {
 
         NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 50, false).then(function (news) {
             $rootScope.allNews = news;
         });
+
+        $scope.authObj = AuthServ.getObj();
 
         $scope.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
@@ -18,16 +19,7 @@ angular.module('common')
             }
         })
 
-        var mainRef = new Firebase(url);
-        $scope.authObj = $firebaseAuth(mainRef);
 
-        $scope.loginFb = function () {
-            $scope.authObj.$authWithOAuthPopup("facebook").then(function (authData) {
-                console.log("Logged in as:", authData.uid);
-            }).catch(function (error) {
-                console.error("Authentication failed: ", error);
-            });
-        }
         /**
          * Sidenav
          */
@@ -55,7 +47,6 @@ angular.module('common')
                     $log.debug("close Right is done");
                 });
         })
-
 
         $scope.close = function () {
             $mdSidenav('left').close()

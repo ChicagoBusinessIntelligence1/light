@@ -1,12 +1,12 @@
 div(layout='column')
 	div(flex='')
 		lx-text-field.auth-text-field(label='Email:')
-			input(ng-model='textFields.lastNameDark' type='email')
+			input(ng-model='user.email' type='text')
 	div(flex='')
 		lx-text-field.auth-text-field(label='Password:')
-			input(ng-model='textFields.lastNameDark' type='email')
+			input(ng-model='user.pass' type='password')
 	section(layout='row' layout-margin='10' layout-align='center center')
-		button.btn.btn--m.btn--blue.btn--raised.margin-right(lx-ripple) Login
+		button.btn.btn--m.btn--blue.btn--raised.margin-right(lx-ripple ng-click='signin()') Login
 		button.btn.btn--m.btn--white.btn--raised(lx-ripple ng-click="cancel()") Cancel
 
 
