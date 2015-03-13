@@ -25,6 +25,7 @@
 
                     $scope.cancel = function () {
                         $rootScope.$broadcast('cancel');
+
                     }
 
                 }
