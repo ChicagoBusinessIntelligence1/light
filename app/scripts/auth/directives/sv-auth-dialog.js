@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('auth')
-        .directive('svAuthDialog', function ($mdDialog) {
+        .directive('svAuthDialog', function ($mdDialog, AuthServ, $rootScope) {
             return {
                 templateUrl: 'scripts/auth/directives/sv-auth-dialog.html',
                 link: function ($scope, element, attr) {
@@ -16,6 +16,7 @@
                             $scope.alert = 'You cancelled the dialog.';
                         });
                     };
+
                 }
             }
         });

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('auth')
-        .directive('svAuthBtn', function ($mdDialog) {
+        .directive('svAuthBtn', function ($mdDialog, $rootScope, AuthServ) {
             return {
                 templateUrl: 'scripts/auth/directives/sv-auth-btn.html',
                 restrict: 'E',
@@ -20,6 +20,15 @@
                     $scope.$on('cancel', function () {
                         $mdDialog.cancel();
                     });
+
+                    $rootScope.$watch('user', function (newVal, oldVal) {
+                        $scope.user = newVal;
+                    })
+
+                    $scope.logout = function () {
+                        AuthServ.logout();
+
+                    };
                 }
             };
         });

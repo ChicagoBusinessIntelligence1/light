@@ -7,7 +7,9 @@ angular.module('common')
             $rootScope.allNews = news;
         });
 
-        $scope.authObj = AuthServ.getObj();
+       $rootScope.user = AuthServ.getUser();
+
+
 
         $scope.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
