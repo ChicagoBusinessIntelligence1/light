@@ -4,11 +4,11 @@
       =mixins
 ***********************/
 
-news-xs()
+news-body-s()
   font-size 11px
   line-height 14px !important
 
-news-header-s()
+news-header-xs()
   font-size 10px
   line-height 12px
 
@@ -43,8 +43,9 @@ news-header-s()
 .article-toolbar-body
   color #393939
 
-.article-toolbar-date
-  news-xs()
+.article-toolbar
+  news-body-s()
+
 
 .article-quote
   font-size 14px
@@ -63,7 +64,7 @@ news-header-s()
 
 
 .article-thumb-header-s
-  news-header-s()
+  news-header-xs()
 
   @media screen and (max-width: 1200px)
     font-size 12px
