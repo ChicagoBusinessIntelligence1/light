@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('common')
-    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ) {
-
+    .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ, AuthServ) {
 
         NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 50, false).then(function (news) {
             $rootScope.allNews = news;
         });
+
+        $scope.authObj = AuthServ.getObj();
 
         $scope.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
@@ -17,9 +18,6 @@ angular.module('common')
                 $scope.isAdmin = true;
             }
         })
-
-        var mainRef = new Firebase(url);
-        $scope.authObj = $firebaseAuth(mainRef);
 
 
         /**
@@ -49,7 +47,6 @@ angular.module('common')
                     $log.debug("close Right is done");
                 });
         })
-
 
         $scope.close = function () {
             $mdSidenav('left').close()

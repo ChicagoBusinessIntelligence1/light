@@ -2,13 +2,13 @@
     'use strict';
 
     angular.module('auth')
-        .factory('AuthServ', function () {
+        .factory('AuthServ', function ($firebaseAuth, url) {
 
-            var meaningOfLife = 42;
+            var mainRef = new Firebase(url);
 
             return {
-                someMethod: function () {
-                    return meaningOfLife;
+                getObj: function () {
+                    return $firebaseAuth(mainRef);
                 }
             };
         });
