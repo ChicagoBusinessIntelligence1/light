@@ -5,5 +5,6 @@
         .controller('SocietyCtrl', function ($scope, $location, NewsCategoriesServ) {
             $scope.news = NewsCategoriesServ.getCategoryNews($location);
         });
+
 })();
 
