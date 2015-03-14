@@ -55,7 +55,8 @@
                 logout: function () {
                     $rootScope.user = null;
 
-                    this.getObj().unauth();
+                    var authObj = this.getObj();
+                    authObj.$unauth();
 
                 },
 

@@ -21,13 +21,6 @@
 
                     element.on('click', function () {
 
-                        AuthServ.authProvider($scope.provider).then(function (user) {
-                            $rootScope.user = user;
-                            $mdDialog.hide();
-
-                        }).catch(function (error) {
-                            console.error("Authentication failed:", error);
-                        });
                     })
 
                 }

@@ -17,6 +17,9 @@
                         });
                     };
 
+
+
+
                     $scope.$on('cancel', function () {
                         $mdDialog.cancel();
                     });
@@ -25,7 +28,18 @@
                         $scope.user = newVal;
                     })
 
+                    $scope.loginSvetUser = function (provider) {
+
+                        AuthServ.authProvider(provider).then(function (user) {
+                            $rootScope.user = user;
+
+                        }).catch(function (error) {
+                            console.error("Authentication failed:", error);
+                        });
+                    };
+
                     $scope.logout = function () {
+                        $rootScope.user = null;
                         AuthServ.logout();
 
                     };

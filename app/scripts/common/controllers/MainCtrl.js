@@ -9,7 +9,6 @@ angular.module('common')
         });
 
 
-
        $rootScope.user = AuthServ.getUser();
 
 

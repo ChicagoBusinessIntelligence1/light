@@ -3028,16 +3028,16 @@ fieldset[disabled] .btn {
 .btn-default.focus,
 .btn-default:active,
 .btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
-}
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  background-image: none;
-}
+/*.open > .dropdown-toggle.btn-default {*/
+  /*color: #333;*/
+  /*background-color: #e6e6e6;*/
+  /*border-color: #adadad;*/
+/*}*/
+/*.btn-default:active,*/
+/*.btn-default.active,*/
+/*.open > .dropdown-toggle.btn-default {*/
+  /*background-image: none;*/
+/*}*/
 .btn-default.disabled,
 .btn-default[disabled],
 fieldset[disabled] .btn-default,
@@ -3073,16 +3073,16 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.focus,
 .btn-primary:active,
 .btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
-}
+/*.open > .dropdown-toggle.btn-primary {*/
+  /*color: #fff;*/
+  /*background-color: #286090;*/
+  /*border-color: #204d74;*/
+/*}*/
 .btn-primary:active,
 .btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  background-image: none;
-}
+/*.open > .dropdown-toggle.btn-primary {*/
+  /*background-image: none;*/
+/*}*/
 .btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
@@ -3118,16 +3118,16 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.focus,
 .btn-success:active,
 .btn-success.active,
-.open > .dropdown-toggle.btn-success {
-  color: #fff;
-  background-color: #449d44;
-  border-color: #398439;
-}
-.btn-success:active,
-.btn-success.active,
-.open > .dropdown-toggle.btn-success {
-  background-image: none;
-}
+/*.open > .dropdown-toggle.btn-success {*/
+  /*color: #fff;*/
+  /*background-color: #449d44;*/
+  /*border-color: #398439;*/
+/*}*/
+/*.btn-success:active,*/
+/*.btn-success.active,*/
+/*.open > .dropdown-toggle.btn-success {*/
+  /*background-image: none;*/
+/*}*/
 .btn-success.disabled,
 .btn-success[disabled],
 fieldset[disabled] .btn-success,
