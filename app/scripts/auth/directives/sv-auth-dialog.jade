@@ -2,8 +2,13 @@ md-dialog(aria-label='Login')
 	md-subheader.auth-subheader.md-sticky-no-effect
 		| Log In
 	md-content.auth-dialog-content(layout='row' layout-align="center center")
-		md-button.md-primary.md-raised
-			i.icon.icon--s.icon--flat.mdi.mdi-facebook
-			span.display-block.fs-body-2 Facebook
+		div(flex='')
+			md-button.md-primary.md-raised.btn-auth
+				i.fa.fa-facebook.fa-fw.fa-lg
+				| &nbsp Facebook
+		div(flex='')
+			md-button.md-accent.md-raised.btn-auth
+				i.fa.fa-google-plus.fa-fw.fa-lg
+				| &nbsp Google+
 
 
