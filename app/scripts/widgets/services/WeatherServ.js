@@ -5,6 +5,8 @@
         .factory('WeatherServ', function ($http, $q, $firebaseObject) {
             var urlWeather = 'https://publicdata-weather.firebaseio.com/chicago';
             var refWeather = new Firebase(urlWeather);
+            var weatherObj = $firebaseObject(refWeather);
+
 
             function celciusToFar(degrees) {
                 var degreeN = degrees;
@@ -28,6 +30,12 @@
             weatherImages['50d'] = 'mist';
 
             return {
+                getWeatherObj: function () {
+                   return weatherObj;
+
+                },
+
+
                 getForeCast: function (days) {
 
                     var deferred = $q.defer();
