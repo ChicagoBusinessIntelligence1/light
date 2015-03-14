@@ -630,6 +630,9 @@ module.exports = function (grunt) {
     }
 
     function addStyleImages(after, addition) {
+        console.log(after);
+        console.log(addition);
+
         var app = grunt.file.read(MAINSTYL);
         var alreadyIn = app.indexOf(addition);
 
