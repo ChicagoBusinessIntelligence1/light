@@ -13,7 +13,7 @@ div(layout='column' layout-align='center center')
             img(ng-src="../img/weather/{{weather.daily.data[0].icon|IconProcess}}.png" style='display:inline-block; width:80%')
         .text-left(flex-gt-sm='20' flex-sm="15")
             .weather-city
-                | {{weather.currently.apparentTemperature|FarToCelcius}}
+                | {{weather.daily.data['2'].apparentTemperatureMax|FarToCelcius}}
                 i.mdi.mdi-temperature-celsius
     div(layout='row')
         .weather-city.text-center(flex-gt-sm='35' flex-sm='15') После завтра
@@ -21,7 +21,7 @@ div(layout='column' layout-align='center center')
             img(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png" style='display:inline-block; width:80%')
         .text-left(flex-gt-sm='20' flex-sm="15")
             .weather-city
-                | {{weather.currently.apparentTemperature|FarToCelcius}}
+                | {{weather.daily.data['4'].apparentTemperatureMax|FarToCelcius}}
                 i.mdi.mdi-temperature-celsius
 
 
