@@ -1,11 +1,15 @@
 div(layout='row' layout-align='center center')
-	.weather-city.text-center(flex-gt-sm='35' flex-sm='15') Chicago, IL
-	.text-center(flex-gt-sm='20' flex-sm="15")
-		img(ng-src="../img/weather/{{icon}}.png" style='display:inline-block; width:80%')
-	.text-left(flex-gt-sm='20' flex-sm="15")
-		.weather-city
-			| {{weather.currently.apparentTemperature|FarToCelcius}}
-			i.mdi.mdi-temperature-celsius
+    .weather-city.text-center(flex-gt-sm='35' flex-sm='15') Chicago, IL
+    .text-center(flex-gt-sm='20' flex-sm="15")
+        .fab.ml
+            button.fab__primary.btn.btn--xl.btn--fab(lx-ripple='', lx-tooltip='Profile', tooltip-position='left')
+                img(ng-src="../img/weather/{{icon}}.png")
+            .fab__actions.fab__actions--right
+                button.btn.btn--l.btn--blue.btn--fab(ng-repeat='d in weather.daily.data')
+                    img(ng-src="../img/weather/{{d.icon}}.png")
+
+
+
 
 
 
