@@ -5,7 +5,7 @@
         .directive('svAuthIcon', function () {
             return {
                 templateUrl: 'scripts/auth/directives/sv-auth-icon.html',
-                scope:{},
+                scope: {},
                 link: function ($scope, element, attr) {
 
                 }
