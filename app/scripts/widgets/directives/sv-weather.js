@@ -5,15 +5,11 @@
         .directive('svWeather', function (WeatherServ) {
             return {
                 templateUrl: 'scripts/widgets/directives/sv-weather.html',
-                scope:{},
+                scope: {},
                 link: function ($scope, element, attr) {
                     WeatherServ.getForeCast(1).then(function (weather) {
                         $scope.weather = weather;
                     });
-
-
-
-
                 }
             };
         });

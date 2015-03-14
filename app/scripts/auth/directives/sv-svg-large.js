@@ -11,13 +11,13 @@
                 link: function ($scope, element, attr) {
                     element.css('cursor', 'pointer');
 
-                    var p = Raphael(element[0], 120, 120);
+                    var p = Raphael(element[0], 35, 35);
                     var icon = p.path(icons[$scope.provider]).attr({
                         fill: colors[$scope.provider],
                         stroke: "none",
                         cursor: 'pointer'
                     });
-                    icon.transform('s4,4,0,0');
+                    icon.transform('s1.1,1.1,0,-20');
 
                     element.on('click', function () {
 
