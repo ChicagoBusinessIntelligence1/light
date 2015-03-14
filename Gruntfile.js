@@ -54,7 +54,6 @@ var removeFromInside = function (target, remove) {
 
     });
 
-
     return final;
 }
 
@@ -602,9 +601,9 @@ module.exports = function (grunt) {
         function includeStyleCreateImgFolder() {
             var styleAddition = "@import '../scripts/" + moduleDirectirized + "/styles/" + moduleName + "'";
             var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
-            console.log(newMainStyl);
-
-            grunt.file.write(MAINSTYL, newMainStyl);
+            if (!_.isUndefined(newMainStyl)) {
+                grunt.file.write(MAINSTYL, newMainStyl);
+            }
         }
 
         if (!isIndexExist) {
@@ -630,8 +629,6 @@ module.exports = function (grunt) {
     }
 
     function addStyleImages(after, addition) {
-        console.log(after);
-        console.log(addition);
 
         var app = grunt.file.read(MAINSTYL);
         var alreadyIn = app.indexOf(addition);
@@ -654,7 +651,7 @@ module.exports = function (grunt) {
             grunt.file.write(styleFile, '');
         }
         var startImg = styleFile.lastIndexOf('styles/');
-        var imgDir = styleFile.substring(0,startImg)+'img';
+        var imgDir = styleFile.substring(0, startImg) + 'img';
 
         if (!grunt.file.exists(imgDir)) {
             grunt.file.mkdir(imgDir);
