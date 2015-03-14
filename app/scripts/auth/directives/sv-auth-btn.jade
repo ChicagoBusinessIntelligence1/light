@@ -1,10 +1,26 @@
 div
-    md-button.md-primary.md-hue-1.md-raised.b-login(ng-click="showAdvanced($event)", area-label='login' ng-if='!user')
-        i.icon.icon--s.icon--flat.mdi.mdi-login
-    div(ng-if='!!user')
-        div {{user.fname}}  {{user.lname}}
-        md-button.md-primary.md-hue-1.md-raised.b-logout(ng-click="logout()", area-label='logout')
-            i.icon.icon--s.icon--flat.mdi.mdi-logout
+	md-button.md-primary.md-hue-1.md-raised.b-login(ng-click="showAdvanced($event)", area-label='login' ng-if='!user')
+		i.icon.icon--s.icon--flat.mdi.mdi-login
+	div(ng-if='!!user')
+		div {{user.fname}}  {{user.lname}}
+		lx-dropdown(position='right', from-top='true')
+			button.btn.btn--m.btn--black.btn--icon(lx-ripple='', lx-dropdown-toggle='')
+				i.mdi.mdi-dots-vertical
+			lx-dropdown-menu
+				ul
+					li
+						a.dropdown-link Action
+					li
+						a.dropdown-link Another action
+					li
+						a.dropdown-link Something else here
+					li.dropdown-divider
+					li
+						a.dropdown-link.dropdown-link--is-header Header
+					li
+						a.dropdown-link Separated link
+		//md-button.md-primary.md-hue-1.md-raised.b-logout(ng-click="logout()", area-label='logout')
+		//    i.icon.icon--s.icon--flat.mdi.mdi-logout
 
 
 
