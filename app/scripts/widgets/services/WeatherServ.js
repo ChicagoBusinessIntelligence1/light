@@ -31,6 +31,8 @@
 
             return {
                 getWeatherObj: function () {
+
+
                    return weatherObj;
 
                 },

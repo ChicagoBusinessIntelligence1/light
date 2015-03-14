@@ -1,10 +1,10 @@
 div(layout='row' layout-align='center center')
 	.weather-city.text-center(flex-gt-sm='35' flex-sm='15') Chicago, IL
 	.text-center(flex-gt-sm='20' flex-sm="15")
-		img(ng-src="../img/weather/{{weather.icon}}.png" style='display:inline-block; width:80%')
+		img(ng-src="../img/weather/{{icon}}.png" style='display:inline-block; width:80%')
 	.text-left(flex-gt-sm='20' flex-sm="15")
 		.weather-city
-			| {{weather.celc}}
+			| {{weather.currently.apparentTemperature|FarToCelcius}}
 			i.mdi.mdi-temperature-celsius
 
 
