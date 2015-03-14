@@ -603,6 +603,7 @@ module.exports = function (grunt) {
             var newMainStyl = addStyleImages("@import 'nib'", styleAddition);
             if (!_.isUndefined(newMainStyl)) {
                 grunt.file.write(MAINSTYL, newMainStyl);
+
             }
         }
 
