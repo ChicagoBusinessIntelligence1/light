@@ -5,7 +5,10 @@ angular.module('common')
 
         NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 50, false).then(function (news) {
             $rootScope.allNews = news;
+
         });
+
+
 
        $rootScope.user = AuthServ.getUser();
 
