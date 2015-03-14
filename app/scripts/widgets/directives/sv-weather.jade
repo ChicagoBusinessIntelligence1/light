@@ -1,15 +1,28 @@
-div(layout='row' layout-align='center center')
-    .weather-city.text-center(flex-gt-sm='35' flex-sm='15') Chicago, IL
-    .text-center(flex-gt-sm='20' flex-sm="15")
-        .fab.ml
-            button.fab__primary.btn.btn--xl.btn--fab(lx-ripple='', lx-tooltip='Profile', tooltip-position='left')
-                img(ng-src="../img/weather/{{icon}}.png")
-            .fab__actions.fab__actions--right
-                button.btn.btn--l.btn--blue.btn--fab(ng-repeat='d in weather.daily.data')
-                    img(ng-src="../img/weather/{{d.icon}}.png")
-
-
-
+div(layout='column' layout-align='center center')
+    div(layout='row')
+        .weather-city.text-center(flex-gt-sm='35' flex-sm='15') Сегодня
+        .text-center(flex-gt-sm='20' flex-sm="15")
+            img(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png" style='display:inline-block; width:80%')
+        .text-left(flex-gt-sm='20' flex-sm="15")
+            .weather-city
+                | {{weather.currently.apparentTemperature|FarToCelcius}}
+                i.mdi.mdi-temperature-celsius
+    div(layout='row')
+        .weather-city.text-center(flex-gt-sm='35' flex-sm='15') Завтра
+        .text-center(flex-gt-sm='20' flex-sm="15")
+            img(ng-src="../img/weather/{{weather.daily.data[0].icon|IconProcess}}.png" style='display:inline-block; width:80%')
+        .text-left(flex-gt-sm='20' flex-sm="15")
+            .weather-city
+                | {{weather.currently.apparentTemperature|FarToCelcius}}
+                i.mdi.mdi-temperature-celsius
+    div(layout='row')
+        .weather-city.text-center(flex-gt-sm='35' flex-sm='15') После завтра
+        .text-center(flex-gt-sm='20' flex-sm="15")
+            img(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png" style='display:inline-block; width:80%')
+        .text-left(flex-gt-sm='20' flex-sm="15")
+            .weather-city
+                | {{weather.currently.apparentTemperature|FarToCelcius}}
+                i.mdi.mdi-temperature-celsius
 
 
 
