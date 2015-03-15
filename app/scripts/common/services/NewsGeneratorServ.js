@@ -55,19 +55,19 @@
                     var svobodaUrls = ['zoprp_egjrpy','z_oqpvergqpr', 'zmgrpqe$mqpo','zjkqp_eymopy','zykoeqmqi']
                     var promises = [];
 
-                    var allNews = [];
+                    var allNewsArr = [];
                     for (var i = 0; i < svobodaUrls.length; i++) {
                         var urlEnd = svobodaUrls[i];
                         var url = urlCom + urlEnd;
                         promises.push(this.getPoliticalNewsWithImages(url).then(function (value) {
-                            allNews.push(value);
+                            allNewsArr.push(value);
                         }));
                     }
                     $q.all(promises).then(function () {
                         var uniqueNews=[];
                         var uniqueImgs=[];
                         var counter = 0;
-                        allNews.forEach(function (oneNews) {
+                        allNewsArr.forEach(function (oneNews) {
                             for (var i = 0; i < oneNews.length; i++) {
                                 var singleNews = oneNews[i];
                                 var img = singleNews.img;
@@ -79,6 +79,11 @@
 
                             }
                         });
+                        uniqueNews = _.sortBy(uniqueNews, function (sNews) {
+                            return -sNews.content.length;
+                        })
+
+
                         deferred.resolve(uniqueNews);
                     });
 
