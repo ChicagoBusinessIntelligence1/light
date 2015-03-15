@@ -5,6 +5,7 @@
         .factory('NewsGeneratorServ', function ($http, $q) {
 
             var gUrl = 'http://api.feedzilla.com/v1/categories.json';
+            var svobodaUrls = ['zoprp_egjrpy', 'zipqpqejjqpo', 'zjkqp_eymopy', 'z_oqpvergqpr', 'zmtqte$oot', 'zooqppegkqpm']
 
             function getUniqueCategories(news) {
                 var categories = [];
@@ -50,11 +51,10 @@
             return {
                 getPoliticalNews: function (number, shuffle) {
                     number = number || 20;
-                    shuffle = shuffle || true;
+                    //shuffle = shuffle || true;
 
                     var deferred = $q.defer();
                     var urlCom = 'http://www.svoboda.org/api/';
-                    var svobodaUrls = ['zoprp_egjrpy','zipqpqejjqpo','zjkqp_eymopy', 'zooqppegkqpm']
                     var promises = [];
 
                     var allNewsArr = [];
@@ -90,9 +90,9 @@
                         });
 
                         if (shuffle) {
-                            var t5 = _.shuffle(_.take(uniqueNews,5));
-                            var rest = _.rest(uniqueNews,5);
-                            uniqueNews = _.union(t5,rest);
+                            var t5 = _.shuffle(_.take(uniqueNews, 5));
+                            var rest = _.rest(uniqueNews, 5);
+                            uniqueNews = _.union(t5, rest);
                         }
 
                         deferred.resolve(uniqueNews);

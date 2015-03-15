@@ -13,6 +13,11 @@
 
 
                     weatherObj.$bindTo($scope, 'weather')
+
+                    var day = new Date();
+                    day.setDate(day.getDate()+2);
+
+                    $scope.dayAfterTomorrow = day;
                 }
             };
         });
