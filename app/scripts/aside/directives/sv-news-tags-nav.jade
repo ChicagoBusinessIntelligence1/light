@@ -1,25 +1,7 @@
 .news-tags-wrapper
-	a.tag-link.tag-books.txt-darkBlue.f-18(href="") BOOKS
-	a.tag-link.tag-illinois.txt-blue.f-20(href="")  ILLINOIS
-	a.tag-link.tag-illinois.txt-darkGrey.f-14(href="")  WORLD
-	a.tag-link.tag-chicago.txt-darkBlue.f-15(href="")  CHICAGO
-	a.tag-link.tag-usa.txt-lightRed.f-26(href="")  USA
-	a.tag-link.tag-ukraine.txt-deepBlue.f-16(href="")  UKRAINE
-	a.tag-link.tag-russia.txt-darkRed.f-18(href="")  RUSSIA
-	a.tag-link.tag-russia.txt-deepBlue.f-20(href="")  WAR
-	a.tag-link.tag-politics.txt-darkRed.f-16(href="")  POLITICS
-	a.tag-link.tag-events.txt-lightRed.f-22(href="")  EVENTS
-	a.tag-link.tag-economy.txt-pink.f-16(href="")  REVIEW
-	a.tag-link.tag-movie.txt-darkBlue.f-14(href="")  MOVIE
-	a.tag-link.tag-opinion.f-16(href="")  OPINION
-	a.tag-link.tag-electronics.txt-coral.txt-15(href="")  ELECTIONS
-	a.tag-link.tag-israel.txt-darkBlue.f-16(href="")  ISRAEL
-	a.tag-link.tag-economy.txt-darkGrey.f-16(href="")  ECONOMY
-	a.tag-link.tag-latvia.txt-green.f-14(href="")  LATVIA
-	a.tag-link.tag-europe.txt-lightPurple.f-13(href="")  EUROPE
-	a.tag-link.tag-health.txt-darkBlue.txt-14(href="")  HEALTH
-	a.tag-link.tag-fasion.txt-darkRed.f-16(href="")  FASHION
-	a.tag-link.tag-medicine.txt-pink(href="")  MEDICINE
+	a.tag-link(class='{{tagClasses[$index]}}' href="" ng-repeat="t in tags") {{t.name}}
+
+
 
 
 

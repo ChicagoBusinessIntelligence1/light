@@ -6,24 +6,40 @@
 
             var gUrl = 'http://api.feedzilla.com/v1/categories.json';
             var svobodaUrls = ['zoprp_egjrpy', 'zipqpqejjqpo', 'zjkqp_eymopy', 'z_oqpvergqpr', 'zmtqte$oot', 'zooqppegkqpm']
+            var allCategories = [];
 
             function getUniqueCategories(news) {
                 var categories = [];
+                var categNumb = [];
                 news.forEach(function (n) {
-                    var indCateg = n.categories;
+                    var indCateg = n.sections;
 
                     indCateg.forEach(function (nin) {
                         nin = nin.replace('Новости - ', '');
                         nin = nin.replace('Новости', '').toLowerCase();
-                        if (nin.length > 0 && categories.indexOf(nin) === -1) {
-                            categories.push(nin);
+                        if (nin.length > 0) {
+                            var index = categories.indexOf(nin);
+                            if (index === -1) {
+                                categories.push(nin);
+                                categNumb.push(1);
+                            } else {
+                                categNumb[index]++;
+                            }
 
                         }
 
                     })
 
                 })
-                return categories;
+                //console.log(categories);
+                //console.log(categNumb);
+                _.zip(categories, categNumb).forEach(function (tag) {
+                    allCategories.push({name: tag[0], numb: tag[1]});
+                });
+                allCategories = _.sortBy(allCategories, function (tag2) {
+                    return -tag2.numb;
+                });
+                return allCategories;
 
             }
 
@@ -49,6 +65,10 @@
             }
 
             return {
+                getCategories: function () {
+                    return allCategories;
+                },
+
                 getPoliticalNews: function (number, shuffle) {
                     number = number || 20;
                     //shuffle = shuffle || true;
@@ -94,6 +114,7 @@
                             var rest = _.rest(uniqueNews, 5);
                             uniqueNews = _.union(t5, rest);
                         }
+                        getUniqueCategories(uniqueNews);
 
                         deferred.resolve(uniqueNews);
                     });
@@ -150,13 +171,7 @@
                             finalNews = _.first(news, number);
                         }
 
-                        var counter = 0;
-                        //finalNews = _.map(finalNews, function (n) {
-                        //    var breakPoint = 1;
-                        //    n.id = counter++;
-                        //    return n;
-                        //});
-                        var categories = getUniqueCategories(finalNews);
+                        //var categories = getUniqueCategories(finalNews);
                         finalNews = classify(finalNews);
                         //console.log(categories);
 
