@@ -3,7 +3,7 @@
 angular.module('common')
     .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ, AuthServ) {
 
-        NewsGeneratorServ.getPoliticalNews(20,true).then(function (news) {
+        NewsGeneratorServ.getPoliticalNews(25,true).then(function (news) {
             $rootScope.allNews = news;
 
         });
