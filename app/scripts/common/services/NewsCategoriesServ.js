@@ -27,7 +27,7 @@
                     var indexTag = parseInt(categoryEng);
 
                     var categoriesRus;
-                    if (_.isNumber(indexTag)) {
+                    if (!_.isNaN(indexTag)) {
                         var allCateg = $rootScope.allCateg;
                         categoriesRus = [allCateg[indexTag].name];
 
