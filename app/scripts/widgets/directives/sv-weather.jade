@@ -1,26 +1,25 @@
-div(layout='column' layout-align='center center' ng-if='weather')
-	div(layout='row' layout-align='center center' flex)
-		.weather-city(flex-gt-sm='35' flex-sm='15') Сегодня
-		.text-center(flex-gt-sm='35' flex-sm="15")
-			img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
-		.text-left(flex-gt-sm='35' flex-sm="15")
-			.weather-city
+div(layout='column' ng-if='weather')
+	div(flex)
+		div(layout='row' )
+			.weather-city(flex='35') Сегодня
+			.text-center.margin-right-5(flex='25')
+				img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
+			.text-left.weather-city(flex)
 				| {{weather.currently.apparentTemperature|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
-	div(layout='row' layout-align='center center' flex)
-		.weather-city(flex-gt-sm='35' flex-sm='15') Завтра
-		.text-center(flex-gt-sm='35' flex-sm="15")
-			img.display-inline-block(ng-src="../img/weather/{{weather.daily.data[0].icon|IconProcess}}.png")
-		.text-left(flex-gt-sm='35' flex-sm="15")
-			.weather-city
+	div(flex)
+		div(layout='row' layout-align='start')
+			.weather-city(flex='35') Завтра
+			.text-center.margin-right-5(flex='25')
+				img.display-inline-block(ng-src="../img/weather/{{weather.daily.data[0].icon|IconProcess}}.png")
+			.text-left.weather-city(flex)
 				| {{weather.daily.data['2'].apparentTemperatureMax|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
-	div(layout='row' layout-align='center center' flex)
-		.weather-city(flex-gt-sm='35' flex-sm='15') {{dayAfterTomorrow | date:'M/d/yy'}}
-		.text-center(flex-gt-sm='35' flex-sm="15")
-			img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
-		.text-left(flex-gt-sm='35' flex-sm="15")
-			.weather-city
+	div(flex)
+		div(layout='row' layout-align='start')
+			.weather-city(flex) {{dayAfterTomorrow | date:'M/d/yy'}}
+			.text-center.margin-right-5(flex='25')
+				img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
+			.text-left.weather-city(flex)
 				| {{weather.daily.data['4'].apparentTemperatureMax|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
-
