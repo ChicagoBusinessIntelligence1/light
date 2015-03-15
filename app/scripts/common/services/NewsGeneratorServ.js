@@ -51,7 +51,7 @@
             return {
                 getPoliticalNews: function (number, shuffle) {
                     number = number || 20;
-                    shuffle = shuffle || true;
+                    //shuffle = shuffle || true;
 
                     var deferred = $q.defer();
                     var urlCom = 'http://www.svoboda.org/api/';
