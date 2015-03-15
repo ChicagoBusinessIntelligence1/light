@@ -296,6 +296,9 @@ md-sidenav.md-locked-open {
   min-width: 240px !important;
   max-width: 240px !important;
 }
+.text-center {
+  text-align: center;
+}
 .text-subheader {
   color: #4c4c4c;
 }
