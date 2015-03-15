@@ -1,1 +1,1 @@
-<div class="news-tags-wrapper"><a href="" ng-repeat="t in tags" class="tag-link {{tagClasses[$index]}}">{{t.name}}&nbsp;</a></div>
+<div class="news-tags-wrapper"><a ui-sref="app.tags({id:$index})" ng-repeat="t in tags" class="tag-link {{tagClasses[$index]}}">{{t.name}}&nbsp;</a></div>

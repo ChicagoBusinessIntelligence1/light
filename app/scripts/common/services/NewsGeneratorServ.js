@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('common')
-        .factory('NewsGeneratorServ', function ($http, $q) {
+        .factory('NewsGeneratorServ', function ($http, $q,$rootScope) {
 
             var gUrl = 'http://api.feedzilla.com/v1/categories.json';
             var svobodaUrls = ['zoprp_egjrpy', 'zipqpqejjqpo', 'zjkqp_eymopy', 'z_oqpvergqpr', 'zmtqte$oot', 'zooqppegkqpm']
@@ -53,6 +53,8 @@
                 allCategories = _.sortBy(allCategories, function (tag2) {
                     return -tag2.numb;
                 });
+                $rootScope.allCateg = allCategories;
+
                 return allCategories;
 
             }

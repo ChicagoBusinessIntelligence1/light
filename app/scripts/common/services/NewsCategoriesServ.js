@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('common')
-        .factory('NewsCategoriesServ', function ($rootScope) {
+        .factory('NewsCategoriesServ', function ($rootScope, NewsGeneratorServ) {
 
             var rusEng = {};
 
@@ -24,7 +24,17 @@
                     var categoryEng;
                     var start = location.$$absUrl.lastIndexOf('/') + 1;
                     categoryEng = location.$$absUrl.substr(start);
-                    var categoriesRus = rusEng[categoryEng];
+                    var indexTag = parseInt(categoryEng);
+
+                    var categoriesRus;
+                    if (_.isNumber(indexTag)) {
+                        var allCateg = $rootScope.allCateg;
+                        categoriesRus = [allCateg[indexTag].name];
+
+                    } else {
+                        categoriesRus = rusEng[categoryEng];
+
+                    }
 
                     $rootScope.allNews.forEach(function (n) {
                         n.isEligible = true;

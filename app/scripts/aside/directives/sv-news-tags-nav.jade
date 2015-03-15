@@ -1,5 +1,5 @@
 .news-tags-wrapper
-	a.tag-link(class='{{tagClasses[$index]}}' href="" ng-repeat="t in tags") {{t.name}}&nbsp;
+	a.tag-link(class='{{tagClasses[$index]}}' ui-sref='app.tags({id:$index})' ng-repeat="t in tags") {{t.name}}&nbsp;
 
 
 

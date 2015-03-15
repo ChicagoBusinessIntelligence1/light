@@ -34,7 +34,7 @@
     ]).factory('$exceptionHandler', function () {
         return function (exception, cause) {
             exception.message += ' (caused by "' + cause + '")';
-            //throw exception;
+            throw exception;
         };
     }).config(function ($mdThemingProvider) {
             $mdThemingProvider.theme('default')
@@ -124,8 +124,8 @@
                 //    url: "/:id",
                 //    templateUrl: "scripts/sections/politics/views/politics-article.html"
                 //})
-                .state("app.news", {
-                    url: "/svet-news/:id",
+                .state("app.tags", {
+                    url: "/tag/:id",
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
