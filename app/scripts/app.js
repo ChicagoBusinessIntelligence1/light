@@ -31,12 +31,45 @@
         'ngAnimate',
         'ngMaterial',
         'ui.router'
-    ]).factory('$exceptionHandler', function () {
-        return function (exception, cause) {
-            exception.message += ' (caused by "' + cause + '")';
-            //throw exception;
+    ]).controller('MainCtrl', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ, AuthServ, news) {
+
+        $rootScope.allNews = news;
+
+        $rootScope.user = AuthServ.getUser();
+
+        $scope.toggleSidenav = function (menuId) {
+            $mdSidenav(menuId).toggle();
         };
-    }).config(function ($mdThemingProvider) {
+        $scope.fenElementActive = {val: 'null'};
+        $scope.$watch('auth.user.provider', function (newVal) {
+            if (newVal === 'password') {
+                $scope.isAdmin = true;
+            }
+        })
+
+        /**
+         * Sidenav
+         */
+        $scope.toggleLeft = function () {
+            $mdSidenav('left').toggle()
+                .then(function () {
+                    $log.debug("toggle left is done");
+                });
+        };
+        $scope.toggleRight = function () {
+            $mdSidenav('right').toggle()
+                .then(function () {
+                    $log.debug("toggle RIGHT is done");
+                });
+        };
+    })
+
+        .factory('$exceptionHandler', function () {
+            return function (exception, cause) {
+                exception.message += ' (caused by "' + cause + '")';
+                throw exception;
+            };
+        }).config(function ($mdThemingProvider) {
             $mdThemingProvider.theme('default')
                 .primaryPalette('indigo')
                 .backgroundPalette('grey')
@@ -61,6 +94,12 @@
             $stateProvider
                 .state('app', {
                     abstract: true,
+                    controller: 'MainCtrl',
+                    resolve: {
+                       news: function (NewsGeneratorServ) {
+                          return  NewsGeneratorServ.getPoliticalNews(15, false);
+                        }
+                    },
                     templateUrl: 'scripts/sections/home/views/main.html'
 
                 })
@@ -124,11 +163,11 @@
                 //    url: "/:id",
                 //    templateUrl: "scripts/sections/politics/views/politics-article.html"
                 //})
-			.state("app.news", {
-				url: "/news/:id",
-				controller:"SvetNewsCtrl",
-				templateUrl: "scripts/common/views/svet-newsCtrl.html"
-			})
+                .state("app.news", {
+                    url: "/news/:id",
+                    controller: "SvetNewsCtrl",
+                    templateUrl: "scripts/common/views/svet-newsCtrl.html"
+                })
                 .state("app.tags", {
                     url: "/tag/:id",
                     controller: "ArticleCtrl",
