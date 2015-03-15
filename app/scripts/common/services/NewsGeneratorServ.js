@@ -7,6 +7,18 @@
             var gUrl = 'http://api.feedzilla.com/v1/categories.json';
             var svobodaUrls = ['zoprp_egjrpy', 'zipqpqejjqpo', 'zjkqp_eymopy', 'z_oqpvergqpr', 'zmtqte$oot', 'zooqppegkqpm']
             var allCategories = [];
+            var avoidCategories = ['игорем','померанцев'];
+
+            function isInAvoid(tag) {
+                for (var i = 0; i < avoidCategories.length; i++) {
+                    var avoid = avoidCategories[i];
+                    if (tag.indexOf(avoid) > -1) {
+                        return true;
+                    }
+
+                }
+                return false;
+            }
 
             function getUniqueCategories(news) {
                 var categories = [];
@@ -15,17 +27,19 @@
                     var indCateg = n.sections;
 
                     indCateg.forEach(function (nin) {
-                        nin = nin.replace('Новости - ', '');
-                        nin = nin.replace('Новости', '').toLowerCase();
-                        if (nin.length > 0) {
-                            var index = categories.indexOf(nin);
-                            if (index === -1) {
-                                categories.push(nin);
-                                categNumb.push(1);
-                            } else {
-                                categNumb[index]++;
-                            }
 
+                        if (!isInAvoid(nin)) {
+
+                            if (nin.length > 0) {
+                                var index = categories.indexOf(nin);
+                                if (index === -1) {
+                                    categories.push(nin);
+                                    categNumb.push(1);
+                                } else {
+                                    categNumb[index]++;
+                                }
+
+                            }
                         }
 
                     })
