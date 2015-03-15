@@ -51,8 +51,11 @@
 .comment-feedback-link {
   cursor: pointer;
 }
-.article-thumb-header {
-  font-weight: bold;
+.main-article-thumb-header {
+  line-height: 20px;
+}
+.main-article-thumb-body {
+  line-height: 18px;
 }
 .article-thumb-header-s {
   font-size: 10px;
