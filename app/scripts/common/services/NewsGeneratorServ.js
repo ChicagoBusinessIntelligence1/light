@@ -48,11 +48,13 @@
             }
 
             return {
-                getPoliticalNews: function () {
+                getPoliticalNews: function (number, shuffle) {
+                    number = number || 20;
+                    shuffle = shuffle || true;
 
                     var deferred = $q.defer();
                     var urlCom = 'http://www.svoboda.org/api/';
-                    var svobodaUrls = ['zoprp_egjrpy','z_oqpvergqpr', 'zmgrpqe$mqpo','zjkqp_eymopy','zykoeqmqi']
+                    var svobodaUrls = ['zoprp_egjrpy', 'z_oqpvergqpr', 'zmgrpqe$mqpo', 'zjkqp_eymopy', 'zykoeqmqi']
                     var promises = [];
 
                     var allNewsArr = [];
@@ -64,25 +66,32 @@
                         }));
                     }
                     $q.all(promises).then(function () {
-                        var uniqueNews=[];
-                        var uniqueImgs=[];
-                        var counter = 0;
+                        var uniqueNews = [];
+                        var uniqueImgs = [];
                         allNewsArr.forEach(function (oneNews) {
                             for (var i = 0; i < oneNews.length; i++) {
                                 var singleNews = oneNews[i];
                                 var img = singleNews.img;
                                 if (uniqueImgs.indexOf(img) === -1) {
                                     uniqueImgs.push(img);
-                                    singleNews.id = counter++;
                                     uniqueNews.push(singleNews);
                                 }
 
                             }
                         });
-                        uniqueNews = _.sortBy(uniqueNews, function (sNews) {
+                        uniqueNews = _.first(_.sortBy(uniqueNews, function (sNews) {
                             return -sNews.content.length;
-                        })
+                        }), number);
 
+                        var counter = 0;
+                        uniqueNews = _.map(uniqueNews, function (eNews) {
+                            eNews.id = counter++;
+                            return eNews;
+                        });
+
+                        if (shuffle) {
+                            uniqueNews = _.shuffle(uniqueNews);
+                        }
 
                         deferred.resolve(uniqueNews);
                     });
