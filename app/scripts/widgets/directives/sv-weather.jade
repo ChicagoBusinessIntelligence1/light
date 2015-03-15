@@ -16,7 +16,7 @@ div(layout='column' layout-align='center center' ng-if='weather')
 				| {{weather.daily.data['2'].apparentTemperatureMax|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
 	div(layout='row' layout-align='center center' flex)
-		.weather-city(flex-gt-sm='35' flex-sm='15') {{dayAfterTomorrow|date:'M/d/yy'}}
+		.weather-city(flex-gt-sm='35' flex-sm='15') {{dayAfterTomorrow | date:'M/d/yy'}}
 		.text-center(flex-gt-sm='35' flex-sm="15")
 			img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
 		.text-left(flex-gt-sm='35' flex-sm="15")
