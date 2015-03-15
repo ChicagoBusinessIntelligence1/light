@@ -54,7 +54,7 @@
 
                     var deferred = $q.defer();
                     var urlCom = 'http://www.svoboda.org/api/';
-                    var svobodaUrls = ['zoprp_egjrpy', 'z_oqpvergqpr', 'zmgrpqe$mqpo', 'zjkqp_eymopy', 'zykoeqmqi']
+                    var svobodaUrls = ['zoprp_egjrpy','zipqpqejjqpo','zjkqp_eymopy', 'zooqppegkqpm']
                     var promises = [];
 
                     var allNewsArr = [];
@@ -90,7 +90,9 @@
                         });
 
                         if (shuffle) {
-                            uniqueNews = _.shuffle(uniqueNews);
+                            var t5 = _.shuffle(_.take(uniqueNews,5));
+                            var rest = _.rest(uniqueNews,5);
+                            uniqueNews = _.union(t5,rest);
                         }
 
                         deferred.resolve(uniqueNews);
@@ -156,7 +158,7 @@
                         //});
                         var categories = getUniqueCategories(finalNews);
                         finalNews = classify(finalNews);
-                        console.log(categories);
+                        //console.log(categories);
 
                         deferred.resolve(finalNews);
                     }).catch(function (e) {
