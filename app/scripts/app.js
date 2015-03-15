@@ -124,6 +124,11 @@
                 //    url: "/:id",
                 //    templateUrl: "scripts/sections/politics/views/politics-article.html"
                 //})
+			.state("app.news", {
+				url: "/news/:id",
+				controller:"SvetNewsCtrl",
+				templateUrl: "scripts/common/views/svet-newsCtrl.html"
+			})
                 .state("app.tags", {
                     url: "/tag/:id",
                     controller: "ArticleCtrl",
@@ -135,11 +140,6 @@
                     templateUrl: "scripts/sections/test/views/trackCtrl.html"
                 })
 
-			.state("app.svet-news", {
-				url: "/svet-news", 
-				controller:"SvetNewsCtrl",
-				templateUrl: "scripts/common/views/svet-newsCtrl.html"
-			})
 //#state
         });
 
