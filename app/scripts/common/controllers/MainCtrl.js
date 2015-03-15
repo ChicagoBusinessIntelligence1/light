@@ -3,7 +3,7 @@
 angular.module('common')
     .controller('Main', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ, AuthServ) {
 
-        NewsGeneratorServ.getPoliticalNewsWithImages('http://www.svoboda.org/api/z-pqpiev-qpp', 50, false).then(function (news) {
+        NewsGeneratorServ.getPoliticalNews().then(function (news) {
             $rootScope.allNews = news;
 
         });
@@ -67,4 +67,4 @@ angular.module('common')
                     $log.debug("close RIGHT is done");
                 });
         };
-    });
+    })

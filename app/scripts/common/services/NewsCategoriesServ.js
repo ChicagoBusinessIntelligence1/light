@@ -5,12 +5,17 @@
         .factory('NewsCategoriesServ', function ($rootScope) {
 
             var rusEng = {};
-            rusEng['politics'] = 'политика';
-            rusEng['culture'] = 'культура';
-            rusEng['science'] = 'мир';
-            rusEng['money'] = 'экономика';
-            rusEng['society'] = 'общество';
-            rusEng['archive'] = 'регионы';
+
+            var avoidCategories = [];
+            avoidCategories.push('видео');
+            avoidCategories.push('свободы');
+            avoidCategories.push('письма');
+
+            rusEng['politics'] = ['политика'];
+            rusEng['money'] = ['экономика', "экономическая среда", "экономика"];
+            rusEng['culture'] = ['культура', "время джаза"];
+            rusEng['society'] = ['общество', "культ личности", 'с христианской точки зрения', "дороги к свободе"];
+            rusEng['international'] = ['мир', "украина"];
 
             return {
                 getCategoryNews: function (location) {
@@ -19,18 +24,31 @@
                     var categoryEng;
                     var start = location.$$absUrl.lastIndexOf('/') + 1;
                     categoryEng = location.$$absUrl.substr(start);
-                    var categoryRus = rusEng[categoryEng].toLowerCase();
+                    var categoriesRus = rusEng[categoryEng];
 
                     $rootScope.allNews.forEach(function (n) {
-                        n.sections.forEach(function (section) {
-                            if (section.indexOf(categoryRus) > -1) {
-                                if (news.indexOf(n) === -1) {
-                                    news.push(n);
-                                }
-                            }
-                        })
+                        n.isEligible = true;
 
-                    })
+                        for (var i = 0; i < n.sections.length; i++) {
+                            var section = n.sections[i].toLowerCase();
+
+                            if (avoidCategories.indexOf(section) > -1) {
+                                n.isEligible = false;
+                                break;
+                            }
+
+                            categoriesRus.forEach(function (rusCategory) {
+                                rusCategory = rusCategory.toLowerCase();
+                                if (section.indexOf(rusCategory) > -1) {
+
+                                    if (news.indexOf(n) === -1) {
+                                        news.push(n);
+                                    }
+                                }
+                            });
+                        }
+
+                    });
                     return news;
                 }
             };

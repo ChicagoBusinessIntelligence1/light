@@ -4,6 +4,9 @@
     angular.module('widgets')
         .filter('IconProcess', function () {
             return function (icon) {
+                if (_.isUndefined(icon) || _.isNull(icon)) {
+                    return;
+                }
                 var finalIcon;
                 switch (true) {
                     case icon.indexOf('clear')>-1:

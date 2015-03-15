@@ -5,7 +5,7 @@
     var app = angular.module('app', [
 
         // modules
-		'common.article',
+        'common.article',
         'widgets',
         'header',
         'aside',
@@ -31,8 +31,12 @@
         'ngAnimate',
         'ngMaterial',
         'ui.router'
-    ])
-        .config(function ($mdThemingProvider) {
+    ]).factory('$exceptionHandler', function () {
+        return function (exception, cause) {
+            exception.message += ' (caused by "' + cause + '")';
+            //throw exception;
+        };
+    }).config(function ($mdThemingProvider) {
             $mdThemingProvider.theme('default')
                 .primaryPalette('indigo')
                 .backgroundPalette('grey')
@@ -86,7 +90,7 @@
                     templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
                 .state("app.science", {
-                    url: "/science",
+                    url: "/international",
                     controller: "ScienceCtrl",
                     templateUrl: "scripts/sections/science/views/scienceCtrl.html"
                 })
@@ -125,13 +129,12 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-			.state("app.track", {
-				url: "/track",
-				controller:"TrackCtrl",
-				templateUrl: "scripts/sections/test/views/trackCtrl.html"
-			})
+                .state("app.track", {
+                    url: "/track",
+                    controller: "TrackCtrl",
+                    templateUrl: "scripts/sections/test/views/trackCtrl.html"
+                })
 
-			
 //#state
         });
 

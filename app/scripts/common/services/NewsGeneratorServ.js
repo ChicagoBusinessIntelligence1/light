@@ -21,7 +21,6 @@
 
                     })
 
-
                 })
                 return categories;
 
@@ -49,12 +48,45 @@
             }
 
             return {
-                getPoliticalNews: function (url) {
+                getPoliticalNews: function () {
 
-                    return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
+                    var deferred = $q.defer();
+                    var urlCom = 'http://www.svoboda.org/api/';
+                    var svobodaUrls = ['zoprp_egjrpy','z_oqpvergqpr', 'zmgrpqe$mqpo','zjkqp_eymopy','zykoeqmqi']
+                    var promises = [];
 
+                    var allNews = [];
+                    for (var i = 0; i < svobodaUrls.length; i++) {
+                        var urlEnd = svobodaUrls[i];
+                        var url = urlCom + urlEnd;
+                        promises.push(this.getPoliticalNewsWithImages(url).then(function (value) {
+                            allNews.push(value);
+                        }));
+                    }
+                    $q.all(promises).then(function () {
+                        var uniqueNews=[];
+                        var uniqueImgs=[];
+                        var counter = 0;
+                        allNews.forEach(function (oneNews) {
+                            for (var i = 0; i < oneNews.length; i++) {
+                                var singleNews = oneNews[i];
+                                var img = singleNews.img;
+                                if (uniqueImgs.indexOf(img) === -1) {
+                                    uniqueImgs.push(img);
+                                    singleNews.id = counter++;
+                                    uniqueNews.push(singleNews);
+                                }
+
+                            }
+                        });
+                        deferred.resolve(uniqueNews);
+                    });
+
+                    return deferred.promise;
                 },
+
                 getPoliticalNewsWithImages: function (url, number, shuffle) {
+                    number = number || 50;
                     var deferred = $q.defer();
 
                     var result = $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
@@ -102,13 +134,12 @@
                             finalNews = _.first(news, number);
                         }
 
-
                         var counter = 0;
-                        finalNews = _.map(finalNews, function (n) {
-                            var breakPoint = 1;
-                            n.id = counter++;
-                            return n;
-                        });
+                        //finalNews = _.map(finalNews, function (n) {
+                        //    var breakPoint = 1;
+                        //    n.id = counter++;
+                        //    return n;
+                        //});
                         var categories = getUniqueCategories(finalNews);
                         finalNews = classify(finalNews);
                         console.log(categories);

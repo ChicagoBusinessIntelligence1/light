@@ -1,4 +1,4 @@
-div(layout='column' layout-align='center center')
+div(layout='column' layout-align='center center' ng-if='weather')
     div(layout='row')
         .weather-city.text-center(flex-gt-sm='35' flex-sm='15') Сегодня
         .text-center(flex-gt-sm='20' flex-sm="15")
@@ -23,7 +23,4 @@ div(layout='column' layout-align='center center')
             .weather-city
                 | {{weather.daily.data['4'].apparentTemperatureMax|FarToCelcius}}
                 i.mdi.mdi-temperature-celsius
-
-
-
 
