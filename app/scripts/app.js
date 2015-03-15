@@ -135,6 +135,11 @@
                     templateUrl: "scripts/sections/test/views/trackCtrl.html"
                 })
 
+			.state("app.svet-news", {
+				url: "/svet-news", 
+				controller:"SvetNewsCtrl",
+				templateUrl: "scripts/common/views/svet-newsCtrl.html"
+			})
 //#state
         });
 
