@@ -1,19 +1,19 @@
 div
 	div(ng-if='!user')
 		.fab.ml
-			button.fab__primary.btn.btn--xl.btn--fab(lx-ripple='')
+			button.fab__primary.btn.btn--xl.bgc-indigo-300.btn--fab(lx-ripple='')
 				i.mdi.mdi-account
 				i.mdi.mdi-login
 			.fab__actions.fab__actions--left
-				button.btn.btn--l.btn--blue.btn--fab(lx-ripple='', lx-tooltip='Facebook', tooltip-position='down' ng-click='loginSvetUser("facebook")')
+				button.btn.btn--l.bgc-indigo-400.btn--fab(lx-ripple='', lx-tooltip='Facebook', tooltip-position='down' ng-click='loginSvetUser("facebook")')
 					i.mdi.mdi-facebook
-				button.btn.btn--l.btn--red.btn--fab(lx-ripple='', lx-tooltip='Google', tooltip-position='down' ng-click='loginSvetUser("google")')
+				button.btn.btn--l.bgc-red-400.btn--fab(lx-ripple='', lx-tooltip='Google', tooltip-position='down' ng-click='loginSvetUser("google")')
 					i.mdi.mdi-google-plus
 	div(ng-if='!!user')
 		.fab.ml
-			button.fab__primary.btn.btn--xl.btn--green.btn--fab(lx-ripple='', lx-tooltip='Profile', tooltip-position='left')
+			button.fab__primary.btn.btn--xl.btn--indigo.btn--fab(lx-ripple='', lx-tooltip='Profile', tooltip-position='left')
 				img(ng-src="{{user.avatar}}")
 			.fab__actions.fab__actions--down
-				button.btn.btn--l.btn--blue.btn--fab(lx-ripple='', lx-tooltip='LOG OUT', tooltip-position='left' ng-click='logout()')
+				button.btn.btn--l.bgc-indigo-300.btn--fab(lx-ripple='', lx-tooltip='LOG OUT', tooltip-position='left' ng-click='logout()')
 					i.mdi.mdi-logout
 
