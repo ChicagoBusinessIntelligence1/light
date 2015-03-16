@@ -2,10 +2,9 @@ md-toolbar(layout='column')
 	div(layout='row' layout-align='space-between center' layout-margin='10')
 		.text-right(flex-gt-lg='20' flex-gt-sm='25' flex-sm="20" hide-sm)
 			sv-weather
-		div(flex-gt-lg='60' flex-gt-sm='50' flex-sm="100")
-			.header-logo.margin-top-8.text-center
-				a.text-center(ui-sref='app.home')
-					img.img-responsive(ng-src="img/logo/newLightLogo580.png" style='display:inline-block')
+		div.text-center(flex-gt-lg='60' flex-gt-sm='50' flex-sm="100")
+			a.text-center(ui-sref='app.home')
+				img.img-responsive(ng-src="img/logo/newLightLogo580.png" style='display:inline-block')
 		div(flex-gt-lg='20' flex-gt-sm='25' flex-sm="20" hide-sm)
 			.margin-right-10.text-right
 				sv-auth-btn
