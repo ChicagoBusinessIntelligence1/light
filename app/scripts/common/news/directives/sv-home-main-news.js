@@ -8,11 +8,9 @@
                 replace: true,
                 link: function ($scope, element, attr) {
 
-                    $scope.$watch('allNews', function (newValue, oldValue) {
-                        $scope.n1 = $scope.allNews[0];
-                        $scope.n2 = $scope.allNews[1];
-                        $scope.n3 = $scope.allNews[2];
-                    });
+                    $scope.n1 = $scope.news[0];
+                    $scope.n2 = $scope.news[1];
+                    $scope.n3 = $scope.news[2];
 
                     $scope.mainNewsFilter;
                     $scope.secondNewsTitleFilter;
@@ -97,7 +95,6 @@
                             $scope.secondNewsBodyFilter = 0;
                         }
                     });
-
 
 
                     $scope.$watchCollection(function () {

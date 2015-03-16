@@ -20,7 +20,6 @@
                     } else {
 
                         $scope.secondNews = $scope.news;
-                        console.log($scope.secondNews);
                     }
 
                 }
