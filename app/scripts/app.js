@@ -180,12 +180,12 @@
                 })
 
 			.state("app.pdf-archive", {
-				url: "/pdf-archive", 
+				url: "/pdf-archive",
 				controller:"PdfArchiveCtrl",
 				templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
 			})
-			.state("app.pdf-view", {
-				url: "/pdf-view", 
+			.state("app.pdf-issue", {
+				url: "/pdf-view/:issueId",
 				controller:"PdfViewCtrl",
 				templateUrl: "scripts/common/views/pdf-viewCtrl.html"
 			})

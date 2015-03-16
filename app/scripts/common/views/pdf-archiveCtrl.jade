@@ -6,4 +6,5 @@ md-content
 	md-row-height="2:3"
 	md-gutter='15px')
 		md-grid-tile.card(ng-repeat='a in archive')
-			div.red
+			a(ui-sref='app.pdf-issue({issueId:a})')
+				img(ng-src="../img/articles/pdf-mock.jpg")
