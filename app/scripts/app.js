@@ -153,16 +153,6 @@
                     controller: "ClassifiedCtrl",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                //.state("app.politics", {
-                //    url: "/politics",
-                //    controller: "Politics",
-                //    templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
-                //})
-                //
-                //.state("app.politics.article", {
-                //    url: "/:id",
-                //    templateUrl: "scripts/sections/politics/views/politics-article.html"
-                //})
                 .state("app.news", {
                     url: "/news/:id",
                     controller: "SvetNewsCtrl",
