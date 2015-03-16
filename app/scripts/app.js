@@ -179,16 +179,16 @@
                     templateUrl: "scripts/sections/test/views/trackCtrl.html"
                 })
 
-			.state("app.pdf-archive", {
-				url: "/pdf-archive",
-				controller:"PdfArchiveCtrl",
-				templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
-			})
-			.state("pdf-issue", {
-				url: "/pdf-view/:issueId",
-				controller:"PdfViewCtrl",
-				templateUrl: "scripts/common/views/pdf-viewCtrl.html"
-			})
+                .state("app.pdf-archive", {
+                    url: "/pdf-archive",
+                    controller: "PdfArchiveCtrl",
+                    templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
+                })
+                .state("pdf-issue", {
+                    url: "/pdf-view/:issueId",
+                    controller: "PdfViewCtrl",
+                    templateUrl: "scripts/common/views/pdf-viewCtrl.html"
+                })
 //#state
         });
 
