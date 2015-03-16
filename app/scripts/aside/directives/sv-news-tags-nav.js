@@ -30,7 +30,7 @@ angular.module('aside')
             tagClasses.push('tag-medicine txt-pink');
 
             $scope.tagClasses = tagClasses;
-            $scope.tags = NewsGeneratorServ.getCategories();
+            $scope.tags = NewsGeneratorServ.getCategories(19);
         }
     };
   });

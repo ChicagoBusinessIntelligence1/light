@@ -81,7 +81,11 @@
             }
 
             return {
-                getCategories: function () {
+                getCategories: function (limit) {
+                    if (limit) {
+
+                    return _.first(allCategories,limit);
+                    }
                     return allCategories;
                 },
 
