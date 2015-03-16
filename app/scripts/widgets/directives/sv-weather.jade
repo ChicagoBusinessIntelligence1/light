@@ -1,24 +1,24 @@
 div(layout='column' layout-align='start' ng-if='weather')
 	div(flex)
 		div(layout='row' layout-align='center center')
-			.weather-city.text-left(flex='30') Сегодня
-			.text-left.margin-right-5(flex='25')
+			.weather-city.text-left(flex='25') Сегодня
+			.text-left.margin-right-5(flex='20')
 				img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
 			.text-left.weather-city(flex)
 				| {{weather.currently.apparentTemperature|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
 	div(flex)
 		div(layout='row' layout-align='center center')
-			.weather-city.text-left(flex='30') Завтра
-			.text-left.margin-right-5(flex='25')
-				img.display-inline-block(ng-src="../img/weather/{{weather.daily.data[0].icon|IconProcess}}.png")
+			.weather-city.text-left(flex='25') Завтра
+			.text-left.margin-right-5(flex='20')
+				img.img-responsive(ng-src="../img/weather/{{weather.daily.data[0].icon|IconProcess}}.png")
 			.text-left.weather-city(flex)
 				| {{weather.daily.data['2'].apparentTemperatureMax|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
 	div(flex)
 		div(layout='row' layout-align='center center')
-			.weather-city.text-left(flex='30') {{dayAfterTomorrow | date:'M/d/yy'}}
-			.text-left.margin-right-5(flex='25')
+			.weather-city.text-left(flex='25') {{dayAfterTomorrow | date:'M/d/yy'}}
+			.text-left.margin-right-5(flex='20')
 				img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
 			.text-left.weather-city(flex)
 				| {{weather.daily.data['4'].apparentTemperatureMax|FarToCelcius}}
