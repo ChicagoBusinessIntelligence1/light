@@ -7,7 +7,6 @@
             var refWeather = new Firebase(urlWeather);
             var weatherObj = $firebaseObject(refWeather);
 
-
             function celciusToFar(degrees) {
                 var degreeN = degrees;
 
@@ -15,7 +14,6 @@
                     degreeN = parseFloat(degrees);
                 }
                 return Math.floor(degreeN * 9 / 5 + 32);
-
             }
 
             var weatherImages = {};
@@ -31,37 +29,8 @@
 
             return {
                 getWeatherObj: function () {
-
-
-                   return weatherObj;
-
-                },
-
-
-                getForeCast: function (days) {
-
-                    var deferred = $q.defer();
-
-                    var weather = {};
-
-                    $http.jsonp(url)
-                        .success(function (data) {
-
-                            weather.celc = data.main.temp.toFixed(1);
-                            weather.humidity = data.main.humidity;
-                            weather.f = celciusToFar(weather.celc);
-                            var weatherIcon = data.weather['0'].icon;
-                            weather.icon = weatherImages[weatherIcon];
-                            deferred.resolve(weather);
-
-                        }).error(function (error) {
-                            console.log(error);
-                        });
-
-                    return deferred.promise;
-
+                    return weatherObj;
                 }
-
             };
         });
 })();
