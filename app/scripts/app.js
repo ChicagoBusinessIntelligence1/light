@@ -184,7 +184,7 @@
 				controller:"PdfArchiveCtrl",
 				templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
 			})
-			.state("app.pdf-issue", {
+			.state("pdf-issue", {
 				url: "/pdf-view/:issueId",
 				controller:"PdfViewCtrl",
 				templateUrl: "scripts/common/views/pdf-viewCtrl.html"

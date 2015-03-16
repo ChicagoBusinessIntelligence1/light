@@ -7,12 +7,28 @@
                 templateUrl: 'scripts/common/directives/sv-pdf-issue.html',
                 scope:{},
                 link: function ($scope, element, attr) {
-                    $("#flipbook").turn({
-                        width: 400,
-                        height: 300,
-                        autoCenter: true
-                    });
+                var flip = element.find('.flipbook');
+                    flip.turn({
 
+                        width:922,
+
+                        // Height
+
+                        height:600,
+
+                        // Elevation
+
+                        elevation: 50,
+
+                        // Enable gradients
+
+                        gradients: true,
+
+                        // Auto center this flipbook
+
+                        autoCenter: true
+
+                    });
                 }
             };
         });
