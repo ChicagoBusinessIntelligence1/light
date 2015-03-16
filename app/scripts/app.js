@@ -184,6 +184,11 @@
 				controller:"PdfArchiveCtrl",
 				templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
 			})
+			.state("app.pdf-view", {
+				url: "/pdf-view", 
+				controller:"PdfViewCtrl",
+				templateUrl: "scripts/common/views/pdf-viewCtrl.html"
+			})
 //#state
         });
 
