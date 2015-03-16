@@ -13,6 +13,17 @@ news-header-xs()
   line-height 13px
 
 /**********************
+     =pdf
+***********************/
+#magazine
+  /*width 1152px !important*/
+  height 752px !important
+  /*position static !important*/
+
+#magazine .turn-page
+  background-color #ccc
+  background-size 100% 100%
+/**********************
      =article
 ***********************/
 .breadcrumb-section
@@ -65,6 +76,11 @@ news-header-xs()
 .main-article-thumb-title-s
   line-height 17px
   font-size 13px
+
+.second-article-thumb-title
+  @media screen and (max-width: 350px)
+    font-size 10px !important
+    line-height 13px !important
 
 .main-article-thumb-body
   line-height 18px

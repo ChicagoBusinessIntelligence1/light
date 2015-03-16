@@ -1,0 +1,10 @@
+md-content
+	md-grid-list(
+	md-cols-sm='2'
+	md-cols-gt-sm='3'
+
+	md-row-height="2:3"
+	md-gutter='15px')
+		md-grid-tile.card(ng-repeat='a in archive')
+			a(href='scripts/magazine/index.html' target='_blank')
+				img(ng-src="../img/articles/pdf-mock.jpg")

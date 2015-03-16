@@ -5,6 +5,8 @@
     <title>Новый Свет | Первая Русская Газета в Чикаго</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <meta name="viewport" content="width = 1050, user-scalable = no" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
@@ -33,7 +35,6 @@
     <!-- endbuild -->
 </head>
 <body layout="column" flex>
-
 <div ui-view></div>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -56,6 +57,7 @@
 <script src="bower_components/raphael/raphael.js"></script>
 <script src="bower_components/firebase/firebase.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="scripts/magazine/lib/turn.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
@@ -75,6 +77,10 @@
 
 <!-- common -->
 <script src="scripts/common/commonIndex.js"></script>
+<script src="scripts/common/directives/sv-pdf-issue.js"></script>
+<script src="scripts/common/controllers/PdfViewCtrl.js"></script>
+<script src="scripts/common/directives/sv-archive-nav.js"></script>
+<script src="scripts/common/controllers/PdfArchiveCtrl.js"></script>
 <script src="scripts/common/controllers/SvetNewsCtrl.js"></script>
 <script src="scripts/common/directives/sv-section-news.js"></script>
 <script src="scripts/common/services/NewsCategoriesServ.js"></script>
@@ -152,7 +158,6 @@
 
 <!--archive-->
 <script src="scripts/sections/archive/archiveIndex.js"></script>
-<script src="scripts/sections/archive/controllers/ArchiveCtrl.js"></script>
 
 <!-- contact-->
 <script src="scripts/sections/contact/contactIndex.js"></script>
@@ -176,6 +181,7 @@
 <script src="scripts/common/article/directives/sv-article-thumb-main.js"></script>
 <!-- links -->
 <!-- endbuild -->
+
 
 <!-- END MODULES-->
 </body>
