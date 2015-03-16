@@ -24,6 +24,9 @@
                     case icon.indexOf('mist')>-1:
                         finalIcon = 'mist'
                         break;
+                    case icon.indexOf('wind')>-1:
+                        finalIcon = 'broken-cloud'
+                        break;
                 }
                 return finalIcon;
             };
