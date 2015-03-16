@@ -1,1 +1,16 @@
-.well sv-pdf-issue Template
+#flipbook
+	.hard  Turn.js
+	.hard
+	div  Page 1
+	div  Page 2
+	div  Page 3
+	div  Page 4
+	.hard
+	.hard
+
+script(type='text/javascript').
+	$("#flipbook").turn({
+		width: 400,
+		height: 300,
+		autoCenter: true
+	});
