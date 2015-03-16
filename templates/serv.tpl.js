@@ -2,12 +2,12 @@
     'use strict';
 
     angular.module('#module#')
-        .factory('#name#Serv', function () {
-
-            var meaningOfLife = 42;
+        .factory('#name#Serv', function ($q) {
 
             return {
-                someMethod: function () {
+                get: function () {
+                    var deferred =$q.defer();
+
                     return meaningOfLife;
                 }
             };
