@@ -179,6 +179,11 @@
                     templateUrl: "scripts/sections/test/views/trackCtrl.html"
                 })
 
+			.state("app.pdf-archive", {
+				url: "/pdf-archive", 
+				controller:"PdfArchiveCtrl",
+				templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
+			})
 //#state
         });
 
