@@ -96,8 +96,8 @@
                     abstract: true,
                     controller: 'MainCtrl',
                     resolve: {
-                       news: function (NewsGeneratorServ) {
-                          return  NewsGeneratorServ.getPoliticalNews(15, false);
+                        news: function (NewsGeneratorServ) {
+                            return NewsGeneratorServ.getPoliticalNews(25, true);
                         }
                     },
                     templateUrl: 'scripts/sections/home/views/main.html'

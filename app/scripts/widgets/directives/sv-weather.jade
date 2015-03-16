@@ -1,4 +1,4 @@
-div(layout='column' layout-align='start' ng-if='weather')
+div(layout='column' layout-align='start' ng-if='weatherReady')
 	div(flex)
 		div(layout='row' layout-align='center center')
 			.weather-city.text-left(flex='25') Сегодня
@@ -23,3 +23,5 @@ div(layout='column' layout-align='start' ng-if='weather')
 			.text-left.weather-city(flex)
 				| {{weather.daily.data['4'].apparentTemperatureMax|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
+lx-progress(type='circular', color='#5fa2db', ng-if='!weatherReady')
+
