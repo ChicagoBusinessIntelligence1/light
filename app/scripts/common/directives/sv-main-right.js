@@ -7,7 +7,6 @@
                 templateUrl: 'scripts/common/directives/sv-main-right.html',
                 replace: true,
                 link: function ($scope, element, attr) {
-                    $("#datepicker").datepicker();
                     $scope.openBottomSheet = function () {
                         $mdBottomSheet.show({
                             templateUrl: 'scripts/footer/templates/social-media-links.html'
