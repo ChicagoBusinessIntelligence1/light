@@ -1,6 +1,15 @@
 div
 	div(ng-if='!user')
-		.fab.ml
+		.fab.ml(hide-gt-sm)
+			button.fab__primary.btn.btn--l.bgc-indigo-300.btn--fab(lx-ripple='' )
+				i.mdi.mdi-account
+				i.mdi.mdi-login(style='color:white !important')
+			.fab__actions.fab__actions--left
+				button.btn.btn--m.bgc-indigo-400.btn--fab(lx-ripple='' ng-click='loginSvetUser("facebook")')
+					i.mdi.mdi-facebook
+				button.btn.btn--m.bgc-red-400.btn--fab(lx-ripple='' ng-click='loginSvetUser("google")')
+					i.mdi.mdi-google-plus
+		.fab.ml(hide-sm)
 			button.fab__primary.btn.btn--xl.bgc-indigo-300.btn--fab(lx-ripple='' )
 				i.mdi.mdi-account
 				i.mdi.mdi-login(style='color:white !important')
@@ -10,7 +19,13 @@ div
 				button.btn.btn--l.bgc-red-400.btn--fab(lx-ripple='' ng-click='loginSvetUser("google")')
 					i.mdi.mdi-google-plus
 	div(ng-if='!!user')
-		.fab.ml
+		.fab.ml(hide-gt-sm)
+			button.fab__primary.btn.btn--l.btn--indigo.btn--fab(lx-ripple='')
+				img(ng-src="{{user.avatar}}")
+			.fab__actions.fab__actions--down
+				button.btn.btn--m.bgc-indigo-300.btn--fab(lx-ripple=''  ng-click='logout()' style='color:white !important')
+					i.mdi.mdi-logout
+		.fab.ml(hide-sm)
 			button.fab__primary.btn.btn--xl.btn--indigo.btn--fab(lx-ripple='')
 				img(ng-src="{{user.avatar}}")
 			.fab__actions.fab__actions--down

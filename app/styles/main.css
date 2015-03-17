@@ -31,9 +31,13 @@
     line-height: 20px;
   }
 }
+.first-newspaper {
+  margin-bottom: 10px;
+}
 @media screen and (max-width: 992px) {
   .first-newspaper {
-    font-size: 10px;
+    margin-bottom: 0px;
+    font-size: 12px !important;
   }
 }
 .header-logo {

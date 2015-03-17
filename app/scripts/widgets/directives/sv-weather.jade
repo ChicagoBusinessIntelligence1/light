@@ -1,12 +1,18 @@
 div(layout='column' layout-align='start' ng-if='weatherReady')
 	div(flex)
 		div(layout='row' layout-align='center center')
+			.weather-city.text-left(flex='100')
+				.text-left Чикаго, Иллинойс
+	div(flex)
+		div(layout='row' layout-align='center center')
 			.weather-city.text-left(flex='25') Сегодня
 			.text-left.margin-right-5(flex='20')
 				img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
 			.text-left.weather-city(flex)
 				| {{weather.currently.apparentTemperature|FarToCelcius}}
 				i.mdi.mdi-temperature-celsius
+	div(flex)
+		lx-progress(type='circular', color='#5fa2db', ng-if='!weatherReady')
 	div(flex)
 		div(layout='row' layout-align='center center')
 			.weather-city.text-left(flex='25') Завтра
@@ -17,11 +23,4 @@ div(layout='column' layout-align='start' ng-if='weatherReady')
 				i.mdi.mdi-temperature-celsius
 	div(flex)
 		div(layout='row' layout-align='center center')
-			.weather-city.text-left(flex='25') {{dayAfterTomorrow | date:'M/d/yy'}}
-			.text-left.margin-right-5(flex='20')
-				img.display-inline-block(ng-src="../img/weather/{{weather.currently.icon|IconProcess}}.png")
-			.text-left.weather-city(flex)
-				| {{weather.daily.data['4'].apparentTemperatureMax|FarToCelcius}}
-				i.mdi.mdi-temperature-celsius
-lx-progress(type='circular', color='#5fa2db', ng-if='!weatherReady')
 
