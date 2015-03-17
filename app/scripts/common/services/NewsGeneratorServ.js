@@ -2,12 +2,13 @@
     'use strict';
 
     angular.module('common')
-        .factory('NewsGeneratorServ', function ($http, $q,$rootScope) {
+        .factory('NewsGeneratorServ', function ($http, $q, $rootScope) {
 
             var gUrl = 'http://api.feedzilla.com/v1/categories.json';
             var svobodaUrls = ['zoprp_egjrpy', 'zipqpqejjqpo', 'zjkqp_eymopy', 'z_oqpvergqpr', 'zmtqte$oot', 'zooqppegkqpm']
             var allCategories = [];
-            var avoidCategories = ['игорем','померанцев'];
+            var avoidCategories = ['игорем', 'померанцев'];
+            var avoidNewsWithTitle = ['стрелков'];
 
             function isInAvoid(tag) {
                 for (var i = 0; i < avoidCategories.length; i++) {
@@ -84,7 +85,7 @@
                 getCategories: function (limit) {
                     if (limit) {
 
-                    return _.first(allCategories,limit);
+                        return _.first(allCategories, limit);
                     }
                     return allCategories;
                 },
@@ -111,10 +112,16 @@
                         allNewsArr.forEach(function (oneNews) {
                             for (var i = 0; i < oneNews.length; i++) {
                                 var singleNews = oneNews[i];
-                                var img = singleNews.img;
-                                if (uniqueImgs.indexOf(img) === -1) {
-                                    uniqueImgs.push(img);
-                                    uniqueNews.push(singleNews);
+                                var titleTokens = _.map(singleNews.title.split(' '), function (token) {
+                                    return token.toLowerCase();
+                                });
+                                var interSection = _.intersection(titleTokens, avoidNewsWithTitle);
+                                if (interSection.length === 0) {
+                                    var img = singleNews.img;
+                                    if (uniqueImgs.indexOf(img) === -1) {
+                                        uniqueImgs.push(img);
+                                        uniqueNews.push(singleNews);
+                                    }
                                 }
 
                             }
