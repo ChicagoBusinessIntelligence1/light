@@ -1,6 +1,6 @@
 'use strict'
 
-var common = angular.module('common', ['firebase'])
+var common = angular.module('common', ['firebase','ngResource'])
     .factory('FeedLoader', function ($resource) {
         return $resource('http://ajax.googleapis.com/ajax/services/feed/load', {}, {
             fetch: { method: 'JSONP', params: {v: '1.0', callback: 'JSON_CALLBACK'} }

@@ -7,7 +7,7 @@ div(layout='column' flex='')
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
 		ul.list-inline
 			span.fs-caption Теги:
-			li(ng-repeat='s in sections track by $index')
+			li(ng-repeat='s in sections')
 				.text-subheader.label.label-default {{s}}
 	.light-margin-5(flex='')
 		.card
