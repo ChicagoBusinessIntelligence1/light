@@ -8,11 +8,11 @@ md-content.md-padding(flex)
 		.margin-left-5.margin-right-5(flex flex-order-gt-md='2' flex-order='1')
 			div(layout='row' layout-align='space-around center' hide-gt-lg='')
 				.margin-bottom-5
-					md-button.md-primary.md-raised.md-hue-1(ng-click='toggleLeft()' style='font-size:11px')
+					md-button.md-primary.md-raised.txt-white(ng-click='toggleLeft()' style='font-size:11px')
 						i.mdi.mdi-newspaper
 						| &nbsp Рубрики Новостей
 				.margin-bottom-5
-					md-button.md-primary.md-raised.md-hue-1(ng-click='toggleRight()' style='font-size:11px')
+					md-button.md-accent.md-raised.md-hue-1.txt-white(ng-click='toggleRight()' style='font-size:11px')
 						i.fa.fa-file-archive-o.fa-fw
 						| &nbsp Наши Сервисы
 			div(ui-view='')
