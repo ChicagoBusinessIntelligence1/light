@@ -179,16 +179,16 @@
                     controller: "AuthorDashboardCtrl",
                     templateUrl: "scripts/common/authors/views/author-dashboardCtrl.html"
                 })
+                .state("app.profile.author-articles", {
+                    url: "/author-articles",
+                    controller: "AuthorArticlesCtrl",
+                    templateUrl: "scripts/common/authors/views/author-articlesCtrl.html"
+                })
                 .state("app.profile.create-article", {
                     url: "/create-article",
                     controller: "CreateArticleCtrl",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
-			.state("app.author-articles", {
-				url: "/author-articles", 
-				controller:"AuthorArticlesCtrl",
-				templateUrl: "scripts/common/authors/views/author-articlesCtrl.html"
-			})
 //#state
         });
 
