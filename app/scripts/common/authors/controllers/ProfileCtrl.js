@@ -1,9 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('common.authors')
+    angular.module('common')
         .controller('ProfileCtrl', function ($scope) {
-
         });
 })();
 
