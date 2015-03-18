@@ -171,7 +171,6 @@
                 })
                 .state("app.profile", {
                     abstract: true,
-                    url: "/profile",
                     controller: "ProfileCtrl",
                     templateUrl: "scripts/common/authors/views/profileCtrl.html"
                 })
@@ -185,6 +184,11 @@
                     controller: "CreateArticleCtrl",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
+			.state("app.author-articles", {
+				url: "/author-articles", 
+				controller:"AuthorArticlesCtrl",
+				templateUrl: "scripts/common/authors/views/author-articlesCtrl.html"
+			})
 //#state
         });
 
