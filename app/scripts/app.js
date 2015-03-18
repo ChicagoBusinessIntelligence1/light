@@ -169,7 +169,7 @@
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
 			.state("app.create-article", {
-				url: "/create-article", 
+				url: "/create-article",
 				controller:"CreateArticleCtrl",
 				templateUrl: "scripts/common/article/views/create-articleCtrl.html"
 			})

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('common.article')
+    angular.module('common')
         .controller('CreateArticleCtrl', function ($scope) {
 
         });
