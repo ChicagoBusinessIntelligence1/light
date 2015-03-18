@@ -168,16 +168,15 @@
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-                .state("app.create-article", {
-                    url: "/create-article",
-                    controller: "CreateArticleCtrl",
-                    templateUrl: "scripts/common/article/views/create-articleCtrl.html"
-                })
-			
-			.state("app.author-profile", {
-				url: "/author-profile", 
-				controller:"AuthorProfileCtrl",
-				templateUrl: "scripts/common/authors/views/author-profileCtrl.html"
+			.state("app.create-article", {
+				url: "/create-article",
+				controller:"CreateArticleCtrl",
+				templateUrl: "scripts/common/article/views/create-articleCtrl.html"
+			})
+			.state("app.profile", {
+				url: "/profile", 
+				controller:"ProfileCtrl",
+				templateUrl: "scripts/common/authors/views/profileCtrl.html"
 			})
 //#state
         });
