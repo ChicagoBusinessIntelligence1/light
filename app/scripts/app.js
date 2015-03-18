@@ -174,6 +174,11 @@
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 			
+			.state("app.author-profile", {
+				url: "/author-profile", 
+				controller:"AuthorProfileCtrl",
+				templateUrl: "scripts/common/authors/views/author-profileCtrl.html"
+			})
 //#state
         });
 
