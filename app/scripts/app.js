@@ -133,11 +133,11 @@
                     controller: "ScienceCtrl",
                     templateUrl: "scripts/sections/science/views/scienceCtrl.html"
                 })
-                .state("app.archive", {
-                    url: "/archive",
-                    controller: "ArchiveCtrl",
-                    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
-                })
+                //.state("app.archive", {
+                //    url: "/archive",
+                //    controller: "ArchiveCtrl",
+                //    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
+                //})
                 .state("app.contact", {
                     url: "/contact",
                     controller: "ContactCtrl",
@@ -153,16 +153,6 @@
                     controller: "ClassifiedCtrl",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                //.state("app.politics", {
-                //    url: "/politics",
-                //    controller: "Politics",
-                //    templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
-                //})
-                //
-                //.state("app.politics.article", {
-                //    url: "/:id",
-                //    templateUrl: "scripts/sections/politics/views/politics-article.html"
-                //})
                 .state("app.news", {
                     url: "/news/:id",
                     controller: "SvetNewsCtrl",
@@ -183,11 +173,6 @@
                     url: "/pdf-archive",
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
-                })
-                .state("pdf-issue", {
-                    url: "/pdf-view/:issueId",
-                    controller: "PdfViewCtrl",
-                    templateUrl: "scripts/common/views/pdf-viewCtrl.html"
                 })
 //#state
         });
