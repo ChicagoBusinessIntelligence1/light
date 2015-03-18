@@ -169,6 +169,11 @@
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
 			
+			.state("app.article-form", {
+				url: "/article-form", 
+				controller:"Article-formCtrl",
+				templateUrl: "scripts/common/article/views/article-formCtrl.html"
+			})
 //#state
         });
 
