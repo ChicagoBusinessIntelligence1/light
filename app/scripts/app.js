@@ -168,11 +168,7 @@
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-			.state("app.add-article", {
-				url: "/add-article", 
-				controller:"Add-articleCtrl",
-				templateUrl: "scripts/common/article/views/add-articleCtrl.html"
-			})
+			
 //#state
         });
 
