@@ -2,7 +2,8 @@
     'use strict';
 
     angular.module('common.authors')
-        .controller('ProfileCtrl', function ($scope) {
+        .controller('AuthorDashboardCtrl', function ($scope) {
+
         });
 })();
 

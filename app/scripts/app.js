@@ -6,6 +6,7 @@
 
         // modules
         'common.article',
+        'common.authors',
         'widgets',
         'header',
         'aside',
@@ -168,15 +169,21 @@
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-			.state("app.create-article", {
-				url: "/create-article",
-				controller:"CreateArticleCtrl",
-				templateUrl: "scripts/common/article/views/create-articleCtrl.html"
-			})
-			.state("app.profile", {
-				url: "/profile", 
-				controller:"ProfileCtrl",
-				templateUrl: "scripts/common/authors/views/profileCtrl.html"
+                .state("app.profile", {
+                    abstract: true,
+                    url: "/profile",
+                    controller: "ProfileCtrl",
+                    templateUrl: "scripts/common/authors/views/profileCtrl.html"
+                })
+                .state("app.profile.create-article", {
+                    url: "/create-article",
+                    controller: "CreateArticleCtrl",
+                    templateUrl: "scripts/common/article/views/create-articleCtrl.html"
+                })
+			.state("app.author-dashboard", {
+				url: "/author-dashboard", 
+				controller:"AuthorDashboardCtrl",
+				templateUrl: "scripts/common/authors/views/author-dashboardCtrl.html"
 			})
 //#state
         });
