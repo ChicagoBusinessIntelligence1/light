@@ -173,6 +173,11 @@
                     controller: "Article-formCtrl",
                     templateUrl: "scripts/common/article/views/article-formCtrl.html"
                 })
+			.state("app.create-article", {
+				url: "/create-article", 
+				controller:"Create-articleCtrl",
+				templateUrl: "scripts/common/article/views/create-articleCtrl.html"
+			})
 //#state
         });
 
