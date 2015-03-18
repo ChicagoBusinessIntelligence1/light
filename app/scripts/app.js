@@ -163,17 +163,16 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-                .state("app.track", {
-                    url: "/track",
-                    controller: "TrackCtrl",
-                    templateUrl: "scripts/sections/test/views/trackCtrl.html"
-                })
-
                 .state("app.pdf-archive", {
                     url: "/pdf-archive",
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
+			.state("app.add-article", {
+				url: "/add-article", 
+				controller:"Add-articleCtrl",
+				templateUrl: "scripts/common/article/views/add-articleCtrl.html"
+			})
 //#state
         });
 
