@@ -1,6 +1,7 @@
-div(layout='row' layout-align="left center")
-	sv-nav-link(url='app.profile.author-dashboard' title='Home' icon='home')
-	sv-nav-link(url='app.profile.author-articles' title='My Articles' icon='file-document-box')
-div(layout='row' layout-align="right center")
-	button.btn.btn--m.btn--raised(lx-ripple='' ui-sref='app.profile.create-article')
-		i.mdi.mdi-plus.fc-red-500
+div(layout='row' layout-align='space-between' layout-margin='')
+	div(layout='row' flex='')
+		sv-nav-link(url='app.profile.author-dashboard' title='Home' icon='home')
+		sv-nav-link(url='app.profile.author-articles' title='My Articles' icon='file-document-box')
+	div.text-right(flex='')
+		button.btn.btn--m.btn--raised(lx-ripple='' ui-sref='app.profile.create-article')
+			i.mdi.mdi-plus.fc-red-500
