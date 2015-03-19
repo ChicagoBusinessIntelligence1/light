@@ -195,6 +195,9 @@
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 
+			
+			
+			
 //#state
         });
 

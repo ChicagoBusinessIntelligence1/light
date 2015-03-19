@@ -17,6 +17,8 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
+            // need to have a space in order not to be included in submodules. eg. common not to common.test
+            txt+=' ';
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
@@ -270,6 +272,7 @@ module.exports = function (grunt) {
 
         var placeToInsert = module.split('.');
         var before = placeToInsert || '<!-- links -->';
+        console.log(before);
         /////////////////// index
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>';
