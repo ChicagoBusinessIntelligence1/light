@@ -1,6 +1,7 @@
-div(layout='row')
+div(layout='column' layout-gt-md='row')
 	div(flex='20')
 		sv-news-toolbar(number='7' panel-title='Last News')
-	.margin-left-5.margin-right-5(flex ui-view='')
+	.margin-left-5.margin-right-5
+		div(flex ui-view='')
 	div(flex='20')
 		sv-news-toolbar(number='7' panel-title='Featured')

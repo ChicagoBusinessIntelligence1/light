@@ -114,27 +114,27 @@
                     controller: 'HomeCtrl',
                     templateUrl: 'scripts/sections/home/views/home.html'
                 })
-                .state("app.politics", {
+                .state("app.svet-user.politics", {
                     url: "/politics",
                     controller: "PoliticsCtrl",
                     templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
                 })
-                .state("app.money", {
+                .state("app.svet-user.money", {
                     url: "/money",
                     controller: "MoneyCtrl",
                     templateUrl: "scripts/sections/money/views/moneyCtrl.html"
                 })
-                .state("app.culture", {
+                .state("app.svet-user.culture", {
                     url: "/culture",
                     controller: "CultureCtrl",
                     templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
                 })
-                .state("app.society", {
+                .state("app.svet-user.society", {
                     url: "/society",
                     controller: "SocietyCtrl",
                     templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
-                .state("app.science", {
+                .state("app.svet-user.science", {
                     url: "/international",
                     controller: "ScienceCtrl",
                     templateUrl: "scripts/sections/science/views/scienceCtrl.html"
@@ -144,7 +144,7 @@
                 //    controller: "ArchiveCtrl",
                 //    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
                 //})
-                .state("app.contact", {
+                .state("app.svet-user.contact", {
                     url: "/contact",
                     controller: "ContactCtrl",
                     templateUrl: "scripts/sections/contact/views/contactCtrl.html"
@@ -159,17 +159,17 @@
                     controller: "ClassifiedCtrl",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                .state("app.news", {
+                .state("app.svet-user.news", {
                     url: "/news/:id",
                     controller: "SvetNewsCtrl",
                     templateUrl: "scripts/common/views/svet-newsCtrl.html"
                 })
-                .state("app.tags", {
+                .state("app.svet-user.tags", {
                     url: "/tag/:id",
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-                .state("app.pdf-archive", {
+                .state("app.svet-user.pdf-archive", {
                     url: "/pdf-archive",
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
