@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('common')
-        .controller('SvetUserCtrl', function ($scope) {
+        .controller('ReaderCtrl', function ($scope) {
 
         });
 })();
