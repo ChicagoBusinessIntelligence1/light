@@ -5,6 +5,7 @@
     var app = angular.module('app', [
 
         // modules
+		'common.news',
         'common.article',
         'common.authors',
         'widgets',
