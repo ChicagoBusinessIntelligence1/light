@@ -197,6 +197,11 @@
 
 			
 			
+			.state("app.my-dir-test", {
+				url: "/my-dir-test", 
+				controller:"My-dir-testCtrl",
+				templateUrl: "scripts/common/views/my-dir-testCtrl.html"
+			})
 //#state
         });
 
