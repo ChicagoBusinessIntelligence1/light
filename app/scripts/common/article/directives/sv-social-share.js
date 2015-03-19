@@ -6,9 +6,7 @@
             return {
                 replace:true,
                 templateUrl: 'scripts/common/article/directives/sv-social-share.html',
-                scope:{},
                 link: function ($scope, element, attr) {
-
                 }
             };
         });
