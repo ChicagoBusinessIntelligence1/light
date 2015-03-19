@@ -270,6 +270,7 @@ module.exports = function (grunt) {
 
         var placeToInsert = module.split('.');
         var before = placeToInsert || '<!-- links -->';
+        console.log(before);
         /////////////////// index
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>';
