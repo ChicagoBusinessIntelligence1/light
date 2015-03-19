@@ -4,11 +4,10 @@
     angular.module('common.news')
         .directive('svNewsTitle', function () {
             return {
-                replace:true,
+                replace: true,
                 templateUrl: 'scripts/common/news/directives/sv-news-title.html',
-                scope:{},
-                link: function ($scope, element, attr) {
-
+                scope: {
+                    title: '@'
                 }
             };
         });
