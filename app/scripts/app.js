@@ -196,6 +196,11 @@
                 })
 
 			
+			.state("app.test", {
+				url: "/test", 
+				controller:"TestCtrl",
+				templateUrl: "scripts/common/views/testCtrl.html"
+			})
 //#state
         });
 
