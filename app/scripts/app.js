@@ -189,11 +189,7 @@
                     controller: "CreateArticleCtrl",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
-			.state("app.user", {
-				url: "/user", 
-				controller:"UserCtrl",
-				templateUrl: "scripts/common/views/userCtrl.html"
-			})
+			
 //#state
         });
 
