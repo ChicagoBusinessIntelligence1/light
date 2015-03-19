@@ -12,8 +12,7 @@ div(layout='column' flex='')
 		.card
 			.light-margin
 				span.fs-display-1.display-block {{title}}
-				.margin-bottom-5
-					span.fs-caption.display-block Svet Media Group
+				span.fs-caption.display-block.margin-bottom-5 Svet Media Group
 				div(layout='row' layout-align='space-between')
 					.margin-bottom-5(flex="80")
 						sv-social-share
@@ -24,9 +23,9 @@ div(layout='column' flex='')
 					img(ng-src="{{img}}")
 				div.light-padding-5.margin-bottom-15
 					p.fs-body-2 {{body}}
+				div.light-padding-5.margin-bottom-15
+					p.fs-caption {{date}}
 	.light-margin-5(flex='')
-		img(src="../img/ad/mb-logo.jpg")
+		sv-ad-mb-bank
 	.light-margin-5(flex='')
-		md-toolbar.bgc-blue-grey-50.toolbar-blue-grey
-			h1.md-toolbar-tools.txt-fontGrey Comments
 		sv-comment
