@@ -1,9 +1,6 @@
 div(layout='column' flex='')
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
-		div(layout='row' layout-align='start end')
-			a.fs-caption.breadcrumb-section Section Name
-			span &nbsp / &nbsp
-			span.fs-caption.display-block {{title|Title:15}}
+		sv-article-breadcrumb
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
 		span.fs-caption Теги:
 		span(ng-repeat='s in sections track by $index') &nbsp
