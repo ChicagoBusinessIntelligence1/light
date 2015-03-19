@@ -5,9 +5,9 @@
         .directive('svDashboardArticles', function () {
             return {
                 templateUrl: 'scripts/common/authors/directives/sv-dashboard-articles.html',
-                scope:{},
+                scope: {},
                 link: function ($scope, element, attr) {
-
+                    $("#datepicker").datepicker();
                 }
             };
         });
