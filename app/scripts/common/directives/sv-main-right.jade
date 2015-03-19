@@ -1,41 +1,41 @@
 md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' , md-is-locked-open="$media('gt-lg')")
-	md-toolbar.md-accent.md-hue-1.txt-white.margin-bottom-15(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
-		md-button.txt-white(ng-click='close()' hide-gt-lg='')
-			i.mdi.mdi-close
-		span Читателям и Партнерам
-	div(layout='column')
-		.margin-bottom-15.text-center
-			a.display-inline-block(href='https://svet15.herokuapp.com/' target='_blank')
-				img.display-inline-block(ng-src="img/ad/svet.jpg")
-		.text-center
-			md-button.md-raised.text-info(ng-click='openBottomSheet()')
-				i.mdi.mdi-account-multiple
-				span.fs-caption &nbsp Svet on Social Media
-		div
-			ul.list(class='mt++')
-				li.list-row.list-row--has-separator
-					.list-row__primary
-						a(href="https://www.youtube.com/watch?v=fuVyrMp3BpI"  target='_blank')
-							img(src="../img/ad/youtube-c.png" style='width:32px; display:inline-block;')
-					.list-row__content
-						a(href="https://www.youtube.com/watch?v=fuVyrMp3BpI"  target='_blank')
-							.fs-body-1.text-subheader Youtube Channel
-				li.list-row.list-row--has-separator
-					.list-row__primary
-						a(href="https://itunes.apple.com/us/app/svet-local/id592739995?mt=8"  target='_blank')
-							img(src="../img/ad/svet-app-64.png" style='width:32px; display:inline-block;')
-					.list-row__content
-						a(href="https://itunes.apple.com/us/app/svet-local/id592739995?mt=8"  target='_blank')
-							.fs-body-1.text-subheader Svet Local App
-	//md-content.md-padding.text-center
-	//	img(src="../img/ad/surgery.jpg" style='display:inline-block')
-	md-content.md-padding(ng-controller='RightCtrl')
-		sv-clients-nav
-	md-content.md-padding.margin-top-8.text-center
-		div(id='datepicker')
-	md-toolbar.bgc-blue-grey-50.txt-fontGrey(layout='row' layout-align="center center")
-		span Наши Друзья
-	md-content.md-padding.margin-top-8.text-center
-		a(href="http://cso.org/")
-			img.aside-img(src="../img/clients/chicago-symphony-orchestra.png")
+    md-toolbar.md-accent.md-hue-1.txt-white.margin-bottom-15(ng-controller='RightCtrl' layout='row' layout-align='space-around center')
+        md-button.txt-white(ng-click='close()' hide-gt-lg='')
+            i.mdi.mdi-close
+        span Читателям и Партнерам
+    div(layout='column')
+        .margin-bottom-15.text-center
+            a.display-inline-block(href='https://svet15.herokuapp.com/' target='_blank')
+                img.display-inline-block(ng-src="img/ad/svet.jpg")
+        .text-center
+            md-button.md-raised.text-info(ng-click='openBottomSheet()')
+                i.mdi.mdi-account-multiple
+                span.fs-caption &nbsp Svet on Social Media
+        div
+            ul.list(class='mt++')
+                li.list-row.list-row--has-separator
+                    .list-row__primary
+                        a(href="https://www.youtube.com/watch?v=fuVyrMp3BpI"  target='_blank')
+                            img(src="../img/ad/youtube-c.png" style='width:32px; display:inline-block;')
+                    .list-row__content
+                        a(href="https://www.youtube.com/watch?v=fuVyrMp3BpI"  target='_blank')
+                            .fs-body-1.text-subheader Youtube Channel
+                li.list-row.list-row--has-separator
+                    .list-row__primary
+                        a(href="https://itunes.apple.com/us/app/svet-local/id592739995?mt=8"  target='_blank')
+                            img(src="../img/ad/svet-app-64.png" style='width:32px; display:inline-block;')
+                    .list-row__content
+                        a(href="https://itunes.apple.com/us/app/svet-local/id592739995?mt=8"  target='_blank')
+                            .fs-body-1.text-subheader Svet Local App
+    //md-content.md-padding.text-center
+    //	img(src="../img/ad/surgery.jpg" style='display:inline-block')
+    md-content.md-padding(ng-controller='RightCtrl')
+        sv-clients-nav
+    md-content.md-padding.margin-top-8.text-center
+        div(id='datepicker')
+    md-toolbar.bgc-blue-grey-50.txt-fontGrey(layout='row' layout-align="center center")
+        span Наши Друзья
+    md-content.md-padding.margin-top-8.text-center
+        a(href="http://cso.org/")
+            img.aside-img(src="../img/clients/chicago-symphony-orchestra.png")
 
