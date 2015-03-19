@@ -195,11 +195,7 @@
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 
-			.state("app.-test", {
-				url: "/-test", 
-				controller:"TestCtrl",
-				templateUrl: "scripts/commont/views/-testCtrl.html"
-			})
+			
 //#state
         });
 
