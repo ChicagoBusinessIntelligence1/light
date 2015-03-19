@@ -1,7 +1,7 @@
 .card
 	md-toolbar.md-hue-1.margin-bottom-10( ng-controller='RightCtrl' layout='row' layout-align='space-around center')
 		span.fs-subhead.display-block {{panelTitle}}
-	.light-padding-8
+	md-content.light-padding-8
 		ul.list-unstyled
 			li.margin-bottom-10.article-toolbar(ng-repeat='n in news')
 				a.text-primary(ui-sref='app.news({id:n.id})')
