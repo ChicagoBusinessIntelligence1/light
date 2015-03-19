@@ -17,7 +17,7 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
-            // need an app
+            // need to have a space in order not to be included in submodules. eg. common not to common.test
             txt+=' ';
             temp = target.indexOf(txt, temp);
         });
