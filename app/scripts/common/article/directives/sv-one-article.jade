@@ -5,10 +5,9 @@ div(layout='column' flex='')
 			span &nbsp / &nbsp
 			span.fs-caption.display-block {{title|Title:15}}
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
-		ul.list-inline
-			span.fs-caption Теги:
-			li(ng-repeat='s in sections track by $index')
-				.text-subheader.label.label-default {{s}}
+		span.fs-caption Теги:
+		span(ng-repeat='s in sections track by $index') &nbsp
+			.text-subheader.label.label-default {{s}}
 	.light-margin-5(flex='')
 		.card
 			.light-margin
@@ -16,17 +15,16 @@ div(layout='column' flex='')
 				.margin-bottom-5
 					span.fs-caption.display-block Svet Media Group
 				div(layout='row' layout-align='space-between')
-					div(flex="80")
-						ul.list-inline.list-unstyled.margin-bottom-5
-							li
+					.margin-bottom-5(flex="80")
+						div(layout='row')
+							div
 								img(src="../img/social/fb-share.png" lx-ripple lx-tooltip="Поделиться")
-							li
+							div
 								img(src="../img/social/google-share.png" lx-ripple lx-tooltip="Поделиться")
-							li
+							div
 								img(src="../img/social/twitter-share.png" lx-ripple lx-tooltip="Поделиться" )
-							li
+							div
 								img(src="../img/social/linkedin-share.png" lx-ripple lx-tooltip="Поделиться")
-							li
 					div(flex="20")
 						span.display-block.text-right.color-subheader(lx-ripple lx-tooltip="Просмотры")
 							i.icon.icon--s.icon--flat.mdi.mdi-eye
