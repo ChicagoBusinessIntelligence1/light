@@ -104,7 +104,12 @@
                     templateUrl: 'scripts/sections/home/views/main.html'
 
                 })
-                .state('app.home', {
+                .state("app.svet-user", {
+                    abstract: true,
+                    controller: "SvetUserCtrl",
+                    templateUrl: "scripts/common/views/svet-userCtrl.html"
+                })
+                .state('app.svet-user.home', {
                     url: '/home',
                     controller: 'HomeCtrl',
                     templateUrl: 'scripts/sections/home/views/home.html'
@@ -189,12 +194,7 @@
                     controller: "CreateArticleCtrl",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
-			
-			.state("app.svet-user", {
-				url: "/svet-user", 
-				controller:"SvetUserCtrl",
-				templateUrl: "scripts/common/views/svet-userCtrl.html"
-			})
+
 //#state
         });
 

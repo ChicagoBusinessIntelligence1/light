@@ -4,6 +4,7 @@
     angular.module('common')
         .directive('svNewsToolbar', function (NewsGeneratorServ, $rootScope) {
             return {
+                replace: true,
                 templateUrl: 'scripts/common/news/directives/sv-news-toolbar.html',
                 scope: {
                     number: '=',
