@@ -17,6 +17,8 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
+            // need an app
+            txt+=' ';
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
