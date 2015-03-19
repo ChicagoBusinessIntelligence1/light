@@ -2,11 +2,10 @@
     'use strict';
 
     angular.module('common')
-        .directive('svMainContent', function () {
+        .directive('svAsideNav', function () {
             return {
-                templateUrl: 'scripts/common/directives/sv-main-content.html',
+                templateUrl: 'scripts/common/directives/sv-aside-nav.html',
                 link: function ($scope, element, attr) {
-
                 }
             };
         });
