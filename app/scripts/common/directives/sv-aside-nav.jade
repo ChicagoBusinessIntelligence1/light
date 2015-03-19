@@ -1,1 +1,9 @@
-.well sv-aside-nav Template
+div(layout='row' layout-align='space-around center' hide-gt-lg='')
+	.margin-bottom-5
+		md-button.md-primary.md-raised.txt-white(ng-click='toggleLeft()' style='font-size:11px')
+			i.mdi.mdi-newspaper
+			| &nbsp ??????? ????????
+	.margin-bottom-5
+		md-button.md-accent.md-raised.md-hue-1.txt-white(ng-click='toggleRight()' style='font-size:11px')
+			i.fa.fa-file-archive-o.fa-fw
+			| &nbsp ???? ???????
