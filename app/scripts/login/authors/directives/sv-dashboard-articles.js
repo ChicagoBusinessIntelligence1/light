@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('common.authors')
+    angular.module('login.authors')
         .directive('svDashboardArticles', function () {
             return {
-                templateUrl: 'scripts/common/authors/directives/sv-dashboard-articles.html',
+                templateUrl: 'scripts/login/authors/directives/sv-dashboard-articles.html',
                 scope: {},
                 link: function ($scope, element, attr) {
                 }
