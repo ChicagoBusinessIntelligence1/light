@@ -30,67 +30,12 @@
 
         // 3rd party modules
         'firebase',
+        'toastr',
         'lumx',
         'ngAnimate',
         'ngMaterial',
         'ui.router'
-    ]).controller('MainCtrl', function ($scope, $firebase, url, $firebaseAuth, $state, $mdSidenav, $log, $rootScope, NewsGeneratorServ, AuthServ, news) {
-
-        $rootScope.allNews = news;
-
-        $rootScope.user = AuthServ.getUser();
-
-        $scope.toggleSidenav = function (menuId) {
-            $mdSidenav(menuId).toggle();
-        };
-        $scope.fenElementActive = {val: 'null'};
-        $scope.$watch('auth.user.provider', function (newVal) {
-            if (newVal === 'password') {
-                $scope.isAdmin = true;
-            }
-        })
-
-        /**
-         * Sidenav
-         */
-        $scope.toggleLeft = function () {
-            $mdSidenav('left').toggle()
-                .then(function () {
-                    $log.debug("toggle left is done");
-                });
-        };
-        $scope.toggleRight = function () {
-            $mdSidenav('right').toggle()
-                .then(function () {
-                    $log.debug("toggle RIGHT is done");
-                });
-        };
-    })
-
-        .factory('$exceptionHandler', function () {
-            return function (exception, cause) {
-                exception.message += ' (caused by "' + cause + '")';
-                throw exception;
-            };
-        }).config(function ($mdThemingProvider) {
-            $mdThemingProvider.theme('default')
-                .primaryPalette('indigo')
-                .backgroundPalette('grey')
-                .accentPalette('red', {
-                    'default': '600',
-                    'hue-1': '400'
-                });
-        })
-        .config(function ($mdThemingProvider) {
-            var svetRedMap = $mdThemingProvider.extendPalette('red', {
-                '500': 'C02033'
-            });
-            // Register the new color palette map with the name <code>neonRed</code>
-            $mdThemingProvider.definePalette('svetRed', svetRedMap);
-            // Use that theme for the primary intentions
-            $mdThemingProvider.theme('accent')
-                .primaryPalette('svetRed')
-        })
+    ])
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
 
@@ -141,11 +86,6 @@
                     controller: "ScienceCtrl",
                     templateUrl: "scripts/sections/science/views/scienceCtrl.html"
                 })
-                //.state("app.archive", {
-                //    url: "/archive",
-                //    controller: "ArchiveCtrl",
-                //    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
-                //})
                 .state("app.reader.contact", {
                     url: "/contact",
                     controller: "ContactCtrl",
@@ -202,5 +142,33 @@
         });
 
     app.value('url', 'https://svet.firebaseio.com/');
+
+    app.factory('$exceptionHandler', function ($injector) {
+        return function (exception, cause) {
+            var $rootScope = $injector.get('$rootScope');
+            exception.message += ' (caused by "' + cause + '")';
+            $rootScope.$broadcast('error');
+
+            throw exception;
+        };
+    }).config(function ($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('indigo')
+            .backgroundPalette('grey')
+            .accentPalette('red', {
+                'default': '600',
+                'hue-1': '400'
+            });
+    })
+        .config(function ($mdThemingProvider) {
+            var svetRedMap = $mdThemingProvider.extendPalette('red', {
+                '500': 'C02033'
+            });
+            // Register the new color palette map with the name <code>neonRed</code>
+            $mdThemingProvider.definePalette('svetRed', svetRedMap);
+            // Use that theme for the primary intentions
+            $mdThemingProvider.theme('accent')
+                .primaryPalette('svetRed')
+        })
 
 })();
