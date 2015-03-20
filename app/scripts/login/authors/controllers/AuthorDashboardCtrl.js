@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('common.authors')
+    angular.module('login.authors')
         .controller('AuthorDashboardCtrl', function ($scope) {
 
         });

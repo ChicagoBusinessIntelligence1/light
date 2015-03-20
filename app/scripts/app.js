@@ -5,10 +5,16 @@
     var app = angular.module('app', [
 
         // modules
+
+
+        'login',
+        'login.authors',
+        //'login.admins',
+
+
         'common.ad',
         'common.news',
         'common.article',
-        'common.authors',
         'widgets',
         'header',
         'aside',
@@ -42,10 +48,13 @@
             $stateProvider
                 .state('app', {
                     abstract: true,
-                    controller: 'MainCtrl',
+                    controller: 'MainCtrl as main',
                     resolve: {
                         news: function (NewsGeneratorServ) {
                             return NewsGeneratorServ.getPoliticalNews(25, true);
+                        },
+                        user: function (AuthServ) {
+                            return AuthServ.getUser();
                         }
                     },
                     templateUrl: 'scripts/sections/home/views/main.html'
@@ -116,22 +125,24 @@
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-                .state("app.profile", {
+
+
+                .state("app.login", {
                     abstract: true,
-                    controller: "ProfileCtrl",
-                    templateUrl: "scripts/common/authors/views/profileCtrl.html"
+                    controller: "LoginCtrl as login",
+                    templateUrl: "scripts/login/views/loginCtrl.html"
                 })
-                .state("app.profile.author-dashboard", {
+                .state("app.login.author-dashboard", {
                     url: "/author-dashboard",
                     controller: "AuthorDashboardCtrl",
-                    templateUrl: "scripts/common/authors/views/author-dashboardCtrl.html"
+                    templateUrl: "scripts/login/authors/views/author-dashboardCtrl.html"
                 })
-                .state("app.profile.author-articles", {
+                .state("app.login.author-articles", {
                     url: "/author-articles",
                     controller: "AuthorArticlesCtrl",
-                    templateUrl: "scripts/common/authors/views/author-articlesCtrl.html"
+                    templateUrl: "scripts/login/authors/views/author-articlesCtrl.html"
                 })
-                .state("app.profile.create-article", {
+                .state("app.login.create-article", {
                     url: "/create-article",
                     controller: "CreateArticleCtrl",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
