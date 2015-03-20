@@ -2,9 +2,7 @@ div(layout='column' flex='')
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
 		sv-article-breadcrumb
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
-		span.fs-caption Теги:
-		span(ng-repeat='s in sections track by $index') &nbsp
-			.text-subheader.label.label-default {{s}}
+		sv-article-tags
 	.light-margin-5(flex='')
 		.card
 			.light-margin
