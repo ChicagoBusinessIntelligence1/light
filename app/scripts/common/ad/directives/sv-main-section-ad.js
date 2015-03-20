@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('common')
+    angular.module('common.ad')
         .directive('svMainSectionAd', function () {
             return {
                 replace: true,

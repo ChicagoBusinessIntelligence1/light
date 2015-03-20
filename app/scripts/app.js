@@ -5,7 +5,8 @@
     var app = angular.module('app', [
 
         // modules
-		'common.news',
+        'common.ad',
+        'common.news',
         'common.article',
         'common.authors',
         'widgets',
@@ -105,37 +106,37 @@
                     templateUrl: 'scripts/sections/home/views/main.html'
 
                 })
-                .state("app.svet-user", {
+                .state("app.reader", {
                     abstract: true,
-                    controller: "SvetUserCtrl",
-                    templateUrl: "scripts/common/views/svet-userCtrl.html"
+                    controller: "ReaderCtrl",
+                    templateUrl: "scripts/common/views/readerCtrl.html"
                 })
-                .state('app.svet-user.home', {
+                .state('app.reader.home', {
                     url: '/home',
                     controller: 'HomeCtrl',
                     templateUrl: 'scripts/sections/home/views/home.html'
                 })
-                .state("app.svet-user.politics", {
+                .state("app.reader.politics", {
                     url: "/politics",
                     controller: "PoliticsCtrl",
                     templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
                 })
-                .state("app.svet-user.money", {
+                .state("app.reader.money", {
                     url: "/money",
                     controller: "MoneyCtrl",
                     templateUrl: "scripts/sections/money/views/moneyCtrl.html"
                 })
-                .state("app.svet-user.culture", {
+                .state("app.reader.culture", {
                     url: "/culture",
                     controller: "CultureCtrl",
                     templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
                 })
-                .state("app.svet-user.society", {
+                .state("app.reader.society", {
                     url: "/society",
                     controller: "SocietyCtrl",
                     templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
-                .state("app.svet-user.science", {
+                .state("app.reader.science", {
                     url: "/international",
                     controller: "ScienceCtrl",
                     templateUrl: "scripts/sections/science/views/scienceCtrl.html"
@@ -145,7 +146,7 @@
                 //    controller: "ArchiveCtrl",
                 //    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
                 //})
-                .state("app.svet-user.contact", {
+                .state("app.reader.contact", {
                     url: "/contact",
                     controller: "ContactCtrl",
                     templateUrl: "scripts/sections/contact/views/contactCtrl.html"
@@ -160,17 +161,17 @@
                     controller: "ClassifiedCtrl",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                .state("app.svet-user.news", {
+                .state("app.reader.news", {
                     url: "/news/:id",
                     controller: "SvetNewsCtrl",
                     templateUrl: "scripts/common/views/svet-newsCtrl.html"
                 })
-                .state("app.svet-user.tags", {
+                .state("app.reader.tags", {
                     url: "/tag/:id",
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-                .state("app.svet-user.pdf-archive", {
+                .state("app.reader.pdf-archive", {
                     url: "/pdf-archive",
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
@@ -196,9 +197,7 @@
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 
-			
-			
-			
+
 //#state
         });
 
