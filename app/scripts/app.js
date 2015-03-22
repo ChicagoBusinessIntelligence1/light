@@ -6,11 +6,9 @@
 
         // modules
 
-
         'login',
         'login.authors',
         //'login.admins',
-
 
         'common.ad',
         'common.news',
@@ -126,7 +124,6 @@
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
 
-
                 .state("app.login", {
                     abstract: true,
                     controller: "LoginCtrl as login",
@@ -147,7 +144,6 @@
                     controller: "CreateArticleCtrl",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
-
 
 //#state
         });
