@@ -8,26 +8,22 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-    <!--<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">-->
     <link rel="stylesheet" href="bower_components/angular-material/modules/css/angular-material-layout.css">
 
 
     <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
 
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/index-container.css">
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css">
 
     <!--<link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!--<link rel="stylesheet" href="styles/kingmain.css">-->
 
     <!-- endbuild -->
     <!-- build:js scripts/modernizr.js -->
-
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 </head>
@@ -42,20 +38,18 @@
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
 <script src="bower_components/velocity/velocity.js"></script>
 <script src="bower_components/velocity/velocity.ui.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/lumx/dist/lumx.js"></script>
-<script src="bower_components/firebase/firebase.js"></script>
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
-<script src="bower_components/materialize/bin/materialize.js"></script>
+<script src="bower_components/firebase/firebase-debug.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="scripts/app.js"></script>
 
 <!-- MODULES-->
@@ -120,6 +114,7 @@
 
 <!-- auth -->
 <script src="scripts/auth/authIndex.js"></script>
+<script src="scripts/auth/controllers/SvetLoginCtrl.js"></script>
 <script src="scripts/auth/directives/sv-auth-dropdown.js"></script>
 <script src="scripts/auth/directives/sv-auth-icon.js"></script>
 <script src="scripts/auth/directives/sv-svg-large.js"></script>

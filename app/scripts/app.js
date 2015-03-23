@@ -145,6 +145,11 @@
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 
+                .state("app.svet-login", {
+                    url: "/svet-login",
+                    controller: "SvetLoginCtrl",
+                    templateUrl: "scripts/auth/views/svet-loginCtrl.html"
+                })
 //#state
         });
 
