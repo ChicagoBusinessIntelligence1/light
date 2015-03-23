@@ -239,10 +239,11 @@ module.exports = function (grunt) {
         var lname = cname;
 
         var name = lname.charAt(0).toUpperCase() + lname.substring(1);
+        var nameCamel =lname.charAt(0).toLowerCase() + lname.substring(1);
 
         var ctrlr = ctrl.replace(/#name#/g, name)
             .replace(/#module#/g, module)
-            .replace(/#lname#/g, lname.toLowerCase());
+            .replace(/#lname#/g, nameCamel);
 
 ////////////////
 
@@ -251,7 +252,7 @@ module.exports = function (grunt) {
         // register
         var state = '\t\t\t.state("app.' + _.str.dasherize(lname) + '", {\r\n' +
             '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
-            '\t\t\t\tcontroller:"' + name + 'Ctrl as '+name+'",\r\n' +
+            '\t\t\t\tcontroller:"' + name + 'Ctrl as '+ nameCamel+'",\r\n' +
             '\t\t\t\ttemplateUrl: "scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html"\r\n' +
             '\t\t\t})\r\n';
 
