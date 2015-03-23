@@ -118,7 +118,6 @@
                     controller: "PdfArchiveCtrl as archive",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-
                 .state("app.login", {
                     abstract: true,
                     controller: "LoginCtrl as login",
@@ -126,23 +125,22 @@
                 })
                 .state("app.login.author-dashboard", {
                     url: "/author-dashboard",
-                    controller: "AuthorDashboardCtrl",
+                    controller: "AuthorDashboardCtrl as authorDashboard",
                     templateUrl: "scripts/login/authors/views/author-dashboardCtrl.html"
                 })
                 .state("app.login.author-articles", {
                     url: "/author-articles",
-                    controller: "AuthorArticlesCtrl",
+                    controller: "AuthorArticlesCtrl as author-articles",
                     templateUrl: "scripts/login/authors/views/author-articlesCtrl.html"
                 })
                 .state("app.login.create-article", {
                     url: "/create-article",
-                    controller: "CreateArticleCtrl",
+                    controller: "CreateArticleCtrl as createArticle",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
-
                 .state("app.svet-login", {
                     url: "/svet-login",
-                    controller: "SvetLoginCtrl",
+                    controller: "SvetLoginCtrl as svetLogin",
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
 //#state
