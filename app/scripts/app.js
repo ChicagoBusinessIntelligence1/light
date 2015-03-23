@@ -157,11 +157,7 @@
 				controller:"RomanCtrl as Roman",
 				templateUrl: "scripts/auth/views/romanCtrl.html"
 			})
-			.state("app.izya-oberman", {
-				url: "/izya-oberman", 
-				controller:"IzyaObermanCtrl as izyaOberman",
-				templateUrl: "scripts/auth/views/izya-obermanCtrl.html"
-			})
+			
 //#state
         });
 
