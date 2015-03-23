@@ -26,7 +26,7 @@
         'sections.money',
         'sections.culture',
         'sections.society',
-        'sections.science',
+        'sections.international',
         'sections.archive',
         'sections.contact',
         'sections.subscription',
@@ -88,10 +88,10 @@
                     controller: "SocietyCtrl as society",
                     templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
-                .state("app.reader.science", {
+                .state("app.reader.international", {
                     url: "/international",
-                    controller: "ScienceCtrl",
-                    templateUrl: "scripts/sections/science/views/scienceCtrl.html"
+                    controller: "InternationalCtrl as international",
+                    templateUrl: "scripts/sections/international/views/internationalCtrl.html"
                 })
                 .state("app.reader.contact", {
                     url: "/contact",
