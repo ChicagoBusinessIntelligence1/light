@@ -115,7 +115,7 @@
                 })
                 .state("app.reader.pdf-archive", {
                     url: "/pdf-archive",
-                    controller: "PdfArchiveCtrl",
+                    controller: "PdfArchiveCtrl as archive",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
 
