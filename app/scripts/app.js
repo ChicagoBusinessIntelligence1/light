@@ -95,26 +95,21 @@
                 })
                 .state("app.reader.contact", {
                     url: "/contact",
-                    controller: "ContactCtrl",
+                    controller: "ContactCtrl as contact",
                     templateUrl: "scripts/sections/contact/views/contactCtrl.html"
                 })
                 .state("app.subscription", {
                     url: "/subscription",
-                    controller: "SubscriptionCtrl",
+                    controller: "SubscriptionCtrl as subscription",
                     templateUrl: "scripts/sections/subscription/views/subscriptionCtrl.html"
                 })
                 .state("app.classified", {
                     url: "/classified",
-                    controller: "ClassifiedCtrl",
+                    controller: "ClassifiedCtrl as classified",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                .state("app.reader.news", {
+                .state("app.reader.article", {
                     url: "/news/:id",
-                    controller: "SvetNewsCtrl",
-                    templateUrl: "scripts/common/views/svet-newsCtrl.html"
-                })
-                .state("app.reader.tags", {
-                    url: "/tag/:id",
                     controller: "ArticleCtrl as article",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
