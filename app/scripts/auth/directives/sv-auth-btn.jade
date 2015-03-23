@@ -1,21 +1,21 @@
 div
-	div(ng-if='!user')
-		.fab.ml
-			button.fab__primary.btn.btn--xl.bgc-indigo-300.btn--fab(lx-ripple='' )
-				i.mdi.mdi-account
-				i.mdi.mdi-login(style='color:white !important')
-			.fab__actions.fab__actions--left
-				button.btn.btn--l.bgc-indigo-400.btn--fab(lx-ripple='' ng-click='loginSvetUser("facebook")')
-					i.mdi.mdi-facebook
-				button.btn.btn--l.bgc-red-400.btn--fab(lx-ripple='' ng-click='loginSvetUser("google")')
-					i.mdi.mdi-google-plus
-				button.btn.btn--l.bgc-red-400.btn--fab(lx-ripple='' ng-click='loginSvetUser("")')
-					img(src="../img/logo/svet-24.jpg")
-	div(ng-if='!!user')
-		.fab.ml
-			button.fab__primary.btn.btn--xl.btn--indigo.btn--fab(lx-ripple='')
-				img(ng-src="{{user.avatar}}")
-			.fab__actions.fab__actions--down
-				button.btn.btn--l.bgc-indigo-300.btn--fab(lx-ripple=''  ng-click='logout()' style='color:white !important')
-					i.mdi.mdi-logout
+    div(ng-if='!user')
+        .fab.ml
+            button.fab__primary.btn.btn--xl.btn--fab(lx-ripple='' )
+                i.mdi.mdi-account
+                i.mdi.mdi-login(style='color:white !important')
+            .fab__actions.fab__actions--left
+                button.btn.btn--l.bgc-white-1.btn--fab.tc-blue-800(lx-ripple='' ng-click='loginSvetUser("facebook")')
+                    i.mdi.mdi-facebook
+                button.btn.btn--l.bgc-white-1.btn--fab.tc-red-500(lx-ripple='' ng-click='loginSvetUser("google")')
+                    i.mdi.mdi-google-plus
+                button.btn.btn--l.bgc-white-1.btn--fab(lx-ripple='' ng-click='loginSvetUser("")')
+                    span.f-22r.tc-red-500 S
+    div(ng-if='!!user')
+        .fab.ml
+            button.fab__primary.btn.btn--xl.btn--indigo.btn--fab(lx-ripple='')
+                img(ng-src="{{user.avatar}}")
+            .fab__actions.fab__actions--down
+                button.btn.btn--l.bgc-indigo-300.btn--fab(lx-ripple=''  ng-click='logout()' style='color:white !important')
+                    i.mdi.mdi-logout
 
