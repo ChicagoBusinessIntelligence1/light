@@ -80,12 +80,12 @@
                 })
                 .state("app.reader.culture", {
                     url: "/culture",
-                    controller: "CultureCtrl",
+                    controller: "CultureCtrl as culture",
                     templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
                 })
                 .state("app.reader.society", {
                     url: "/society",
-                    controller: "SocietyCtrl",
+                    controller: "SocietyCtrl as society",
                     templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
                 .state("app.reader.science", {
