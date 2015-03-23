@@ -1,5 +1,5 @@
 md-content(flex)
 	div(layout='column')
 		sv-aside-nav
-		sv-author-profile-nav
+		sv-author-profile-nav(ng-if='!!user')
 		div(ui-view='')
