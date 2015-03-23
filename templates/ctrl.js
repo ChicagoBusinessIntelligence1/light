@@ -3,7 +3,7 @@
 
     angular.module('#module#')
         .controller('#name#Ctrl', function ($scope) {
-
+            var #name# = this;
         });
 })();
 

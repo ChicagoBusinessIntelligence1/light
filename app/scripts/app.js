@@ -150,6 +150,11 @@
                     controller: "SvetLoginCtrl",
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
+			.state("app.test", {
+				url: "/test", 
+				controller:"TestCtrl as Test",
+				templateUrl: "scripts/auth/views/testCtrl.html"
+			})
 //#state
         });
 
