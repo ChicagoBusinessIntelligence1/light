@@ -60,17 +60,17 @@
                 })
                 .state("app.reader", {
                     abstract: true,
-                    controller: "ReaderCtrl",
+                    controller: "ReaderCtrl as reader",
                     templateUrl: "scripts/common/views/readerCtrl.html"
                 })
                 .state('app.reader.home', {
                     url: '/home',
-                    controller: 'HomeCtrl',
+                    controller: 'HomeCtrl as home',
                     templateUrl: 'scripts/sections/home/views/home.html'
                 })
                 .state("app.reader.politics", {
                     url: "/politics",
-                    controller: "PoliticsCtrl",
+                    controller: "PoliticsCtrl as politics",
                     templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
                 })
                 .state("app.reader.money", {
@@ -115,7 +115,7 @@
                 })
                 .state("app.reader.tags", {
                     url: "/tag/:id",
-                    controller: "ArticleCtrl",
+                    controller: "ArticleCtrl as article",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
                 .state("app.reader.pdf-archive", {
@@ -165,10 +165,10 @@
         };
     }).config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('grey',{
+            .primaryPalette('grey', {
                 'default': '900'
             })
-            .backgroundPalette('grey',{
+            .backgroundPalette('grey', {
                 'default': '50'
             })
             .accentPalette('red', {
