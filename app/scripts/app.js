@@ -152,6 +152,11 @@
                 })
 			
 			
+			.state("app.roman", {
+				url: "/roman", 
+				controller:"RomanCtrl as Roman",
+				templateUrl: "scripts/auth/views/romanCtrl.html"
+			})
 //#state
         });
 
