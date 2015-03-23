@@ -3,7 +3,8 @@
 
     angular.module('sections.money')
         .controller('MoneyCtrl', function ($scope, $location, NewsCategoriesServ) {
-            $scope.news = NewsCategoriesServ.getCategoryNews($location);
+            var money = this;
+            money.news = NewsCategoriesServ.getCategoryNews($location);
         });
 })();
 

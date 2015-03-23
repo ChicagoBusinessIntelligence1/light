@@ -26,7 +26,7 @@
         'sections.money',
         'sections.culture',
         'sections.society',
-        'sections.science',
+        'sections.international',
         'sections.archive',
         'sections.contact',
         'sections.subscription',
@@ -75,55 +75,49 @@
                 })
                 .state("app.reader.money", {
                     url: "/money",
-                    controller: "MoneyCtrl",
+                    controller: "MoneyCtrl as money",
                     templateUrl: "scripts/sections/money/views/moneyCtrl.html"
                 })
                 .state("app.reader.culture", {
                     url: "/culture",
-                    controller: "CultureCtrl",
+                    controller: "CultureCtrl as culture",
                     templateUrl: "scripts/sections/culture/views/cultureCtrl.html"
                 })
                 .state("app.reader.society", {
                     url: "/society",
-                    controller: "SocietyCtrl",
+                    controller: "SocietyCtrl as society",
                     templateUrl: "scripts/sections/society/views/societyCtrl.html"
                 })
-                .state("app.reader.science", {
+                .state("app.reader.international", {
                     url: "/international",
-                    controller: "ScienceCtrl",
-                    templateUrl: "scripts/sections/science/views/scienceCtrl.html"
+                    controller: "InternationalCtrl as international",
+                    templateUrl: "scripts/sections/international/views/internationalCtrl.html"
                 })
                 .state("app.reader.contact", {
                     url: "/contact",
-                    controller: "ContactCtrl",
+                    controller: "ContactCtrl as contact",
                     templateUrl: "scripts/sections/contact/views/contactCtrl.html"
                 })
                 .state("app.subscription", {
                     url: "/subscription",
-                    controller: "SubscriptionCtrl",
+                    controller: "SubscriptionCtrl as subscription",
                     templateUrl: "scripts/sections/subscription/views/subscriptionCtrl.html"
                 })
                 .state("app.classified", {
                     url: "/classified",
-                    controller: "ClassifiedCtrl",
+                    controller: "ClassifiedCtrl as classified",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                .state("app.reader.news", {
+                .state("app.reader.article", {
                     url: "/news/:id",
-                    controller: "SvetNewsCtrl",
-                    templateUrl: "scripts/common/views/svet-newsCtrl.html"
-                })
-                .state("app.reader.tags", {
-                    url: "/tag/:id",
                     controller: "ArticleCtrl as article",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
                 .state("app.reader.pdf-archive", {
                     url: "/pdf-archive",
-                    controller: "PdfArchiveCtrl",
+                    controller: "PdfArchiveCtrl as archive",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-
                 .state("app.login", {
                     abstract: true,
                     controller: "LoginCtrl as login",
@@ -131,23 +125,22 @@
                 })
                 .state("app.login.author-dashboard", {
                     url: "/author-dashboard",
-                    controller: "AuthorDashboardCtrl",
+                    controller: "AuthorDashboardCtrl as authorDashboard",
                     templateUrl: "scripts/login/authors/views/author-dashboardCtrl.html"
                 })
                 .state("app.login.author-articles", {
                     url: "/author-articles",
-                    controller: "AuthorArticlesCtrl",
+                    controller: "AuthorArticlesCtrl as author-articles",
                     templateUrl: "scripts/login/authors/views/author-articlesCtrl.html"
                 })
                 .state("app.login.create-article", {
                     url: "/create-article",
-                    controller: "CreateArticleCtrl",
+                    controller: "CreateArticleCtrl as createArticle",
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
-
                 .state("app.svet-login", {
                     url: "/svet-login",
-                    controller: "SvetLoginCtrl",
+                    controller: "SvetLoginCtrl as svetLogin",
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
 

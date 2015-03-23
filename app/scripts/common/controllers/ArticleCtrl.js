@@ -2,13 +2,9 @@
     'use strict';
 
     angular.module('common')
-        .controller('ArticleCtrl', function ($scope,$stateParams,$rootScope,$location,NewsCategoriesServ) {
+        .controller('ArticleCtrl', function ($scope, $stateParams, $rootScope) {
             var article = this;
-            var id = $stateParams.id;
-            article.tag = $rootScope.allCateg[id];
-
-            article.news =  NewsCategoriesServ.getCategoryNews($location);
-
+            article.news = $rootScope.allNews[$stateParams.id];
         });
 })();
 
