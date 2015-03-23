@@ -144,8 +144,6 @@
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
 
-
-
 //#state
         });
 
@@ -167,8 +165,8 @@
             .backgroundPalette('grey', {
                 'default': '50'
             })
-            .accentPalette('red', {
-                'default': '600',
+            .accentPalette('blue', {
+                'default': '700',
                 'hue-1': '500'
             });
     })
