@@ -4,17 +4,23 @@
     angular.module('#module#')
         .directive('#jname#', function () {
             return {
-                replace:true,
+                replace: true,
                 templateUrl: 'scripts/#moduleDirectirized#/directives/#dname#.html',
-                 bindToController: {
-                      someObject: '=',
-                      someString: '@',
-                      someExpr: '&'
-                    }
-                    controller: function () {
-                      this.name = 'Pascal';
-                    },
-                    controllerAs: 'ctrl'
+                scope: {},
+                bindToController: {
+                    someObject: '=',
+                    someString: '@',
+                    someExpr: '&'
+                },
+
+                controller: function ($scope) {
+                    var ctrl = this;
+
+                },
+
+                link: function ($scope, el, attrs) {
+
+                }
             };
         });
 })();
