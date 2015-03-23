@@ -237,11 +237,12 @@ module.exports = function (grunt) {
         var ctrl = grunt.file.read('templates/ctrl.js');
 
         var lname = cname;
+
         var name = lname.charAt(0).toUpperCase() + lname.substring(1);
 
         var ctrlr = ctrl.replace(/#name#/g, name)
             .replace(/#module#/g, module)
-            .replace(/#lname#/g, lname);
+            .replace(/#lname#/g, lname.toLowerCase());
 
 ////////////////
 
