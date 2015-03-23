@@ -150,14 +150,9 @@
                     controller: "SvetLoginCtrl",
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
-			
-			
-			.state("app.roman", {
-				url: "/roman", 
-				controller:"RomanCtrl as Roman",
-				templateUrl: "scripts/auth/views/romanCtrl.html"
-			})
-			
+
+
+
 //#state
         });
 
