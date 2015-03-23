@@ -8,6 +8,7 @@
                 replace: true,
                 scope: {},
                 link: function ($scope, element, attr) {
+                    $scope.object = {name:'Izya'};
 
                 }
             };

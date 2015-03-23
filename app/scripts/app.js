@@ -143,6 +143,9 @@
                     controller: "SvetLoginCtrl as svetLogin",
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
+
+
+
 //#state
         });
 
