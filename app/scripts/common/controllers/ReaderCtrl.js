@@ -3,6 +3,7 @@
 
     angular.module('common')
         .controller('ReaderCtrl', function ($scope) {
+            var reader = this;
 
         });
 })();

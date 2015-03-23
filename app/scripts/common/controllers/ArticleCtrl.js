@@ -3,10 +3,11 @@
 
     angular.module('common')
         .controller('ArticleCtrl', function ($scope,$stateParams,$rootScope,$location,NewsCategoriesServ) {
+            var article = this;
             var id = $stateParams.id;
-            $scope.tag = $rootScope.allCateg[id];
+            article.tag = $rootScope.allCateg[id];
 
-            $scope.news =  NewsCategoriesServ.getCategoryNews($location);
+            article.news =  NewsCategoriesServ.getCategoryNews($location);
 
         });
 })();

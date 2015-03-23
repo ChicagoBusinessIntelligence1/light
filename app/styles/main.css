@@ -306,6 +306,21 @@ md-warn {
 .cursor-p {
   cursor: pointer;
 }
+.bg-blue {
+  background-color: #00f;
+  color: #f5f5f5;
+/*flex-child(2)*/
+}
+.bg-green {
+  background-color: #008000;
+  color: #f5f5f5;
+/*flex-child(6)*/
+}
+.bg-red {
+  background-color: #f00;
+  color: #f5f5f5;
+/*flex-child(3)*/
+}
 body {
 font-family
   color: #444;
