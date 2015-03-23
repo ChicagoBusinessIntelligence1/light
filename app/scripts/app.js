@@ -159,7 +159,7 @@
         };
     }).config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('red', {
+            .primaryPalette('grey', {
                 'default': '900'
             })
             .backgroundPalette('grey', {
