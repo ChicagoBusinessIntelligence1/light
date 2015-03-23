@@ -6,11 +6,9 @@
 
         // modules
 
-
         'login',
         'login.authors',
         //'login.admins',
-
 
         'common.ad',
         'common.news',
@@ -126,7 +124,6 @@
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
 
-
                 .state("app.login", {
                     abstract: true,
                     controller: "LoginCtrl as login",
@@ -148,12 +145,11 @@
                     templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 
-
-			.state("app.svet-login", {
-				url: "/svet-login", 
-				controller:"SvetLoginCtrl",
-				templateUrl: "scripts/auth/views/svet-loginCtrl.html"
-			})
+                .state("app.svet-login", {
+                    url: "/svet-login",
+                    controller: "SvetLoginCtrl",
+                    templateUrl: "scripts/auth/views/svet-loginCtrl.html"
+                })
 //#state
         });
 
