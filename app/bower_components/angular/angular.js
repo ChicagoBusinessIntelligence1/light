@@ -11795,7 +11795,7 @@ function $LogProvider() {
           forEach(arguments, function(arg) {
             args.push(formatError(arg));
           });
-          //return logFn.apply(console, args);
+          return logFn.apply(console, args);
         };
       }
 

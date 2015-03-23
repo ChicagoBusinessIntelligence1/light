@@ -149,6 +149,11 @@
                 })
 
 
+			.state("app.svet-login", {
+				url: "/svet-login", 
+				controller:"SvetLoginCtrl",
+				templateUrl: "scripts/auth/views/svet-loginCtrl.html"
+			})
 //#state
         });
 

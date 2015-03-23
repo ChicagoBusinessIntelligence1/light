@@ -12,9 +12,10 @@
     "angular-ui-router": "0.2.13",
     "angular-material": "~0.8.1",
     "lumx": "~0.3.17",
-    "firebase": "2.2.2",
     "angular-toastr": "~1.0.2",
-    "bootstrap": "3.3.4"
+    "bootstrap": "3.3.4",
+    "firebase": "2.2.3",
+    "angularfire": "~1.0.0"
   },
   "devDependencies": {}
 }
