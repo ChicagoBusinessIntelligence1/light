@@ -160,11 +160,15 @@
         };
     }).config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('indigo')
-            .backgroundPalette('grey')
+            .primaryPalette('grey',{
+                'default': '900'
+            })
+            .backgroundPalette('grey',{
+                'default': '50'
+            })
             .accentPalette('red', {
                 'default': '600',
-                'hue-1': '400'
+                'hue-1': '500'
             });
     })
         .config(function ($mdThemingProvider) {
