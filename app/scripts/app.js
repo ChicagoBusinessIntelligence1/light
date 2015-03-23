@@ -75,7 +75,7 @@
                 })
                 .state("app.reader.money", {
                     url: "/money",
-                    controller: "MoneyCtrl",
+                    controller: "MoneyCtrl as money",
                     templateUrl: "scripts/sections/money/views/moneyCtrl.html"
                 })
                 .state("app.reader.culture", {
