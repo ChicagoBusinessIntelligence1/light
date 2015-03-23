@@ -420,6 +420,24 @@ md-sidenav.md-locked-open {
 .f-32 {
   font-size: 32px;
 }
+.f-40 {
+  font-size: 60px;
+}
+.svet-logo-s {
+  position: relative;
+  line-height: 70px;
+  font-size: 90px;
+  color: #fff;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+}
+.svet-logo-text {
+  position: relative;
+  top: -5px;
+  font-size: 26px;
+  color: #fff;
+  font-weight: 900;
+}
 .txt-white {
   color: #f5f5f5 !important;
 }
