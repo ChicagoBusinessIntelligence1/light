@@ -151,11 +151,7 @@
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
 			
-			.state("app.ramala", {
-				url: "/ramala", 
-				controller:"RamalaCtrl as Ramala",
-				templateUrl: "scripts/auth/views/ramalaCtrl.html"
-			})
+			
 //#state
         });
 
