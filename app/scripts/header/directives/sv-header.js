@@ -7,6 +7,7 @@
                 templateUrl: 'scripts/header/directives/sv-header.html',
                 replace: true,
                 link: function ($scope, element, attr) {
+                    element.css('z-index',100);
                 }
             };
         });
