@@ -134,40 +134,7 @@
     font-size: 10px !important;
   }
 }
-.footer {
-  background-color: #2b6fd8;
-  height: 60px;
-}
-.footer span,
-.footer a {
-  color: color-lighten;
-}
-.footer-content {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.copyright {
-  display: inline-block;
-  margin-top: 10px;
-}
-@media screen and (min-width: 992px) {
-  .light-footer {
-    padding: 10px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .light-footer {
-    padding-bottom: 30px !important;
-  }
-}
-.toolbar-g {
-  background-color: #efeff1 !important;
-}
-.h-footer {
-  color: #777;
-}
 .text-footer {
-  color: #777;
   display: block;
   font-size: 13px;
 }
@@ -448,6 +415,9 @@ md-sidenav.md-locked-open {
 .txt-grey {
   color: #d3d3d3;
 }
+.txt-red {
+  color: #ef5350;
+}
 .txt-fontGrey {
   color: #393939 !important;
 }
@@ -588,95 +558,6 @@ md-button .md-warn span {
 ***********************/
 .color-subheader {
   color: #777;
-}
-.grey {
-  background: #d3d3d3;
-}
-.green {
-  background: #b9f6ca;
-}
-.yellow {
-  background: #ffff8d;
-}
-.blue {
-  background: #84ffff;
-}
-.darkBlue {
-  background: #80d8ff;
-}
-.deepBlue {
-  background: #448aff;
-}
-.purple {
-  background: #b388ff;
-}
-.lightPurple {
-  background: #8c9eff;
-}
-.red {
-  background: #ff8a80;
-}
-.pink {
-  background: #ff80ab;
-}
-.coral {
-  background: #ff7f50;
-}
-md-grid-list {
-  margin: 8px;
-}
-md-grid-list .gray {
-  background: #f5f5f5;
-}
-md-grid-list .green {
-  background: #b9f6ca;
-}
-md-grid-list .yellow {
-  background: #ffff8d;
-}
-md-grid-list .blue {
-  background: #84ffff;
-}
-md-grid-list .darkBlue {
-  background: #3f51b5;
-}
-md-grid-list .deepBlue {
-  background: #448aff;
-}
-md-grid-list .purple {
-  background: #b388ff;
-}
-md-grid-list .lightPurple {
-  background: #8c9eff;
-}
-md-grid-list .red {
-  background: #ff8a80;
-}
-md-grid-list .pink {
-  background: #ff80ab;
-}
-md-grid-list md-grid-tile {
-  -webkit-transition: all 300ms ease-out 50ms;
-  -moz-transition: all 300ms ease-out 50ms;
-  -o-transition: all 300ms ease-out 50ms;
-  -ms-transition: all 300ms ease-out 50ms;
-  transition: all 300ms ease-out 50ms;
-}
-md-grid-list md-grid-tile md-icon {
-  padding-bottom: 32px;
-}
-md-grid-list md-grid-tile md-grid-tile-footer {
-  background: rgba(0,0,0,0.68);
-  height: 36px;
-}
-md-grid-list md-grid-tile-footer figcaption {
-  width: 100%;
-}
-md-grid-list md-grid-tile-footer figcaption h3 {
-  margin: 0px;
-  font-weight: 700;
-  width: 100%;
-  text-align: center;
 }
 /**********************
  =Weather Widget
