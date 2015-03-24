@@ -257,19 +257,20 @@ module.exports = function (grunt) {
             '\t\t\t})\r\n';
 
         var apath = 'app/scripts/app.js';
+        var routesPath = 'app/scripts/routes.js';
+
         var tpath = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.jade';
         var tpathHtml = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html';
+
         var app = grunt.file.read(apath);
+        var routes = grunt.file.read(routesPath);
+
         if (rm) {
-            //app = removeFromInside(app, ref);
-            //app = removeFromInside(app, reg);
-            app = removeFromInside(app, state);
+            routes = removeFromInside(routes, state);
         }
         else {
 
-            //app = enterInside(app, '//#ctrl', reg);
-            //app = enterInside(app, '//#ref', ref);
-            app = enterInside(app, '//#state', state);
+            routes = enterInside(routes, '//#state', state);
         }
 
         var placeToInsert = module.split('.');
@@ -308,7 +309,8 @@ module.exports = function (grunt) {
             grunt.file.write(tpath, '.well content');
             grunt.file.write(tpathHtml, '<div class="well">content</div>');
         }
-        grunt.file.write(apath, app);
+        grunt.file.write(routesPath, routes);
+
         grunt.file.write(ipath, indf);
         grunt.task.run('addcommit');
     })
