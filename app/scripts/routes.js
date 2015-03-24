@@ -1,3 +1,4 @@
+(function () {
     'use strict'
 
     angular.module('app')
@@ -105,5 +106,8 @@
                     templateUrl: "scripts/auth/views/svet-loginCtrl.html"
                 })
 
+				
+//#state'
         });
 
+})();
