@@ -1,5 +1,5 @@
 md-toolbar.toolbar-red(layout='row' layout-padding='' layout-align='space-between center')
-    md-button.menu(hide-gt-sm='', ng-click='ul.toggleList()', aria-label='Show User List')
+    md-button.menu(hide-gt-lg='', ng-click='main.toggleLeft()', aria-label='Show User List')
         md-icon(md-svg-icon='img/svg/menu.svg')
     div
         span.display-inline-block.svet-logo-s S
@@ -7,4 +7,6 @@ md-toolbar.toolbar-red(layout='row' layout-padding='' layout-align='space-betwee
         sv-new-dir(some-string = 'Hello')
     div
         sv-auth-btn
+    md-button.menu(hide-gt-lg='', ng-click='main.toggleRight()', aria-label='Show User List')
+        md-icon(md-svg-icon='img/svg/dots-vertical.svg')
 
