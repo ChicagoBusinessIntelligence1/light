@@ -1,12 +1,13 @@
 md-toolbar.toolbar-red(layout='row' layout-padding='' layout-align='space-between center')
-    md-button.menu(hide-gt-lg='', ng-click='main.toggleLeft()', aria-label='Show User List')
-        md-icon(md-svg-icon='img/svg/menu.svg')
-    div
-        span.display-inline-block.svet-logo-s S
-        span.display-inline-block.svet-logo-text VET
-        sv-new-dir(some-string = 'Hello')
-    div
+    div(layout='row' layout-align="start center")
+        md-button.menu(hide-gt-lg='', ng-click='main.toggleLeft()', aria-label='Рубрики Новостей')
+            md-icon(md-svg-icon='img/svg/menu.svg')
+        div.margin-left-10
+            span.display-inline-block.svet-logo-s S
+            span.display-inline-block.svet-logo-text VET
+            sv-new-dir(some-string = 'Hello')
+    div(layout='row')
         sv-auth-btn
-    md-button.menu(hide-gt-lg='', ng-click='main.toggleRight()', aria-label='Show User List')
-        md-icon(md-svg-icon='img/svg/dots-vertical.svg')
+        md-button.menu(hide-gt-lg='', ng-click='main.toggleRight()', aria-label='Наши Сервисы')
+            md-icon(md-svg-icon='img/svg/dots-vertical.svg')
 
