@@ -327,6 +327,9 @@ font-family
   font: Verdana, Helvetica Neue, Helvetica, Arial;
   font-size: 0.8em;
 }
+.svet-secondary {
+  background-color: #eee;
+}
 a {
   cursor: pointer !important;
 }
@@ -347,9 +350,6 @@ md-sidenav.md-locked-open {
 }
 .display-inline-block {
   display: inline-block;
-}
-.label-default {
-  background-color: #efeff1;
 }
 .bold {
   font-weight: bold;
