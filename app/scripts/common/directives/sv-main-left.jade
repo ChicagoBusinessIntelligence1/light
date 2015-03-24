@@ -7,8 +7,11 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked
 		sv-search-news
 	md-content.md-padding(ng-controller='LeftCtrl')
 		sv-news-sections-nav
+	md-content.md-padding
+		sv-nav-link(url='app.profile.author-dashboard' title='Author Profile' icon='account-star')
 	md-content.md-padding(ng-controller='LeftCtrl')
 		sv-archive-nav
+
 	div(flex-container='row')
 		div(flex-item)
 			.card.bgc-blue-grey-50.margin-bottom-10.text-center(class='p+')

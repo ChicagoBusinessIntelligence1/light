@@ -6,6 +6,7 @@
 
         // modules
         'common.article',
+        'common.authors',
         'widgets',
         'header',
         'aside',
@@ -133,11 +134,11 @@
                     controller: "ScienceCtrl",
                     templateUrl: "scripts/sections/science/views/scienceCtrl.html"
                 })
-                .state("app.archive", {
-                    url: "/archive",
-                    controller: "ArchiveCtrl",
-                    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
-                })
+                //.state("app.archive", {
+                //    url: "/archive",
+                //    controller: "ArchiveCtrl",
+                //    templateUrl: "scripts/sections/archive/views/archiveCtrl.html"
+                //})
                 .state("app.contact", {
                     url: "/contact",
                     controller: "ContactCtrl",
@@ -153,16 +154,6 @@
                     controller: "ClassifiedCtrl",
                     templateUrl: "scripts/sections/classified/views/classifiedCtrl.html"
                 })
-                //.state("app.politics", {
-                //    url: "/politics",
-                //    controller: "Politics",
-                //    templateUrl: "scripts/sections/politics/views/politicsCtrl.html"
-                //})
-                //
-                //.state("app.politics.article", {
-                //    url: "/:id",
-                //    templateUrl: "scripts/sections/politics/views/politics-article.html"
-                //})
                 .state("app.news", {
                     url: "/news/:id",
                     controller: "SvetNewsCtrl",
@@ -173,21 +164,30 @@
                     controller: "ArticleCtrl",
                     templateUrl: "scripts/common/views/articleCtrl.html"
                 })
-                .state("app.track", {
-                    url: "/track",
-                    controller: "TrackCtrl",
-                    templateUrl: "scripts/sections/test/views/trackCtrl.html"
-                })
-
                 .state("app.pdf-archive", {
                     url: "/pdf-archive",
                     controller: "PdfArchiveCtrl",
                     templateUrl: "scripts/common/views/pdf-archiveCtrl.html"
                 })
-                .state("pdf-issue", {
-                    url: "/pdf-view/:issueId",
-                    controller: "PdfViewCtrl",
-                    templateUrl: "scripts/common/views/pdf-viewCtrl.html"
+                .state("app.profile", {
+                    abstract: true,
+                    controller: "ProfileCtrl",
+                    templateUrl: "scripts/common/authors/views/profileCtrl.html"
+                })
+                .state("app.profile.author-dashboard", {
+                    url: "/author-dashboard",
+                    controller: "AuthorDashboardCtrl",
+                    templateUrl: "scripts/common/authors/views/author-dashboardCtrl.html"
+                })
+                .state("app.profile.author-articles", {
+                    url: "/author-articles",
+                    controller: "AuthorArticlesCtrl",
+                    templateUrl: "scripts/common/authors/views/author-articlesCtrl.html"
+                })
+                .state("app.profile.create-article", {
+                    url: "/create-article",
+                    controller: "CreateArticleCtrl",
+                    templateUrl: "scripts/common/article/views/create-articleCtrl.html"
                 })
 //#state
         });

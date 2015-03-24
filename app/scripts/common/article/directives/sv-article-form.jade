@@ -1,0 +1,24 @@
+div(layout='column')
+	md-content.md-padding
+		span.display-block.fs-display-1.txt-fontGrey(class='mt+') New Article
+		md-divider(class='mt+')
+	md-content.md-padding
+		form(name='userForm')
+			div(layout='', layout-sm='column')
+				md-input-container(style='width:80%')
+					label Author
+					input(ng-model='user.author', disabled='')
+				md-input-container(flex='')
+					label Submission Date
+					input(type='date', ng-model='user.submissionDate')
+			div(layout='', layout-sm='column')
+				md-input-container(flex='')
+					label Article Title
+					input(ng-model='user.title')
+			md-input-container(flex='')
+				label Article Content
+				textarea(ng-model='user.body', columns='1')
+		md-button.md-raised.md-hue-1
+			i.mdi.mdi-send
+			| &nbsp Submit
+
