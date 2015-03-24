@@ -250,11 +250,11 @@ module.exports = function (grunt) {
 ////////////////
 
         // register
-        var state = '\t\t\t.state("app.' + _.str.dasherize(lname) + '", {\r\n' +
-            '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
-            '\t\t\t\tcontroller:"' + name + 'Ctrl as '+ nameCamel+'",\r\n' +
-            '\t\t\t\ttemplateUrl: "scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html"\r\n' +
-            '\t\t\t})\r\n';
+        var state = '\t\t\t\t.state("app.' + _.str.dasherize(lname) + '", {\r\n' +
+            '\t\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
+            '\t\t\t\t\tcontroller:"' + name + 'Ctrl as '+ nameCamel+'",\r\n' +
+            '\t\t\t\t\ttemplateUrl: "scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html"\r\n' +
+            '\t\t\t\t})\r\n';
 
         var apath = 'app/scripts/app.js';
         var routesPath = 'app/scripts/routes.js';
