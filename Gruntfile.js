@@ -241,6 +241,7 @@ module.exports = function (grunt) {
         var name = lname.charAt(0).toUpperCase() + lname.substring(1);
         var nameCamel =lname.charAt(0).toLowerCase() + lname.substring(1);
 
+        lname = nameCamel;
 
         var ctrlr = ctrl.replace(/#name#/g, name)
             .replace(/#module#/g, module)
