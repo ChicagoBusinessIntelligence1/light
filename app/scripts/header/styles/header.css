@@ -17,8 +17,20 @@
     font-size: 12px !important;
   }
 }
-.header-logo {
-  margin-bottom: 0px;
+.svet-logo-s {
+  position: relative;
+  line-height: 70px;
+  font-size: 90px;
+  color: #ef5350;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+}
+.svet-logo-text {
+  position: relative;
+  top: -5px;
+  font-size: 26px;
+  color: #ef5350;
+  font-weight: 900;
 }
 .navbar-brand {
   display: inline-block;
