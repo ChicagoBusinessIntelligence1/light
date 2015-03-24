@@ -6,7 +6,9 @@
             return {
                 templateUrl: 'scripts/header/directives/sv-header.html',
                 replace: true,
+                scope: {},
                 link: function ($scope, element, attr) {
+
                 }
             };
         });

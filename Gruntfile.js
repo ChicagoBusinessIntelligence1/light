@@ -17,8 +17,6 @@ var enterInside = function (target, before, insert) {
     try {
         var temp = 0;
         before.forEach(function (txt) {
-            // need to have a space in order not to be included in submodules. eg. common not to common.test
-            txt+=' ';
             temp = target.indexOf(txt, temp);
         });
         start = target.indexOf('>', temp) + 1;
@@ -234,50 +232,44 @@ module.exports = function (grunt) {
 //     C        //
         var d = 'app/scripts/' + moduleDirectirized + '/controllers/';
         var t = 'Ctrl' + '.js';
-        var ctrl = grunt.file.read('templates/ctrl.js');
+        var ctrl = grunt.file.read('templates/ctrl.tpl');
 
         var lname = cname;
-
         var name = lname.charAt(0).toUpperCase() + lname.substring(1);
-        var nameCamel =lname.charAt(0).toLowerCase() + lname.substring(1);
-
-        lname = nameCamel;
 
         var ctrlr = ctrl.replace(/#name#/g, name)
             .replace(/#module#/g, module)
-            .replace(/#lname#/g, nameCamel);
+            .replace(/#lname#/g, lname);
 
 ////////////////
 
 ////////////////
 
         // register
-        var state = '\t\t\t\t.state("app.' + _.str.dasherize(lname) + '", {\r\n' +
-            '\t\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
-            '\t\t\t\t\tcontroller:"' + name + 'Ctrl as '+ nameCamel+'",\r\n' +
-            '\t\t\t\t\ttemplateUrl: "scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html"\r\n' +
-            '\t\t\t\t})\r\n';
+        var state = '\t\t\t.state("app.' + _.str.dasherize(lname) + '", {\r\n' +
+            '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
+            '\t\t\t\tcontroller:"' + name + 'Ctrl",\r\n' +
+            '\t\t\t\ttemplateUrl: "scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html"\r\n' +
+            '\t\t\t})\r\n';
 
         var apath = 'app/scripts/app.js';
-        var routesPath = 'app/scripts/routes.js';
-
         var tpath = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.jade';
         var tpathHtml = 'app/scripts/' + moduleDirectirized + '/views/' + _.str.dasherize(lname) + 'Ctrl.html';
-
         var app = grunt.file.read(apath);
-        var routes = grunt.file.read(routesPath);
-
         if (rm) {
-            routes = removeFromInside(routes, state);
+            //app = removeFromInside(app, ref);
+            //app = removeFromInside(app, reg);
+            app = removeFromInside(app, state);
         }
         else {
 
-            routes = enterInside(routes, '//#state', state);
+            //app = enterInside(app, '//#ctrl', reg);
+            //app = enterInside(app, '//#ref', ref);
+            app = enterInside(app, '//#state', state);
         }
 
         var placeToInsert = module.split('.');
         var before = placeToInsert || '<!-- links -->';
-        console.log(before);
         /////////////////// index
         var ipath = 'app/index.html';
         var src = '\r\n<script src="scripts/' + moduleDirectirized + '/controllers/' + name + 'Ctrl.js"></script>';
@@ -311,8 +303,7 @@ module.exports = function (grunt) {
             grunt.file.write(tpath, '.well content');
             grunt.file.write(tpathHtml, '<div class="well">content</div>');
         }
-        grunt.file.write(routesPath, routes);
-
+        grunt.file.write(apath, app);
         grunt.file.write(ipath, indf);
         grunt.task.run('addcommit');
     })
@@ -339,7 +330,7 @@ module.exports = function (grunt) {
 //     C        //
         var d = 'app/scripts/' + moduleDirectirized + '/services/';
         var t = 'Serv.js';
-        var serv = grunt.file.read('templates/serv.js');
+        var serv = grunt.file.read('templates/serv.tpl');
 
         //var lname = sname.toLowerCase();
         var lname = sname;
@@ -439,7 +430,7 @@ module.exports = function (grunt) {
         var d = 'app/scripts/' + moduleDirectirized + '/filters/';
         var t = '.js';
 
-        var filt = grunt.file.read('templates/filt.js');
+        var filt = grunt.file.read('templates/filt.tpl');
 
         var name = fname.charAt(0).toUpperCase() + fname.substring(1);
         var jname = name.charAt(0).toLowerCase() + name.substring(1);
@@ -505,7 +496,7 @@ module.exports = function (grunt) {
         var before = placeToInsert || '<!-- links -->';
 
         var d = 'app/scripts/' + moduleDirectirized + '/directives/';
-        var directive = grunt.file.read('templates/dir.js');
+        var directive = grunt.file.read('templates/dir.tpl');
         dname = 'sv-' + _.str.dasherize(dname);
         var dnames = dname.toLowerCase().split('-');
 

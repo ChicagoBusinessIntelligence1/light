@@ -1,13 +1,6 @@
 /**********************
      =top-navbar
 ***********************/
-.toolbar-red {
-  background: -webkit-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
-  background: -moz-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
-  background: -o-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
-  background: -ms-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
-  background: linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
-}
 .first-newspaper {
   margin-bottom: 10px;
 }
@@ -17,20 +10,8 @@
     font-size: 12px !important;
   }
 }
-.svet-logo-s {
-  position: relative;
-  line-height: 70px;
-  font-size: 90px;
-  color: #ef5350;
-  font-weight: 800;
-  font-family: "Roboto", sans-serif;
-}
-.svet-logo-text {
-  position: relative;
-  top: -5px;
-  font-size: 26px;
-  color: #ef5350;
-  font-weight: 900;
+.header-logo {
+  margin-bottom: 0px;
 }
 .navbar-brand {
   display: inline-block;

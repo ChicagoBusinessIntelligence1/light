@@ -1,4 +1,4 @@
-/*! @license Firebase v2.2.3
+/*! @license Firebase v2.2.2
     License: https://www.firebase.com/terms/terms-of-service.html */
 var CLOSURE_NO_DEPS = true;
 var COMPILED = false;
@@ -8858,7 +8858,7 @@ fb.core.SparseSnapshotTree.prototype.forEachChild = function(func) {
   }
 };
 goog.provide("fb.login.Constants");
-fb.login.Constants = {SESSION_PERSISTENCE_KEY_PREFIX:"session", DEFAULT_SERVER_HOST:"auth.firebase.com", SERVER_HOST:"auth.firebase.com", API_VERSION:"v2", POPUP_PATH_TO_CHANNEL:"/auth/channel", POPUP_RELAY_FRAME_NAME:"__winchan_relay_frame", POPUP_CLOSE_CMD:"die", JSONP_CALLBACK_NAMESPACE:"__firebase_auth_jsonp", REDIR_REQUEST_ID_KEY:"redirect_request_id", REDIR_REQUEST_COMPLETION_KEY:"__firebase_request_key", REDIR_CLIENT_OPTIONS_KEY:"redirect_client_options", INTERNAL_REDIRECT_SENTINAL_PATH:"/blank/page.html",
+fb.login.Constants = {SESSION_PERSISTENCE_KEY_PREFIX:"session", DEFAULT_SERVER_HOST:"auth.firebase.com", SERVER_HOST:"auth.firebase.com", API_VERSION:"v2", POPUP_PATH_TO_CHANNEL:"/auth/channel", POPUP_RELAY_FRAME_NAME:"__winchan_relay_frame", POPUP_CLOSE_CMD:"die", JSONP_CALLBACK_NAMESPACE:"__firebase_auth_jsonp", REDIR_REQUEST_ID_KEY:"redirect_request_id", REDIR_REQUEST_COMPLETION_KEY:"__firebase_request_key", REDIR_CLIENT_OPTIONS_KEY:"redirect_client_options", INTERNAL_REDIRECT_SENTINAL_PATH:"/blank/page.html", 
 CLIENT_OPTION_SESSION_PERSISTENCE:"remember", CLIENT_OPTION_REDIRECT_TO:"redirectTo"};
 goog.provide("fb.login.RequestInfo");
 goog.require("fb.login.Constants");
@@ -9573,7 +9573,7 @@ fb.login.transports.JSONP.prototype.writeScriptTag_ = function(id, url, cb) {
   }, 0);
 };
 fb.login.transports.JSONP["isAvailable"] = function() {
-  return!NODE_CLIENT;
+  return!NODE_CLIENT && !fb.login.util.environment.isMobileCordova();
 };
 fb.login.transports.JSONP.prototype.classification = function() {
   return "json";
@@ -10314,7 +10314,7 @@ FirebaseIFrameScriptHolder.prototype.addTag = function(url, loadCB) {
           }
         };
         newScript.onerror = function() {
-          //fb.core.util.log("Long-poll script failed to load: " + url);
+          fb.core.util.log("Long-poll script failed to load: " + url);
           self.sendNewPolls = false;
           self.close();
         };
@@ -13018,5 +13018,5 @@ Firebase.INTERNAL = fb.api.INTERNAL;
 Firebase.Context = fb.core.RepoManager;
 Firebase.TEST_ACCESS = fb.api.TEST_ACCESS;
 
-Firebase.SDK_VERSION = '2.2.3';
+Firebase.SDK_VERSION = '2.2.2';
 

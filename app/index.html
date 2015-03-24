@@ -8,19 +8,19 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="bower_components/angular-material/modules/css/angular-material-layout.css">
 
 
     <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
 
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Sintony:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/index-container.css">
 
     <!--<link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>-->
+    <!--<link rel="stylesheet" href="bower_components/jquery-ui/ui">-->
     <!--<link rel="stylesheet" href="styles/kingmain.css">-->
 
     <!-- endbuild -->
@@ -31,56 +31,33 @@
 <body layout="column" flex>
 <div ui-view></div>
 
-<!--<script src="http://affddl.automotive.com/widgets/gas/2/gas.js"></script>-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
 <script src="bower_components/velocity/velocity.js"></script>
 <script src="bower_components/velocity/velocity.ui.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/lumx/dist/lumx.js"></script>
-<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/raphael/raphael.js"></script>
 <script src="bower_components/firebase/firebase.js"></script>
-<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="scripts/app.js"></script>
-<script src="scripts/routes.js"></script>
-
-<script src="scripts/settings/constants.js"></script>
-<script src="scripts/settings/colors.js"></script>
 
 <!-- MODULES-->
-
-<!-- common.ad -->
-<script src="scripts/common/ad/adIndex.js"></script>
-<script src="scripts/common/ad/directives/sv-main-section-ad.js"></script>
-<script src="scripts/common/ad/directives/sv-aside-ad.js"></script>
-<script src="scripts/common/ad/directives/sv-ad-mb-bank.js"></script>
-
-<!-- common.news -->
-<script src="scripts/common/news/newsIndex.js"></script>
-<script src="scripts/common/news/directives/sv-news-title.js"></script>
-
-<!-- login -->
-<script src="scripts/login/loginIndex.js"></script>
-<script src="scripts/login/controllers/LoginCtrl.js"></script>
-
-<!-- login.authors -->
-<script src="scripts/login/authors/authorsIndex.js"></script>
-<script src="scripts/login/authors/controllers/AuthorArticlesCtrl.js"></script>
-<script src="scripts/login/authors/controllers/AuthorDashboardCtrl.js"></script>
-<script src="scripts/login/controllers/LoginCtrl.js"></script>
-<script src="scripts/login/authors/directives/sv-dashboard-articles.js"></script>
-<script src="scripts/login/authors/directives/sv-author-profile-nav.js"></script>
 
 
 <!-- widgets -->
@@ -93,11 +70,10 @@
 
 <!-- common -->
 <script src="scripts/common/commonIndex.js"></script>
-<script src="scripts/common/controllers/ReaderCtrl.js"></script>
-<script src="scripts/common/directives/sv-aside-nav.js"></script>
 <script src="scripts/common/controllers/PdfViewCtrl.js"></script>
 <script src="scripts/common/directives/sv-archive-nav.js"></script>
 <script src="scripts/common/controllers/PdfArchiveCtrl.js"></script>
+<script src="scripts/common/controllers/SvetNewsCtrl.js"></script>
 <script src="scripts/common/directives/sv-section-news.js"></script>
 <script src="scripts/common/services/NewsCategoriesServ.js"></script>
 <script src="scripts/common/controllers/ArticleCtrl.js"></script>
@@ -110,16 +86,23 @@
 <script src="scripts/common/controllers/MainCtrl.js"></script>
 <script src="scripts/common/directives/sv-search-news.js"></script>
 
+<!-- article -->
+<script src="scripts/common/article/directives/sv-article-thumb.js"></script>
+<script src="scripts/common/article/directives/sv-article-thumb-second.js"></script>
+<script src="scripts/common/article/directives/sv-comment.js"></script>
+<script src="scripts/common/article/directives/sv-one-article.js"></script>
 
 <!-- news-->
 <script src="scripts/common/news/directives/sv-home-main-news.js"></script>
 <script src="scripts/common/news/directives/sv-home-second-news.js"></script>
 <script src="scripts/common/news/directives/sv-news-toolbar.js"></script>
 
+<!-- ad -->
+<script src="scripts/common/ad/directives/sv-main-section-ad.js"></script>
+<script src="scripts/common/ad/directives/sv-aside-ad.js"></script>
 
 <!-- auth -->
 <script src="scripts/auth/authIndex.js"></script>
-<script src="scripts/auth/controllers/SvetLoginCtrl.js"></script>
 <script src="scripts/auth/directives/sv-auth-dropdown.js"></script>
 <script src="scripts/auth/directives/sv-auth-icon.js"></script>
 <script src="scripts/auth/directives/sv-svg-large.js"></script>
@@ -161,9 +144,9 @@
 <script src="scripts/sections/society/societyIndex.js"></script>
 <script src="scripts/sections/society/controllers/SocietyCtrl.js"></script>
 
-<!--international-->
-<script src="scripts/sections/international/internationalIndex.js"></script>
-<script src="scripts/sections/international/controllers/internationalCtrl.js"></script>
+<!--science-->
+<script src="scripts/sections/science/scienceIndex.js"></script>
+<script src="scripts/sections/science/controllers/ScienceCtrl.js"></script>
 
 <!--archive-->
 <script src="scripts/sections/archive/archiveIndex.js"></script>
@@ -187,16 +170,7 @@
 
 <!-- common.article -->
 <script src="scripts/common/article/articleIndex.js"></script>
-<script src="scripts/common/article/directives/sv-article-tags.js"></script>
-<script src="scripts/common/article/directives/sv-article-breadcrumb.js"></script>
-<script src="scripts/common/article/directives/sv-social-share.js"></script>
 <script src="scripts/common/article/directives/sv-article-thumb-main.js"></script>
-<script src="scripts/common/article/directives/sv-article-form.js"></script>
-<script src="scripts/common/article/controllers/CreateArticleCtrl.js"></script>
-<script src="scripts/common/article/directives/sv-article-thumb.js"></script>
-<script src="scripts/common/article/directives/sv-article-thumb-second.js"></script>
-<script src="scripts/common/article/directives/sv-comment.js"></script>
-<script src="scripts/common/article/directives/sv-one-article.js"></script>
 <!-- links -->
 <!-- endbuild -->
 

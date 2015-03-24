@@ -1,16 +1,32 @@
 div(layout='column' flex='')
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
-		sv-article-breadcrumb
+		div(layout='row' layout-align='start end')
+			a.fs-caption.breadcrumb-section Section Name
+			span &nbsp / &nbsp
+			span.fs-caption.display-block {{title|Title:15}}
 	div.margin-top-8.margin-bottom-10.margin-left-5(flex='')
-		sv-article-tags
+		ul.list-inline
+			span.fs-caption Теги:
+			li(ng-repeat='s in sections track by $index')
+				.text-subheader.label.label-default {{s}}
 	.light-margin-5(flex='')
 		.card
 			.light-margin
 				span.fs-display-1.display-block {{title}}
-				span.fs-caption.display-block.margin-bottom-5 Svet Media Group
+				.margin-bottom-5
+					span.fs-caption.display-block Svet Media Group
 				div(layout='row' layout-align='space-between')
-					.margin-bottom-5(flex="80")
-						sv-social-share
+					div(flex="80")
+						ul.list-inline.list-unstyled.margin-bottom-5
+							li
+								img(src="../img/social/fb-share.png" lx-ripple lx-tooltip="Поделиться")
+							li
+								img(src="../img/social/google-share.png" lx-ripple lx-tooltip="Поделиться")
+							li
+								img(src="../img/social/twitter-share.png" lx-ripple lx-tooltip="Поделиться" )
+							li
+								img(src="../img/social/linkedin-share.png" lx-ripple lx-tooltip="Поделиться")
+							li
 					div(flex="20")
 						span.display-block.text-right.color-subheader(lx-ripple lx-tooltip="Просмотры")
 							i.icon.icon--s.icon--flat.mdi.mdi-eye
@@ -18,6 +34,9 @@ div(layout='column' flex='')
 					img(ng-src="{{img}}")
 				div.light-padding-5.margin-bottom-15
 					p.fs-body-2 {{body}}
-				div.light-padding-5.margin-bottom-15
-					span.display-block.fs-caption Автор:
-					span.display-block.fs-caption Дата публикации: 18.03.2015
+	.light-margin-5(flex='')
+		img(src="../img/ad/mb-logo.jpg")
+	.light-margin-5(flex='')
+		md-toolbar.bgc-blue-grey-50.toolbar-blue-grey
+			h1.md-toolbar-tools.txt-fontGrey Comments
+		sv-comment
