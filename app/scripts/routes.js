@@ -107,11 +107,7 @@
                 })
 
 				
-				.state("app.controller", {
-					url: "/controller", 
-					controller:"ControllerCtrl as controller",
-					templateUrl: "scripts/auth/views/controllerCtrl.html"
-				})
+				
 //#state'
         });
 
