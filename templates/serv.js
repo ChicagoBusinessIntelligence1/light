@@ -4,14 +4,13 @@
     angular.module('#module#')
         .factory('#name#Serv', function ($q) {
             return {
+                getSync: function () {
+
+                },
                 get: function () {
-                    function resolve () {
+                    return $q(function (resolve, reject) {
 
-                    }
-                    function reject () {
-
-                    }
-                    return $q(resolve, reject);
+                    });
                 }
             };
         });

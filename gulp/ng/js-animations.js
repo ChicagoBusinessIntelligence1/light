@@ -29,7 +29,7 @@ var argv = require('yargs')
 var rm = argv.rm;
 var cname = argv.cname;
 
-var initialInjection = 'js-animations.tpl';
+var initialInjection = 'js-animations.js';
 var injection = templates + initialInjection;
 var injectLine;
 var fs = require('fs')
