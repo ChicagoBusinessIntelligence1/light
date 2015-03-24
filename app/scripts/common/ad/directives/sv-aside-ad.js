@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('common.ad')
+    angular.module('common')
         .directive('svAsideAd', function () {
             return {
                 templateUrl: 'scripts/common/ad/directives/sv-aside-ad.html',

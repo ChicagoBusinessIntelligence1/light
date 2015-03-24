@@ -50,7 +50,6 @@ angular.module('lumx.dropdown', [])
     {
         var dropdown,
             dropdownMenu;
-        var dropdownMenuHeight;
 
         $scope.isOpened = false;
         $scope.isDropped = false;
@@ -92,122 +91,73 @@ angular.module('lumx.dropdown', [])
             });
         }
 
-        function fromTop(toTop)
+        function setDropdownMenuCss()
         {
-            if (angular.isUndefined($scope.overToggle) && angular.isDefined($scope.fromTop))
-            {
-                return $scope.fromTop === 'true';
-            }
+            var top,
+                bottom,
+                left = 'auto',
+                right = 'auto';
 
-            if ($scope.overToggle === 'true')
+            if (angular.isDefined($scope.fromTop))
             {
-                return !toTop;
+                top = dropdown.offset().top;
+                bottom = $window.innerHeight - dropdown.offset().top;
             }
             else
             {
-                return toTop;
+                top = dropdown.offset().top + dropdown.outerHeight();
+                bottom = $window.innerHeight - dropdown.offset().top - dropdown.outerHeight();
             }
-        }
 
-        function setDropdownMenuCss()
-        {
-            var dropdownMenuWidth = dropdownMenu.outerWidth();
-            dropdownMenuHeight = dropdownMenu.outerHeight();
-            var origin = {
-                x: dropdown.offset().left,
-                y: dropdown.offset().top + dropdown.outerHeight()
-            };
-            var width = dropdownMenuWidth;
-            var height, bottomOffset, topOffset;
+            if ($scope.position === 'left')
+            {
+                left = dropdown.offset().left;
+            }
+            else if ($scope.position === 'right')
+            {
+                right = $window.innerWidth - (dropdown.offset().left + dropdown.outerWidth());
+            }
+            else if ($scope.position === 'center')
+            {
+                left = (dropdown.offset().left - (dropdownMenu.outerWidth() / 2)) + (dropdown.outerWidth() / 2);
+            }
+
+            if ($scope.direction === 'up')
+            {
+                dropdownMenu.css(
+                    {
+                        left: left,
+                        right: right,
+                        bottom: bottom
+                    });
+            }
+            else
+            {
+                dropdownMenu.css(
+                {
+                    left: left,
+                    right: right,
+                    top: top
+                });
+            }
 
             if (angular.isDefined($scope.width))
             {
                 if ($scope.width === 'full')
                 {
-                    width = dropdown.outerWidth();
+                    dropdownMenu.css('width', dropdown.outerWidth());
                 }
                 else
                 {
-                    width = dropdown.outerWidth() + parseInt($scope.width);
-                }
-            }
-
-            if ($scope.position === 'right')
-            {
-                origin.x = $window.innerWidth - (dropdown.offset().left + dropdown.outerWidth());
-            }
-            else if ($scope.position === 'center')
-            {
-                origin.x = dropdown.offset().left + (dropdown.outerWidth() - width) / 2;
-            }
-
-            if (origin.y + dropdownMenuHeight >= $window.innerHeight && origin.y - dropdownMenuHeight > 0)
-            { // To top
-                bottomOffset = fromTop(true) ? dropdown.outerHeight() : 0;
-
-                if (bottomOffset && origin.y - bottomOffset - dropdownMenuHeight <= 0)
-                {
-                    height = origin.y - bottomOffset - 8;
-                }
-
-                dropdownMenu.css(
-                {
-                    left: $scope.position !== 'right' ? origin.x : undefined,
-                    right: $scope.position === 'right' ? origin.x : undefined,
-                    bottom: $window.innerHeight - origin.y + bottomOffset,
-                    width: width,
-                    height: height
-                });
-            }
-            else if (origin.y + dropdownMenuHeight < $window.innerHeight)
-            { // To bottom
-                topOffset = fromTop(false) ? -dropdown.outerHeight() : 0;
-
-                dropdownMenu.css(
-                {
-                    left: $scope.position !== 'right' ? origin.x : undefined,
-                    right: $scope.position === 'right' ? origin.x : undefined,
-                    top: origin.y + topOffset,
-                    width: width
-                });
-            }
-            else // Dropdown too big, check the biggest space between up or down and use it with a padding
-            {
-                if (origin.y > $window.innerHeight / 2) // Middle of the screen
-                { // To top
-                    bottomOffset = fromTop(true) ? dropdown.outerHeight() : 0;
-                    height = origin.y - 8;
-
-                    dropdownMenu.css(
-                    {
-                        left: $scope.position !== 'right' ? origin.x : undefined,
-                        right: $scope.position === 'right' ? origin.x : undefined,
-                        bottom: $window.innerHeight - origin.y + bottomOffset,
-                        width: width,
-                        height: height - bottomOffset
-                    });
-                }
-                else
-                { // To bottom
-                    topOffset = fromTop(false) ?  -dropdown.outerHeight() : 0;
-                    height = $window.innerHeight - origin.y - 8;
-
-                    dropdownMenu.css(
-                    {
-                        left: $scope.position !== 'right' ? origin.x : undefined,
-                        right: $scope.position === 'right' ? origin.x : undefined,
-                        top: origin.y + topOffset,
-                        width: width,
-                        height: height - topOffset
-                    });
+                    dropdownMenu.css('width', dropdown.outerWidth() + parseInt($scope.width));
                 }
             }
         }
 
         function openDropdownMenu()
         {
-            var width = dropdownMenu.outerWidth();
-            var height = dropdownMenu.outerHeight();
+            var dropdownMenuWidth = dropdownMenu.outerWidth(),
+                dropdownMenuHeight = dropdownMenu.outerHeight();
 
             dropdownMenu.css({
                 width: 0,
@@ -216,12 +166,12 @@ angular.module('lumx.dropdown', [])
             });
 
             dropdownMenu.find('.dropdown-dropdownMenu__content').css({
-                width: width,
-                height: height
+                width: dropdownMenuWidth,
+                height: dropdownMenuHeight
             });
 
             dropdownMenu.velocity({
-                width: width
+                width: dropdownMenuWidth
             }, {
                 duration: 200,
                 easing: 'easeOutQuint',
@@ -229,25 +179,20 @@ angular.module('lumx.dropdown', [])
             });
 
             dropdownMenu.velocity({
-                height: height
+                height: dropdownMenuHeight
             }, {
                 duration: 500,
                 easing: 'easeOutQuint',
                 queue: false,
                 complete: function()
                 {
-                    if (height === dropdownMenuHeight)
+                    if (angular.isDefined($scope.width))
                     {
                         dropdownMenu.css({ height: 'auto' });
                     }
                     else
                     {
-                        dropdownMenu.css({ overflow: 'auto' });
-                    }
-
-                    if (!angular.isDefined($scope.width))
-                    {
-                        dropdownMenu.css({ width: 'auto' });
+                        dropdownMenu.css({ width: 'auto', height: 'auto' });
                     }
 
                     dropdownMenu.find('.dropdown-menu__content').removeAttr('style');
@@ -321,7 +266,7 @@ angular.module('lumx.dropdown', [])
                 position: '@',
                 width: '@',
                 fromTop: '@',
-                overToggle: '@'
+                direction: '@'
             },
             link: function(scope, element, attrs, ctrl)
             {

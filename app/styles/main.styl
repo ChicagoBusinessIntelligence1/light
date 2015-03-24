@@ -1,8 +1,4 @@
 @import 'nib'
-@import '../scripts/common/ad/styles/ad'
-@import '../scripts/common/news/styles/news'
-@import '../scripts/login/authors/styles/authors'
-@import '../scripts/common/article/styles/article'
 @import '../scripts/widgets/styles/widgets'
 @import '../scripts/sections/classified/styles/classified'
 @import 'functions'
@@ -13,18 +9,12 @@
 @import '../scripts/sections/home/styles/home'
 @import '../scripts/sections/politics/styles/politics'
 @import '../scripts/common/styles/common'
-@import 'layout'
-
 
 body
   font-family
   color #444444
   font Verdana, Helvetica Neue, Helvetica, Arial
   font-size .8em
-
-.svet-secondary
-  background-color #EEEEEE
-
 
 a
   cursor pointer !important
@@ -48,6 +38,8 @@ md-sidenav
 .display-inline-block
   display inline-block
 
+.label-default
+  background-color #EFEFF1
 
 .bold
   font-weight bold
@@ -118,18 +110,11 @@ md-sidenav
 .f-32
   font-size 32px
 
-.f-40
-  font-size 60px
-
-
 .txt-white
   color #f5f5f5 !important
 
 .txt-grey
   color lightgrey
-
-.txt-red
-  color color-svet-red
 
 .txt-fontGrey
   color #393939 !important
@@ -307,6 +292,43 @@ md-button .md-warn
 .coral
   background #ff7f50
 
+md-grid-list
+  margin 8px
+  .gray
+    background #f5f5f5
+  .green
+    background #b9f6ca
+  .yellow
+    background #ffff8d
+  .blue
+    background #84ffff
+  .darkBlue
+    background #3F51B5
+  .deepBlue
+    background #448aff
+  .purple
+    background #b388ff
+  .lightPurple
+    background #8c9eff
+  .red
+    background #ff8a80
+  .pink
+    background #ff80ab
+  md-grid-tile
+    transition all 300ms ease-out 50ms
+    md-icon
+      padding-bottom 32px
+    md-grid-tile-footer
+      background rgba(0, 0, 0, 0.68)
+      height 36px
+  md-grid-tile-footer
+    figcaption
+      width 100%
+      h3
+        margin 0px
+        font-weight 700
+        width 100%
+        text-align center
 
 /**********************
  =Weather Widget

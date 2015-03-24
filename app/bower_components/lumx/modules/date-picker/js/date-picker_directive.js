@@ -18,12 +18,12 @@ angular.module('lumx.date-picker', [])
             $datePicker = element.find('.lx-date-picker');
             $datePickerContainer = element;
 
-            self.build(locale, false);
+            self.build(locale);
         };
 
-        this.build = function(locale, isNewModel)
+        this.build = function(locale)
         {
-            if (locale === activeLocale && !isNewModel)
+            if (locale === activeLocale)
             {
                 return;
             }
@@ -213,12 +213,7 @@ angular.module('lumx.date-picker', [])
 
                 attrs.$observe('locale', function()
                 {
-                    ctrl.build(checkLocale(attrs.locale), false);
-                });
-
-                scope.$watch('model', function()
-                {
-                    ctrl.build(checkLocale(attrs.locale), true);
+                    ctrl.build(checkLocale(attrs.locale));
                 });
 
                 function checkLocale(locale)
