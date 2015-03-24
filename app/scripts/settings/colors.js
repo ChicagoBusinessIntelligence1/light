@@ -1,8 +1,8 @@
 (function () {
     angular.module('app').config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('red', {
-                'default': '900'
+            .primaryPalette('grey', {
+                'default': '200'
             })
             .backgroundPalette('grey', {
                 'default': '50'
