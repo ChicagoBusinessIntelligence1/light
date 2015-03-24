@@ -3,7 +3,6 @@
 
     angular.module('sections.subscription')
         .controller('SubscriptionCtrl', function ($scope) {
-            var subscription = this;
 
         });
 })();

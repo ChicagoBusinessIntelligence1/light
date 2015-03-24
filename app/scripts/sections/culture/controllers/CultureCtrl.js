@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('sections.culture')
-        .controller('CultureCtrl', function ($scope, $location, NewsCategoriesServ) {
-            var culture = this;
-            culture.news = NewsCategoriesServ.getCategoryNews($location);
+        .controller('CultureCtrl', function ($scope,$location, NewsCategoriesServ) {
+
+            $scope.news =  NewsCategoriesServ.getCategoryNews($location);
         });
 })();
 

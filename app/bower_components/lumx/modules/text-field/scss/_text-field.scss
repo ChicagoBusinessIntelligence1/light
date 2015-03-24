@@ -170,7 +170,6 @@
         cursor: text;
         background-color: transparent;
         @include appearance(none);
-        box-shadow: none;
 
         &:focus {
             outline: none;
