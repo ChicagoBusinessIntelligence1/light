@@ -8,9 +8,9 @@
                 replace: true,
                 link: function ($scope, element, attr) {
 
-                    $scope.n1 = $scope.news[0];
-                    $scope.n2 = $scope.news[1];
-                    $scope.n3 = $scope.news[2];
+                    $scope.n1 = $rootScope.news[0];
+                    $scope.n2 = $rootScope.news[1];
+                    $scope.n3 = $rootScope.news[2];
 
                     $scope.mainNewsFilter;
                     $scope.secondNewsTitleFilter;

@@ -3,8 +3,8 @@
 
     angular.module('sections.politics')
         .controller('PoliticsCtrl', function ($scope, $location, NewsCategoriesServ) {
-            $scope.news =  NewsCategoriesServ.getCategoryNews($location);
-
+            var politics = this;
+            politics.news = NewsCategoriesServ.getCategoryNews($location);
         });
 })();
 

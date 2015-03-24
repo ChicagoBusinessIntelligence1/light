@@ -9983,8 +9983,6 @@ function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDoc
       };
 
       var requestError = function() {
-        // The response is always empty
-        // See https://xhr.spec.whatwg.org/#request-error-steps and https://fetch.spec.whatwg.org/#concept-network-error
         completeRequest(callback, -1, null, null, '');
       };
 
@@ -11795,7 +11793,7 @@ function $LogProvider() {
           forEach(arguments, function(arg) {
             args.push(formatError(arg));
           });
-          //return logFn.apply(console, args);
+          return logFn.apply(console, args);
         };
       }
 

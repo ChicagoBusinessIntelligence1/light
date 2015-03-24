@@ -1,24 +1,24 @@
-md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$media('gt-lg')" style='bottom:0')
-	md-toolbar.bgc-blue-grey-50.txt-fontGrey(ng-controller='LeftCtrl' layout='row' layout-align='space-around center' style='background-color:white'  hide-gt-lg)
-		span Наши новости
-		md-button.md-primary(ng-click='close()')
-			i.mdi.mdi-close
-	md-content.md-padding(ng-controller='LeftCtrl')
-		sv-search-news
-	md-content.md-padding(ng-controller='LeftCtrl')
-		sv-news-sections-nav
-	md-content.md-padding
-		sv-nav-link(url='app.profile.author-dashboard' title='Author Profile' icon='account-star')
-	md-content.md-padding(ng-controller='LeftCtrl')
-		sv-archive-nav
+md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-lg')" style='height:inherit')
+    md-toolbar.bgc-grey-200.tc-grey-800(ng-controller='LeftCtrl' layout='row' layout-align='space-around center' style='background-color:white'  hide-gt-lg)
+        span Наши новости
+        md-button.tc-grey-800(aria-label='close' ng-click='close()')
+            i.mdi.mdi-close
+    md-content.md-padding(ng-controller='LeftCtrl')
+        sv-search-news
+    md-content.md-padding(ng-controller='LeftCtrl')
+        sv-news-sections-nav
+    md-content.md-padding
+        sv-nav-link(url='app.login.author-dashboard' title='Author Profile' icon='account-star')
+    md-content.md-padding(ng-controller='LeftCtrl')
+        sv-archive-nav
 
-	div(flex-container='row')
-		div(flex-item)
-			.card.bgc-blue-grey-50.margin-bottom-10.text-center(class='p+')
-				span.display-block.margin-top-10.margin-bottom-10.f-16 Популярные Теги
-			md-content.md-padding
-				sv-news-tags-nav
-	md-content.md-padding.text-center
-		a(href="http://crystalpalacebanquets.com/")
-			img(src="../img/ad/crystal-palace-banquets.jpg" style='display:inline-block')
+    div(flex-container='row')
+        div(flex-item)
+            .card.bgc-grey-100.margin-bottom-10.text-center(class='p+')
+                span.display-block.margin-top-10.margin-bottom-10.f-16 Популярные Теги
+            md-content.md-padding
+                sv-news-tags-nav
+    md-content.md-padding.text-center
+        a(href="http://crystalpalacebanquets.com/")
+            img(src="../img/ad/crystal-palace-banquets.jpg" style='display:inline-block')
 

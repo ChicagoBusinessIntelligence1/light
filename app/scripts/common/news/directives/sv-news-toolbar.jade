@@ -1,9 +1,10 @@
-md-toolbar.md-hue-1.margin-bottom-10( ng-controller='RightCtrl' layout='row' layout-align='space-around center')
-	span.fs-subhead.display-block {{panelTitle}}
-md-content.light-padding-8
-	ul.list-unstyled
-		li.margin-bottom-10.article-toolbar(ng-repeat='n in news')
-			a.text-primary(ui-sref='app.news({id:n.id})')
-				span.display-block.margin-bottom-3 {{n.publishedDate|NewsDate}}
-			a.article-toolbar-body(ui-sref='app.news({id:n.id})')
-				span.display-block {{n.title}}
+.card
+    md-toolbar.margin-bottom-10.bgc-grey-100.tc-grey-800( ng-controller='RightCtrl' layout='row' layout-align='space-around center')
+        span.fs-subhead.display-block {{panelTitle}}
+    md-content.light-padding-8
+        ul.list-unstyled
+            li.margin-bottom-10.article-toolbar(ng-repeat='n in news')
+                a.text-primary(ui-sref='app.reader.article({id:n.id})')
+                    span.display-block.margin-bottom-3 {{n.publishedDate|NewsDate}}
+                a.article-toolbar-body(ui-sref='app.reader.article({id:n.id})')
+                    span.display-block {{n.title}}

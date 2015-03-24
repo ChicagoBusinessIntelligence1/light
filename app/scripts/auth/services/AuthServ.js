@@ -61,6 +61,8 @@
                 },
 
                 getUser: function () {
+                    var deferred = $q.defer();
+
                     var user;
                     var data = this.getObj().$getAuth();
 
@@ -76,7 +78,9 @@
 
                         user = null;
                     }
-                    return user;
+                    deferred.resolve(user);
+
+                    return deferred.promise;
                 }
 
             };

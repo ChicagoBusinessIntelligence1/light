@@ -2,14 +2,12 @@
     'use strict';
 
     angular.module('common')
-        .controller('PdfArchiveCtrl', function ($scope) {
-            $scope.archive = [];
+        .controller('PdfArchiveCtrl', function () {
+            var archive = this;
+            archive.data = [];
             for (var i = 1; i < 13; i++) {
-                $scope.archive.push(i);
-
+                archive.data.push(i);
             }
-
-
         });
 })();
 
