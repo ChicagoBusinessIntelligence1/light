@@ -1,6 +1,13 @@
 /**********************
      =top-navbar
 ***********************/
+.toolbar-red {
+  background: -webkit-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
+  background: -moz-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
+  background: -o-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
+  background: -ms-linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
+  background: linear-gradient(#d32f2f, #c62828, #b71c1c) !important;
+}
 .first-newspaper {
   margin-bottom: 10px;
 }
